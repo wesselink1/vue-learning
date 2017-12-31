@@ -1,6 +1,6 @@
 import Home from './components/Home.vue';
 import Admin from './components/Admin.vue';
-import error404 from './components/error404.vue';
+import Error404 from './components/Error404.vue';
 
 export const routes = [
 	{ 
@@ -13,6 +13,6 @@ export const routes = [
 	},
 	{ 
 		path: '*', 
-		component: error404 
+		component: Error404 
 	}
 ];
