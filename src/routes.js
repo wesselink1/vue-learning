@@ -5,10 +5,12 @@ import Error404 from './components/Error404.vue';
 export const routes = [
 	{ 
 		path: '/',
+		name: 'linkHome',
 		component: Home
 	},
 	{ 
 		path: '/admin',
+		name: 'linkAdmin',
 		component: Admin
 	},
 	{ 
