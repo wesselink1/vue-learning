@@ -19,3 +19,10 @@
 		}
 	}
 </script>
+
+<style scoped>
+	h1,
+	p {
+		font-family: 'Roboto', sans-serif;
+	}
+</style>

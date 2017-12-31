@@ -10,3 +10,29 @@
 		<hr>
 	</header>
 </template>
+
+<style lang="scss" scoped>
+	p {
+		font-family: 'Roboto', sans-serif;
+		font-weight: 300;
+		font-size: 32px;
+	}
+
+	ul {
+		display: flex;
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		list-style: none;
+
+		& + & {
+			margin-left: 10px;
+		}
+
+		a {
+			font-family: 'Roboto', sans-serif;
+		}
+	}
+</style>
