@@ -7,15 +7,40 @@
 		<p>
 			<button v-on:click="goToAdmin">Go to the admin area</button>
 		</p>
+
+		<h3>{{ counter }}</h3>
+
+		<p>
+			<button v-on:click="btnIncrementCounter">Increment counter</button>
+			<button v-on:click="btnDecrementCounter">Decrement counter</button>
+		</p>
 	</main>
 </template>
 
 <script>
 	export default {
+		computed: {
+			counter() {
+				return this.$store.getters.counter;
+			}
+		},
 		methods: {
 			goToAdmin() {
 				this.$router.push({ name: 'linkAdmin' });
+			},
+			btnIncrementCounter() {
+				this.$store.commit('incrementCounter');
+			},
+			btnDecrementCounter() {
+				this.$store.commit('decrementCounter');				
 			}
 		}
 	}
 </script>
+
+<style scoped>
+	h1,
+	p {
+		font-family: 'Roboto', sans-serif;
+	}
+</style>
