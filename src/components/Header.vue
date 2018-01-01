@@ -7,9 +7,20 @@
 				<router-link tag="li" :to="{ name: 'linkAdmin' }" active-class="is-active" exact-active-class="is-exact"><a>Admin</a></router-link>
 			</ul>
 		</nav>
+		<p>{{ counter }}</p>
 		<hr>
 	</header>
 </template>
+
+<script>
+	export default {
+		computed: {
+			counter() {
+				return this.$store.getters.counter;
+			}
+		}
+	}
+</script>
 
 <style lang="scss" scoped>
 	p {

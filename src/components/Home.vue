@@ -21,7 +21,7 @@
 	export default {
 		computed: {
 			counter() {
-				return this.$store.state.counter;
+				return this.$store.getters.counter;
 			}
 		},
 		methods: {
@@ -29,12 +29,10 @@
 				this.$router.push({ name: 'linkAdmin' });
 			},
 			btnIncrementCounter() {
-				this.$store.state.counter++;
+				this.$store.commit('incrementCounter');
 			},
 			btnDecrementCounter() {
-				if(this.$store.state.counter > 0) {
-					this.$store.state.counter--;
-				}
+				this.$store.commit('decrementCounter');				
 			}
 		}
 	}
