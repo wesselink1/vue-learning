@@ -1,8 +1,18 @@
 # vue-webpack
 
-> A Vue.js project
+> A Vue.js learning playground. Learning about Webpack and the vue-webpack-simple boilerplate.
 
-## Build Setup
+## Prerequisites
+
+* [NodeJS](https://nodejs.org/en/) installed
+* Vue-cli installed
+
+```bash
+# Install Vue cli
+npm i -g vue-cli
+```
+
+## One time setup for this demo project
 
 ``` bash
 # install dependencies
