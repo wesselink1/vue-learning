@@ -13,6 +13,9 @@ npm i --save vuex
 
 # Axios, promise based Ajax requests
 npm i --save axios
+
+# Veevalidate, form validation
+npm i --save vee-validate
 ```
 
 ## Deployment to production server
