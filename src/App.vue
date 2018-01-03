@@ -1,5 +1,5 @@
 <template>
-  	<div id="app">
+  	<div id="app" class="container">
   		<dwHeader></dwHeader>
   		<router-view></router-view>
   		<dwFooter></dwFooter>
@@ -17,3 +17,10 @@
 		}
 	}
 </script>
+
+<style scoped>
+	.container {
+		max-width: 1024px;
+		margin: 0 auto;
+	}
+</style>

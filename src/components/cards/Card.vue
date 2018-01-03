@@ -26,8 +26,26 @@
 		border: 1px solid #ddd;
 	}
 
+	.card__item__heading,
+	.card__item__price {
+		font-family: 'Roboto', sans-serif;
+	}
+
 	.card__item__heading {
 		margin: 0;
 		padding: 0;
+		font-weight: 700;
+	}
+
+	.card__item__price {
+		font-weight: 400;
+		font-size: 12px;
+	}
+
+	.card__item__button {
+		border: 1px solid #ddd;
+		background-color: #eee;
+		border-radius: 3px;
+		padding: 4px;
 	}
 </style>
