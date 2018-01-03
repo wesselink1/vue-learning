@@ -2,8 +2,12 @@
 	<section>
 		<h2 class="cards__total">Total: {{ total }}</h2>
 
+		<p>
+			<button v-on:click="resetTotal">Reset total</button>
+		</p>
+
 		<div class="cards">
-			<appCard v-for="card in cards" v-bind:card="card"></appCard>
+			<appCard v-for="card in cards" v-bind:card="card" v-on:addToTotal="addToTotal"></appCard>
 		</div>
 	</section>
 </template>
@@ -26,6 +30,14 @@
 					{ id: 5, heading: 'Bol.com', price: 88 },
 					{ id: 6, heading: 'Tweakers.com', price: 55 },
 				]
+			}
+		},
+		methods: {
+			addToTotal(value) {
+				this.total += value;
+			},
+			resetTotal() {
+				this.total = 0;
 			}
 		}
 	}

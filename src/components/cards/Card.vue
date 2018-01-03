@@ -13,7 +13,7 @@
 		props: ['card'],
 		methods: {
 			buyCard() {
-				console.log(this.card.price);
+				this.$emit('addToTotal', this.card.price);
 			}
 		}
 	}
