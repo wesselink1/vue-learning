@@ -31,7 +31,8 @@
 	}
 
 	h1 {
-		font-size: 32px;
+		font-size: 42px;
+		color: deeppink;
 	}
 
 	p {
@@ -55,12 +56,13 @@
 			font-family: 'Roboto', sans-serif;
 			text-decoration: none;
 			color: #000;
+			font-weight: 700;
 		}
 	}
 
 	.is-active {
 		a {
-			font-weight: 700;
+			color: deepskyblue;
 		}
 	}
 </style>
