@@ -2,7 +2,7 @@
   	<div id="app" class="container">
   		<appHeader></appHeader>
 
-  		<transition name="comp-slide" mode="out-in" type="animation">
+  		<transition name="routerSlide" mode="out-in" type="animation">
   			<router-view></router-view>
   		</transition>
 
@@ -28,15 +28,15 @@
 		margin: 0 auto;
 	}
 
-	.comp-slide-enter-active {
-		animation: componentSlideIn .3s ease-out forwards;
+	.routerSlide-enter-active {
+		animation: routerSlideIn .3s ease-out forwards;
 	}
 
-	.comp-slide-leave-active {
-		animation: componentSlideOut .3s ease-out forwards;		
+	.routerSlide-leave-active {
+		animation: routerSlideOut .3s ease-out forwards;		
 	}
 
-	@keyframes componentSlideIn {
+	@keyframes routerSlideIn {
 		0% {
 			opacity: 0;
 			transform: translateY(20px);
@@ -48,7 +48,7 @@
 		}
 	}
 
-	@keyframes componentSlideOut {
+	@keyframes routerSlideOut {
 		0% {
 			opacity: 1;
 		}
