@@ -14,7 +14,7 @@
 		</p>
 
 		<div class="cards">
-			<appCard v-for="card in cards" v-bind:card="card" v-on:addToTotal="addToTotal"></appCard>
+			<appCard v-for="card in cards" v-bind:card="card" v-bind:total="total" v-on:addToTotal="addToTotal"></appCard>
 		</div>
 	</section>
 </template>
@@ -33,12 +33,8 @@
 					{ id: 1, heading: 'BMW', price: 5 },
 					{ id: 2, heading: 'Google', price: 10 },
 					{ id: 3, heading: 'Twitter', price: 15 },
-					{ id: 4, heading: 'Amazone', price: 22 },
-					{ id: 5, heading: 'Bol.com', price: 88 },
-					{ id: 6, heading: 'Tweakers.com', price: 55 },
-					{ id: 6, heading: 'Apple', price: 200 },
-					{ id: 6, heading: 'IBM', price: 155 },
-					{ id: 6, heading: 'ZDNet', price: 89 },
+					{ id: 4, heading: 'Amazone', price: 50 },
+					{ id: 5, heading: 'Bol.com', price: 75 }
 				]
 			}
 		},
