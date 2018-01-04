@@ -1,15 +1,18 @@
 <template>
 	<footer>
-		&copy; 2017 Dutchwebworks
+		By Dennis Burger, Waddinxveen, januari 2017
 	</footer>
 </template>
 
 <style scoped>
 	footer {
-		margin-top: 20px;
+		border-top: 1px solid #ccc;
+		margin-top: 30px;
+		padding-top: 10px;
 		font-family: 'Roboto', sans-serif;
-		font-size: 20px;
+		font-size: 14px;
 		font-weight: 300;
 		color: #ccc;
+		text-align: right;
 	}
 </style>
