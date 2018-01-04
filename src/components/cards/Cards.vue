@@ -1,5 +1,12 @@
 <template>
 	<section>
+		<h1>Cards demo</h1>
+
+		<p>
+			Using parent and child components. Repeating child componetns based
+			on array in parent. And having the child emit event to parent.
+		</p>
+
 		<h2 class="cards__total">Total: {{ total }}</h2>
 
 		<p>
@@ -46,7 +53,7 @@
 <style>
 	.cards {
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		grid-gap: 20px;
 	}
 </style>
