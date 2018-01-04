@@ -1,12 +1,12 @@
 <template>
   	<div id="app" class="container">
-  		<dwHeader></dwHeader>
+  		<appHeader></appHeader>
 
   		<transition name="comp-slide" mode="out-in" type="animation">
   			<router-view></router-view>
   		</transition>
-  		
-  		<dwFooter></dwFooter>
+
+  		<appFooter></appFooter>
   	</div>
 </template>
 
@@ -16,8 +16,8 @@
 
 	export default {
 		components: {
-			dwHeader: Header,
-			dwFooter: Footer
+			appHeader: Header,
+			appFooter: Footer
 		}
 	}
 </script>
