@@ -1,14 +1,15 @@
 <template>
 	<header>
-		<p>Dutchwebworks logo</p>
+		<h1>Vue SPA learning ground</h1>
 		<nav>
 			<ul role="navigation">
 				<router-link tag="li" :to="{ name: 'linkHome' }" active-class="is-active" exact-active-class="is-exact" exact><a>Home</a></router-link>
 				<router-link tag="li" :to="{ name: 'linkAdmin' }" active-class="is-active" exact-active-class="is-exact"><a>Admin</a></router-link>
+				<router-link tag="li" :to="{ name: 'linkCards' }" active-class="is-active" exact-active-class="is-exact"><a>Cards</a></router-link>
 			</ul>
 		</nav>
-		<p>{{ counter }}</p>
 		<hr>
+		<p>Using Vuex Getters: {{ counter }}</p>
 	</header>
 </template>
 
@@ -23,10 +24,19 @@
 </script>
 
 <style lang="scss" scoped>
+	h1,
 	p {
 		font-family: 'Roboto', sans-serif;
 		font-weight: 300;
-		font-size: 32px;
+	}
+
+	h1 {
+		font-size: 42px;
+		color: deeppink;
+	}
+
+	p {
+		font-size: 18px;
 	}
 
 	ul {
@@ -44,6 +54,15 @@
 
 		a {
 			font-family: 'Roboto', sans-serif;
+			text-decoration: none;
+			color: #000;
+			font-weight: 700;
+		}
+	}
+
+	.is-active {
+		a {
+			color: deepskyblue;
 		}
 	}
 </style>
