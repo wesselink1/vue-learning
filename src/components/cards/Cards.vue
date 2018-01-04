@@ -36,6 +36,9 @@
 					{ id: 4, heading: 'Amazone', price: 22 },
 					{ id: 5, heading: 'Bol.com', price: 88 },
 					{ id: 6, heading: 'Tweakers.com', price: 55 },
+					{ id: 6, heading: 'Apple', price: 200 },
+					{ id: 6, heading: 'IBM', price: 155 },
+					{ id: 6, heading: 'ZDNet', price: 89 },
 				]
 			}
 		},
