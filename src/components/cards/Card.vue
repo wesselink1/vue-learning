@@ -1,8 +1,8 @@
 <template>
-	<div class="card__item" v-bind:class="{ 'is-alert' : total > 50, 'is-danger' : total > 100 }">
+	<div class="card__item" v-bind:class="{ 'is-alert' : total > limit[0], 'is-danger' : total > limit[1] }">
 		<h3 class="card__item-heading">{{ card.heading }} <small class="card__item-price">{{ card.price }}</small></h3>
 
-		<button v-on:click="buyCard" class="card__item-button" v-bind:disabled="total > 150">Buy card</button>
+		<button v-on:click="buyCard" class="card__item-button" v-bind:disabled="total > limit[2]">Buy card</button>
 	</div>
 </template>
 
@@ -10,7 +10,8 @@
 	export default {
 		props: [
 			'card',
-			'total'
+			'total',
+			'limit'
 		],
 		methods: {
 			buyCard() {

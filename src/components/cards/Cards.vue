@@ -3,8 +3,13 @@
 		<h1 class="cards__title">Cards demo</h1>
 
 		<p class="cards__body">
-			Using parent and child components. Repeating child componetns based
-			on array in parent. And having the child emit event to parent.
+			Using parent and child components. Repeating child components based
+			on data array in parent. And having the child $emit() an event to parent.
+		</p>
+
+		<p class="cards__body">
+			When going over {{ limit[0] }}, the cards will turn orange.
+			Going over {{ limit[1] }} will turn them red. And going over {{ limit[2] }} will disable the 'buy' -button.
 		</p>
 
 		<h2 class="cards__total">Parent total: {{ total }}</h2>
@@ -14,7 +19,7 @@
 		</p>
 
 		<div class="cards__grid">
-			<app-card v-for="card in cards" v-bind:card="card" v-bind:total="total" v-on:addToTotal="addToTotal"></app-card>
+			<app-card v-for="card in cards" v-bind:card="card" v-bind:total="total" v-bind:limit="limit" v-on:addToTotal="addToTotal"></app-card>
 		</div>
 	</main>
 </template>
@@ -35,7 +40,8 @@
 					{ id: 3, heading: 'Twitter', price: 15 },
 					{ id: 4, heading: 'Amazone', price: 50 },
 					{ id: 5, heading: 'Bol.com', price: 75 }
-				]
+				],
+				limit: [50, 100, 150]
 			}
 		},
 		methods: {
