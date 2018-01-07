@@ -12,8 +12,9 @@ const router = new VueRouter({
 });
 
 Vue.filter("euroCurrency", function(price){
-	return "\u20AC " + Number(price).toLocaleString("nl-NL", { 
-		minimumFractionDigits: 2
+	return Number(price).toLocaleString("nl-NL", { 
+		style: "currency",
+        currency: "EUR"
 	});
 });
 
