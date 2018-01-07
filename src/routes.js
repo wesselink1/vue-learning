@@ -1,5 +1,6 @@
 import Cards from "./components/Cards/Cards.vue";
 import Counter from "./components/Counter/Counter.vue";
+import DynamicComponents from "./components/DynamicComponents/DynamicComponents.vue";
 import Error404 from "./components/Errors/Error404.vue";
 import Home from "./components/Home/Home.vue";
 
@@ -13,6 +14,11 @@ export const routes = [
 		path: "/cards",
 		name: "linkCards",
 		component: Cards
+	},
+	{
+		path: "/dynamiccomponents",
+		name: "linkDynamicComponents",
+		component: DynamicComponents
 	},
 	{
 		path: "/counter",

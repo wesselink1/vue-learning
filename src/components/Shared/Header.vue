@@ -7,6 +7,7 @@
 				<router-link tag="li" :to="{ name: 'linkHome' }" class="header__nav-item" active-class="is-active" exact-active-class="is-exact" exact><a>Home</a></router-link>
 				<router-link tag="li" :to="{ name: 'linkCards' }" class="header__nav-item" active-class="is-active" exact-active-class="is-exact"><a>Cards</a></router-link>
 				<router-link tag="li" :to="{ name: 'linkCounter' }" class="header__nav-item" active-class="is-active" exact-active-class="is-exact"><a>Counter</a></router-link>
+				<router-link tag="li" :to="{ name: 'linkDynamicComponents' }" class="header__nav-item" active-class="is-active" exact-active-class="is-exact"><a>Dynamic Components</a></router-link>
 			</ul>
 		</nav>
 	</header>
