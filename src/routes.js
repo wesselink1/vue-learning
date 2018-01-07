@@ -1,4 +1,3 @@
-import Admin from "./components/Admin/Admin.vue";
 import Cards from "./components/Cards/Cards.vue";
 import Counter from "./components/Counter/Counter.vue";
 import Error404 from "./components/Errors/Error404.vue";
@@ -9,11 +8,6 @@ export const routes = [
 		path: "/",
 		name: "linkHome",
 		component: Home
-	},
-	{
-		path: "/admin",
-		name: "linkAdmin",
-		component: Admin
 	},
 	{
 		path: "/cards",

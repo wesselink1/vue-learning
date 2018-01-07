@@ -7,7 +7,8 @@
 		<h2 class="home__sub-title">Scripted nav button using vue-router</h2>
 
 		<p class="home__buttons">
-			<button @click="goToAdmin" class="home__button">Go to the admin area</button>
+			<button @click="goToCards" class="home__button">Go to the cards demo page</button>
+			<button @click="goToError404" class="home__button">Go to 404 error page</button>
 		</p>
 	</main>
 </template>
@@ -15,9 +16,12 @@
 <script>
 	export default {
 		methods: {
-			goToAdmin() {
-				this.$router.push({ name: "linkAdmin" });
-			}
+			goToCards() {
+				this.$router.push({ name: "linkCards" });
+			},
+			goToError404() {
+				this.$router.push('/404');
+			},
 		}
 	}
 </script>
