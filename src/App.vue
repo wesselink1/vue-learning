@@ -1,29 +1,29 @@
 <template>
-  	<div id="app" class="container">
-  		<appHeader></appHeader>
+  	<main id="app" class="app__container">
+  		<app-header></app-header>
 
   		<transition name="routerSlide" mode="out-in" type="animation">
   			<router-view></router-view>
   		</transition>
 
-  		<appFooter></appFooter>
-  	</div>
+  		<app-footer></app-footer>
+  	</main>
 </template>
 
 <script>
-	import Header from './components/Shared/Header.vue';
 	import Footer from './components/Shared/Footer.vue';
+	import Header from './components/Shared/Header.vue';
 
 	export default {
 		components: {
-			appHeader: Header,
-			appFooter: Footer
+			'app-footer': Footer,
+			'app-header': Header
 		}
 	}
 </script>
 
-<style scoped>
-	.container {
+<style>
+	.app__container {
 		max-width: 1024px;
 		margin: 0 auto;
 	}

@@ -9,7 +9,7 @@ export const store = new Vuex.Store({
     },
     getters: {
         counter: state => {
-            return state.counter + ' times clicked';
+            return state.counter;
         }
     },
     mutations: {

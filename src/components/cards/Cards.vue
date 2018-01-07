@@ -1,22 +1,22 @@
 <template>
-	<section>
-		<h1>Cards demo</h1>
+	<main class="cards">
+		<h1 class="cards__title">Cards demo</h1>
 
-		<p>
+		<p class="cards__body">
 			Using parent and child components. Repeating child componetns based
 			on array in parent. And having the child emit event to parent.
 		</p>
 
-		<h2 class="cards__total">Total: {{ total }}</h2>
+		<h2 class="cards__total">Parent total: {{ total }}</h2>
 
-		<p>
+		<p class="cards__reset">
 			<button v-on:click="resetTotal">Reset total</button>
 		</p>
 
-		<div class="cards">
-			<appCard v-for="card in cards" v-bind:card="card" v-bind:total="total" v-on:addToTotal="addToTotal"></appCard>
+		<div class="cards__grid">
+			<app-card v-for="card in cards" v-bind:card="card" v-bind:total="total" v-on:addToTotal="addToTotal"></app-card>
 		</div>
-	</section>
+	</main>
 </template>
 
 <script>
@@ -24,7 +24,7 @@
 
 	export default {
 		components: {
-			appCard: Card
+			'app-card': Card
 		},
 		data() {
 			return {
@@ -50,9 +50,21 @@
 </script>
 
 <style>
-	.cards {
+	.cards__title,
+	.cards__body,
+	.cards__total {
+		font-family: 'Roboto', sans-serif;
+	}
+
+	.cards__title {
+		font-weight: 300;
+		font-size: 32px;
+		color: deepskyblue;
+	}
+
+	.cards__grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		grid-gap: 20px;
+		grid-gap: 20px;		
 	}
 </style>
