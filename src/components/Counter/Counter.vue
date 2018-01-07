@@ -2,7 +2,7 @@
 	<main class="counter">
 		<h1 class="counter__title">Counter</h1>
 
-		<p class="counter__body">Using Vuex to store the state of a property</p>
+		<p class="counter__body">Using Vuex to store the state the counter property.</p>
 
 		<h3 class="counter__sub-title">Vuex stored counter: {{ counter }}</h3>
 
