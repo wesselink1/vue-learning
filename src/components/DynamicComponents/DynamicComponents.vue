@@ -45,9 +45,9 @@
 					tab.firstChild.setAttribute(ariaSelected, "false");
 				}
 
-				event.currentTarget.parentNode.classList.toggle(isActiveClass);
+				event.currentTarget.parentNode.classList.add(isActiveClass);
 				event.currentTarget.setAttribute(ariaSelected, "true");
-				window.location.hash = event.currentTarget.hash;
+
 				this.selectedComponent = componentName;
 				return false;
 			}
@@ -70,10 +70,6 @@
 
 	.dynamic-components__body {
 		line-height: 1.2;
-	}
-
-	.dynamic-components__nav {
-
 	}
 
 	.dynamic-components__tab {
