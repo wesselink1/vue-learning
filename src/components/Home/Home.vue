@@ -4,10 +4,10 @@
 
 		<p class="home__body">Learning various aspects of Vue Webpack Simple SPA setup.</p>
 
-		<h2 class="home__sub-title">Scripted nav button</h2>
+		<h2 class="home__sub-title">Scripted nav button using vue-router</h2>
 
 		<p class="home__buttons">
-			<button v-on:click="goToAdmin" class="home__button">Go to the admin area</button>
+			<button @click="goToAdmin" class="home__button">Go to the admin area</button>
 		</p>
 	</main>
 </template>
@@ -22,7 +22,7 @@
 	}
 </script>
 
-<style scoped>
+<style>
 	.home__title,
 	.home__sub-title,
 	.home__body {

@@ -7,8 +7,8 @@
 		<h3 class="counter__sub-title">Vuex stored counter: {{ counter }}</h3>
 
 		<p class="counter__buttons">
-			<button v-on:click="btnIncrementCounter" class="counter__button">Increment counter</button>
-			<button v-on:click="btnDecrementCounter" class="counter__button">Decrement counter</button>
+			<button @click="btnIncrementCounter" class="counter__button">Increment counter</button>
+			<button @click="btnDecrementCounter" class="counter__button">Decrement counter</button>
 		</p>
 	</main>
 </template>

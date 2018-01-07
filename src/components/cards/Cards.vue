@@ -15,11 +15,11 @@
 		<h2 class="cards__total">Parent total: {{ total | euroCurrency }}</h2>
 
 		<p class="cards__reset">
-			<button v-on:click="resetTotal">Reset total</button>
+			<button @click="resetTotal">Reset total</button>
 		</p>
 
 		<div class="cards__grid">
-			<app-card v-for="card in cards" v-bind:card="card" v-bind:total="total" v-bind:limit="limit" v-on:addToTotal="addToTotal"></app-card>
+			<app-card v-for="card in cards" :card="card" :total="total" :limit="limit" @addToTotal="addToTotal"></app-card>
 		</div>
 	</main>
 </template>
@@ -41,7 +41,11 @@
 					{ id: 4, heading: "Amazone", price: 50 },
 					{ id: 5, heading: "Bol.com", price: 75 }
 				],
-				limit: [50, 100, 150]
+				limit: [
+					50,
+					100,
+					150
+				]
 			}
 		},
 		methods: {
