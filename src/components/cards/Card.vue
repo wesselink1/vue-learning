@@ -1,6 +1,6 @@
 <template>
 	<div class="card__item" v-bind:class="{ 'is-alert' : total > limit[0], 'is-danger' : total > limit[1] }">
-		<h3 class="card__item-heading">{{ card.heading }} <small class="card__item-price">{{ card.price }}</small></h3>
+		<h3 class="card__item-heading">{{ card.heading }} <small class="card__item-price">{{ card.price | euroCurrency }}</small></h3>
 
 		<button v-on:click="buyCard" class="card__item-button" v-bind:disabled="total > limit[2]">Buy card</button>
 	</div>
@@ -9,13 +9,13 @@
 <script>
 	export default {
 		props: [
-			'card',
-			'total',
-			'limit'
+			"card",
+			"total",
+			"limit"
 		],
 		methods: {
 			buyCard() {
-				this.$emit('addToTotal', this.card.price);
+				this.$emit("addToTotal", this.card.price);
 			}
 		}
 	}
@@ -41,7 +41,7 @@
 
 	.card__item-heading,
 	.card__item-price {
-		font-family: 'Roboto', sans-serif;
+		font-family: "Roboto", sans-serif;
 	}
 
 	.card__item-heading {

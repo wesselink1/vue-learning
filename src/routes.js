@@ -1,32 +1,32 @@
-import Admin from './components/Admin/Admin.vue';
-import Cards from './components/Cards/Cards.vue';
-import Counter from './components/Counter/Counter.vue';
-import Error404 from './components/Errors/Error404.vue';
-import Home from './components/Home/Home.vue';
+import Admin from "./components/Admin/Admin.vue";
+import Cards from "./components/Cards/Cards.vue";
+import Counter from "./components/Counter/Counter.vue";
+import Error404 from "./components/Errors/Error404.vue";
+import Home from "./components/Home/Home.vue";
 
 export const routes = [
 	{
-		path: '/',
-		name: 'linkHome',
+		path: "/",
+		name: "linkHome",
 		component: Home
 	},
 	{
-		path: '/admin',
-		name: 'linkAdmin',
+		path: "/admin",
+		name: "linkAdmin",
 		component: Admin
 	},
 	{
-		path: '/cards',
-		name: 'linkCards',
+		path: "/cards",
+		name: "linkCards",
 		component: Cards
 	},
 	{
-		path: '/counter',
-		name: 'linkCounter',
+		path: "/counter",
+		name: "linkCounter",
 		component: Counter
 	},
 	{
-		path: '*',
+		path: "*",
 		component: Error404
 	}
 ];

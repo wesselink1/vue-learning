@@ -1,5 +1,5 @@
 <template>
-  	<main id="app" class="app__container">
+  	<section id="app" class="app__container">
   		<app-header></app-header>
 
   		<transition name="routerSlide" mode="out-in" type="animation">
@@ -7,17 +7,17 @@
   		</transition>
 
   		<app-footer></app-footer>
-  	</main>
+  	</section>
 </template>
 
 <script>
-	import Footer from './components/Shared/Footer.vue';
-	import Header from './components/Shared/Header.vue';
+	import Footer from "./components/Shared/Footer.vue";
+	import Header from "./components/Shared/Header.vue";
 
 	export default {
 		components: {
-			'app-footer': Footer,
-			'app-header': Header
+			"app-footer": Footer,
+			"app-header": Header
 		}
 	}
 </script>

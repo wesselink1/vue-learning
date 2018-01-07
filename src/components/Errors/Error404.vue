@@ -9,7 +9,7 @@
 <style>
 	.error__title,
 	.error__body {
-		font-family: 'Roboto', sans-serif;
+		font-family: "Roboto", sans-serif;
 	}
 
 	.error__title {

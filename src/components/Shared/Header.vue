@@ -13,12 +13,6 @@
 	</header>
 </template>
 
-<script>
-	export default {
-		
-	}
-</script>
-
 <style>
 	.header {
 		margin-bottom: 30px;
@@ -28,13 +22,13 @@
 
 	.header__title,
 	.header__body {
-		font-family: 'Roboto', sans-serif;
 		font-weight: 300;
+		font-family: "Roboto", sans-serif;
 	}
 
 	.header__title {
-		font-size: 42px;
 		color: deeppink;
+		font-size: 42px;
 	}
 
 	.header__body {
@@ -56,10 +50,10 @@
 	}
 
 	.header__nav-item a {
-		font-family: 'Roboto', sans-serif;
-		text-decoration: none;
 		color: #000;
 		font-weight: 700;
+		text-decoration: none;
+		font-family: "Roboto", sans-serif;
 	}
 
 	.header__nav-item.is-active a {

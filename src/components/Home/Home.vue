@@ -16,7 +16,7 @@
 	export default {
 		methods: {
 			goToAdmin() {
-				this.$router.push({ name: 'linkAdmin' });
+				this.$router.push({ name: "linkAdmin" });
 			}
 		}
 	}
@@ -26,7 +26,7 @@
 	.home__title,
 	.home__sub-title,
 	.home__body {
-		font-family: 'Roboto', sans-serif;
+		font-family: "Roboto", sans-serif;
 	}
 
 	.home__title {

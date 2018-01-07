@@ -12,7 +12,7 @@
 			Going over {{ limit[1] }} will turn them red. And going over {{ limit[2] }} will disable the 'buy' -button.
 		</p>
 
-		<h2 class="cards__total">Parent total: {{ total }}</h2>
+		<h2 class="cards__total">Parent total: {{ total | euroCurrency }}</h2>
 
 		<p class="cards__reset">
 			<button v-on:click="resetTotal">Reset total</button>
@@ -25,21 +25,21 @@
 </template>
 
 <script>
-	import Card from './Card.vue';
+	import Card from "./Card.vue";
 
 	export default {
 		components: {
-			'app-card': Card
+			"app-card": Card
 		},
 		data() {
 			return {
 				total: 0,
 				cards: [
-					{ id: 1, heading: 'BMW', price: 5 },
-					{ id: 2, heading: 'Google', price: 10 },
-					{ id: 3, heading: 'Twitter', price: 15 },
-					{ id: 4, heading: 'Amazone', price: 50 },
-					{ id: 5, heading: 'Bol.com', price: 75 }
+					{ id: 1, heading: "BMW", price: 5 },
+					{ id: 2, heading: "Google", price: 10 },
+					{ id: 3, heading: "Twitter", price: 15 },
+					{ id: 4, heading: "Amazone", price: 50 },
+					{ id: 5, heading: "Bol.com", price: 75 }
 				],
 				limit: [50, 100, 150]
 			}
@@ -59,7 +59,7 @@
 	.cards__title,
 	.cards__body,
 	.cards__total {
-		font-family: 'Roboto', sans-serif;
+		font-family: "Roboto", sans-serif;
 	}
 
 	.cards__title {

@@ -17,10 +17,10 @@
 	export default {		
 		methods: {
 			btnIncrementCounter() {
-				this.$store.commit('incrementCounter');
+				this.$store.commit("incrementCounter");
 			},
 			btnDecrementCounter() {
-				this.$store.commit('decrementCounter');				
+				this.$store.commit("decrementCounter");				
 			}
 		},
 		computed: {
@@ -35,7 +35,7 @@
 	.counter__title,
 	.counter__sub-title,
 	.counter__body {
-		font-family: 'Roboto', sans-serif;
+		font-family: "Roboto", sans-serif;
 	}
 
 	.counter__title {
