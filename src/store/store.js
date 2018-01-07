@@ -1,5 +1,5 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import Vue from "vue";
+import Vuex from "vuex";
 
 Vue.use(Vuex);
 
@@ -9,7 +9,7 @@ export const store = new Vuex.Store({
     },
     getters: {
         counter: state => {
-            return state.counter + ' times clicked';
+            return state.counter;
         }
     },
     mutations: {

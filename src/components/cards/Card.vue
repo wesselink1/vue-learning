@@ -1,68 +1,69 @@
 <template>
-	<div class="card__item" v-bind:class="{ 'is-alert' : total > 50, 'is-danger' : total > 100 }">
-		<h3 class="card__item__heading">{{ card.heading }} <small class="card__item__price">{{ card.price }}</small></h3>
+	<div class="card__item" :class="{ 'is-alert' : total > limit[0], 'is-danger' : total > limit[1] }">
+		<h3 class="card__item-heading">{{ card.heading }} <small class="card__item-price">{{ card.price | euroCurrency }}</small></h3>
 
-		<button v-on:click="buyCard" class="card__item__button" v-bind:disabled="total > 150">Buy card</button>
+		<button @click="buyCard" class="card__item-button" :disabled="total > limit[2]">Buy card</button>
 	</div>
 </template>
 
 <script>
 	export default {
 		props: [
-			'card',
-			'total'
+			"card",
+			"total",
+			"limit"
 		],
 		methods: {
 			buyCard() {
-				this.$emit('addToTotal', this.card.price);
+				this.$emit("addToTotal", this.card.price);
 			}
 		}
 	}
 </script>
 
-<style scoped>
+<style>
 	.card__item {
 		padding: 10px;
+		color: white;
 		border-radius: 8px;
 		border: 1px solid #ddd;
 		background-color: green;
-		color: white;
 		transition: background-color .5s;
 	}
 
-	.is-alert {
+	.card__item.is-alert {
 		background-color: orange;
 	}
 
-	.is-danger {
+	.card__item.is-danger {
 		background-color: red;
 	}
 
-	.card__item__heading,
-	.card__item__price {
-		font-family: 'Roboto', sans-serif;
+	.card__item-heading,
+	.card__item-price {
+		font-family: "Roboto", sans-serif;
 	}
 
-	.card__item__heading {
+	.card__item-heading {
 		margin: 0 0 10px 0;
 		padding: 0;
 		font-weight: 700;
 	}
 
-	.card__item__price {
-		font-weight: 400;
+	.card__item-price {
 		font-size: 12px;
+		font-weight: 700;
 	}
 
-	.card__item__button {
-		border: 1px solid #ddd;
-		background-color: #eee;
-		border-radius: 3px;
+	.card__item-button {
 		padding: 4px;
 		cursor: pointer;
+		border-radius: 3px;
+		border: 1px solid #ddd;
+		background-color: #eee;
 	}
 
-	.card__item__button[disabled] {
+	.card__item-button[disabled] {
 		cursor: not-allowed;
 	}
 </style>
