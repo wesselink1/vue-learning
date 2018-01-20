@@ -1,5 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+var PrerenderSpaPlugin = require('prerender-spa-plugin')
 
 module.exports = {
   entry: './src/main.js',
@@ -69,6 +71,24 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+      new CopyWebpackPlugin([{
+            from: './src/assets',
+            to: './dist/assets'
+      }]),
+      new PrerenderSpaPlugin(
+        // Absolute path to compiled SPA
+        path.join(__dirname, './dist'),
+        // List of routes to prerender
+        [
+            '/',
+            '/cards',
+            '/counter',
+            '/dynamiccomponents',
+            '/pug'
+        ]
+      )
+  ],
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
