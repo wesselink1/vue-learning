@@ -4,7 +4,7 @@
 
         <p class="customdirective__body">Using Vue custom directive attributes to create custom functionality.</p>
 
-        <p class="customdirective__body" v-highlight:background.delayed="'orange'">Using inline attribute to set the background color of this custom directive</p>
+        <p class="customdirective__body" v-highlight:background.delayed="{ color: 'white', backgroundColor: 'orange', delay: 6000 }">Using inline attribute to set the background color of this custom directive</p>
 
         <p class="customdirective__body">Directives can be set globally or localy.</p>
     </main>
@@ -18,14 +18,15 @@
                     var delay = 0;
                     
                     if(binding.modifiers['delayed']) {
-                        delay = 3000;
+                        delay = binding.value.delay;
                     }
 
                     setTimeout(() => {
                         if (binding.arg == 'background') {
-                            el.style.backgroundColor = binding.value;
+                            el.style.color = binding.value.color;
+                            el.style.backgroundColor = binding.value.backgroundColor;
                         } else {
-                            el.style.color = binding.value;
+                            el.style.color = binding.value.color;
                         }
                     }, delay);	
                 }
