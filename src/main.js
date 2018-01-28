@@ -18,6 +18,12 @@ Vue.filter("euroCurrency", function(price){
 	});
 });
 
+Vue.directive("highlight", {
+	bind(el, binding, vnode) {
+		el.style.backgroundColor = binding.value;
+	}
+});
+
 new Vue({
 	el: "#app",
 	router,
