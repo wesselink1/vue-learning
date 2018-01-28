@@ -12,16 +12,24 @@
 
 <script>
     export default {
-        components: {
-            
-        },
-        data() {
-            return {
+        directives: {
+            "highlight": {
+                bind(el, binding) {
+                    var delay = 0;
+                    
+                    if(binding.modifiers['delayed']) {
+                        delay = 3000;
+                    }
 
-            }
-        },
-        methods: {
-
+                    setTimeout(() => {
+                        if (binding.arg == 'background') {
+                            el.style.backgroundColor = binding.value;
+                        } else {
+                            el.style.color = binding.value;
+                        }
+                    }, delay);	
+                }
+            } 
         }
     }
 </script>
