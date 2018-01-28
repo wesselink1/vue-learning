@@ -19,7 +19,7 @@
 		</p>
 
 		<div class="cards__grid">
-			<app-card v-for="(card, index) in cards" key="index" :card="card" :total="total" :limit="limit" @addToTotal="addToTotal"></app-card>
+			<app-card v-for="(card, index) in cards" :key="index" :card="card" :total="total" :limit="limit" @addToTotal="addToTotal"></app-card>
 		</div>
 	</main>
 </template>

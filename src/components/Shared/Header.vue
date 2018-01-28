@@ -9,6 +9,7 @@
 				<router-link tag="li" :to="{ name: 'linkCounter' }" class="header__nav-item" active-class="is-active" exact-active-class="is-exact"><a>Counter</a></router-link>
 				<router-link tag="li" :to="{ name: 'linkDynamicComponents' }" class="header__nav-item" active-class="is-active" exact-active-class="is-exact"><a>Dynamic Components</a></router-link>
 				<router-link tag="li" :to="{ name: 'linkPug' }" class="header__nav-item" active-class="is-active" exact-active-class="is-exact"><a>Pug</a></router-link>
+				<router-link tag="li" :to="{ name: 'linkCustomDirectives' }" class="header__nav-item" active-class="is-active" exact-active-class="is-exact"><a>Custom Directives</a></router-link>
 			</ul>
 		</nav>
 	</header>

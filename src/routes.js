@@ -1,5 +1,6 @@
 import Cards from "./components/Cards/Cards.vue";
 import Counter from "./components/Counter/Counter.vue";
+import CustomDirectives from "./components/CustomDirectives/CustomDirective.vue";
 import DynamicComponents from "./components/DynamicComponents/DynamicComponents.vue";
 import Error404 from "./components/Errors/Error404.vue";
 import Home from "./components/Home/Home.vue";
@@ -30,6 +31,11 @@ export const routes = [
 		path: "/pug",
 		name: "linkPug",
 		component: Pug
+	},
+	{
+		path: "/customdirectives",
+		name: "linkCustomDirectives",
+		component: CustomDirectives
 	},
 	{
 		path: "*",
