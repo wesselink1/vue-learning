@@ -12,14 +12,23 @@
 			Going over {{ limit[1] }} will turn them red. And going over {{ limit[2] }} will disable the 'buy' -button.
 		</p>
 
-		<h2 class="cards__total">Parent total: {{ total | euroCurrency }}</h2>
+		<p class="cards__body">The <strong>total</strong> is stored in Vuex.</p>
+
+		<h2 class="cards__total">Total: {{ cardsTotal | euroCurrency }}</h2>
 
 		<p class="cards__reset">
 			<button @click="resetTotal">Reset total</button>
 		</p>
 
 		<div class="cards__grid">
-			<app-card v-for="(card, index) in cards" :key="index" :card="card" :total="total" :limit="limit" @addToTotal="addToTotal"></app-card>
+			<app-card
+				v-for="(card, index) in cards" 
+				:key="index"
+				:card="card"
+				:cardsTotal="cardsTotal"
+				:limit="limit"
+				@addToTotal="addToTotal">			
+			</app-card>
 		</div>
 	</main>
 </template>
@@ -33,7 +42,6 @@
 		},
 		data() {
 			return {
-				total: 0,
 				cards: [
 					{ id: 1, heading: "BMW", price: 5.95 },
 					{ id: 2, heading: "Google", price: 10.33 },
@@ -50,10 +58,15 @@
 		},
 		methods: {
 			addToTotal(value) {
-				this.total += value;
+				this.$store.commit("incrementCardsTotal", value);
 			},
 			resetTotal() {
-				this.total = 0;
+				this.$store.commit("resetCardsTotal");
+			}
+		},
+		computed: {
+			cardsTotal() {
+				return this.$store.getters.cardsTotal;
 			}
 		}
 	}

@@ -2,6 +2,8 @@
 	<header class="header">
 		<h1 class="header__title">Vue SPA learning ground</h1>
 
+		<app-vuex-values></app-vuex-values>
+
 		<nav class="header__nav">
 			<ul class="header__nav-items" role="navigation">
 				<router-link tag="li" :to="{ name: 'linkHome' }" class="header__nav-item" active-class="is-active" exact-active-class="is-exact" exact><a>Home</a></router-link>
@@ -14,6 +16,16 @@
 		</nav>
 	</header>
 </template>
+
+<script>
+	import VuexValues from "./VuexValues.vue";
+
+	export default {
+		components: {
+			"app-vuex-values": VuexValues
+		}
+	}
+</script>
 
 <style>
 	.header {
