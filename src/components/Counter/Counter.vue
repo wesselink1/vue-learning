@@ -7,8 +7,8 @@
 		<h3 class="counter__sub-title">Vuex stored counter: {{ counter }}</h3>
 
 		<p class="counter__buttons">
-			<button @click="btnIncrementCounter" class="counter__button">Increment counter</button>
-			<button @click="btnDecrementCounter" class="counter__button">Decrement counter</button>
+			<button @click="incrementCounter" class="counter__button">Increment counter</button>
+			<button @click="decrementCounter" class="counter__button">Decrement counter</button>
 		</p>
 
 		<hr class="counter__line">
@@ -21,6 +21,7 @@
 
 <script>
 	import { mapGetters } from "vuex";
+	import { mapMutations } from "vuex";
 
 	export default {
 		data() {
@@ -30,12 +31,10 @@
 			}
 		},
 		methods: {
-			btnIncrementCounter() {
-				this.$store.commit("incrementCounter");
-			},
-			btnDecrementCounter() {
-				this.$store.commit("decrementCounter");				
-			}
+			...mapMutations([
+				"incrementCounter",
+				"decrementCounter"
+			])
 		},
 		computed: {
 			...mapGetters([

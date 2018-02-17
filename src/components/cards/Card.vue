@@ -19,7 +19,7 @@
 		],
 		methods: {
 			buyCard() {
-				this.$emit("addToTotal", this.card.price);
+				this.$emit("incrementCardsTotal", this.card.price);
 			}
 		}
 	}

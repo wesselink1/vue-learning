@@ -17,7 +17,7 @@
 		<h2 class="cards__total">Total: {{ cardsTotal | euroCurrency }}</h2>
 
 		<p class="cards__reset">
-			<button @click="resetTotal">Reset total</button>
+			<button @click="resetCardsTotal">Reset total</button>
 		</p>
 
 		<div class="cards__grid">
@@ -25,8 +25,9 @@
 				v-for="(card, index) in cards" 
 				:key="index"
 				:card="card"
+				:cardsTotal="cardsTotal"
 				:limit="limit"
-				@addToTotal="addToTotal">			
+				@incrementCardsTotal="incrementCardsTotal">		
 			</appCard>
 		</div>
 	</main>
@@ -34,6 +35,7 @@
 
 <script>
 	import { mapGetters } from "vuex";
+	import { mapMutations } from "vuex";
 	import Card from "./Card.vue";
 
 	export default {
@@ -57,12 +59,10 @@
 			}
 		},
 		methods: {
-			addToTotal(value) {
-				this.$store.commit("incrementCardsTotal", value);
-			},
-			resetTotal() {
-				this.$store.commit("resetCardsTotal");
-			}
+			...mapMutations([
+				"incrementCardsTotal",	
+				"resetCardsTotal",	
+			])
 		},
 		computed: {
 			...mapGetters([
