@@ -14,6 +14,8 @@
 </template>
 
 <script>
+	import { mapGetters } from "vuex";
+	
 	export default {		
 		methods: {
 			btnIncrementCounter() {
@@ -23,11 +25,9 @@
 				this.$store.commit("decrementCounter");				
 			}
 		},
-		computed: {
-			counter() {
-				return this.$store.getters.counter;
-			}
-		},
+		computed: mapGetters([
+				"counter"
+			])
 	}
 </script>
 

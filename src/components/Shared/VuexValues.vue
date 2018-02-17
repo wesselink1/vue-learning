@@ -13,15 +13,13 @@
 </template>
 
 <script>
+	import { mapGetters } from "vuex";
+
 	export default {
-		computed: {
-			cardsTotal() {
-				return this.$store.getters.cardsTotal;
-			},
-			counter() {
-				return this.$store.getters.counter;
-			}
-		}
+		computed: mapGetters([
+				"counter",
+				"cardsTotal"
+			])
 	}
 </script>
 
