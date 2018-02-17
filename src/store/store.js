@@ -1,38 +1,21 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import counter from "./modules/counter";
+import cards from "./modules/cards";
+import * as getters from "./getters";
+import * as mutations from "./mutations";
 
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     state: {
-        counter: 0,
-        cardsTotal: 0
+        appTitle: "SPA Vue & Vuex learning with Max",
+        userName: "Mr. Blue"
     },
-    getters: {
-        counter: state => {
-            return state.counter;
-        },
-        cardsTotal: state => {
-            return state.cardsTotal;
-        }
-    },
-    mutations: {
-        incrementCounter: state => {
-            state.counter++;
-        },
-        decrementCounter: state => {
-            if (state.counter > 0) {
-                state.counter--;
-            }
-        },
-        incrementCardsTotal: (state, value) => {
-            state.cardsTotal += value;
-        },
-        resetCardsTotal: state => {
-            state.cardsTotal = 0;
-        }
-    },
-    actions: {
-        // for async (like ajax calls) actions that eventually also 'commit' a mutation
+    getters,
+    mutations,
+    modules: {
+        counter,
+        cards
     }
 });

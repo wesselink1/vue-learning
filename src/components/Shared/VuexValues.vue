@@ -9,18 +9,23 @@
 		<p class="vuex-values__body">
 			Your increment is: {{ counter }}
 		</p>
+
+		<p class="vuex-values__body">
+			Your username: {{ userName }}
+		</p>
 	</div>
 </template>
 
 <script>
+	import { mapGetters } from "vuex";
+
 	export default {
 		computed: {
-			cardsTotal() {
-				return this.$store.getters.cardsTotal;
-			},
-			counter() {
-				return this.$store.getters.counter;
-			}
+			...mapGetters([
+				"counter",
+				"cardsTotal",
+				"userName"
+			])			
 		}
 	}
 </script>
