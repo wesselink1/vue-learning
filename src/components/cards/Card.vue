@@ -2,7 +2,11 @@
 	<div class="card__item" :class="{ 'is-alert' : total > limit[0], 'is-danger' : total > limit[1] }">
 		<h3 class="card__item-heading">{{ card.heading }} <small class="card__item-price">{{ card.price | euroCurrency }}</small></h3>
 
-		<button @click="buyCard" class="card__item-button" :disabled="total > limit[2]">Buy card</button>
+		<button
+			@click="buyCard" class="card__item-button"
+			:disabled="total > limit[2]">
+			Buy card
+		</button>
 	</div>
 </template>
 

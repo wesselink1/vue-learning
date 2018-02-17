@@ -5,11 +5,15 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     state: {
-        counter: 0
+        counter: 0,
+        cardsTotal: 0
     },
     getters: {
         counter: state => {
             return state.counter;
+        },
+        cardsTotal: state => {
+            return state.cardsTotal;
         }
     },
     mutations: {
@@ -20,6 +24,12 @@ export const store = new Vuex.Store({
             if (state.counter > 0) {
                 state.counter--;
             }
+        },
+        incrementCardsTotal: (state, value) => {
+            state.cardsTotal += value;
+        },
+        resetCardsTotal: state => {
+            state.cardsTotal = 0;
         }
     },
     actions: {
