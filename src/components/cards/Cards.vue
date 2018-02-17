@@ -21,24 +21,24 @@
 		</p>
 
 		<div class="cards__grid">
-			<app-card
+			<appCard
 				v-for="(card, index) in cards" 
 				:key="index"
 				:card="card"
-				:cardsTotal="cardsTotal"
 				:limit="limit"
 				@addToTotal="addToTotal">			
-			</app-card>
+			</appCard>
 		</div>
 	</main>
 </template>
 
 <script>
+	import { mapGetters } from "vuex";
 	import Card from "./Card.vue";
 
 	export default {
 		components: {
-			"app-card": Card
+			"appCard": Card
 		},
 		data() {
 			return {
@@ -65,9 +65,9 @@
 			}
 		},
 		computed: {
-			cardsTotal() {
-				return this.$store.getters.cardsTotal;
-			}
+			...mapGetters([
+				"cardsTotal"
+			])
 		}
 	}
 </script>
