@@ -14,7 +14,7 @@
 
 		<p class="cards__body">The <strong>total</strong> is stored in Vuex.</p>
 
-		<h2 class="cards__total">Parent total: {{ total | euroCurrency }}</h2>
+		<h2 class="cards__total">Total: {{ cardsTotal | euroCurrency }}</h2>
 
 		<p class="cards__reset">
 			<button @click="resetTotal">Reset total</button>
@@ -25,9 +25,9 @@
 				v-for="(card, index) in cards" 
 				:key="index"
 				:card="card"
-				:total="total"
+				:cardsTotal="cardsTotal"
 				:limit="limit"
-				@addToTotal="addToTotal">					
+				@addToTotal="addToTotal">			
 			</app-card>
 		</div>
 	</main>
@@ -65,7 +65,7 @@
 			}
 		},
 		computed: {
-			total: function() {
+			cardsTotal() {
 				return this.$store.getters.cardsTotal;
 			}
 		}
