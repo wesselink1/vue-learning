@@ -1,6 +1,12 @@
 <template>
 	<header class="header">
-		<h1 class="header__title">Vue SPA learning ground</h1>
+		<h1 class="header__title">{{ appTitle }}</h1>
+
+		<p class="header__body">Username: {{ userName }}</p>
+
+		<p>
+			<button @click="changeName">Change name</button>
+		</p>
 
 		<appVuexValues></appVuexValues>
 
@@ -23,6 +29,24 @@
 	export default {
 		components: {
 			"appVuexValues": VuexValues
+		},
+		data() {
+			return {
+				newName: "Master of Disaster"
+			}
+		},
+		methods: {
+			changeName() {
+				this.$store.commit("changeName", this.newName);
+			}
+		},
+		computed: {
+			appTitle() {
+				return this.$store.getters.appTitle;
+			},
+			userName() {
+				return this.$store.getters.userName;
+			}
 		}
 	}
 </script>
