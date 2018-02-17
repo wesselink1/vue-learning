@@ -2,7 +2,7 @@
 	<header class="header">
 		<h1 class="header__title">Vue SPA learning ground</h1>
 
-		<app-vuex-values></app-vuex-values>
+		<appVuexValues></appVuexValues>
 
 		<nav class="header__nav">
 			<ul class="header__nav-items" role="navigation">
@@ -22,7 +22,7 @@
 
 	export default {
 		components: {
-			"app-vuex-values": VuexValues
+			"appVuexValues": VuexValues
 		}
 	}
 </script>
