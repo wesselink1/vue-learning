@@ -2,31 +2,17 @@
 	<main class="home">
 		<h1 class="home__title">Navigation buttons</h1>
 
-		<h2 class="home__sub-title">Scripted nav button using Vue Router</h2>
+		<p class="home__body">Scripted navigation button using <strong>Vue Router</strong></p>
 
 		<p class="home__buttons">
-			<button @click="goToCards" class="home__button">Go to the cards demo page</button>
-			<button @click="goToError404" class="home__button">Go to a 404 error page</button>
+			<button @click="$router.push({ name: 'linkCards' })" class="home__button">Cards demo page</button>
+			<button @click="$router.push('/404')" class="home__button">404 error</button>
 		</p>
 	</main>
 </template>
 
-<script>
-	export default {
-		methods: {
-			goToCards() {
-				this.$router.push({ name: "linkCards" });
-			},
-			goToError404() {
-				this.$router.push('/404');
-			},
-		}
-	}
-</script>
-
 <style>
 	.home__title,
-	.home__sub-title,
 	.home__body {
 		font-family: "Roboto", sans-serif;
 	}
@@ -35,5 +21,14 @@
 		font-weight: 300;
 		font-size: 32px;
 		color: deepskyblue;
+	}
+
+	.home__button {
+		padding: 15px 30px;
+		color: white;
+		cursor: pointer;
+		font-size: 26px;
+		border-radius: 8px;
+		background-color: deeppink;
 	}
 </style>

@@ -9,8 +9,7 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     state: {
-        appTitle: "SPA Vue & Vuex learning with Max",
-        userName: "Mr. Blue"
+        
     },
     getters,
     mutations,

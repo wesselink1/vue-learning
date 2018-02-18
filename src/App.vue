@@ -1,12 +1,12 @@
 <template>
   	<section id="app" class="app__container">
-  		<app-header></app-header>
+  		<appHeader></appHeader>
 
   		<transition name="routerSlide" mode="out-in" type="animation">
   			<router-view></router-view>
   		</transition>
 
-  		<app-footer></app-footer>
+  		<appFooter></appFooter>
   	</section>
 </template>
 
@@ -16,15 +16,15 @@
 
 	export default {
 		components: {
-			"app-footer": Footer,
-			"app-header": Header
+			"appFooter": Footer,
+			"appHeader": Header
 		}
 	}
 </script>
 
 <style>
 	.app__container {
-		max-width: 1024px;
+		max-width: 1200px;
 		margin: 0 auto;
 	}
 
