@@ -1,6 +1,6 @@
 <template>
 	<footer class="footer">
-		<p class="footer__body">By Dennis Burger, Waddinxveen, januari 2017</p>
+		<p class="footer__body">By Dennis Burger, februari 2018</p>
 	</footer>
 </template>
 

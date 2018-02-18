@@ -2,7 +2,7 @@
 	<main class="counter">
 		<h1 class="counter__title">Counter</h1>
 
-		<p class="counter__body">Using Vuex to store the state the counter property.</p>
+		<p class="counter__body">Using Vuex to store the state of the counter property.</p>
 
 		<h3 class="counter__sub-title">Vuex stored counter: {{ counter }}</h3>
 
@@ -13,9 +13,17 @@
 
 		<hr class="counter__line">
 
-		<h3 class="counter__sub-title">Testing an added computed property when using <code>mapGetters</code> in a spread operator</h3>
+		<h3 class="counter__sub-title">Testing additional computed properties besides mapGetters</h3>
 
-		<p class="counter__body">Custom computed property, fullName: {{ fullName }}</p>
+		<p class="counter__body">FullName: {{ fullName }}</p>
+
+		<p class="counter__body">
+			<button class="counter__button" 
+				@click="changeName"
+				:disabled="nameChanged">
+				{{ nameChanged ? 'Name was changed' : 'Change name' }}
+			</button>
+		</p>
 	</main>
 </template>
 
@@ -27,14 +35,20 @@
 		data() {
 			return {
 				firstName: "James",
-				lastName: "Dean"
+				lastName: "Dean",
+				nameChanged: false,
 			}
 		},
 		methods: {
 			...mapMutations([
 				"incrementCounter",
 				"decrementCounter"
-			])
+			]),
+			changeName() {
+				this.firstName = "Master",
+				this.lastName = "of Disaster",
+				this.nameChanged = true;
+			}
 		},
 		computed: {
 			...mapGetters([
@@ -60,10 +74,30 @@
 		color: deepskyblue;
 	}
 
+	.counter__sub-title {
+		font-size: 42px;
+	}
+
 	.counter__line {
 		height: 0;
 		margin: 30px 0;
 		border: 0;
 		border-top: 1px solid #ccc;
+	}
+
+	.counter__button {
+		padding: 15px 30px;
+		color: white;
+		cursor: pointer;
+		font-size: 26px;
+		border-radius: 8px;
+		background-color: deeppink;
+		transition: background-color .3s;
+	}
+
+	.counter__button[disabled] {
+		color: #444;
+		cursor: not-allowed;
+		background-color: #ccc;
 	}
 </style>

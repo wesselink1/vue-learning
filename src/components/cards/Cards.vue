@@ -1,23 +1,18 @@
 <template>
 	<main class="cards">
-		<h1 class="cards__title">Cards demo</h1>
+		<h1 class="cards__title">Cards calculation demo</h1>
 
 		<p class="cards__body">
 			Using parent and child components. Repeating child components based
-			on data array in parent. And having the child $emit() an event to parent.
+			on data array in parent. And having the child <code>$emit()</code> an event to parent.
+			When going <strong>over {{ limit[0] }}, the cards will turn orange</strong>.
+			Going <strong>over {{ limit[1] }} will turn them red</strong>. And going <strong>over {{ limit[2] }} will disable</strong> the 'Buy card' -button.
 		</p>
 
-		<p class="cards__body">
-			When going over {{ limit[0] }}, the cards will turn orange.
-			Going over {{ limit[1] }} will turn them red. And going over {{ limit[2] }} will disable the 'buy' -button.
-		</p>
-
-		<p class="cards__body">The <strong>total</strong> is stored in Vuex.</p>
-
-		<h2 class="cards__total">Total: {{ cardsTotal | euroCurrency }}</h2>
+		<h2 class="cards__total">Vuex stored total: {{ cardsTotal | euroCurrency }}</h2>
 
 		<p class="cards__reset">
-			<button @click="resetCardsTotal">Reset total</button>
+			<button class="cards__reset-btn" @click="resetCardsTotal">Reset total</button>
 		</p>
 
 		<div class="cards__grid">
@@ -27,7 +22,7 @@
 				:card="card"
 				:cardsTotal="cardsTotal"
 				:limit="limit"
-				@incrementCardsTotal="incrementCardsTotal">		
+				@incrementCardsTotal="incrementCardsTotal">
 			</appCard>
 		</div>
 	</main>
@@ -87,7 +82,21 @@
 
 	.cards__grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		grid-gap: 20px;		
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		grid-auto-rows: 200px;
+		grid-gap: 10px;		
+	}
+
+	.cards__total {
+		font-size: 42px;
+	}
+
+	.cards__reset-btn {
+		padding: 15px 30px;
+		color: white;
+		cursor: pointer;
+		font-size: 26px;
+		border-radius: 8px;
+		background-color: deeppink;
 	}
 </style>

@@ -3,14 +3,15 @@ import Counter from "./components/Counter/Counter.vue";
 import CustomDirectives from "./components/CustomDirectives/CustomDirective.vue";
 import DynamicComponents from "./components/DynamicComponents/DynamicComponents.vue";
 import Error404 from "./components/Errors/Error404.vue";
-import Home from "./components/Home/Home.vue";
+import NavButtons from "./components/NavButtons/NavButtons.vue";
+import Overview from "./components/Overview/Overview.vue";
 import Pug from "./components/Pug/Pug.vue";
 
 export const routes = [
 	{
 		path: "/",
-		name: "linkHome",
-		component: Home
+		name: "linkOverview",
+		component: Overview
 	},
 	{
 		path: "/cards",
@@ -18,24 +19,29 @@ export const routes = [
 		component: Cards
 	},
 	{
-		path: "/dynamiccomponents",
-		name: "linkDynamicComponents",
-		component: DynamicComponents
-	},
-	{
 		path: "/counter",
 		name: "linkCounter",
 		component: Counter
 	},
 	{
-		path: "/pug",
-		name: "linkPug",
-		component: Pug
-	},
-	{
 		path: "/customdirectives",
 		name: "linkCustomDirectives",
 		component: CustomDirectives
+	},
+	{
+		path: "/dynamiccomponents",
+		name: "linkDynamicComponents",
+		component: DynamicComponents
+	},
+	{
+		path: "/navbuttons",
+		name: "linkNavbuttons",
+		component: NavButtons
+	},
+	{
+		path: "/pug",
+		name: "linkPug",
+		component: Pug
 	},
 	{
 		path: "*",
