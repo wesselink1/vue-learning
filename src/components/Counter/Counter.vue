@@ -18,7 +18,7 @@
 		<p class="counter__body">FullName: {{ fullName }}</p>
 
 		<p class="counter__body">
-			<button class="counter__button" 
+			<button class="counter__button"
 				@click="changeName"
 				:disabled="nameChanged">
 				{{ nameChanged ? 'Name was changed' : 'Change name' }}
@@ -90,6 +90,7 @@
 		color: white;
 		cursor: pointer;
 		font-size: 26px;
+		border: 0;
 		border-radius: 8px;
 		background-color: deeppink;
 		transition: background-color .3s;

@@ -17,7 +17,7 @@
 
 		<div class="cards__grid">
 			<appCard
-				v-for="(card, index) in cards" 
+				v-for="(card, index) in cards"
 				:key="index"
 				:card="card"
 				:cardsTotal="cardsTotal"
@@ -55,8 +55,8 @@
 		},
 		methods: {
 			...mapMutations([
-				"incrementCardsTotal",	
-				"resetCardsTotal",	
+				"incrementCardsTotal",
+				"resetCardsTotal",
 			])
 		},
 		computed: {
@@ -84,7 +84,7 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 		grid-auto-rows: 200px;
-		grid-gap: 10px;		
+		grid-gap: 10px;
 	}
 
 	.cards__total {
@@ -96,6 +96,7 @@
 		color: white;
 		cursor: pointer;
 		font-size: 26px;
+		border: 0;
 		border-radius: 8px;
 		background-color: deeppink;
 	}
