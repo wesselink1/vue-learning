@@ -6,10 +6,10 @@
 			Distinctio quae nobis molestiae, ullam animi magni ratione voluptatem harum laborum. Dolore.
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio quae nobis molestiae, ullam animi magni ratione voluptatem harum laborum. Dolore.
 		</p>
-		
+
 		<p class="catalog__body">
 			Adipisicing elit. Distinctio quae nobis molestiae, ullam animi magni ratione voluptatem harum laborum. Dolore.
-		</p>	
+		</p>
 	</div>
 </template>
 
@@ -27,5 +27,9 @@
 
 	.catalog__body {
 		line-height: 1.6;
+	}
+
+	.tab:focus {
+		outline: none;
 	}
 </style>

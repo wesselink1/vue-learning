@@ -36,10 +36,10 @@
 			'appProducts': Products
 		},
 		methods: {
-			selectTab(componentName, event) {	
+			selectTab(componentName, event) {
 				let isActiveClass = "is-active";
 				let ariaSelected = "aria-selected";
-				
+
 				for(let tab of this.$refs.tabs.querySelectorAll("li")) {
 					tab.classList.remove(isActiveClass);
 					tab.firstChild.setAttribute(ariaSelected, "false");
@@ -92,7 +92,7 @@
 	}
 
 	.dynamic-components__tab-item {
-		margin: 0;		
+		margin: 0;
 		list-style: none;
 	}
 

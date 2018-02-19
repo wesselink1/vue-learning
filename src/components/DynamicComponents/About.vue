@@ -23,4 +23,8 @@
 	.about__body {
 		line-height: 1.6;
 	}
+
+	.tab:focus {
+		outline: none;
+	}
 </style>

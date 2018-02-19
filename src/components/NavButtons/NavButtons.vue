@@ -28,6 +28,7 @@
 		color: white;
 		cursor: pointer;
 		font-size: 26px;
+		border: 0;
 		border-radius: 8px;
 		background-color: deeppink;
 	}

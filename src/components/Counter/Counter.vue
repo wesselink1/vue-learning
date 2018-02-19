@@ -2,23 +2,21 @@
 	<main class="counter">
 		<h1 class="counter__title">Counter</h1>
 
-		<p class="counter__body">Using Vuex to store the state of the counter property.</p>
-
 		<h3 class="counter__sub-title">Vuex stored counter: {{ counter }}</h3>
 
 		<p class="counter__buttons">
 			<button @click="incrementCounter" class="counter__button">Increment counter</button>
-			<button @click="decrementCounter" class="counter__button">Decrement counter</button>
+			<button @click="decrementCounter" class="counter__button" :disabled="counter <= 0">Decrement counter</button>
 		</p>
 
 		<hr class="counter__line">
 
-		<h3 class="counter__sub-title">Testing additional computed properties besides mapGetters</h3>
+		<p class="counter__body">Testing additional computed properties besides mapGetters</p>
 
 		<p class="counter__body">FullName: {{ fullName }}</p>
 
 		<p class="counter__body">
-			<button class="counter__button" 
+			<button class="counter__button"
 				@click="changeName"
 				:disabled="nameChanged">
 				{{ nameChanged ? 'Name was changed' : 'Change name' }}
@@ -90,6 +88,7 @@
 		color: white;
 		cursor: pointer;
 		font-size: 26px;
+		border: 0;
 		border-radius: 8px;
 		background-color: deeppink;
 		transition: background-color .3s;

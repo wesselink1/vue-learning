@@ -1,16 +1,16 @@
 <template>
 	<div id="contact-tab" aria-labelledby="contact" class="tab" tabindex="0" role="tabpanel">
-		<h3 class="contact__title">Contact</h3>	
+		<h3 class="contact__title">Contact</h3>
 
 		<p class="contact__body">
 			Consectetur adipisicing elit. Distinctio quae nobis molestiae, ullam animi magni ratione voluptatem harum laborum. Dolore.
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio quae nobis molestiae, ullam animi magni ratione voluptatem harum laborum. Dolore.
-		</p>	
+		</p>
 
 		<p class="contact__body">
 			Fistinctio quae nobis molestiae, ullam animi magni ratione voluptatem harum laborum. Dolore.
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio quae nobis molestiae, ullam animi magni ratione voluptatem harum laborum. Dolore.
-		</p>	
+		</p>
 	</div>
 </template>
 
@@ -28,5 +28,9 @@
 
 	.contact__body {
 		line-height: 1.6;
+	}
+
+	.tab:focus {
+		outline: none;
 	}
 </style>
