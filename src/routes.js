@@ -6,6 +6,7 @@ import Error404 from "./components/Errors/Error404.vue";
 import NavButtons from "./components/NavButtons/NavButtons.vue";
 import Overview from "./components/Overview/Overview.vue";
 import Pug from "./components/Pug/Pug.vue";
+import Vuelidate from "./components/Vuelidate/Vuelidate.vue";
 
 export const routes = [
 	{
@@ -42,6 +43,11 @@ export const routes = [
 		path: "/pug",
 		name: "linkPug",
 		component: Pug
+	},
+	{
+		path: "/vuelidate",
+		name: "linkVuelidate",
+		component: Vuelidate
 	},
 	{
 		path: "*",
