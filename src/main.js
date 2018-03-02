@@ -1,10 +1,12 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import App from "./App.vue";
+import Vuelidate from "vuelidate";
 import { routes } from "./routes.js";
 import { store } from "./store/store.js";
 
 Vue.use(VueRouter);
+Vue.use(Vuelidate);
 
 const router = new VueRouter({
 	routes,
@@ -12,7 +14,7 @@ const router = new VueRouter({
 });
 
 Vue.filter("euroCurrency", function(price){
-	return Number(price).toLocaleString("nl-NL", { 
+	return Number(price).toLocaleString("nl-NL", {
 		style: "currency",
         currency: "EUR"
 	});

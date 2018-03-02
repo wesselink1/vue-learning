@@ -7,6 +7,7 @@
 			<router-link tag="div" :to="{ name: 'linkDynamicComponents' }" class="overview__nav-item" active-class="is-active" exact-active-class="is-exact">Dynamic Components</router-link>
 			<router-link tag="div" :to="{ name: 'linkPug' }" class="overview__nav-item" active-class="is-active" exact-active-class="is-exact">Pug</router-link>
 			<router-link tag="div" :to="{ name: 'linkCustomDirectives' }" class="overview__nav-item" active-class="is-active" exact-active-class="is-exact">Custom Directives</router-link>
+			<router-link tag="div" :to="{ name: 'linkVuelidate' }" class="overview__nav-item" active-class="is-active" exact-active-class="is-exact">Vuelidate</router-link>
 		</nav>
 	</main>
 </template>
