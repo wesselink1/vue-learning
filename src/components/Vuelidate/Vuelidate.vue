@@ -6,7 +6,7 @@
 
 		<form>
 			<div class="vuelidate-grid">
-				<label class="vuelidate__label">Name</label>
+				<label class="vuelidate__label vuelidate__label--input-field">Name</label>
 
 				<div
 					class="vuelidate__values"
@@ -21,7 +21,7 @@
 					<small class="vuelidate__error" v-if="$v.username.$error">Please enter you name</small>
 				</div>
 
-				<label class="vuelidate__label">E-mail</label>
+				<label class="vuelidate__label vuelidate__label--input-field">E-mail</label>
 
 				<div
 					class="vuelidate__values"
@@ -35,6 +35,18 @@
 						v-model="email">
 					<small class="vuelidate__error" v-if="$v.email.$error">Please enter an email address</small>
 					<small class="vuelidate__error" v-if="!$v.email.email">Please provide a valid email address</small>
+				</div>
+
+				<label class="vuelidate__label">Terms</label>
+
+				<div class="vuelidate__values">
+					<label :class="{ 'has-error' : ($v.terms.$error && $v.terms.$dirty) }">
+						<input type="checkbox" v-model="terms"> I accept the terms of usage
+					</label>
+
+					<small class="vuelidate__error" v-if="$v.terms.$error">You must accept our terms of usage to procede</small>
+
+					<pre>{{ $v.terms }}</pre>
 				</div>
 
 				<button
@@ -55,7 +67,8 @@
 		data() {
 			return {
 				username: null,
-				email: null
+				email: null,
+				terms: false
 			}
 		},
 		validations: {
@@ -65,6 +78,9 @@
 			email: {
 				required,
 				email
+			},
+			terms: {
+				required
 			}
 		},
 		methods: {
@@ -81,7 +97,8 @@
 	.vuelidate__body,
 	.vuelidate__label,
 	.vuelidate__error,
-	.vuelidate__newsletter-list {
+	.vuelidate__newsletter-list,
+	.vuelidate__values {
 		font-family: "Roboto", sans-serif;
 	}
 
@@ -100,6 +117,9 @@
 
 	.vuelidate__label {
 		font-weight: 300;
+	}
+
+	.vuelidate__label--input-field {
 		padding-top: 15px;
 	}
 
@@ -147,6 +167,10 @@
 
 	.vuelidate__newsletter-list li {
 		margin-bottom: 10px;
+	}
+
+	.vuelidate__values {
+
 	}
 
 	.vuelidate__button {
