@@ -46,12 +46,33 @@
 				</div>
 
 				<label
+					class="vuelidate__label vuelidate__label--input-field"
+					:class="{ 'has-error' : $v.age.$error, 'is-valid' : (!$v.age.$error && $v.age.$dirty) }">
+					Age
+				</label>
+
+				<div
+					class="vuelidate__values"
+					:class="{ 'do-shake' : $v.age.$error }">
+					<input 
+						type="number" 
+						class="vuelidate__input"
+						:class="{ 'has-error' : $v.age.$error, 'is-valid' : (!$v.age.$error && $v.age.$dirty) }"
+						v-model.number="age"
+						:placeholder="'Minimum age is ' +  $v.age.$params.minVal.min"
+						@blur="$v.age.$touch()">
+					<small class="vuelidate__error" v-if="$v.age.$error">Minimum age is {{ $v.age.$params.minVal.min }}</small>
+				</div>
+
+				<label
 					class="vuelidate__label"
 					:class="{ 'is-valid' : terms }">
 				 	Terms
 				</label>
 
-				<div class="vuelidate__values">
+				<div
+					class="vuelidate__values"
+					:class="{ 'do-shake' : $v.terms.$error }">
 					<label :class="{ 'is-valid' : terms }">
 						<input 
 							type="checkbox"
@@ -60,7 +81,7 @@
 							I accept the terms of usage
 					</label>
 
-					<small class="vuelidate__error" v-if="$v.terms.$error">You must accept our terms of usage to procede</small>
+					<small class="vuelidate__error" v-if="$v.terms.$error">You must accept our terms and conditions to proceed</small>
 				</div>
 
 				<button
@@ -81,13 +102,14 @@
 </template>
 
 <script>
-	import { required, email, minLength } from "vuelidate/lib/validators";
+	import { required, email, minValue, minLength } from "vuelidate/lib/validators";
 
 	export default {
 		data() {
 			return {
 				username: null,
 				email: null,
+				age: null,
 				terms: false
 			}
 		},
@@ -98,6 +120,10 @@
 			email: {
 				required,
 				email
+			},
+			age: {
+				required,
+				minVal: minValue(18)
 			},
 			terms: {
 				required
