@@ -6,7 +6,11 @@
 
 		<form>
 			<div class="vuelidate-grid">
-				<label class="vuelidate__label">Name</label>
+				<label 
+					class="vuelidate__label vuelidate__label--input-field"
+					:class="{ 'has-error' : $v.username.$error, 'is-valid' : (!$v.username.$error && $v.username.$dirty) }">
+					Name
+				</label>
 
 				<div
 					class="vuelidate__values"
@@ -15,13 +19,17 @@
 						type="text"
 						name="username"
 						class="vuelidate__input"
-						:class="{ 'has-error' : $v.username.$error, 'is-valid': (!$v.username.$error && $v.username.$dirty) }"
+						:class="{ 'has-error' : $v.username.$error, 'is-valid' : (!$v.username.$error && $v.username.$dirty) }"
 						@blur="$v.username.$touch()"
 						v-model="username">
 					<small class="vuelidate__error" v-if="$v.username.$error">Please enter you name</small>
 				</div>
 
-				<label class="vuelidate__label">E-mail</label>
+				<label 
+					class="vuelidate__label vuelidate__label--input-field"
+					:class="{ 'has-error' : $v.email.$error, 'is-valid' : (!$v.email.$error && $v.email.$dirty) }">
+					E-mail
+				</label>
 
 				<div
 					class="vuelidate__values"
@@ -30,11 +38,29 @@
 						type="email"
 						name="email"
 						class="vuelidate__input"
-						:class="{ 'has-error' : $v.email.$error, 'is-valid': (!$v.email.$error && $v.email.$dirty) }"
+						:class="{ 'has-error' : $v.email.$error, 'is-valid' : (!$v.email.$error && $v.email.$dirty) }"
 						@blur="$v.email.$touch()"
 						v-model="email">
 					<small class="vuelidate__error" v-if="$v.email.$error">Please enter an email address</small>
 					<small class="vuelidate__error" v-if="!$v.email.email">Please provide a valid email address</small>
+				</div>
+
+				<label
+					class="vuelidate__label"
+					:class="{ 'is-valid' : terms }">
+				 	Terms
+				</label>
+
+				<div class="vuelidate__values">
+					<label :class="{ 'is-valid' : terms }">
+						<input 
+							type="checkbox"
+							v-model="terms"
+							@change="$v.terms.$touch()">
+							I accept the terms of usage
+					</label>
+
+					<small class="vuelidate__error" v-if="$v.terms.$error">You must accept our terms of usage to procede</small>
 				</div>
 
 				<button
@@ -43,6 +69,12 @@
 					@click.prevent="submitForm">
 					Send form
 				</button>
+
+				<div class="vuelidate__label">Vuelidate validation object</div>
+
+				<div class="vuelidate__values">
+					<pre>{{ $v }}</pre>
+				</div>
 			</div>
 		</form>
 	</section>
@@ -55,7 +87,8 @@
 		data() {
 			return {
 				username: null,
-				email: null
+				email: null,
+				terms: false
 			}
 		},
 		validations: {
@@ -65,6 +98,9 @@
 			email: {
 				required,
 				email
+			},
+			terms: {
+				required
 			}
 		},
 		methods: {
@@ -81,7 +117,8 @@
 	.vuelidate__body,
 	.vuelidate__label,
 	.vuelidate__error,
-	.vuelidate__newsletter-list {
+	.vuelidate__newsletter-list,
+	.vuelidate__values {
 		font-family: "Roboto", sans-serif;
 	}
 
@@ -93,13 +130,16 @@
 
 	.vuelidate-grid {
 		display: grid;
-		grid-template-columns: 100px 1fr;
-		grid-gap: 10px;
-		max-width: 500px;
+		grid-template-columns: 200px 1fr;
+		grid-gap: 20px;
+		max-width: 600px;
 	}
 
 	.vuelidate__label {
 		font-weight: 300;
+	}
+
+	.vuelidate__label--input-field {
 		padding-top: 15px;
 	}
 
@@ -111,8 +151,16 @@
 		border: 2px solid #ccc;
 	}
 
+	.vuelidate__label.is-valid {
+		color: green;
+	}
+	
 	.vuelidate__input.is-valid {
 		border-color: green;
+	}
+
+	.vuelidate__label.has-error {
+		color: red;
 	}
 
 	.vuelidate__input.has-error {
@@ -128,6 +176,10 @@
 
 	.vuelidate__values {
 		grid-column: 2;
+	}
+
+	.vuelidate__values .is-valid {
+		color: green;
 	}
 
 	.vuelidate__values.do-shake {
@@ -147,6 +199,10 @@
 
 	.vuelidate__newsletter-list li {
 		margin-bottom: 10px;
+	}
+
+	.vuelidate__values {
+
 	}
 
 	.vuelidate__button {
