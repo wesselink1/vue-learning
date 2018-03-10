@@ -59,7 +59,7 @@
 						class="vuelidate__input"
 						:class="{ 'has-error' : $v.age.$error, 'is-valid' : (!$v.age.$error && $v.age.$dirty) }"
 						v-model.number="age"
-						:placeholder="minimumAgePlaceholder" 
+						:placeholder="'Minimum age is ' +  $v.age.$params.minVal.min"
 						@blur="$v.age.$touch()">
 					<small class="vuelidate__error" v-if="$v.age.$error">Minimum age is {{ $v.age.$params.minVal.min }}</small>
 				</div>
@@ -111,11 +111,6 @@
 				email: null,
 				age: null,
 				terms: false
-			}
-		},
-		computed: {
-			minimumAgePlaceholder() {
-				return "Minimum age is " + this.$v.age.$params.minVal.min;
 			}
 		},
 		validations: {
