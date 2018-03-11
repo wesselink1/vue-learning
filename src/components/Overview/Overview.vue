@@ -9,6 +9,10 @@
 			<router-link tag="div" :to="{ name: 'linkCustomDirectives' }" class="overview__nav-item" active-class="is-active" exact-active-class="is-exact">Custom Directives</router-link>
 			<router-link tag="div" :to="{ name: 'linkVuelidate' }" class="overview__nav-item" active-class="is-active" exact-active-class="is-exact">Vuelidate</router-link>
 		</nav>
+
+		<p class="overview__logo">
+			<img src="../../assets/vuejs-logo.png" alt="Vue logo" class="overview__logo-img">
+		</p>
 	</main>
 </template>
 
@@ -50,5 +54,14 @@
 	.overview__nav > div:hover {
 		background-color: deeppink;
 		font-size: 30px;
+	}
+
+	.overview__logo {
+		text-align: center;
+	}
+
+	.overview__logo-img {
+		width: 400px;
+		height: auto;
 	}
 </style>
