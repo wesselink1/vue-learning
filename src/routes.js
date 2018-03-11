@@ -10,42 +10,42 @@ import Vuelidate from "./components/Vuelidate/Vuelidate.vue";
 
 export const routes = [
 	{
-		path: "/vue-learning",
+		path: "/",
 		name: "linkOverview",
 		component: Overview
 	},
 	{
-		path: "/vue-learning/cards",
+		path: "/cards",
 		name: "linkCards",
 		component: Cards
 	},
 	{
-		path: "/vue-learning/counter",
+		path: "/counter",
 		name: "linkCounter",
 		component: Counter
 	},
 	{
-		path: "/vue-learning/customdirectives",
+		path: "/customdirectives",
 		name: "linkCustomDirectives",
 		component: CustomDirectives
 	},
 	{
-		path: "/vue-learning/dynamiccomponents",
+		path: "/dynamiccomponents",
 		name: "linkDynamicComponents",
 		component: DynamicComponents
 	},
 	{
-		path: "/vue-learning/navbuttons",
+		path: "/navbuttons",
 		name: "linkNavbuttons",
 		component: NavButtons
 	},
 	{
-		path: "/vue-learning/pug",
+		path: "/pug",
 		name: "linkPug",
 		component: Pug
 	},
 	{
-		path: "/vue-learning/vuelidate",
+		path: "/vuelidate",
 		name: "linkVuelidate",
 		component: Vuelidate
 	},
