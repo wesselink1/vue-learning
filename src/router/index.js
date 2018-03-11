@@ -16,42 +16,42 @@ export default new Router({
   mode: "history",
   routes: [
 	{
-		path: "/",
+		path: "/vue-learning",
 		name: "linkOverview",
 		component: Overview
 	},
 	{
-		path: "/cards",
+		path: "/vue-learning/cards",
 		name: "linkCards",
 		component: Cards
 	},
 	{
-		path: "/counter",
+		path: "/vue-learning/counter",
 		name: "linkCounter",
 		component: Counter
 	},
 	{
-		path: "/customdirectives",
+		path: "/vue-learning/customdirectives",
 		name: "linkCustomDirectives",
 		component: CustomDirectives
 	},
 	{
-		path: "/dynamiccomponents",
+		path: "/vue-learning/dynamiccomponents",
 		name: "linkDynamicComponents",
 		component: DynamicComponents
 	},
 	{
-		path: "/navbuttons",
+		path: "/vue-learning/navbuttons",
 		name: "linkNavbuttons",
 		component: NavButtons
 	},
 	{
-		path: "/pug",
+		path: "/vue-learning/pug",
 		name: "linkPug",
 		component: Pug
 	},
 	{
-		path: "/vuelidate",
+		path: "/vue-learning/vuelidate",
 		name: "linkVuelidate",
 		component: Vuelidate
 	},
