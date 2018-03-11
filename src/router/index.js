@@ -1,14 +1,20 @@
-import Cards from "./components/Cards/Cards.vue";
-import Counter from "./components/Counter/Counter.vue";
-import CustomDirectives from "./components/CustomDirectives/CustomDirective.vue";
-import DynamicComponents from "./components/DynamicComponents/DynamicComponents.vue";
-import Error404 from "./components/Errors/Error404.vue";
-import NavButtons from "./components/NavButtons/NavButtons.vue";
-import Overview from "./components/Overview/Overview.vue";
-import Pug from "./components/Pug/Pug.vue";
-import Vuelidate from "./components/Vuelidate/Vuelidate.vue";
+import Vue from 'vue';
+import Router from 'vue-router';
+import Cards from "@/components/Cards/Cards";
+import Counter from "@/components/Counter/Counter";
+import CustomDirectives from "@/components/CustomDirectives/CustomDirective";
+import DynamicComponents from "@/components/DynamicComponents/DynamicComponents";
+import Error404 from "@/components/Errors/Error404";
+import NavButtons from "@/components/NavButtons/NavButtons";
+import Overview from "@/components/Overview/Overview";
+import Pug from "@/components/Pug/Pug";
+import Vuelidate from "@/components/Vuelidate/Vuelidate";
 
-export const routes = [
+Vue.use(Router)
+
+export default new Router({
+  mode: "history",
+  routes: [
 	{
 		path: "/vue-learning",
 		name: "linkOverview",
@@ -53,4 +59,5 @@ export const routes = [
 		path: "*",
 		component: Error404
 	}
-];
+  ]
+})
