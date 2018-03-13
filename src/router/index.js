@@ -8,6 +8,7 @@ import Error404 from "@/components/Errors/Error404";
 import NavButtons from "@/components/NavButtons/NavButtons";
 import Overview from "@/components/Overview/Overview";
 import Pug from "@/components/Pug/Pug";
+import Lodash from "@/components/Lodash/Lodash";
 import Vuelidate from "@/components/Vuelidate/Vuelidate";
 
 Vue.use(Router)
@@ -49,6 +50,11 @@ export default new Router({
 		path: "/pug",
 		name: "linkPug",
 		component: Pug
+	},
+	{
+		path: "/lodash",
+		name: "linkLodash",
+		component: Lodash
 	},
 	{
 		path: "/vuelidate",
