@@ -6,38 +6,21 @@
 
 		<h2 class="lodash__sub-title">Movie sorting</h2>
 
-		<p class="lodash__body">
-			<label>
-				<input 
-					type="radio" 
-					v-model="orderByDirection" 
-					value="asc">
-					Ascending
-			</label>
-			<label>
-				<input 
-					type="radio" 
-					v-model="orderByDirection" 
-					value="desc">
-					Descending
-			</label>
-		</p>
-
 		<table class="lodash__movies" cellspacing="0">
 			<thead>
 				<tr>
 					<th 
-						@click="orderBy = 'title'"
+						@click="orderBy = 'title', orderByDesc = !orderByDesc"
 						:class="{ 'is-active' : orderBy == 'title' }">
 						Title
 					</th>
 					<th 
-						@click="orderBy = 'rating'" 
+						@click="orderBy = 'rating', orderByDesc = !orderByDesc" 
 						:class="{ 'is-active' : orderBy == 'rating' }">
 						Rating
 					</th>
 					<th 
-						@click="orderBy = 'year'" 
+						@click="orderBy = 'year', orderByDesc = !orderByDesc" 
 						:class="{ 'is-active' : orderBy == 'year' }">
 						Year
 					</th>
@@ -61,7 +44,7 @@
 		data() {
 			return {
 				orderBy: "year",
-				orderByDirection: "asc",
+				orderByDesc: false,
 				movies: [
 					{
 						"title": "The Last Jedi",
@@ -98,7 +81,7 @@
 		},
 		computed: {
 			filteredMovies() {
-				return orderBy(this.movies, [this.orderBy], this.orderByDirection);
+				return orderBy(this.movies, [this.orderBy], this.orderByDesc ? "desc" : "asc");
 			}
 		}
 	}
