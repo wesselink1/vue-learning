@@ -1,20 +1,53 @@
 <template>
 	<main class="lodash">
-		<h1 class="lodash__title">Lodash</h1>
+		<h1 class="lodash__title">Lodash array sorting</h1>
+
+		<p class="lodash__body">Click on a table heading to sort.</p>
+
+		<h2 class="lodash__sub-title">Movie sorting</h2>
+
+		<p class="lodash__body">
+			<label>
+				<input 
+					type="radio" 
+					v-model="orderByDirection" 
+					value="asc">
+					Ascending
+			</label>
+			<label>
+				<input 
+					type="radio" 
+					v-model="orderByDirection" 
+					value="desc">
+					Descending
+			</label>
+		</p>
 
 		<table class="lodash__movies" cellspacing="0">
 			<thead>
 				<tr>
-					<th>Title</th>
-					<th>Rating</th>
-					<th>Year</th>
+					<th 
+						@click="orderBy = 'title'"
+						:class="{ 'is-active' : orderBy == 'title' }">
+						Title
+					</th>
+					<th 
+						@click="orderBy = 'rating'" 
+						:class="{ 'is-active' : orderBy == 'rating' }">
+						Rating
+					</th>
+					<th 
+						@click="orderBy = 'year'" 
+						:class="{ 'is-active' : orderBy == 'year' }">
+						Year
+					</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr v-for="movie in _.orderBy(movies, ['rating'])">
+				<tr v-for="movie in filteredMovies">
 					<td>{{ movie.title }}</td>
 					<td>{{ movie.rating }}</td>
-					<td>{{movie.year}}</td>
+					<td>{{ movie.year }}</td>
 				</tr>
 			</tbody>
 		</table>
@@ -22,59 +55,65 @@
 </template>
 
 <script>
-	import _ from "lodash";
+	import { orderBy } from "lodash";
 
 	export default {
-		components: {
-			
-		},
 		data() {
 			return {
-				orderBy: "rating",
+				orderBy: "year",
+				orderByDirection: "asc",
 				movies: [
 					{
 						"title": "The Last Jedi",
-						"rating": 9,
+						"rating": 7.4,
 						"year": 2017
 					},
 					{
 						"title": "Conan: The Barbarian",
-						"rating": 7,
-						"year": 1983
+						"rating": 6.9,
+						"year": 1982
 					},
 					{
 						"title": "Lost in Space",
-						"rating": 7.5,
-						"year": 2010
+						"rating": 5.2,
+						"year": 1998
 					},
 					{
 						"title": "The Shawshank Redemption",
-						"rating": 9.5,
-						"year": 1999
+						"rating": 9.3,
+						"year": 1994
 					},
 					{
 						"title": "The Revenant",
-						"rating": 8,
-						"year": 2016
+						"rating": 8.0,
+						"year": 2015
 					},
 					{
 						"title": "Home Alone 2",
-						"rating": 5.5,
-						"year": 1995
+						"rating": 6.6,
+						"year": 1992
 					}
 				]
 			}
 		},
-		methods: {
-
+		computed: {
+			filteredMovies() {
+				return orderBy(this.movies, [this.orderBy], this.orderByDirection);
+			}
 		}
 	}
 </script>
 
 <style>
+	.lodash__movies {
+		border: 1px solid #eee;
+	}
+
 	.lodash__movies th,
 	.lodash__movies td,
-	.lodash__title {
+	.lodash__title,
+	.lodash__sub-title,
+	.lodash__body {
 		font-family: "Roboto", sans-serif;
 	}
 
@@ -84,16 +123,26 @@
 		color: deepskyblue;
 	}
 
+	.lodash__sub-title {
+		font-size: 42px;
+	}
+
 	.lodash__movies th,
 	.lodash__movies td {
 		padding: 20px;
 	}
 
 	.lodash__movies th {
-		font-weight: 300;
+		font-weight: 700;
 		font-size: 32px;
-		color: deeppink;
+		color: black;
 		text-align: left;
+		cursor: pointer;
+	}
+
+	.lodash__movies th.is-active,
+	.lodash__movies th:hover {
+		color: deepskyblue;
 	}
 
 	.lodash__movies td {
