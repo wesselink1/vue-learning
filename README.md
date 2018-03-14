@@ -31,7 +31,7 @@ npm run dev
 
 Open a web browser with the following address and sub-directory:
 
-	http://localhost:8080/vue-learing
+	http://localhost:8080
 
 This project is running deliberately inside above subdirectory (handled by Vue-router). Because the production version is running on a Github Project Page; which is a sub-directory (`/docs`) of its repository.
 
