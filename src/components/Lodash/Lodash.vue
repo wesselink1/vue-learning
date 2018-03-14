@@ -10,23 +10,23 @@
 			<thead>
 				<tr>
 					<th 
-						@click="orderBy = 'title', orderByDesc = !orderByDesc"
-						:class="[ orderByDesc ? 'sorted-desc' : 'sorted-asc', { 'is-active' : orderBy == 'title' }]">
+						@click="setOrderBy('title')"
+						:class="[ changeOrderByDesc ? 'sorted-desc' : 'sorted-asc', { 'is-active' : order == 'title' }]">
 						<span>Title</span>
 					</th>
 					<th 
-						@click="orderBy = 'rating', orderByDesc = !orderByDesc" 
-						:class="[ orderByDesc ? 'sorted-desc' : 'sorted-asc', { 'is-active' : orderBy == 'rating' }]">
+						@click="setOrderBy('rating')"
+						:class="[ changeOrderByDesc ? 'sorted-desc' : 'sorted-asc', { 'is-active' : order == 'rating' }]">
 						<span>Rating</span>
 					</th>
 					<th 
-						@click="orderBy = 'year', orderByDesc = !orderByDesc" 
-						:class="[ orderByDesc ? 'sorted-desc' : 'sorted-asc', { 'is-active' : orderBy == 'year' }]">
+						@click="setOrderBy('year')"
+						:class="[ changeOrderByDesc ? 'sorted-desc' : 'sorted-asc', { 'is-active' : order == 'year' }]">
 						<span>Year</span>
 					</th>
 					<th 
-						@click="orderBy = 'genre', orderByDesc = !orderByDesc" 
-						:class="[ orderByDesc ? 'sorted-desc' : 'sorted-asc', { 'is-active' : orderBy == 'genre' }]">
+						@click="setOrderBy('genre')"
+						:class="[ changeOrderByDesc ? 'sorted-desc' : 'sorted-asc', { 'is-active' : order == 'genre' }]">
 						<span>Genre</span>
 					</th>
 				</tr>
@@ -44,13 +44,13 @@
 </template>
 
 <script>
+	import { mapGetters } from "vuex";
+	import { mapMutations } from "vuex";
 	import { orderBy } from "lodash";
 
 	export default {
 		data() {
 			return {
-				orderBy: "year",
-				orderByDesc: false,
 				movies: [
 					{
 						"title": "The Last Jedi",
@@ -97,9 +97,23 @@
 				]
 			}
 		},
+		methods: {
+			...mapMutations([
+				"order",
+				"changeOrderByDesc"
+			]),
+			setOrderBy(orderValue) {
+				this.$store.commit("order", orderValue);
+				this.$store.commit("changeOrderByDesc");
+			}
+		},
 		computed: {
+			...mapGetters([
+				"order",
+				"orderByDesc"
+			]),
 			filteredMovies() {
-				return orderBy(this.movies, [this.orderBy], this.orderByDesc ? "desc" : "asc");
+				return orderBy(this.movies, [this.order], this.orderByDesc ? "desc" : "asc");
 			}
 		}
 	}
