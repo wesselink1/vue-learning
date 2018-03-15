@@ -1,8 +1,9 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import counter from "./modules/counter";
-import cards from "./modules/cards";
-import lodash from "./modules/lodash";
+import ArraySorting from "./modules/ArraySorting";
+import BuyCards from "./modules/BuyCards";
+import Tabs from "./modules/Tabs";
+import VuexCounter from "./modules/VuexCounter";
 import * as getters from "./getters";
 import * as mutations from "./mutations";
 
@@ -15,8 +16,9 @@ export const store = new Vuex.Store({
     getters,
     mutations,
     modules: {
-        counter,
-        cards,
-        lodash
+        ArraySorting,
+        BuyCards,
+        Tabs,
+        VuexCounter
     }
 });

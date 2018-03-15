@@ -1,8 +1,8 @@
 <template>
 	<main class="lodash">
-		<h1 class="lodash__title">Lodash array sorting</h1>
+		<h1 class="lodash__title">Sorting an array with Lodash</h1>
 
-		<p class="lodash__body">Click on a table heading to sort.</p>
+		<p class="lodash__body">State of the sorting is stored in <strong>Vuex</strong>.</p>
 
 		<h2 class="lodash__sub-title">Movie sorting</h2>
 

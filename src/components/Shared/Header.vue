@@ -3,7 +3,7 @@
 		<h1 class="header__title">SPA learning with Vue, Vuex and vue-router</h1>
 
 		<nav class="header__nav">
-			<router-link tag="a" :to="{ name: 'linkOverview' }" active-class="is-active" exact-active-class="is-exact" exact>Overview</router-link>
+			<router-link tag="a" :to="{ name: 'linkIndex' }" active-class="is-active" exact-active-class="is-exact" exact>Overview</router-link>
 		</nav>
 	</header>
 </template>

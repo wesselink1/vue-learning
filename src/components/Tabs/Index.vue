@@ -1,15 +1,66 @@
 <template>
 	<main class="dynamic-components">
-		<h1 class="dynamic-components__title">Dynamic components</h1>
+		<h1 class="dynamic-components__title">Using Vue dynamic components as tabs</h1>
 
-		<p class="dynamic-components__body">Easily switch (aria enabled) tabs by changing a Vue data property.</p>
+		<p class="dynamic-components__body">
+			Easily switch (aria enabled) tabs by changing a Vue data property.
+			The selected tab is saved in <strong>Vuex</strong>.
+		</p>
 
 		<nav class="dynamic-components__nav">
 			<ul class="dynamic-components__tab" ref="tabs" role="tablist" aria-label="Business value">
-				<li class="dynamic-components__tab-item is-active"><a href="#catalog-tab" @click.prevent="selectTab('appCatalog', $event)" id="catalog" role="tab" aria-selected="false" aria-controls="catalog-tab">Catalog</a></li>
-				<li class="dynamic-components__tab-item"><a href="#products-tab" @click.prevent="selectTab('appProducts', $event)" id="products" role="tab" aria-selected="false" aria-controls="products-tab">Products</a></li>
-				<li class="dynamic-components__tab-item"><a href="#about-tab" @click.prevent="selectTab('appAbout', $event)" id="about" role="tab" aria-selected="true" aria-controls="about-tab">About</a></li>
-				<li class="dynamic-components__tab-item"><a href="#contact-tab" @click.prevent="selectTab('appContact', $event)" id="contact" role="tab" aria-selected="false" aria-controls="contact-tab">Contact</a></li>
+				<li
+					class="dynamic-components__tab-item"
+					:class="{ 'is-active' : selectedComponent == 'appCatalog' }">
+					<a 
+						href="#catalog-tab"
+						@click.prevent="selectTab('appCatalog', $event)"
+						id="catalog"
+						role="tab"
+						aria-selected="false"
+						aria-controls="catalog-tab">
+						Catalog
+					</a>
+				</li>
+				<li
+					class="dynamic-components__tab-item"
+					:class="{ 'is-active' : selectedComponent == 'appProducts' }">
+					<a 
+						href="#products-tab"
+						@click.prevent="selectTab('appProducts', $event)"
+						id="products"
+						role="tab"
+						aria-selected="false"
+						aria-controls="products-tab">
+						Products
+					</a>
+				</li>
+				<li
+					class="dynamic-components__tab-item"
+					:class="{ 'is-active' : selectedComponent == 'appAbout' }">
+					<a 
+						href="#about-tab"
+						@click.prevent="selectTab('appAbout', $event)"
+						id="about"
+						role="tab"
+						aria-selected="true"
+						aria-controls="about-tab">
+						About
+					</a>
+				</li>
+				<li
+					class="dynamic-components__tab-item"
+					:class="{ 'is-active' : selectedComponent == 'appContact' }">
+					<a 
+						href="#contact-tab"
+						@click.prevent="selectTab('appContact', $event)"
+						id="contact"
+						role="tab"
+						aria-selected="false"
+						aria-controls="contact-tab">
+						Contact
+					</a>
+				</li>
 			</ul>
 		</nav>
 
@@ -18,6 +69,8 @@
 </template>
 
 <script>
+	import { mapGetters } from "vuex";
+	import { mapMutations } from "vuex";
 	import About from "./About.vue";
 	import Catalog from "./Catalog.vue";
 	import Contact from "./Contact.vue";
@@ -26,7 +79,7 @@
 	export default {
 		data() {
 			return {
-				selectedComponent: 'appCatalog'
+				
 			}
 		},
 		components: {
@@ -36,6 +89,9 @@
 			'appProducts': Products
 		},
 		methods: {
+			...mapMutations([
+				"setSelectedComponent"
+			]),
 			selectTab(componentName, event) {
 				let isActiveClass = "is-active";
 				let ariaSelected = "aria-selected";
@@ -48,9 +104,14 @@
 				event.currentTarget.parentNode.classList.add(isActiveClass);
 				event.currentTarget.setAttribute(ariaSelected, "true");
 
-				this.selectedComponent = componentName;
+				this.setSelectedComponent(componentName);
 				return false;
 			}
+		},
+		computed: {
+			...mapGetters([
+				"selectedComponent",
+			])
 		}
 	}
 </script>
