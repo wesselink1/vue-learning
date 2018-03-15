@@ -1,15 +1,15 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import ArraySorting from "@/components/ArraySorting/ArraySorting";
-import BuyCards from "@/components/BuyCards/BuyCards";
-import CustomDirectives from "@/components/CustomDirectives/CustomDirective";
+import ArraySorting from "@/components/ArraySorting/Index";
+import BuyCards from "@/components/BuyCards/Index";
+import CustomDirectives from "@/components/CustomDirectives/Index";
 import Error404 from "@/components/Errors/Error404";
 import Index from "@/components/Index/Index";
-import NavButtons from "@/components/NavButtons/NavButtons";
-import Pug from "@/components/Pug/Pug";
-import Tabs from "@/components/Tabs/Tabs";
-import Vuelidate from "@/components/Vuelidate/Vuelidate";
-import VuexCounter from "@/components/VuexCounter/VuexCounter";
+import NavButtons from "@/components/NavButtons/Index";
+import Pug from "@/components/Pug/Index";
+import Tabs from "@/components/Tabs/Index";
+import Vuelidate from "@/components/Vuelidate/Index";
+import VuexCounter from "@/components/VuexCounter/Index";
 
 Vue.use(Router)
 
