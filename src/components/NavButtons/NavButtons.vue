@@ -5,8 +5,9 @@
 		<p class="home__body">Scripted navigation button using <strong>Vue Router</strong></p>
 
 		<p class="home__buttons">
-			<button @click="$router.push({ name: 'linkCards' })" class="home__button">Cards demo page</button>
-			<button @click="$router.push('/404')" class="home__button">404 error</button>
+			<button @click="$router.go(-1)" class="home__button">Go to back one page</button>
+			<button @click="$router.push({ name: 'linkBuyCards' })" class="home__button">Go to Buy Cards demo page</button>
+			<button @click="$router.push('/404')" class="home__button">Trigger 404 error</button>
 		</p>
 	</main>
 </template>
@@ -23,7 +24,14 @@
 		color: deepskyblue;
 	}
 
+	.home__buttons {
+		display: grid;
+		max-width: 450px;
+	}
+
 	.home__button {
+		display: block;
+		margin-bottom: 20px;
 		padding: 15px 30px;
 		color: white;
 		cursor: pointer;

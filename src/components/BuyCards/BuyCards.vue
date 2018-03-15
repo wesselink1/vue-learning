@@ -1,13 +1,17 @@
 <template>
 	<main class="cards">
-		<h1 class="cards__title">Cards calculation demo</h1>
+		<h1 class="cards__title">Buy cards, calculation demo</h1>
 
 		<p class="cards__body">
 			Using parent and child components. Repeating child components based
-			on data array in parent. And having the child <code>$emit()</code> an event to parent.
-			When going <strong>over {{ limit[0] }}, the cards will turn orange</strong>.
-			Going <strong>over {{ limit[1] }} will turn them red</strong>. And going <strong>over {{ limit[2] }} will disable</strong> the 'Buy card' -button.
+			on data array in parent. And having the child <code>$emit()</code> an event to parent.			
 		</p>
+
+		<ul class="cards__list">
+			<li>When going <strong>over {{ limit[0] }}, the cards will turn orange</strong>.</li>
+			<li>Going <strong>over {{ limit[1] }} will turn them red</strong>.</li>
+			<li>And going <strong>over {{ limit[2] }} will disable</strong> the 'Buy card' -button.</li>
+		</ul>
 
 		<h2 class="cards__total">Vuex stored total: {{ cardsTotal | euroCurrency }}</h2>
 
@@ -40,11 +44,31 @@
 		data() {
 			return {
 				cards: [
-					{ id: 1, heading: "BMW", price: 5.95 },
-					{ id: 2, heading: "Google", price: 10.33 },
-					{ id: 3, heading: "Twitter", price: 15.99 },
-					{ id: 4, heading: "Amazone", price: 50 },
-					{ id: 5, heading: "Bol.com", price: 75.25 }
+					{ 
+						id: 1,
+						heading: "BMW",
+						price: 5.95 
+					},
+					{ 
+						id: 2,
+						heading: "Google",
+						price: 10.33
+					},
+					{ 
+						id: 3,
+						heading: "Twitter",
+						price: 15.99
+					},
+					{ 
+						id: 4,
+						heading: "Amazone",
+						price: 50
+					},
+					{ 
+						id: 5,
+						heading: "Bol.com",
+						price: 75.25
+					}
 				],
 				limit: [
 					50,
@@ -70,6 +94,7 @@
 <style>
 	.cards__title,
 	.cards__body,
+	.cards__list,
 	.cards__total {
 		font-family: "Roboto", sans-serif;
 	}

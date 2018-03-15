@@ -1,14 +1,14 @@
 <template>
 	<main class="overview">
 		<nav class="overview__nav">
-			<router-link tag="div" :to="{ name: 'linkNavbuttons' }" class="overview__nav-item" active-class="is-active" exact-active-class="is-exact" >Navbuttons</router-link>
-			<router-link tag="div" :to="{ name: 'linkCards' }" class="overview__nav-item" active-class="is-active" exact-active-class="is-exact">Cards</router-link>
-			<router-link tag="div" :to="{ name: 'linkCounter' }" class="overview__nav-item" active-class="is-active" exact-active-class="is-exact">Counter</router-link>
-			<router-link tag="div" :to="{ name: 'linkDynamicComponents' }" class="overview__nav-item" active-class="is-active" exact-active-class="is-exact">Dynamic Components</router-link>
+			<router-link tag="div" :to="{ name: 'linkNavbuttons' }" class="overview__nav-item" active-class="is-active" exact-active-class="is-exact" >Nav. buttons</router-link>
+			<router-link tag="div" :to="{ name: 'linkVuexCounter' }" class="overview__nav-item" active-class="is-active" exact-active-class="is-exact">Vuex counter</router-link>
+			<router-link tag="div" :to="{ name: 'linkBuyCards' }" class="overview__nav-item" active-class="is-active" exact-active-class="is-exact">Buy cards</router-link>
+			<router-link tag="div" :to="{ name: 'linkTabs' }" class="overview__nav-item" active-class="is-active" exact-active-class="is-exact">Tabs</router-link>
 			<router-link tag="div" :to="{ name: 'linkPug' }" class="overview__nav-item" active-class="is-active" exact-active-class="is-exact">Pug</router-link>
 			<router-link tag="div" :to="{ name: 'linkCustomDirectives' }" class="overview__nav-item" active-class="is-active" exact-active-class="is-exact">Custom Directives</router-link>
 			<router-link tag="div" :to="{ name: 'linkVuelidate' }" class="overview__nav-item" active-class="is-active" exact-active-class="is-exact">Vuelidate</router-link>
-			<router-link tag="div" :to="{ name: 'linkLodash' }" class="overview__nav-item" active-class="is-active" exact-active-class="is-exact">Lodash</router-link>
+			<router-link tag="div" :to="{ name: 'linkArraySorting' }" class="overview__nav-item" active-class="is-active" exact-active-class="is-exact">Array sorting</router-link>
 		</nav>
 
 		<p class="overview__logo">

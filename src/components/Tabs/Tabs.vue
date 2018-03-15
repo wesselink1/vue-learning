@@ -1,6 +1,6 @@
 <template>
 	<main class="dynamic-components">
-		<h1 class="dynamic-components__title">Dynamic components</h1>
+		<h1 class="dynamic-components__title">Loading tabs as Vue dynamic components</h1>
 
 		<p class="dynamic-components__body">Easily switch (aria enabled) tabs by changing a Vue data property.</p>
 
