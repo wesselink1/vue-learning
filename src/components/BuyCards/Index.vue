@@ -42,39 +42,8 @@
 			"appCard": Card
 		},
 		data() {
-			return {
-				cards: [
-					{ 
-						id: 1,
-						heading: "BMW",
-						price: 5.95 
-					},
-					{ 
-						id: 2,
-						heading: "Google",
-						price: 10.33
-					},
-					{ 
-						id: 3,
-						heading: "Twitter",
-						price: 15.99
-					},
-					{ 
-						id: 4,
-						heading: "Amazone",
-						price: 50
-					},
-					{ 
-						id: 5,
-						heading: "Bol.com",
-						price: 75.25
-					}
-				],
-				limit: [
-					50,
-					100,
-					150
-				]
+			return {				
+				
 			}
 		},
 		methods: {
@@ -85,7 +54,9 @@
 		},
 		computed: {
 			...mapGetters([
-				"cardsTotal"
+				"cards",
+				"cardsTotal",
+				"limit"
 			])
 		}
 	}
