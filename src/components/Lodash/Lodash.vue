@@ -99,12 +99,12 @@
 		},
 		methods: {
 			...mapMutations([
-				"order",
+				"changeOrder",
 				"changeOrderByDesc"
 			]),
 			setOrderBy(orderValue) {
-				this.$store.commit("order", orderValue);
-				this.$store.commit("changeOrderByDesc");
+				this.changeOrder(orderValue);
+				this.changeOrderByDesc();
 			}
 		},
 		computed: {

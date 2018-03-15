@@ -13,7 +13,7 @@ const getters = {
 };
 
 const mutations = {
-	order: (state, value) => {
+	changeOrder: (state, value) => {
 		state.order = value;
 	},
 	changeOrderByDesc: state => {
