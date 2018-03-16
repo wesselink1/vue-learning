@@ -72,13 +72,13 @@
 
 	export default {
 		created() {
-			this.setHighestRatedBoolean();
+			this.setHighestAndLowestRatedBoolean();
 		},
 		methods: {
 			...mapMutations([
 				"changeOrder",	
 				"changeOrderByDesc",
-				"setHighestRatedBoolean"
+				"setHighestAndLowestRatedBoolean"
 			]),
 			setOrderBy(orderBy) {
 				this.changeOrder(orderBy);

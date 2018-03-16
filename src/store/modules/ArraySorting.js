@@ -81,20 +81,19 @@ const mutations = {
 	changeOrderByDesc: state => {
 		state.orderByDesc = !state.orderByDesc;
 	},
-	setHighestRatedBoolean: state => {
-		let maxSortedMovies = maxBy(state.movies, function(item) {
+	setHighestAndLowestRatedBoolean: state => {
+		let maxRatedMovie = maxBy(state.movies, function(item) {
 			return item.rating;
 		});
 
-		let maxIndex = state.movies.indexOf(maxSortedMovies);
+		let maxIndex = state.movies.indexOf(maxRatedMovie);
 		state.movies[maxIndex].highest = true;
 
-
-		let minSortedMovies = minBy(state.movies, function(item) {
+		let minRatedMovie = minBy(state.movies, function(item) {
 			return item.rating;
 		});
 
-		let minIndex = state.movies.indexOf(minSortedMovies);
+		let minIndex = state.movies.indexOf(minRatedMovie);
 		state.movies[minIndex].lowest = true;
 	}
 };
