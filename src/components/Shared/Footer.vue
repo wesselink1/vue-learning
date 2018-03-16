@@ -1,6 +1,6 @@
 <template>
 	<footer class="footer">
-		<p class="footer__body">By Dennis Burger, februari 2018</p>
+		<p class="footer__body">By Dennis Burger, march 2018</p>
 	</footer>
 </template>
 

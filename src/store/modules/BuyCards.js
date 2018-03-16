@@ -47,8 +47,8 @@ const getters = {
 };
 
 const mutations = {
-	incrementCardsTotal: (state, value) => {
-	    state.cardsTotal += value;
+	incrementCardsTotal: (state, payload) => {
+	    state.cardsTotal += payload;
 	},
 	resetCardsTotal: state => {
 	    state.cardsTotal = 0;
@@ -59,4 +59,4 @@ export default {
 	state,
 	getters,
 	mutations
-}
+};

@@ -6,6 +6,7 @@ import Tabs from "./modules/Tabs";
 import VuexCounter from "./modules/VuexCounter";
 import * as getters from "./getters";
 import * as mutations from "./mutations";
+import * as actions from "./actions";
 
 Vue.use(Vuex);
 
@@ -15,6 +16,7 @@ export const store = new Vuex.Store({
     },
     getters,
     mutations,
+    actions,
     modules: {
         ArraySorting,
         BuyCards,

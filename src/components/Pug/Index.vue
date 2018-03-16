@@ -2,14 +2,16 @@
 	main.pug
 		h1.pug__title Pug template
 		p.pug__body
-			| The origin of this template is a Pug file. <strong>Webpack compiles the Pug syntax into HTML</strong> before it's send to the browser. No precompiling needed.
+			| The origin of this template is a Pug file. #[strong Webpack compiles the Pug syntax into HTML] before it's send to the browser. No precompiling needed.
 
 		h2.pug__sub-title Techniques used
 		ul.pug__body
 			li Vue
 			li Vuex
 			li Vue Router
-			li JavaScript spreat operator for #[code mapGetters] &amp; #[code mapMutations]</code>
+			li Axios
+			li Lodash
+			li JavaScript ES6 spread operator for #[strong mapGetters] &amp; #[strong mapMutations]
 </template>
 
 <style>

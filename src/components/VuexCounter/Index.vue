@@ -5,8 +5,18 @@
 		<h3 class="counter__sub-title">Vuex stored counter: {{ counter }}</h3>
 
 		<p class="counter__buttons">
-			<button @click="incrementCounter" class="counter__button">Increment counter</button>
-			<button @click="decrementCounter" class="counter__button" :disabled="counter <= 0">Decrement counter</button>
+			<button
+				@click="incrementCounter"
+				class="counter__button">
+				Increment counter
+			</button>
+
+			<button
+				@click="decrementCounter"
+				class="counter__button"
+				:disabled="counter <= 0">
+				Decrement counter
+			</button>
 		</p>
 
 		<hr class="counter__line">
@@ -16,7 +26,8 @@
 		<p class="counter__body">FullName: {{ fullName }}</p>
 
 		<p class="counter__body">
-			<button class="counter__button"
+			<button 
+				class="counter__button"
 				@click="changeName"
 				:disabled="nameChanged">
 				{{ nameChanged ? 'Name was changed' : 'Change name' }}
@@ -39,8 +50,8 @@
 		},
 		methods: {
 			...mapMutations([
-				"incrementCounter",
-				"decrementCounter"
+				"decrementCounter",
+				"incrementCounter"
 			]),
 			changeName() {
 				this.firstName = "Master",
@@ -56,7 +67,7 @@
 				return this.firstName + " " + this.lastName;
 			}
 		}
-	}
+	};
 </script>
 
 <style>

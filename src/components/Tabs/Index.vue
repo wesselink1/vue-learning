@@ -8,7 +8,10 @@
 		</p>
 
 		<nav class="dynamic-components__nav">
-			<ul class="dynamic-components__tab" ref="tabs" role="tablist" aria-label="Business value">
+			<ul class="dynamic-components__tab"
+				ref="tabs"
+				role="tablist"
+				aria-label="Business value">
 				<li
 					class="dynamic-components__tab-item"
 					:class="{ 'is-active' : selectedComponent == 'appCatalog' }">
@@ -71,17 +74,12 @@
 <script>
 	import { mapGetters } from "vuex";
 	import { mapMutations } from "vuex";
-	import About from "./About.vue";
-	import Catalog from "./Catalog.vue";
-	import Contact from "./Contact.vue";
-	import Products from "./Products.vue";
+	import About from "./About";
+	import Catalog from "./Catalog";
+	import Contact from "./Contact";
+	import Products from "./Products";
 
 	export default {
-		data() {
-			return {
-				
-			}
-		},
 		components: {
 			'appAbout': About,
 			'appCatalog': Catalog,
@@ -113,7 +111,7 @@
 				"selectedComponent",
 			])
 		}
-	}
+	};
 </script>
 
 <style>

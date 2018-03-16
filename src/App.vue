@@ -2,7 +2,10 @@
   	<section id="app" class="app__container">
   		<appHeader></appHeader>
 
-  		<transition name="routerSlide" mode="out-in" type="animation">
+  		<transition
+  			name="routerSlide"
+  			mode="out-in"
+  			type="animation">
   			<router-view></router-view>
   		</transition>
 
@@ -11,8 +14,8 @@
 </template>
 
 <script>
-	import Footer from "./components/Shared/Footer.vue";
-	import Header from "./components/Shared/Header.vue";
+	import Footer from "./components/Shared/Footer";
+	import Header from "./components/Shared/Header";
 
 	export default {
 		components: {
