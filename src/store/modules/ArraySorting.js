@@ -1,3 +1,5 @@
+import { orderBy, minBy, maxBy } from "lodash";
+
 const state = {
 	order: "year",
 	orderByDesc: false,
@@ -56,6 +58,19 @@ const getters = {
 	},
 	movies: state => {
 		return state.movies;
+	},
+	filteredMovies: state => {
+		return orderBy(state.movies, [state.order], state.orderByDesc ? "desc" : "asc");
+	},
+	highestRatedMovie: state => {
+		return maxBy(state.movies, function(item) {
+			return item.rating;
+		});
+	},
+	lowestRatedMovie: state => {
+		return minBy(state.movies, function(item) {
+			return item.rating;
+		});
 	}
 };
 
@@ -65,6 +80,21 @@ const mutations = {
 	},
 	changeOrderByDesc: state => {
 		state.orderByDesc = !state.orderByDesc;
+	},
+	setHighestAndLowestRatedBoolean: state => {
+		let maxRatedMovie = maxBy(state.movies, function(item) {
+			return item.rating;
+		});
+
+		let maxIndex = state.movies.indexOf(maxRatedMovie);
+		state.movies[maxIndex].highest = true;
+
+		let minRatedMovie = minBy(state.movies, function(item) {
+			return item.rating;
+		});
+
+		let minIndex = state.movies.indexOf(minRatedMovie);
+		state.movies[minIndex].lowest = true;
 	}
 };
 
