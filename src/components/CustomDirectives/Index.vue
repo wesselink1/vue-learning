@@ -4,9 +4,23 @@
 
         <p class="customdirective__body">Using Vue custom directive attributes to create custom functionality.</p>
 
-        <p class="customdirective__body" v-highlight="{ color: 'red' }">Simple example with one object value.</p>
-        <p class="customdirective__body" v-highlight:background="{ color: 'deeppink', backgroundColor: 'deepskyblue' }">Example directive with a directive argument 'background' and multiple object values.</p>
-        <p class="customdirective__body" v-highlight:background.delayed="{ color: 'white', backgroundColor: 'deeppink', delay: 2000, classname: 'has-hightlight' }">Example with a directive argument and a directive modifier. And also adding a classname to the element.</p>
+        <p
+            class="customdirective__body"
+            v-highlight="{ color: 'red' }">
+            Simple example with one object value.
+        </p>
+
+        <p
+            class="customdirective__body"
+            v-highlight:background="{ color: 'deeppink', backgroundColor: 'deepskyblue' }">
+            Example directive with a directive argument 'background' and multiple object values.
+        </p>
+        
+        <p
+            class="customdirective__body"
+            v-highlight:background.delayed="{ color: 'white', backgroundColor: 'deeppink', delay: 2000, classname: 'has-hightlight' }">
+            Example with a directive argument and a directive modifier. And also adding a classname to the element.
+        </p>
 
         <p class="customdirective__body">Directives can be set globally or localy.</p>
     </main>
@@ -32,7 +46,7 @@
                 }
             } 
         }
-    }
+    };
 </script>
 
 <style>

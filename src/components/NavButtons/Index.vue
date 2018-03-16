@@ -5,9 +5,23 @@
 		<p class="home__body">Scripted navigation button using <strong>Vue Router</strong></p>
 
 		<p class="home__buttons">
-			<button @click="$router.go(-1)" class="home__button">Go to back one page</button>
-			<button @click="$router.push({ name: 'linkBuyCards' })" class="home__button">Go to Buy Cards demo page</button>
-			<button @click="$router.push('/404')" class="home__button">Trigger 404 error</button>
+			<button
+				@click="$router.go(-1)"
+				class="home__button">
+				Go to back one page
+			</button>
+
+			<button
+				@click="$router.push({ name: 'linkBuyCards' })"
+				class="home__button">
+				Go to Buy Cards demo page
+			</button>
+			
+			<button
+				@click="$router.push('/404')"
+				class="home__button">
+				Trigger 404 error
+			</button>
 		</p>
 	</main>
 </template>

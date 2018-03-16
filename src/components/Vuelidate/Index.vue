@@ -22,7 +22,12 @@
 						:class="{ 'has-error' : $v.username.$error, 'is-valid' : (!$v.username.$error && $v.username.$dirty) }"
 						@blur="$v.username.$touch()"
 						v-model="username">
-					<small class="vuelidate__error" v-if="$v.username.$error">Please enter you name</small>
+						
+					<small
+						class="vuelidate__error"
+						v-if="$v.username.$error">
+						Please enter you name
+					</small>
 				</div>
 
 				<label 
@@ -41,8 +46,18 @@
 						:class="{ 'has-error' : $v.email.$error, 'is-valid' : (!$v.email.$error && $v.email.$dirty) }"
 						@blur="$v.email.$touch()"
 						v-model="email">
-					<small class="vuelidate__error" v-if="$v.email.$error">Please enter an email address</small>
-					<small class="vuelidate__error" v-if="!$v.email.email">Please provide a valid email address</small>
+
+					<small
+						class="vuelidate__error"
+						v-if="$v.email.$error">
+						Please enter an email address
+					</small>
+
+					<small 
+						class="vuelidate__error"
+						v-if="!$v.email.email">
+						Please provide a valid email address
+					</small>
 				</div>
 
 				<label
@@ -61,7 +76,12 @@
 						v-model.number="age"
 						:placeholder="'Minimum age is ' +  $v.age.$params.minVal.min"
 						@blur="$v.age.$touch()">
-					<small class="vuelidate__error" v-if="$v.age.$error">Minimum age is {{ $v.age.$params.minVal.min }}</small>
+
+					<small
+						class="vuelidate__error"
+						v-if="$v.age.$error">
+						Minimum age is {{ $v.age.$params.minVal.min }}
+					</small>
 				</div>
 
 				<label
@@ -73,7 +93,8 @@
 				<div
 					class="vuelidate__values"
 					:class="{ 'do-shake' : $v.terms.$error }">
-					<label :class="{ 'is-valid' : terms }">
+					<label 
+						:class="{ 'is-valid' : terms }">
 						<input 
 							type="checkbox"
 							v-model="terms"
@@ -81,7 +102,11 @@
 							I accept the terms of usage
 					</label>
 
-					<small class="vuelidate__error" v-if="$v.terms.$error">You must accept our terms and conditions to proceed</small>
+					<small
+						class="vuelidate__error"
+						v-if="$v.terms.$error">
+						You must accept our terms and conditions to proceed
+					</small>
 				</div>
 
 				<button
@@ -107,26 +132,26 @@
 	export default {
 		data() {
 			return {
-				username: null,
-				email: null,
 				age: null,
-				terms: false
+				email: null,
+				terms: false,
+				username: null
 			}
 		},
 		validations: {
-			username: {
+			age: {
 				required,
+				minVal: minValue(18)
 			},
 			email: {
 				required,
 				email
 			},
-			age: {
-				required,
-				minVal: minValue(18)
-			},
 			terms: {
 				required
+			},
+			username: {
+				required,
 			}
 		},
 		methods: {
@@ -134,7 +159,7 @@
 				alert("Form send");
 			}
 		}
-	}
+	};
 </script>
 
 <style>
