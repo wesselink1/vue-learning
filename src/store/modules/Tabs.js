@@ -9,8 +9,8 @@ const getters = {
 };
 
 const mutations = {
-	setSelectedComponent: (state, value) => {
-		state.selectedComponent = value;
+	setSelectedComponent: (state, payload) => {
+		state.selectedComponent = payload;
 	}
 };
 

@@ -60,8 +60,8 @@ const getters = {
 };
 
 const mutations = {
-	changeOrder: (state, value) => {
-		state.order = value;
+	changeOrder: (state, payload) => {
+		state.order = payload;
 	},
 	changeOrderByDesc: state => {
 		state.orderByDesc = !state.orderByDesc;
