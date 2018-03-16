@@ -11,22 +11,34 @@
 				<tr>
 					<th 
 						@click="setOrderBy('title')"
-						:class="[ changeOrderByDesc ? 'sorted-desc' : 'sorted-asc', { 'is-active' : order == 'title' }]">
+						:class="[
+								orderByDesc ? 'sorted-desc' : 'sorted-asc',
+								{ 'is-active' : order == 'title' }
+							]">
 						<span>Title</span>
 					</th>
 					<th 
 						@click="setOrderBy('rating')"
-						:class="[ changeOrderByDesc ? 'sorted-desc' : 'sorted-asc', { 'is-active' : order == 'rating' }]">
+						:class="[
+								orderByDesc ? 'sorted-desc' : 'sorted-asc',
+								{ 'is-active' : order == 'rating' }
+							]">
 						<span>Rating</span>
 					</th>
 					<th 
 						@click="setOrderBy('year')"
-						:class="[ changeOrderByDesc ? 'sorted-desc' : 'sorted-asc', { 'is-active' : order == 'year' }]">
+						:class="[
+								orderByDesc ? 'sorted-desc' : 'sorted-asc',
+								{ 'is-active' : order == 'year' }
+							]">
 						<span>Year</span>
 					</th>
 					<th 
 						@click="setOrderBy('genre')"
-						:class="[ changeOrderByDesc ? 'sorted-desc' : 'sorted-asc', { 'is-active' : order == 'genre' }]">
+						:class="[
+								orderByDesc ? 'sorted-desc' : 'sorted-asc',
+								{ 'is-active' : order == 'genre' }
+							]">
 						<span>Genre</span>
 					</th>
 				</tr>
