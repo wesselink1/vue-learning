@@ -6,7 +6,7 @@ const getters = {
 	counter: state => {
 	    return state.counter;
 	}
-}
+};
 
 const mutations = {
 	incrementCounter: state => {
@@ -17,10 +17,10 @@ const mutations = {
 	        state.counter--;
 	    }
 	}
-}
+};
 
 export default {
 	state,
 	getters,
 	mutations
-}
+};

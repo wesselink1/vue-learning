@@ -35,7 +35,7 @@
 <script>
 	import { mapGetters } from "vuex";
 	import { mapMutations } from "vuex";
-	import Card from "./Card.vue";
+	import Card from "./Card";
 
 	export default {
 		components: {
@@ -59,7 +59,7 @@
 				"limit"
 			])
 		}
-	}
+	};
 </script>
 
 <style>

@@ -49,11 +49,6 @@
 	import { orderBy } from "lodash";
 
 	export default {
-		data() {
-			return {
-
-			}
-		},
 		methods: {
 			...mapMutations([
 				"changeOrder",
@@ -66,15 +61,15 @@
 		},
 		computed: {
 			...mapGetters([
+				"movies",
 				"order",
-				"orderByDesc",
-				"movies"
+				"orderByDesc"
 			]),
 			filteredMovies() {
 				return orderBy(this.movies, [this.order], this.orderByDesc ? "desc" : "asc");
 			}
 		}
-	}
+	};
 </script>
 
 <style>

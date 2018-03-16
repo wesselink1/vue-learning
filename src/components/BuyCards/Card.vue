@@ -24,7 +24,7 @@
 				this.$emit("incrementCardsTotal", this.card.price);
 			}
 		}
-	}
+	};
 </script>
 
 <style>
