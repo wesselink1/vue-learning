@@ -1,3 +1,5 @@
+import { orderBy, minBy, maxBy } from "lodash";
+
 const state = {
 	order: "year",
 	orderByDesc: false,
@@ -56,6 +58,19 @@ const getters = {
 	},
 	movies: state => {
 		return state.movies;
+	},
+	filteredMovies: state => {
+		return orderBy(state.movies, [state.order], state.orderByDesc ? "desc" : "asc");
+	},
+	highestRatedMovie: state => {
+		return maxBy(state.movies, function(list) {
+			return list.rating;
+		});
+	},
+	worstRatedMovie: state => {
+		return minBy(state.movies, function(list) {
+			return list.rating;
+		});
 	}
 };
 

@@ -44,7 +44,9 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr v-for="movie in filteredMovies">
+				<tr 
+					v-for="(movie, index) in filteredMovies"
+					:key="movie.index">
 					<td>{{ movie.title }}</td>
 					<td>{{ movie.rating }}</td>
 					<td>{{ movie.year }}</td>
@@ -52,13 +54,20 @@
 				</tr>
 			</tbody>
 		</table>
+
+		<h2 class="lodash__sub-title">Highest rated movie</h2>
+
+		<p class="lodash__body">{{ highestRatedMovie.title }}, rated a {{ highestRatedMovie.rating }} from the year {{ highestRatedMovie.year }}.</p>
+
+		<h2 class="lodash__sub-title">Worst rated movie</h2>
+		
+		<p class="lodash__body">{{ worstRatedMovie.title }}, rated a {{ worstRatedMovie.rating }} from the year {{ worstRatedMovie.year }}.</p>
 	</main>
 </template>
 
 <script>
 	import { mapGetters } from "vuex";
 	import { mapMutations } from "vuex";
-	import { orderBy } from "lodash";
 
 	export default {
 		methods: {
@@ -66,20 +75,21 @@
 				"changeOrder",
 				"changeOrderByDesc"
 			]),
-			setOrderBy(orderValue) {
-				this.changeOrder(orderValue);
+			setOrderBy(orderBy) {
+				this.changeOrder(orderBy);
 				this.changeOrderByDesc();
 			}
 		},
 		computed: {
 			...mapGetters([
+				"filteredMovies",
+				"highestRatedMovie",
 				"movies",
 				"order",
-				"orderByDesc"
+				"orderByDesc",
+				"worstRatedMovie"
 			]),
-			filteredMovies() {
-				return orderBy(this.movies, [this.order], this.orderByDesc ? "desc" : "asc");
-			}
+			
 		}
 	};
 </script>
