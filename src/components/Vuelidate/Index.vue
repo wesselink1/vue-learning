@@ -127,17 +127,11 @@
 </template>
 
 <script>
+	import { mapGetters } from "vuex";
+	import { mapMutations } from "vuex";
 	import { required, email, minValue, minLength } from "vuelidate/lib/validators";
 
 	export default {
-		data() {
-			return {
-				age: null,
-				email: null,
-				terms: false,
-				username: null
-			}
-		},
 		validations: {
 			age: {
 				required,
@@ -155,9 +149,23 @@
 			}
 		},
 		methods: {
+			...mapMutations([
+				"setAge",
+				"setEmail",
+				"setTerms",
+				"setUsername",
+			]),
 			submitForm() {
 				alert("Form send");
 			}
+		},
+		computed: {
+			...mapGetters([
+				"age",
+				"email",
+				"terms",
+				"username",
+			])
 		}
 	};
 </script>
