@@ -60,7 +60,7 @@
 
 		<p class="lodash__body">{{ highestRatedMovie.title }}, rated a {{ highestRatedMovie.rating }} from the year {{ highestRatedMovie.year }}.</p>
 
-		<h2 class="lodash__sub-title">Worst rated movie</h2>
+		<h2 class="lodash__sub-title">Lowest rated movie</h2>
 		
 		<p class="lodash__body">{{ lowestRatedMovie.title }}, rated a {{ lowestRatedMovie.rating }} from the year {{ lowestRatedMovie.year }}.</p>
 	</main>
