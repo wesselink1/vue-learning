@@ -46,7 +46,8 @@
 			<tbody>
 				<tr 
 					v-for="(movie, index) in filteredMovies"
-					:key="movie.index">
+					:key="movie.index"
+					:class="{ 'is-highest' : movie.highest, 'is-lowest' : movie.lowest }">
 					<td>{{ movie.title }}</td>
 					<td>{{ movie.rating }}</td>
 					<td>{{ movie.year }}</td>
@@ -61,7 +62,7 @@
 
 		<h2 class="lodash__sub-title">Worst rated movie</h2>
 		
-		<p class="lodash__body">{{ worstRatedMovie.title }}, rated a {{ worstRatedMovie.rating }} from the year {{ worstRatedMovie.year }}.</p>
+		<p class="lodash__body">{{ lowestRatedMovie.title }}, rated a {{ lowestRatedMovie.rating }} from the year {{ lowestRatedMovie.year }}.</p>
 	</main>
 </template>
 
@@ -70,10 +71,14 @@
 	import { mapMutations } from "vuex";
 
 	export default {
+		created() {
+			this.setHighestRatedBoolean();
+		},
 		methods: {
 			...mapMutations([
-				"changeOrder",
-				"changeOrderByDesc"
+				"changeOrder",	
+				"changeOrderByDesc",
+				"setHighestRatedBoolean"
 			]),
 			setOrderBy(orderBy) {
 				this.changeOrder(orderBy);
@@ -84,10 +89,10 @@
 			...mapGetters([
 				"filteredMovies",
 				"highestRatedMovie",
+				"lowestRatedMovie",
 				"movies",
 				"order",
-				"orderByDesc",
-				"worstRatedMovie"
+				"orderByDesc"
 			]),
 			
 		}
@@ -115,6 +120,14 @@
 
 	.lodash__sub-title {
 		font-size: 42px;
+	}
+
+	.lodash__movies tr.is-highest td {
+		color: green;
+	}
+
+	.lodash__movies tr.is-lowest td {
+		color: red;
 	}
 
 	.lodash__movies th,

@@ -63,13 +63,13 @@ const getters = {
 		return orderBy(state.movies, [state.order], state.orderByDesc ? "desc" : "asc");
 	},
 	highestRatedMovie: state => {
-		return maxBy(state.movies, function(list) {
-			return list.rating;
+		return maxBy(state.movies, function(item) {
+			return item.rating;
 		});
 	},
-	worstRatedMovie: state => {
-		return minBy(state.movies, function(list) {
-			return list.rating;
+	lowestRatedMovie: state => {
+		return minBy(state.movies, function(item) {
+			return item.rating;
 		});
 	}
 };
@@ -80,6 +80,22 @@ const mutations = {
 	},
 	changeOrderByDesc: state => {
 		state.orderByDesc = !state.orderByDesc;
+	},
+	setHighestRatedBoolean: state => {
+		let maxSortedMovies = maxBy(state.movies, function(item) {
+			return item.rating;
+		});
+
+		let maxIndex = state.movies.indexOf(maxSortedMovies);
+		state.movies[maxIndex].highest = true;
+
+
+		let minSortedMovies = minBy(state.movies, function(item) {
+			return item.rating;
+		});
+
+		let minIndex = state.movies.indexOf(minSortedMovies);
+		state.movies[minIndex].lowest = true;
 	}
 };
 
