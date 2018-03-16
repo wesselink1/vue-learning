@@ -1,7 +1,7 @@
 {
   "name": "vue-webpack",
   "description": "SPA learning with Vue, Vuex and vue-router",
-  "version": "1.5.0",
+  "version": "2.0.0",
   "author": "Dennis Burger <dennis@dutchwebworks.nl>",
   "license": "MIT",
   "private": true,
