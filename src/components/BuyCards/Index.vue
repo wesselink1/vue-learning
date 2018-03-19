@@ -1,8 +1,8 @@
 <template>
 	<main class="cards">
-		<h1 class="cards__title">Buy cards, calculation demo</h1>
+		<h1 class="heading">Buy cards, calculation demo</h1>
 
-		<p class="cards__body">
+		<p class="paragraph">
 			Using parent and child components. Repeating child components based
 			on data array in parent. And having the child <code>$emit()</code> an event to parent.			
 		</p>
@@ -13,10 +13,10 @@
 			<li>And going <strong>over {{ limit[2] }} will disable</strong> the 'Buy card' -button.</li>
 		</ul>
 
-		<h2 class="cards__total">Vuex stored total: {{ cardsTotal | euroCurrency }}</h2>
+		<h2 class="sub-heading">Vuex stored total: {{ cardsTotal | euroCurrency }}</h2>
 
 		<p class="cards__reset">
-			<button class="cards__reset-btn" @click="resetCardsTotal">Reset total</button>
+			<button class="button button--02" @click="resetCardsTotal">Reset total</button>
 		</p>
 
 		<div class="cards__grid">
@@ -62,18 +62,12 @@
 	};
 </script>
 
-<style>
-	.cards__title,
-	.cards__body,
+<style lang="scss">
+	@import "../../scss/style";
+
 	.cards__list,
 	.cards__total {
-		font-family: "Roboto", sans-serif;
-	}
-
-	.cards__title {
-		font-weight: 300;
-		font-size: 32px;
-		color: deepskyblue;
+		font-family: $font-custom;
 	}
 
 	.cards__grid {
@@ -85,15 +79,5 @@
 
 	.cards__total {
 		font-size: 42px;
-	}
-
-	.cards__reset-btn {
-		padding: 15px 30px;
-		color: white;
-		cursor: pointer;
-		font-size: 26px;
-		border: 0;
-		border-radius: 8px;
-		background-color: deeppink;
 	}
 </style>

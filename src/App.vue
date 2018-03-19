@@ -3,7 +3,7 @@
   		<appHeader></appHeader>
 
   		<transition
-  			name="routerSlide"
+  			name="app__container-"
   			mode="out-in"
   			type="animation">
   			<router-view></router-view>
@@ -25,17 +25,19 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
+	@import "scss/style";
+
 	.app__container {
 		max-width: 1200px;
 		margin: 0 auto;
 	}
 
-	.routerSlide-enter-active {
+	.app__container--enter-active {
 		animation: routerSlideIn .3s ease-out forwards;
 	}
 
-	.routerSlide-leave-active {
+	.app__container-leave-active {
 		animation: routerSlideOut .3s ease-out forwards;		
 	}
 
