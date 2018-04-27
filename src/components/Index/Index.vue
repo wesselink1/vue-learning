@@ -72,44 +72,35 @@
 	</main>
 </template>
 
-<style>
-	.overview__title,
-	.overview__body {
-		font-family: "Roboto", sans-serif;
-	}
-
-	.overview__title {
-		font-weight: 300;
-		font-size: 32px;
-		color: deepskyblue;
-	}
+<style lang="scss">
+	@import "../../scss/style";
 
 	.overview__nav {
 		display: grid;
 		grid-gap: 10px;
 		grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
 		grid-auto-rows: 175px;
-	}
 
-	.overview__nav > div {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		border-radius: 8px;
-		align-items: center;
-		text-align: center;
-		font-weight: 700;
-		font-size: 24px;
-		color: white;
-		cursor: pointer;
-		font-family: "Roboto", sans-serif;
-		transition: background-color .3s, font-size .3s;
-		background-color: deepskyblue;
-	}
+		> div {
+			@include flexbox;
+			@include flex-direction(column);
+			@include justify-content(center);
+			@include align-items(center);
+			border-radius: $border-radius;
+			text-align: center;
+			font-weight: 700;
+			font-size: 24px;
+			color: white;
+			cursor: pointer;
+			font-family: $font-custom;
+			transition: background-color .3s, font-size .3s;
+			background-color: map-get($colors, 01);
 
-	.overview__nav > div:hover {
-		background-color: deeppink;
-		font-size: 30px;
+			&:hover {
+				font-size: 30px;
+				background-color: map-get($colors, 02);
+			}
+		}
 	}
 
 	.overview__logo {

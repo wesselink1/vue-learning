@@ -4,15 +4,17 @@
 	</footer>
 </template>
 
-<style>
+<style lang="scss">
+	@import "../../scss/style";
+
 	.footer__body {
 		margin-top: 30px;
 		padding-top: 10px;
-		border-top: 1px solid #ccc;
-		color: #ccc;
+		border-top: 1px solid map-get($colors, 04);
+		color: map-get($colors, 04);
 		text-align: right;
 		font-size: 14px;
 		font-weight: 300;
-		font-family: "Roboto", sans-serif;
+		font-family: $font-custom;
 	}
 </style>

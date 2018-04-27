@@ -1,33 +1,33 @@
 <template>
 	<main class="counter">
-		<h1 class="counter__title">Counter</h1>
+		<h1 class="heading">Counter</h1>
 
-		<h3 class="counter__sub-title">Vuex stored counter: {{ counter }}</h3>
+		<h3 class="sub-heading">Vuex stored counter: {{ counter }}</h3>
 
 		<p class="counter__buttons">
 			<button
 				@click="incrementCounter"
-				class="counter__button">
+				class="button button--02">
 				Increment counter
 			</button>
 
 			<button
 				@click="decrementCounter"
-				class="counter__button"
+				class="button button--02"
 				:disabled="counter <= 0">
 				Decrement counter
 			</button>
 		</p>
 
-		<hr class="counter__line">
+		<hr class="hr">
 
-		<p class="counter__body">Testing additional computed properties besides mapGetters</p>
+		<p class="paragraph">Testing additional computed properties besides mapGetters</p>
 
-		<p class="counter__body">FullName: {{ fullName }}</p>
+		<p class="paragraph">FullName: {{ fullName }}</p>
 
-		<p class="counter__body">
+		<p class="paragraph">
 			<button 
-				class="counter__button"
+				class="button button--02"
 				@click="changeName"
 				:disabled="nameChanged">
 				{{ nameChanged ? 'Name was changed' : 'Change name' }}
@@ -70,44 +70,6 @@
 	};
 </script>
 
-<style>
-	.counter__title,
-	.counter__sub-title,
-	.counter__body {
-		font-family: "Roboto", sans-serif;
-	}
-
-	.counter__title {
-		font-weight: 300;
-		font-size: 32px;
-		color: deepskyblue;
-	}
-
-	.counter__sub-title {
-		font-size: 42px;
-	}
-
-	.counter__line {
-		height: 0;
-		margin: 30px 0;
-		border: 0;
-		border-top: 1px solid #ccc;
-	}
-
-	.counter__button {
-		padding: 15px 30px;
-		color: white;
-		cursor: pointer;
-		font-size: 26px;
-		border: 0;
-		border-radius: 8px;
-		background-color: deeppink;
-		transition: background-color .3s;
-	}
-
-	.counter__button[disabled] {
-		color: #444;
-		cursor: not-allowed;
-		background-color: #ccc;
-	}
+<style lang="scss">
+	@import "../../scss/style";
 </style>
