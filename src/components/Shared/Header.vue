@@ -15,30 +15,32 @@
 	</header>
 </template>
 
-<style>
+<style lang="scss">
+	@import "../../scss/style";
+
 	.header {
 		margin-bottom: 30px;
 		padding-bottom: 10px;
-		border-bottom: 1px solid #ccc;
+		border-bottom: 1px solid map-get($colors, 04);
 	}
 
 	.header__title {
-		color: deeppink;
+		color: map-get($colors, 02);
 		font-weight: 300;
 		font-size: 42px;
-		font-family: "Roboto", sans-serif;
+		font-family: $font-custom;
 	}
 
 	.header__nav a {
 		font-size: 18px;
 		font-weight: 300;
-		color: deepskyblue;
+		color: map-get($colors, 01);
 		text-decoration: none;
-		font-family: "Roboto", sans-serif;
+		font-family: $font-custom;
 	}
 
 	.header__nav a.is-active {
-		color: #444;
+		color: map-get($colors, 03);
 		visibility: hidden;
 	}
 </style>

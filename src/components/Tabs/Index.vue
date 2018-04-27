@@ -1,8 +1,8 @@
 <template>
 	<main class="dynamic-components">
-		<h1 class="dynamic-components__title">Using Vue dynamic components as tabs</h1>
+		<h1 class="heading">Using Vue dynamic components as tabs</h1>
 
-		<p class="dynamic-components__body">
+		<p class="paragraph">
 			Easily switch (aria enabled) tabs by changing a Vue data property.
 			The selected tab is saved in <strong>Vuex</strong>.
 		</p>
@@ -114,17 +114,23 @@
 	};
 </script>
 
-<style>
-	.dynamic-components__title,
-	.dynamic-components__body,
-	.dynamic-components__tab-item a {
-		font-family: "Roboto", sans-serif;
+<style lang="scss">
+	@import "../../scss/style";
+
+	.dynamic-components__tab-item {
+		a {
+			font-family: $font-custom;
+		}
+
+		.tab:focus {
+			outline: none;
+		}
 	}
 
 	.dynamic-components__title {
 		font-weight: 300;
 		font-size: 32px;
-		color: deepskyblue;
+		color: map-get($colors, 01);
 	}
 
 	.dynamic-components__body {
@@ -133,7 +139,7 @@
 
 	.dynamic-components__tab {
 		position: relative;
-		display: flex;
+		@include flexbox;
 		margin: 0;
 		padding: 0;
 	}
@@ -147,7 +153,7 @@
 		content: '';
 		display: block;
 		width: 100%;
-		border-top: 1px solid deepskyblue;
+		border-top: 1px solid map-get($colors, 01);
 	}
 
 	.dynamic-components__tab-item {
@@ -159,28 +165,32 @@
 		margin-left: 10px;
 	}
 
-	.dynamic-components__tab-item a {
-		display: block;
-		padding: 5px 20px;
-		color: white;
-		font-weight: 300;
-		text-decoration: none;
-		cursor: pointer;
-		border-width: 1px 1px 0 1px;
-		border-style: solid;
-		border-radius: 5px 5px 0 0;
-		border-color: deepskyblue;
-		background-color: deepskyblue;
-	}
+	.dynamic-components__tab-item {
+		:hover {
+			a {
+				color: white;
+				background-color: map-get($colors, 01);
+			}
+		}
 
-	.dynamic-components__tab-item:hover a {
-		color: white;
-		background-color: deepskyblue;
-	}
+		a {
+			display: block;
+			padding: 5px 20px;
+			color: white;
+			font-weight: 300;
+			text-decoration: none;
+			cursor: pointer;
+			border-width: 1px 1px 0 1px;
+			border-style: solid;
+			border-radius: 5px 5px 0 0;
+			border-color: map-get($colors, 01);
+			background-color: map-get($colors, 01);
+		}
 
-	.dynamic-components__tab-item.is-active a {
-		color: deepskyblue;
-		border-bottom-color: deepskyblue;
-		background-color: white;
+		&.is-active a {
+			color: map-get($colors, 01);
+			border-bottom-color: map-get($colors, 01);
+			background-color: white;
+		}
 	}
 </style>

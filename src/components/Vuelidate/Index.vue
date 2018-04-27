@@ -1,8 +1,8 @@
 <template>
 	<section class="vuelidate">
-		<h1 class="vuelidate__title">Form validation using Vuelidate</h1>
+		<h1 class="heading">Form validation using Vuelidate</h1>
 
-		<p class="vuelidate__body">Using 3rd party form validation plugin to validate form fields. When they are invalid they show a CSS animation (shake).</p>
+		<p class="paragraph">Using 3rd party form validation plugin to validate form fields. When they are invalid they show a CSS animation (shake).</p>
 
 		<form>
 			<div class="vuelidate-grid">
@@ -110,7 +110,7 @@
 				</div>
 
 				<button
-					class="vuelidate__button"
+					class="vuelidate__button button button--02"
 					:disabled="$v.$invalid"
 					@click.prevent="submitForm">
 					Send form
@@ -162,32 +162,33 @@
 	};
 </script>
 
-<style>
-	.vuelidate__title,
-	.vuelidate__sub-title,
-	.vuelidate__body,
+<style lang="scss">
+	@import "../../scss/style";
+
 	.vuelidate__label,
 	.vuelidate__error,
 	.vuelidate__newsletter-list,
 	.vuelidate__values {
-		font-family: "Roboto", sans-serif;
-	}
-
-	.vuelidate__title {
-		font-weight: 300;
-		font-size: 32px;
-		color: deepskyblue;
+		font-family: $font-custom;
 	}
 
 	.vuelidate-grid {
-		display: grid;
-		grid-template-columns: 200px 1fr;
+		@include display-grid;
+		@include grid-template-columns(200px 1fr);
 		grid-gap: 20px;
 		max-width: 600px;
 	}
 
 	.vuelidate__label {
 		font-weight: 300;
+
+		&.is-valid {
+			color: green;
+		}
+
+		&.has-error {
+			color: red;
+		}
 	}
 
 	.vuelidate__label--input-field {
@@ -198,43 +199,34 @@
 		width: 100%;
 		box-sizing: border-box;
 		padding: 15px;
-		border-radius: 8px;
+		border-radius: $border-radius;
 		border: 2px solid #ccc;
-	}
 
-	.vuelidate__label.is-valid {
-		color: green;
-	}
-	
-	.vuelidate__input.is-valid {
-		border-color: green;
-	}
+		&.is-valid {
+			border-color: green;
+		}	
 
-	.vuelidate__label.has-error {
-		color: red;
-	}
-
-	.vuelidate__input.has-error {
-		border-color: red;
-	}
+		&.has-error {
+			border-color: red;
+		}
+	}		
 
 	.vuelidate__error {
 		display: block;
 		margin-top: 10px;
 		color: red;
-		align-self: center;
+		@include align-self(center);
 	}
 
 	.vuelidate__values {
-		grid-column: 2;
-	}
+		@include grid-column(2);
 
-	.vuelidate__values .is-valid {
-		color: green;
+		.is-valid {
+			color: green;
+		}
 	}
 
 	.vuelidate__values.do-shake {
-		-webkit-animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
 		animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
 	}
 
@@ -252,28 +244,10 @@
 		margin-bottom: 10px;
 	}
 
-	.vuelidate__values {
-
-	}
-
 	.vuelidate__button {
 		margin-top: 20px;
-		padding: 15px 30px;
-		color: white;
-		cursor: pointer;
-		font-size: 26px;
-		border: 0;
-		border-radius: 8px;
-		background-color: deeppink;
-		transition: background-color .3s;
 		grid-column: 2;
-		align-self: center;
-	}
-
-	.vuelidate__button[disabled] {
-		color: #444;
-		cursor: not-allowed;
-		background-color: #ccc;
+		@include align-self(center);
 	}
 
 	@keyframes shake {
