@@ -99,19 +99,19 @@
 
 						<label
 							class="vuelidate__label vuelidate__label--input-field"
-							:class="{ 'has-error' : $v.coupon.$error, 'is-valid' : $v.coupon.validCoupon && $v.coupon.$dirty }">
+							:class="{ 'has-error' : $v.coupon.$error, 'is-valid' : $v.coupon.validCoupon && coupon != '' && $v.coupon.$dirty }">
 						 	Coupon
 						</label>
 						
 						<div
 							class="vuelidate__values"
-							:class="{ 'do-shake' : $v.coupon.$error, 'is-valid' : $v.coupon.validCoupon && $v.coupon.$dirty }">
+							:class="{ 'do-shake' : $v.coupon.$error, 'is-valid' : $v.coupon.validCoupon && coupon != '' && $v.coupon.$dirty }">
 
 							<label>
 								<input 
 									type="text"
 									class="vuelidate__input"
-									:class="{ 'has-error' : $v.coupon.$error, 'is-valid' : $v.coupon.validCoupon && $v.coupon.$dirty }"
+									:class="{ 'has-error' : $v.coupon.$error, 'is-valid' : $v.coupon.validCoupon && coupon != '' && $v.coupon.$dirty }"
 									v-model="coupon"
 									placeholder="Try out one of the above coupon codes"
 									@blur="$v.coupon.$touch()">
