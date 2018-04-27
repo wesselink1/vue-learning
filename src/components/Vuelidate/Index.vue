@@ -52,13 +52,13 @@
 							<small
 								class="vuelidate__error"
 								v-if="$v.email.$error">
-								Please enter an email address
+								Please enter an e-mail address
 							</small>
 
 							<small 
 								class="vuelidate__error"
 								v-if="!$v.email.email">
-								Please provide a valid email address
+								Please provide a valid e-mail address
 							</small>
 						</div>
 
@@ -106,7 +106,6 @@
 						<div
 							class="vuelidate__values"
 							:class="{ 'do-shake' : $v.coupon.$error, 'is-valid' : isCouponValid }">
-
 							<label>
 								<input 
 									type="text"
