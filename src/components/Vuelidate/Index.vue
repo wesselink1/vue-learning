@@ -152,7 +152,7 @@
 							class="vuelidate__button button button--02"
 							:disabled="$v.$invalid"
 							@click.prevent="submitForm">
-							Send form
+							Submit form
 						</button>
 					</div>
 				</form>
@@ -187,6 +187,16 @@
 				]
 			}
 		},
+		methods: {
+			submitForm() {
+				alert("Form send");
+			}
+		},
+		computed: {
+			isCouponValid() {
+				return this.$v.coupon.validCoupon && this.coupon != "" && this.$v.coupon.$dirty;
+			}
+		},
 		validations: {
 			username: {
 				required,
@@ -211,17 +221,7 @@
 			terms: {
 				required
 			}
-		},
-		methods: {
-			submitForm() {
-				alert("Form send");
-			}
-		},
-		computed: {
-			isCouponValid() {
-				return this.$v.coupon.validCoupon && this.coupon != "" && this.$v.coupon.$dirty;
-			}
-		}
+		}		
 	};
 </script>
 
