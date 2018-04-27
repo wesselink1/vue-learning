@@ -99,26 +99,26 @@
 
 						<label
 							class="vuelidate__label vuelidate__label--input-field"
-							:class="{ 'has-error' : $v.coupon.$error, 'is-valid' : $v.coupon.validCoupon && coupon != '' && $v.coupon.$dirty }">
+							:class="{ 'has-error' : $v.coupon.$error, 'is-valid' : isCouponValid }">
 						 	Coupon
 						</label>
 						
 						<div
 							class="vuelidate__values"
-							:class="{ 'do-shake' : $v.coupon.$error, 'is-valid' : $v.coupon.validCoupon && coupon != '' && $v.coupon.$dirty }">
+							:class="{ 'do-shake' : $v.coupon.$error, 'is-valid' : isCouponValid }">
 
 							<label>
 								<input 
 									type="text"
 									class="vuelidate__input"
-									:class="{ 'has-error' : $v.coupon.$error, 'is-valid' : $v.coupon.validCoupon && coupon != '' && $v.coupon.$dirty }"
+									:class="{ 'has-error' : $v.coupon.$error, 'is-valid' : isCouponValid }"
 									v-model="coupon"
 									placeholder="Try out one of the above coupon codes"
 									@blur="$v.coupon.$touch()">
 
 								<small 
 									class="vuelidate__error"
-									v-if="$v.coupon.$error && !$v.coupon.isEmpty">
+									v-if="$v.coupon.$error">
 									Coupon code is invalid
 								</small>
 							</label>
@@ -216,6 +216,11 @@
 		methods: {
 			submitForm() {
 				alert("Form send");
+			}
+		},
+		computed: {
+			isCouponValid() {
+				return this.$v.coupon.validCoupon && this.coupon != "" && this.$v.coupon.$dirty;
 			}
 		}
 	};
