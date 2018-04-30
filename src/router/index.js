@@ -7,6 +7,7 @@ import Error404 from "@/components/Errors/Error404";
 import Index from "@/components/Index/Index";
 import NavButtons from "@/components/NavButtons/Index";
 import Pug from "@/components/Pug/Index";
+import SlideUpDown from "@/components/SlideUpDown/Index";
 import Tabs from "@/components/Tabs/Index";
 import Vuelidate from "@/components/Vuelidate/Index";
 import VuexCounter from "@/components/VuexCounter/Index";
@@ -60,6 +61,11 @@ export default new Router({
 		path: "/array-sorting",
 		name: "linkArraySorting",
 		component: ArraySorting
+	},
+	{
+		path: "/slide-up-down",
+		name: "linkSlideUpDown",
+		component: SlideUpDown
 	},
 	{
 		path: "*",

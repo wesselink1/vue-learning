@@ -64,6 +64,13 @@
 				exact-active-class="is-exact">
 				Array sorting
 			</router-link>
+			<router-link tag="div"
+				:to="{ name: 'linkSlideUpDown' }"
+				class="overview__nav-item"
+				active-class="is-active" 
+				exact-active-class="is-exact">
+				SlideUpDown
+			</router-link>
 		</nav>
 
 		<p class="overview__logo">
