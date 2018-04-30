@@ -30,6 +30,12 @@
 								v-if="$v.username.$error">
 								Please enter you name
 							</small>
+
+							<small
+								class="vuelidate__error"
+								v-if="!$v.username.minLen">
+								Name must be at least {{ $v.username.$params.minLen.min }} characters long
+							</small>
 						</div>
 
 						<label 
@@ -200,6 +206,7 @@
 		validations: {
 			username: {
 				required,
+				minLen: minLength(4)
 			},
 			email: {
 				required,
