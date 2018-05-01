@@ -2,6 +2,8 @@
 	<main class="slideupdown">
 		<h1 class="heading">Slide Up and Down</h1>
 
+		<p class="paragraph">Using the <a href="https://github.com/danieldiekmeier/vue-slide-up-down/" class="slideupdown__link">vue-slide-up-down component</a>.</p>
+
 		<p class="paragraph">jQuery like slideUp() and slideDown() functions</p>
 
 		<p class="paragraph">
@@ -21,22 +23,26 @@
 			<p class="paragraph">Minus quas consequuntur possimus quia autem voluptatem, facilis reiciendis quis recusandae rerum, eum corporis accusamus omnis, labore perspiciatis sed deleniti?</p>
 		</vue-slide-up-down>
 
-		<dl class="faqList">
-			<template v-for="faq in faqList">
-				<dt
+		<h2 class="sub-heading">FAQ like expanding list</h2>
+
+		<div class="faqList">
+			<template v-for="(faq, index) in faqList">
+				<h4
 					@click="faq.active = !faq.active"
 					class="faqList__title"
 					:class="{ 'is-active' : faq.active }">
 					{{ faq.title }}
-				</dt>
-				<dd
-					v-show="faq.active"
+				</h4>
+
+				<vue-slide-up-down
 					class="faqList__body"
-					:class="{ 'is-active' : faq.active }">
+					:class="{ 'is-active' : faq.active }"
+					:active="faq.active"
+					:duration="duration">
 					{{ faq.body }}
-				</dd>
+				</vue-slide-up-down>
 			</template>
-		</dl>
+		</div>
 	</main>
 </template>
 
@@ -52,25 +58,25 @@
 					{
 						id: 1,
 						active: false,
-						title: "Icecream flavoured strawberry",
+						title: "Whats on my icecream?",
 						body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia aspernatur cupiditate rerum ut, repellat veniam in, placeat sit porro fuga!"
 					},
 					{
 						id: 2,
 						active: false,
-						title: "Fancy red dress",
+						title: "Where can I get a fancy red dress?",
 						body: "Mollitia aspernatur cupiditate rerum ut, repellat veniam in, placeat sit porro fuga!"
 					},
 					{
 						id: 3,
 						active: false,
-						title: "Day at the park",
+						title: "Where's the park?",
 						body: "Consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia aspernatur cupiditate rerum ut, repellat veniam in, placeat sit porro fuga!"
 					},
 					{
 						id: 4,
 						active: false,
-						title: "Job not done",
+						title: "Is the internet finally done?",
 						body: "The internet is not finished yet!"
 					},
 				]
@@ -90,9 +96,15 @@
 <style lang="scss">
 	@import "../../scss/style";
 
-	.slideupdown__container {
-		p {
-			margin-top: 0;
+	.slideupdown__container p {
+		margin-top: 0;
+	}
+
+	.slideupdown__link {
+		color: map-get($colors, 01);
+
+		&:hover {
+			color: map-get($colors, 02);
 		}
 	}
 
@@ -104,13 +116,13 @@
 	.faqList__title {
 		cursor: pointer;
 		font-weight: 700;
-	}
 
-	.faqList__title.is-active {
-		color: map-get($colors, 02);
+		&.is-active {
+			color: map-get($colors, 02);
+		}
 	}
 
 	.faqList__body {
-		margin-bottom: 10px;
+		margin-bottom: 5px;
 	}
 </style>
