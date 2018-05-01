@@ -1,5 +1,5 @@
 <template>
-	<main class="slideupdown">		
+	<main class="slideupdown">
 		<h1 class="heading">Slide Up and Down</h1>
 
 		<p class="paragraph">jQuery like slideUp() and slideDown() functions</p>
@@ -21,6 +21,22 @@
 			<p class="paragraph">Minus quas consequuntur possimus quia autem voluptatem, facilis reiciendis quis recusandae rerum, eum corporis accusamus omnis, labore perspiciatis sed deleniti?</p>
 		</vue-slide-up-down>
 
+		<dl class="faqList">
+			<template v-for="faq in faqList">
+				<dt
+					@click="faq.active = !faq.active"
+					class="faqList__title"
+					:class="{ 'is-active' : faq.active }">
+					{{ faq.title }}
+				</dt>
+				<dd
+					v-show="faq.active"
+					class="faqList__body"
+					:class="{ 'is-active' : faq.active }">
+					{{ faq.body }}
+				</dd>
+			</template>
+		</dl>
 	</main>
 </template>
 
@@ -31,7 +47,33 @@
 		data() {
 			return {
 				active: false,
-				duration: 300
+				duration: 300,
+				faqList: [
+					{
+						id: 1,
+						active: false,
+						title: "Icecream flavoured strawberry",
+						body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia aspernatur cupiditate rerum ut, repellat veniam in, placeat sit porro fuga!"
+					},
+					{
+						id: 2,
+						active: false,
+						title: "Fancy red dress",
+						body: "Mollitia aspernatur cupiditate rerum ut, repellat veniam in, placeat sit porro fuga!"
+					},
+					{
+						id: 3,
+						active: false,
+						title: "Day at the park",
+						body: "Consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia aspernatur cupiditate rerum ut, repellat veniam in, placeat sit porro fuga!"
+					},
+					{
+						id: 4,
+						active: false,
+						title: "Job not done",
+						body: "The internet is not finished yet!"
+					},
+				]
 			}
 		},
 		methods: {
@@ -52,5 +94,23 @@
 		p {
 			margin-top: 0;
 		}
+	}
+
+	.faqList__title,
+	.faqList__body {
+		font-family: $font-custom;
+	}
+
+	.faqList__title {
+		cursor: pointer;
+		font-weight: 700;
+	}
+
+	.faqList__title.is-active {
+		color: map-get($colors, 02);
+	}
+
+	.faqList__body {
+		margin-bottom: 10px;
 	}
 </style>
