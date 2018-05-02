@@ -16,6 +16,7 @@
 
 		<vue-slide-up-down
 			class="slideupdown__container"
+			:tag="section"
 			:active="active"
 			:duration="duration">
 			<p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi repudiandae unde ex aperiam asperiores dicta molestiae, facere suscipit doloribus ipsum!</p>
@@ -25,24 +26,25 @@
 
 		<h2 class="sub-heading">FAQ like expanding list</h2>
 
-		<div class="faqList">
+		<dl class="faqList">
 			<template v-for="(faq, index) in faqList">
-				<h4
+				<dt
 					@click="faq.active = !faq.active"
 					class="faqList__title"
 					:class="{ 'is-active' : faq.active }">
 					{{ faq.title }}
-				</h4>
+				</dt>
 
 				<vue-slide-up-down
-					class="faqList__body"
+					class="faqList__body" 
+					:tag="section"
 					:class="{ 'is-active' : faq.active }"
-					:active="faq.active"
+					:active="faq.active" 
 					:duration="duration">
 					{{ faq.body }}
 				</vue-slide-up-down>
 			</template>
-		</div>
+		</dl>
 	</main>
 </template>
 
