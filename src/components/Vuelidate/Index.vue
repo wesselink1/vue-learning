@@ -168,6 +168,7 @@
 				<h2 class="heading">Vuelidate validation object</h2>
 
 				<div class="vuelidate__values">
+					<p><em>Scroll for more data</em></p>
 					<pre>{{ $v }}</pre>
 				</div>
 			</div>
@@ -307,6 +308,16 @@
 
 		.is-valid {
 			color: green;
+		}
+
+		pre {
+			height: 600px;
+			overflow: auto;
+			font-size: 16px;
+			line-height: 1.5;
+			padding: 20px;
+			border-radius: 10px;
+			border: 1px solid map-get($colors, 01);
 		}
 	}
 
