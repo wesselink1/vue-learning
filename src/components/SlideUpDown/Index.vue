@@ -16,7 +16,7 @@
 
 		<vue-slide-up-down
 			class="slideupdown__container"
-			:tag="section"
+			:tag="'section'"
 			:active="active"
 			:duration="duration">
 			<p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi repudiandae unde ex aperiam asperiores dicta molestiae, facere suscipit doloribus ipsum!</p>
@@ -36,10 +36,10 @@
 				</dt>
 
 				<vue-slide-up-down
-					class="faqList__body" 
-					:tag="section"
+					class="faqList__body"
+					:tag="'dd'"
 					:class="{ 'is-active' : faq.active }"
-					:active="faq.active" 
+					:active="faq.active"
 					:duration="duration">
 					{{ faq.body }}
 				</vue-slide-up-down>
@@ -110,14 +110,21 @@
 		}
 	}
 
+	.faqList {
+		max-width: 400px;
+	}
+
 	.faqList__title,
 	.faqList__body {
 		font-family: $font-custom;
+		line-height: 1.6;
 	}
 
 	.faqList__title {
 		cursor: pointer;
+		font-size: 22px;
 		font-weight: 700;
+		color: map-get($colors, 01);
 
 		&.is-active {
 			color: map-get($colors, 02);
@@ -125,6 +132,7 @@
 	}
 
 	.faqList__body {
-		margin-bottom: 5px;
+		margin: 0 0 20px 0;
+		color: map-get($colors, 03);
 	}
 </style>
