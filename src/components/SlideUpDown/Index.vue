@@ -4,27 +4,7 @@
 
 		<p class="paragraph">Using the <a href="https://github.com/danieldiekmeier/vue-slide-up-down/" class="slideupdown__link">vue-slide-up-down component</a>.</p>
 
-		<p class="paragraph">jQuery like slideUp() and slideDown() functions</p>
-
-		<p class="paragraph">
-			<button
-				class="button button--01"
-				@click="toggleText">
-				Toggle the text
-			</button>
-		</p>
-
-		<vue-slide-up-down
-			class="slideupdown__container"
-			:tag="'section'"
-			:active="active"
-			:duration="duration">
-			<p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi repudiandae unde ex aperiam asperiores dicta molestiae, facere suscipit doloribus ipsum!</p>
-			<p class="paragraph">Ab quisquam fugiat voluptates voluptatem quis, incidunt nesciunt velit, voluptatum odit esse necessitatibus dolores sint illo et nostrum ullam accusantium.</p>
-			<p class="paragraph">Minus quas consequuntur possimus quia autem voluptatem, facilis reiciendis quis recusandae rerum, eum corporis accusamus omnis, labore perspiciatis sed deleniti?</p>
-		</vue-slide-up-down>
-
-		<h2 class="sub-heading">FAQ like expanding list</h2>
+		<h2 class="sub-heading">Questions</h2>
 
 		<dl class="faqList">
 			<template v-for="(faq, index) in faqList">
@@ -85,15 +65,14 @@
 			}
 		},
 		methods: {
-			toggleText() {
-				this.active = !this.active;
-			},
 			toggleFaqItem(index) {
 				for(let i = 0, j = this.faqList.length; i < j; i++){
-					this.faqList[i].active = false;
+					if(i != index) {
+						this.faqList[i].active = false;
+					}
 				}
 
-				this.faqList[index].active = true;
+				this.faqList[index].active = !this.faqList[index].active;
 			}
 		},
 		components: {
@@ -131,15 +110,40 @@
 		cursor: pointer;
 		font-size: 22px;
 		font-weight: 700;
+		cursor: pointer;
 		color: map-get($colors, 01);
+		transition: .3s color;
 
 		&.is-active {
 			color: map-get($colors, 02);
+
+			&::before {
+				transform: rotate(90deg);
+				transition: .3s transform;
+				border-left-color: map-get($colors, 02);
+			}
+		}
+
+		&::before {
+			transform-origin: 25% 50%;
+			position: relative;
+			top: 2px;
+			display: inline-block;
+			width: 0px;
+			height: 0px;
+			overflow: hidden;
+			margin-right: 0px;
+			content: '';
+			border: 10px;
+			border-color: transparent;
+			border-width: 10px;
+			border-style: solid;
+			border-left-color: map-get($colors, 01);
 		}
 	}
 
 	.faqList__body {
-		margin: 0 0 20px 0;
+		margin: 0 0 20px 25px;
 		color: map-get($colors, 03);
 	}
 </style>

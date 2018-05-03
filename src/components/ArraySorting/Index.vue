@@ -131,6 +131,7 @@
 			color: black;
 			text-align: left;
 			cursor: pointer;
+			transition: .3s color;
 
 			span::after {
 				position: relative;
