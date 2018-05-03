@@ -29,7 +29,7 @@
 		<dl class="faqList">
 			<template v-for="(faq, index) in faqList">
 				<dt
-					@click="faq.active = !faq.active"
+					@click="toggleFaqItem(index)"
 					class="faqList__title"
 					:class="{ 'is-active' : faq.active }">
 					{{ faq.title }}
@@ -87,6 +87,13 @@
 		methods: {
 			toggleText() {
 				this.active = !this.active;
+			},
+			toggleFaqItem(index) {
+				for(let i = 0, j = this.faqList.length; i < j; i++){
+					this.faqList[i].active = false;
+				}
+
+				this.faqList[index].active = true;
 			}
 		},
 		components: {
