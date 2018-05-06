@@ -318,6 +318,7 @@
 			padding: 20px;
 			border-radius: 10px;
 			border: 1px solid map-get($colors, 01);
+			-webkit-overflow-scrolling: touch;
 		}
 	}
 
