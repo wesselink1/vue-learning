@@ -1,16 +1,16 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import ArraySorting from "@/components/ArraySorting/Index";
-import BuyCards from "@/components/BuyCards/Index";
-import CustomDirectives from "@/components/CustomDirectives/Index";
-import Error404 from "@/components/Errors/Error404";
-import Index from "@/components/Index/Index";
-import NavButtons from "@/components/NavButtons/Index";
-import Pug from "@/components/Pug/Index";
-import SlideUpDown from "@/components/SlideUpDown/Index";
-import Tabs from "@/components/Tabs/Index";
-import Vuelidate from "@/components/Vuelidate/Index";
-import VuexCounter from "@/components/VuexCounter/Index";
+import ArraySorting from "@/pages/ArraySorting/Index";
+import BuyCards from "@/pages/BuyCards/Index";
+import CustomDirectives from "@/pages/CustomDirectives/Index";
+import Error404 from "@/pages/Errors/Error404";
+import Index from "@/pages/Index/Index";
+import NavButtons from "@/pages/NavButtons/Index";
+import Pug from "@/pages/Pug/Index";
+import SlideUpDown from "@/pages/SlideUpDown/Index";
+import Tabs from "@/pages/Tabs/Index";
+import Vuelidate from "@/pages/Vuelidate/Index";
+import VuexCounter from "@/pages/VuexCounter/Index";
 
 Vue.use(Router)
 
