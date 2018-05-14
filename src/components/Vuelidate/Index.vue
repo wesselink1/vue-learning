@@ -182,11 +182,6 @@
 	export default {
 		data() {
 			return {
-				age: null,
-				email: null,
-				terms: false,
-				username: null,
-				coupon: null,
 				coupons: [
 					"SUMMER28",
 					"FALL44",
@@ -200,6 +195,46 @@
 			}
 		},
 		computed: {
+			age: {
+				get() {
+					return this.$store.getters.age;
+				},
+				set(value) {
+					this.$store.commit("age", value);
+				}
+			},
+			email: {
+				get() {
+					return this.$store.getters.email;
+				},
+				set(value) {
+					this.$store.commit("email", value);
+				}
+			},
+			terms: {
+				get() {
+					return this.$store.getters.terms;
+				},
+				set(value) {
+					this.$store.commit("terms", value);
+				}
+			},
+			username: {
+				get() {
+					return this.$store.getters.username;
+				},
+				set(value) {
+					this.$store.commit("username", value);
+				}
+			},
+			coupon: {
+				get() {
+					return this.$store.getters.coupon;
+				},
+				set(value) {
+					this.$store.commit("coupon", value);
+				}
+			},
 			isCouponValid() {
 				return this.$v.coupon.validCoupon && this.coupon != "" && this.$v.coupon.$dirty;
 			}
