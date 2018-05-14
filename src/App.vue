@@ -14,8 +14,8 @@
 </template>
 
 <script>
-	import Footer from "./pages/Shared/Footer";
-	import Header from "./pages/Shared/Header";
+	import Footer from "./components/Shared/Footer";
+	import Header from "./components/Shared/Header";
 
 	export default {
 		components: {
