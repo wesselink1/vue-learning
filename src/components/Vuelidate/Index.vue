@@ -10,7 +10,7 @@
 					<div class="vuelidate-form-grid">
 						<label 
 							class="vuelidate__label vuelidate__label--input-field"
-							:class="{ 'has-error' : $v.username.$error, 'is-valid' : (!$v.username.$error && $v.username.$dirty) }">
+							:class="{ 'has-error' : $v.username.$error, 'is-valid' : (!$v.username.$error && !$v.username.$invalid) }">
 							Name
 						</label>
 
@@ -21,9 +21,9 @@
 								type="text"
 								name="username"
 								class="vuelidate__input"
-								:class="{ 'has-error' : $v.username.$error, 'is-valid' : (!$v.username.$error && $v.username.$dirty) }"
+								:class="{ 'has-error' : $v.username.$error, 'is-valid' : (!$v.username.$error && !$v.username.$invalid) }"
 								@blur="$v.username.$touch()"
-								v-model="username">
+								v-model.trim="username">
 								
 							<small
 								class="vuelidate__error"
@@ -40,7 +40,7 @@
 
 						<label 
 							class="vuelidate__label vuelidate__label--input-field"
-							:class="{ 'has-error' : $v.email.$error, 'is-valid' : (!$v.email.$error && $v.email.$dirty) }">
+							:class="{ 'has-error' : $v.email.$error, 'is-valid' : (!$v.email.$error && !$v.email.$invalid) }">
 							E-mail
 						</label>
 
@@ -51,9 +51,9 @@
 								type="email"
 								name="email"
 								class="vuelidate__input"
-								:class="{ 'has-error' : $v.email.$error, 'is-valid' : (!$v.email.$error && $v.email.$dirty) }"
+								:class="{ 'has-error' : $v.email.$error, 'is-valid' : (!$v.email.$error && !$v.email.$invalid) }"
 								@blur="$v.email.$touch()"
-								v-model="email">
+								v-model.trim="email">
 
 							<small
 								class="vuelidate__error"
@@ -70,7 +70,7 @@
 
 						<label
 							class="vuelidate__label vuelidate__label--input-field"
-							:class="{ 'has-error' : $v.age.$error, 'is-valid' : (!$v.age.$error && $v.age.$dirty) }">
+							:class="{ 'has-error' : $v.age.$error, 'is-valid' : (!$v.age.$error && !$v.age.$invalid) }">
 							Age
 						</label>
 
@@ -80,10 +80,10 @@
 							<input 
 								type="number" 
 								class="vuelidate__input"
-								:class="{ 'has-error' : $v.age.$error, 'is-valid' : (!$v.age.$error && $v.age.$dirty) }"
-								v-model.number="age"
+								:class="{ 'has-error' : $v.age.$error, 'is-valid' : (!$v.age.$error && !$v.age.$invalid) }"
 								:placeholder="'Minimum age is ' +  $v.age.$params.minVal.min"
-								@blur="$v.age.$touch()">
+								@blur="$v.age.$touch()"
+								v-model.number.trim="age">
 
 							<small
 								class="vuelidate__error"
@@ -117,9 +117,9 @@
 									type="text"
 									class="vuelidate__input"
 									:class="{ 'has-error' : $v.coupon.$error, 'is-valid' : isCouponValid }"
-									v-model="coupon"
 									placeholder="Try out one of the above coupon codes"
-									@blur="$v.coupon.$touch()">
+									@blur="$v.coupon.$touch()"
+									v-model.trim="coupon">
 
 								<small 
 									class="vuelidate__error"
@@ -142,9 +142,9 @@
 								:class="{ 'is-valid' : terms }">
 								<input 
 									type="checkbox"
-									v-model="terms"
-									@change="$v.terms.$touch()">
+									@change="$v.terms.$touch()"
 									I accept the terms of usage
+									v-model="terms">
 							</label>
 
 							<small
@@ -236,7 +236,7 @@
 				}
 			},
 			isCouponValid() {
-				return this.$v.coupon.validCoupon && this.coupon != "" && this.$v.coupon.$dirty;
+				return this.$v.coupon.validCoupon && this.coupon != "" && !this.$v.coupon.$invalid;
 			}
 		},
 		validations: {
