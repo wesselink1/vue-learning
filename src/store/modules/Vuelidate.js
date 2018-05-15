@@ -1,46 +1,44 @@
 const state = {
-    vuelidateForm: {
-        age: null,
-        email: null,
-        terms: false,
-        username: null,
-        coupon: null
-    }
+    age: null,
+    email: null,
+    terms: false,
+    username: null,
+    coupon: null
 };
 
 const getters = {
     age: state => {
-        return state.vuelidateForm.age;
+        return state.age;
     },
     email: state => {
-        return state.vuelidateForm.email;
+        return state.email;
     },
     terms: state => {
-        return state.vuelidateForm.terms;
+        return state.terms;
     },
     username: state => {
-        return state.vuelidateForm.username;
+        return state.username;
     },
     coupon: state => {
-        return state.vuelidateForm.coupon;
+        return state.coupon;
     }
 };
 
 const mutations = {
     age: (state, payload) => {
-        state.vuelidateForm.age = payload;
+        state.age = payload;
     },
     email: (state, payload) => {
-        state.vuelidateForm.email = payload;
+        state.email = payload;
     },
     terms: (state, payload) => {
-        state.vuelidateForm.terms = payload;
+        state.terms = payload;
     },
     username: (state, payload) => {
-        state.vuelidateForm.username = payload;
+        state.username = payload;
     },
     coupon: (state, payload) => {
-        state.vuelidateForm.coupon = payload;
+        state.coupon = payload;
     }
 };
 

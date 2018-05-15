@@ -145,6 +145,7 @@
 									@change="$v.terms.$touch()"
 									I accept the terms of usage
 									v-model="terms">
+									I accept the terms of usage
 							</label>
 
 							<small
@@ -236,7 +237,7 @@
 				}
 			},
 			isCouponValid() {
-				return this.$v.coupon.validCoupon && this.coupon != "" && !this.$v.coupon.$invalid;
+				return this.$v.coupon.validCoupon && this.coupon != "" && this.coupon != null;
 			}
 		},
 		validations: {
