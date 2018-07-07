@@ -2,6 +2,8 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import ArraySorting from "@/components/ArraySorting/Index";
 import BuyCards from "@/components/BuyCards/Index";
+import Cinema from "@/components/Cinema/Index";
+import CinemaDetail from "@/components/Cinema/Detail";
 import CustomDirectives from "@/components/CustomDirectives/Index";
 import Error404 from "@/components/Errors/Error404";
 import Index from "@/components/Index/Index";
@@ -26,6 +28,16 @@ export default new Router({
 		path: "/nav-buttons",
 		name: "linkNavbuttons",
 		component: NavButtons
+	},
+	{
+		path: "/cinema",
+		name: "linkCinema",
+		component: Cinema
+	},
+	{
+		path: "/cinema/:id/:slug",
+		name: "linkCinemaDetail",
+		component: CinemaDetail
 	},
 	{
 		path: "/vuex-counter",

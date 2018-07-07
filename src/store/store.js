@@ -2,6 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 import ArraySorting from "./modules/ArraySorting";
 import BuyCards from "./modules/BuyCards";
+import Cinema from "./modules/Cinema";
 import Tabs from "./modules/Tabs";
 import Vuelidate from "./modules/Vuelidate";
 import VuexCounter from "./modules/VuexCounter";
@@ -21,6 +22,7 @@ export const store = new Vuex.Store({
     modules: {
         ArraySorting,
         BuyCards,
+        Cinema,
         Tabs,
         Vuelidate,
         VuexCounter
