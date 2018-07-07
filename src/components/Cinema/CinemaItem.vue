@@ -3,8 +3,8 @@
         <h3 class="cinema-item__title">
             <router-link
                 tag="a"
-                :to="'/cinema/' + item.id + '/' + slugify(item.title)"
-				active-class="is-active" 
+                :to="'/cinema/' + item.id + '/' + $options.filters.slugify(item.title)"
+				active-class="is-active"
 				exact-active-class="is-exact">
                 {{ item.title }} ({{ item.year }})
             </router-link>
@@ -13,16 +13,16 @@
         <p>
             <router-link
                 tag="a"
-                :to="'/cinema/' + item.id + '/' + slugify(item.title)"
+                :to="'/cinema/' + item.id + '/' + $options.filters.slugify(item.title)"
                 :title="item.title"
-				active-class="is-active" 
+				active-class="is-active"
 				exact-active-class="is-exact">
                 <img
                     :src="'/static/movies/' + item.poster"
                     :alt="item.title"
                     class="movie__poster">
             </router-link>
-            
+
         </p>
 
         <p class="cinema-item__description">{{ item.description }}</p>
@@ -32,7 +32,7 @@
         <h4>Starring</h4>
 
         <ul>
-            <li 
+            <li
                 v-for="(actor, index) in item.stars"
                 :key="index">
                 {{ actor }}
@@ -57,12 +57,7 @@
         },
         methods: {
             slugify(title) {
-                return title.toString().toLowerCase()
-                    .replace(/\s+/g, '-')           // Replace spaces with -
-                    .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
-                    .replace(/\-\-+/g, '-')         // Replace multiple - with single -
-                    .replace(/^-+/, '')             // Trim - from start of text
-                    .replace(/-+$/, '');            // Trim - from end of text
+
             }
         }
     };
