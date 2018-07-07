@@ -21,7 +21,11 @@
         <h4>Starring</h4>
 
         <ul>
-            <li v-for="actor in item.stars">{{ actor }}</li>
+            <li 
+                v-for="(actor, index) in item.stars"
+                :key="index">
+                {{ actor }}
+                </li>
         </ul>
 
         <p>

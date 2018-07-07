@@ -46,7 +46,7 @@
 			<tbody>
 				<tr 
 					v-for="(movie, index) in filteredMovies"
-					:key="movie.index"
+					:key="index"
 					:class="{ 'is-highest' : movie.highest, 'is-lowest' : movie.lowest }">
 					<td>{{ movie.title }}</td>
 					<td>{{ movie.rating }}</td>
