@@ -47,6 +47,7 @@
                 "cinemaList"
             ]),
             selectedMovie() {
+                // https://vuex.vuejs.org/guide/getters.html
                 return this.$store.getters.cinemaItem(this.id);
             }
         }

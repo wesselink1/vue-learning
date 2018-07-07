@@ -91,6 +91,7 @@ const getters = {
         return state.cinema;
     },
     cinemaItem: (state) => (id) => {
+        // https://vuex.vuejs.org/guide/getters.html
         return state.cinema.find(item => item.id == id);
     }
 };
