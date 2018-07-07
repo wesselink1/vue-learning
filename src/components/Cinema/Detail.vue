@@ -37,17 +37,10 @@
         },
         computed: {
             ...mapGetters([
-                "cinema"
+                "cinemaList"
             ]),
             selectedMovie() {
-                let activeMovie = {};
-
-                for(var i = 0, j = this.cinema.length; i < j; i++){
-                    if(this.cinema[i].id == parseInt(this.id)) {
-                        activeMovie = this.cinema[i];
-                    }
-                }
-                return activeMovie;
+                return this.$store.getters.cinemaItem(this.id);
             }
         }
     };

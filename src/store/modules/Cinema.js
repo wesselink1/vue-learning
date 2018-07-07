@@ -87,14 +87,17 @@ const state = {
 };
 
 const getters = {
-    cinema: state => {
+    cinemaList: state => {
         return state.cinema;
+    },
+    cinemaItem: (state) => (id) => {
+        return state.cinema.find(item => item.id == id);
     }
 };
 
 const mutations = {
-    cinema: (state, value) => {
-        state.cinema = value;
+    setCinemaList: (state, value) => {
+        state.cinemaList = value;
     }
 };
 

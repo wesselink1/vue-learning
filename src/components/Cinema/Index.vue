@@ -5,7 +5,7 @@
         <p class="paragraph">Some favourite movies.</p>
 
         <cinema-item
-            v-for="movie in cinema"
+            v-for="movie in cinemaList"
             :item="movie"
             :key="movie.id">
         </cinema-item>
@@ -31,7 +31,7 @@
         },
         computed: {
             ...mapGetters([
-                "cinema"
+                "cinemaList"
             ])
         }
     };
