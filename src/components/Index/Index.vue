@@ -81,7 +81,7 @@
 		</nav>
 
 		<p class="overview__logo">
-			<img src="../../assets/vuejs-logo.png" alt="Vue logo" class="overview__logo-img">
+			<img src="/static/vuejs-logo.png" alt="Vue logo" class="overview__logo-img">
 		</p>
 	</main>
 </template>

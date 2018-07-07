@@ -6,12 +6,23 @@
                 :to="'/cinema/' + item.id + '/' + slugify(item.title)"
 				active-class="is-active" 
 				exact-active-class="is-exact">
-                {{ item.title }}
+                {{ item.title }} ({{ item.year }})
             </router-link>
         </h3>
 
         <p>
-            <img :src="'/assets/movies/' + item.poster" :alt="item.title">
+            <router-link
+                tag="a"
+                :to="'/cinema/' + item.id + '/' + slugify(item.title)"
+                :title="item.title"
+				active-class="is-active" 
+				exact-active-class="is-exact">
+                <img
+                    :src="'/static/movies/' + item.poster"
+                    :alt="item.title"
+                    class="movie__poster">
+            </router-link>
+            
         </p>
 
         <p class="cinema-item__description">{{ item.description }}</p>
@@ -58,7 +69,7 @@
 </script>
 
 <style>
-    .cinema-item {
-
+    .movie__poster {
+        width: 200px;
     }
 </style>

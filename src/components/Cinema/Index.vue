@@ -38,7 +38,5 @@
 </script>
 
 <style>
-    .cinema {
 
-    }
 </style>

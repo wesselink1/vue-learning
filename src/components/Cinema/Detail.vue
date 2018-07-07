@@ -5,14 +5,17 @@
         <h1 class="heading">{{ selectedMovie.title }}</h1>
 
         <p class="paragraph">
-            <img :src="'/assets/movies/' + selectedMovie.poster" :alt="selectedMovie.title">
+            <img
+                :src="'/static/movies/' + selectedMovie.poster"
+                :alt="selectedMovie.title"
+                class="movie__poster">
         </p>
 
         <p class="paragraph">{{ selectedMovie.description }}</p>
 
         <h4>Starring</h4>
 
-        <ul>
+        <ul class="movie__actors">
             <li 
                 v-for="(actor, index) in selectedMovie.stars"
                 :key="index">
@@ -51,7 +54,7 @@
 </script>
 
 <style>
-    .movie-detail {
-
+    .movie__poster {
+        width: 200px;
     }
 </style>
