@@ -71,10 +71,17 @@
 				exact-active-class="is-exact">
 				SlideUpDown
 			</router-link>
+			<router-link tag="div"
+				:to="{ name: 'linkCinema' }"
+				class="overview__nav-item"
+				active-class="is-active" 
+				exact-active-class="is-exact">
+				Cinema
+			</router-link>
 		</nav>
 
 		<p class="overview__logo">
-			<img src="../../assets/vuejs-logo.png" alt="Vue logo" class="overview__logo-img">
+			<img src="/static/vuejs-logo.png" alt="Vue logo" class="overview__logo-img">
 		</p>
 	</main>
 </template>
