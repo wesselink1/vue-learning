@@ -1,37 +1,48 @@
 <template>
     <main class="movie-detail">
-        <p class="movie-detail__back-button">
-            <a href="javascript:;" @click="$router.go(-1)">Back</a>
-        </p>
+        <template v-if="movie == undefined">
+            <h1 class="heading">Movie not found</h1>
 
-        <p class="paragraph movie-detail__poster-block">
-            <img
-                :src="'/static/movies/' + movie.poster"
-                :alt="movie.title"
-                class="movie-detail__poster">
-        </p>
-
-        <div class="movie-details__body">
-            <h1 class="movie-detail__title">{{ movie.title }}</h1>
-
-            <p class="movie-detail__genre">{{ $options.filters.inlineList(movie.genre) }}</p>            
-
-            <p class="movie-detail__year">{{ movie.year }}</p>
-
-            <p class="movie-detail__description">{{ movie.description }}</p>
-
-            <h4 class="movie-detail__starring-title">Starring</h4>
-
-            <p class="movie-detail__actor-list">
-                {{ $options.filters.inlineList(movie.stars) }}
+            <p class="paragraph movie-detail__not-found">
+                The movie ID is incorret. Please go the <router-link :to="{ name: 'moviesOverview' }">movies page</router-link>.
+                Or go back to the <router-link :to="{ name: 'homepage' }">homepage</router-link>.
+            </p>
+        </template>
+        <template v-else>
+            <p class="movie-detail__back-button">
+                <a href="javascript:;" @click="$router.go(-1)">Back</a>
             </p>
 
-            <h4 class="movie-detail__rating">Score: {{ movie.rating }}</h4>
-        </div>
+            <p class="paragraph movie-detail__poster-block">
+                <img
+                    :src="'/static/movies/' + movie.poster"
+                    :alt="movie.title"
+                    class="movie-detail__poster">
+            </p>
 
-        <p class="movie-detail__external">
-            <a :href="movie.imdb" class="movie-detail__externa-link" target="_blank">View on IMDb</a>
-        </p>
+            <div class="movie-details__body">
+                <h1 class="movie-detail__title">{{ movie.title }}</h1>
+
+                <p class="movie-detail__genre">{{ $options.filters.inlineList(movie.genre) }}</p>            
+
+                <p class="movie-detail__year">{{ movie.year }}</p>
+
+                <p class="movie-detail__description">{{ movie.description }}</p>
+
+                <h4 class="movie-detail__starring-title">Starring</h4>
+
+                <p class="movie-detail__actor-list">
+                    {{ $options.filters.inlineList(movie.stars) }}
+                </p>
+
+                <h4 class="movie-detail__rating">Score: {{ movie.rating }}</h4>
+            </div>
+
+            <p class="movie-detail__external">
+                <a :href="movie.imdb" class="movie-detail__externa-link" target="_blank">View on IMDb</a>
+            </p>
+        </template>
+        
     </main>
 </template>
 
@@ -99,7 +110,22 @@
         font-family: $font-custom;
         font-weight: 300;
         color: map-get($colors, 01);
-    }    
+    }
+
+    .movie-detail__not-found {
+        @include grid-row(2);
+        @include grid-column(1, 2);
+        font-family: $font-custom;
+        font-size: 26px;
+
+        a {
+            color: map-get($colors, 02);
+
+            &:hover {
+                color: map-get($colors, 01);
+            }
+        }
+    }
 
     .movie-detail__genre {
         margin: 0 0 10px 0;
