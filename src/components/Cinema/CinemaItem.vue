@@ -44,6 +44,10 @@
 <style lang="scss">
     @import "../../scss/style";
 
+    .cinema__poster {
+        width: 200px;
+    }
+
     .cinema-item__title {   
         margin: 0;     
         font-size: 16px;
@@ -62,9 +66,5 @@
         font-family: $font-custom;
         font-size: 14px;
         color: map-get($colors, 04);
-    }
-
-    .cinema__poster {
-        width: 200px;
-    }
+    }    
 </style>
