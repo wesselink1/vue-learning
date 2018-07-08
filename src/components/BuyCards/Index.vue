@@ -63,7 +63,7 @@
 </script>
 
 <style lang="scss">
-	@import "../../scss/style";
+	@import "~@/scss/style";
 
 	.cards__list,
 	.cards__total {
