@@ -58,7 +58,7 @@
 					<td>
 						<router-link
 							tag="a"
-							:to="'/cinema/' + movie.id + '/' + $options.filters.slugify(movie.title)"
+							:to="'/movie/' + movie.id + '/' + $options.filters.slugify(movie.title)"
 							class="array-sorting__link"
 							active-class="is-active"
 							exact-active-class="is-exact">
@@ -71,7 +71,7 @@
 					<td>
 						<router-link
 							tag="a"
-							:to="'/cinema/' + movie.id + '/' + $options.filters.slugify(movie.title)"
+							:to="'/movie/' + movie.id + '/' + $options.filters.slugify(movie.title)"
 							class="array-sorting__link"
 							active-class="is-active"
 							exact-active-class="is-exact">

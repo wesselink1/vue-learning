@@ -90,7 +90,7 @@
 
 		<div class="featured-movie">
 			<p class="featured-movie__poster">
-				<a :href="'/cinema/' + featuredMovie.id + '/' + $options.filters.slugify(featuredMovie.title) ">
+				<a :href="'/movie/' + featuredMovie.id + '/' + $options.filters.slugify(featuredMovie.title) ">
 					<img 
 						:src="'/static/movies/' + featuredMovie.poster" 
 						:alt="featuredMovie.title"
@@ -99,7 +99,7 @@
 			</p>
 
 			<h4 class="featured-movie__title">
-				<a :href="'/cinema/' + featuredMovie.id + '/' + $options.filters.slugify(featuredMovie.title) ">
+				<a :href="'/movie/' + featuredMovie.id + '/' + $options.filters.slugify(featuredMovie.title) ">
 					{{ featuredMovie.title }} <small>({{ featuredMovie.year }})</small>
 				</a>
 			</h4>

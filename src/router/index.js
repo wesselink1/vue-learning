@@ -35,7 +35,7 @@ export default new Router({
 		component: Movies
 	},
 	{
-		path: "/cinema/:id/:slug",
+		path: "/movie/:id/:slug",
 		name: "linkMovieDetail",
 		component: MovieDetail
 	},
