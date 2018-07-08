@@ -27,7 +27,7 @@
 </template>
 
 <style lang="scss">
-	@import "../../scss/style";
+	@import "~@/scss/style";
 
 	.home__buttons {
 		@include display-grid;

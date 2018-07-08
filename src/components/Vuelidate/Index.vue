@@ -270,7 +270,7 @@
 </script>
 
 <style lang="scss">
-	@import "../../scss/style";
+	@import "~@/scss/style";
 
 	.vuelidate__label,
 	.vuelidate__error,

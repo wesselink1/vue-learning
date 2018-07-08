@@ -31,7 +31,7 @@
 
 
 <style lang="scss">
-	@import "../../scss/style";
+	@import "~@/scss/style";
 
     .featured-movie__title {
 		font-size: 22px;

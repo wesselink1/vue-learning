@@ -53,7 +53,7 @@
 </script>
 
 <style lang="scss">
-    @import "../../scss/style";
+    @import "~@/scss/style";
 
     .movie-detail {
         @include display-grid;
