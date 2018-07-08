@@ -1,16 +1,6 @@
 <template>
     <div class="cinema-item">
-        <h3 class="cinema-item__title">
-            <router-link
-                tag="a"
-                :to="'/cinema/' + item.id + '/' + $options.filters.slugify(item.title)"
-				active-class="is-active"
-				exact-active-class="is-exact">
-                {{ item.title }} ({{ item.year }})
-            </router-link>
-        </h3>
-
-        <p>
+        <p class="cinema-item__poster">
             <router-link
                 tag="a"
                 :to="'/cinema/' + item.id + '/' + $options.filters.slugify(item.title)"
@@ -20,28 +10,21 @@
                 <img
                     :src="'/static/movies/' + item.poster"
                     :alt="item.title"
-                    class="movie__poster">
+                    class="cinema__poster">
             </router-link>
-
         </p>
 
-        <p class="cinema-item__description">{{ item.description }}</p>
+        <h3 class="cinema-item__title">
+            <router-link
+                tag="a"
+                :to="'/cinema/' + item.id + '/' + $options.filters.slugify(item.title)"
+				active-class="is-active"
+				exact-active-class="is-exact">
+                {{ item.title }}
+            </router-link>
+        </h3>
 
-        <p class="cinema-item__year">{{ item.year }}</p>
-
-        <h4>Starring</h4>
-
-        <ul>
-            <li
-                v-for="(actor, index) in item.stars"
-                :key="index">
-                {{ actor }}
-                </li>
-        </ul>
-
-        <p>
-            View IMDb link: <a :href="item.imdb" target="_blank">{{ item.title }}</a>.
-        </p>
+        <p class="cinema-item__genre">{{ inlineList(item.genre) }}</p>        
     </div>
 </template>
 
@@ -50,21 +33,38 @@
         props: [
             "item"
         ],
-        data() {
-            return {
-
-            }
-        },
         methods: {
-            slugify(title) {
-
+            inlineList(listItems) {
+                return listItems.join(", ");
             }
         }
     };
 </script>
 
-<style>
-    .movie__poster {
+<style lang="scss">
+    @import "../../scss/style";
+
+    .cinema-item__title {   
+        margin: 0;     
+        font-size: 16px;
+        font-weight: 300;
+        font-family: $font-custom;
+        color: map-get($colors, 02);
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+
+    .cinema-item__genre {
+        margin: 0;
+        font-family: $font-custom;
+        font-size: 14px;
+        color: map-get($colors, 04);
+    }
+
+    .cinema__poster {
         width: 200px;
     }
 </style>
