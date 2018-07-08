@@ -26,6 +26,10 @@ Vue.filter("slugify", function(title){
 	    .replace(/-+$/, '');            // Trim - from end of text
 });
 
+Vue.filter("inlineList", function(listItems){
+	return listItems.join(", ");		
+});
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

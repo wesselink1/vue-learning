@@ -3,7 +3,7 @@
 		<nav class="overview__nav">
 			<router-link
 				tag="div"
-				:to="{ name: 'linkNavbuttons' }"
+				:to="{ name: 'navButtons' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
@@ -11,7 +11,7 @@
 			</router-link>
 			<router-link
 				tag="div"
-				:to="{ name: 'linkVuexCounter' }"
+				:to="{ name: 'vuexCounter' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
@@ -19,7 +19,7 @@
 			</router-link>
 			<router-link
 				tag="div"
-				:to="{ name: 'linkBuyCards' }"
+				:to="{ name: 'buyCards' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
@@ -27,7 +27,7 @@
 			</router-link>
 			<router-link
 				tag="div"
-				:to="{ name: 'linkTabs' }"
+				:to="{ name: 'tabs' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
@@ -35,7 +35,7 @@
 			</router-link>
 			<router-link
 				tag="div"
-				:to="{ name: 'linkPug' }"
+				:to="{ name: 'pug' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
@@ -43,7 +43,7 @@
 			</router-link>
 			<router-link
 				tag="div"
-				:to="{ name: 'linkCustomDirectives' }"
+				:to="{ name: 'customDirectives' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
@@ -51,40 +51,69 @@
 			</router-link>
 			<router-link
 				tag="div"
-				:to="{ name: 'linkVuelidate' }"
+				:to="{ name: 'vuelidate' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
 				Vuelidate
 			</router-link>
 			<router-link tag="div"
-				:to="{ name: 'linkArraySorting' }"
+				:to="{ name: 'arraySorting' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
 				Array sorting
 			</router-link>
 			<router-link tag="div"
-				:to="{ name: 'linkSlideUpDown' }"
+				:to="{ name: 'slideUpDown' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
 				SlideUpDown
 			</router-link>
 			<router-link tag="div"
-				:to="{ name: 'linkCinema' }"
+				:to="{ name: 'moviesOverview' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
-				Cinema
+				Movies
 			</router-link>
 		</nav>
 
 		<p class="overview__logo">
 			<img src="/static/vuejs-logo.png" alt="Vue logo" class="overview__logo-img">
 		</p>
+
+		<hr>
+
+		<h3 class="heading">Featured movie of the minute</h3>
+
+		<featured-movie
+			:movie="featuredMovie">
+		</featured-movie>
 	</main>
 </template>
+
+<script>
+	import { mapGetters } from "vuex";
+	import FeaturedMovie from "../Movies/FeaturedMovie";
+
+	export default {
+		components: {
+			FeaturedMovie
+		},
+		computed: {
+			...mapGetters([
+				"movies"
+			]),
+			featuredMovie() {
+				let randomMovie = this.movies[Math.floor(Math.random()*this.movies.length)];
+				return this.$store.getters.movie(randomMovie.id);
+			}
+		}
+	}
+</script>
+
 
 <style lang="scss">
 	@import "../../scss/style";

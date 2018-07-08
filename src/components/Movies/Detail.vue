@@ -1,45 +1,41 @@
 <template>
     <main class="movie-detail">
         <p class="movie-detail__back-button">
-            <router-link
-                tag="a"
-                :to="{ name: 'linkCinema' }">
-                &lsaquo; Back to the cinema list
-            </router-link>
+            <a href="javascript:;" @click="$router.go(-1)">Back</a>
         </p>
 
         <p class="paragraph movie-detail__poster-block">
             <img
-                :src="'/static/movies/' + selectedMovie.poster"
-                :alt="selectedMovie.title"
+                :src="'/static/movies/' + movie.poster"
+                :alt="movie.title"
                 class="movie-detail__poster">
         </p>
 
         <div class="movie-details__body">
-            <h1 class="movie-detail__title">{{ selectedMovie.title }}</h1>
+            <h1 class="movie-detail__title">{{ movie.title }}</h1>
 
-            <p class="movie-detail__genre">{{ inlineList(selectedMovie.genre) }}</p>            
+            <p class="movie-detail__genre">{{ $options.filters.inlineList(movie.genre) }}</p>            
 
-            <p class="movie-detail__year">{{ selectedMovie.year }}</p>
+            <p class="movie-detail__year">{{ movie.year }}</p>
 
-            <p class="movie-detail__description">{{ selectedMovie.description }}</p>
+            <p class="movie-detail__description">{{ movie.description }}</p>
 
             <h4 class="movie-detail__starring-title">Starring</h4>
 
             <p class="movie-detail__actor-list">
-                {{ inlineList(selectedMovie.stars) }}
-            </p>   
+                {{ $options.filters.inlineList(movie.stars) }}
+            </p>
+
+            <h4 class="movie-detail__rating">Score: {{ movie.rating }}</h4>
         </div>
 
         <p class="movie-detail__external">
-            <a :href="selectedMovie.imdb" class="movie-detail__externa-link" target="_blank">View on IMDb</a>
+            <a :href="movie.imdb" class="movie-detail__externa-link" target="_blank">View on IMDb</a>
         </p>
     </main>
 </template>
 
-<script>
-    import { mapGetters } from "vuex";
-    
+<script>    
     export default {
         data() {
             return {
@@ -47,18 +43,10 @@
                 slug: this.$route.params.slug
             }
         },
-        methods: {
-            inlineList(listItems) {
-                return listItems.join(", ");
-            }
-        },
         computed: {
-            ...mapGetters([
-                "cinemaList"
-            ]),
-            selectedMovie() {
+            movie() {
                 // https://vuex.vuejs.org/guide/getters.html
-                return this.$store.getters.cinemaItem(this.id);
+                return this.$store.getters.movie(this.id);
             }            
         }
     };
@@ -94,8 +82,10 @@
     }
 
     .movie-detail__poster {
+        margin-bottom: 20px;
         max-width: 450px;
         height: auto;
+        box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .25);
     }
 
     .movie-details__body {
@@ -144,6 +134,13 @@
     .movie-detail__actor-list {
         font-size: 16px;
         font-family: $font-custom;
+    }
+
+    .movie-detail__rating {
+        font-size: 26px;
+        font-family: $font-custom;
+        font-weight: 300;
+        color: map-get($colors, 01);
     }
 
     .movie-detail__external {

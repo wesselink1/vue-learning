@@ -1,9 +1,9 @@
 <template>
-    <div class="cinema-item">
-        <p class="cinema-item__poster">
+    <div class="movie-item">
+        <p class="movie-item__poster">
             <router-link
                 tag="a"
-                :to="'/cinema/' + item.id + '/' + $options.filters.slugify(item.title)"
+                :to="{ name: 'movieDetail', params: { id: item.id, slug: $options.filters.slugify(item.title) } }"
                 :title="item.title"
 				active-class="is-active"
 				exact-active-class="is-exact">
@@ -14,17 +14,17 @@
             </router-link>
         </p>
 
-        <h3 class="cinema-item__title">
+        <h3 class="movie-item__title">
             <router-link
                 tag="a"
-                :to="'/cinema/' + item.id + '/' + $options.filters.slugify(item.title)"
+                :to="{ name: 'movieDetail', params: { id: item.id, slug: $options.filters.slugify(item.title) } }"
 				active-class="is-active"
 				exact-active-class="is-exact">
                 {{ item.title }}
             </router-link>
         </h3>
 
-        <p class="cinema-item__genre">{{ inlineList(item.genre) }}</p>        
+        <p class="movie-item__genre">{{ $options.filters.inlineList(item.genre) }}</p>        
     </div>
 </template>
 
@@ -32,12 +32,7 @@
     export default {
         props: [
             "item"
-        ],
-        methods: {
-            inlineList(listItems) {
-                return listItems.join(", ");
-            }
-        }
+        ]
     };
 </script>
 
@@ -48,7 +43,7 @@
         width: 200px;
     }
 
-    .cinema-item__title {   
+    .movie-item__title {   
         margin: 0;     
         font-size: 16px;
         font-weight: 300;
@@ -61,7 +56,7 @@
         }
     }
 
-    .cinema-item__genre {
+    .movie-item__genre {
         margin: 0;
         font-family: $font-custom;
         font-size: 14px;

@@ -1,8 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import ArraySorting from "./modules/ArraySorting";
 import BuyCards from "./modules/BuyCards";
-import Cinema from "./modules/Cinema";
+import Movies from "./modules/Movies";
 import Tabs from "./modules/Tabs";
 import Vuelidate from "./modules/Vuelidate";
 import VuexCounter from "./modules/VuexCounter";
@@ -20,9 +19,8 @@ export const store = new Vuex.Store({
     mutations,
     actions,
     modules: {
-        ArraySorting,
         BuyCards,
-        Cinema,
+        Movies,
         Tabs,
         Vuelidate,
         VuexCounter

@@ -1,14 +1,14 @@
 import Vue from 'vue';
-import Router from 'vue-router';
 import ArraySorting from "@/components/ArraySorting/Index";
 import BuyCards from "@/components/BuyCards/Index";
-import Cinema from "@/components/Cinema/Index";
-import CinemaDetail from "@/components/Cinema/Detail";
 import CustomDirectives from "@/components/CustomDirectives/Index";
 import Error404 from "@/components/Errors/Error404";
 import Index from "@/components/Index/Index";
+import MovieDetail from "@/components/Movies/Detail";
+import Movies from "@/components/Movies/Index";
 import NavButtons from "@/components/NavButtons/Index";
 import Pug from "@/components/Pug/Index";
+import Router from 'vue-router';
 import SlideUpDown from "@/components/SlideUpDown/Index";
 import Tabs from "@/components/Tabs/Index";
 import Vuelidate from "@/components/Vuelidate/Index";
@@ -21,62 +21,62 @@ export default new Router({
   routes: [
 	{
 		path: "/",
-		name: "linkIndex",
+		name: "homepage",
 		component: Index
 	},
 	{
 		path: "/nav-buttons",
-		name: "linkNavbuttons",
+		name: "navButtons",
 		component: NavButtons
 	},
 	{
-		path: "/cinema",
-		name: "linkCinema",
-		component: Cinema
+		path: "/movies",
+		name: "moviesOverview",
+		component: Movies
 	},
 	{
-		path: "/cinema/:id/:slug",
-		name: "linkCinemaDetail",
-		component: CinemaDetail
+		path: "/movie/:id/:slug",
+		name: "movieDetail",
+		component: MovieDetail
 	},
 	{
 		path: "/vuex-counter",
-		name: "linkVuexCounter",
+		name: "vuexCounter",
 		component: VuexCounter
 	},
 	{
 		path: "/buy-cards",
-		name: "linkBuyCards",
+		name: "buyCards",
 		component: BuyCards
 	},
 	{
 		path: "/tabs",
-		name: "linkTabs",
+		name: "tabs",
 		component: Tabs
 	},
 	{
 		path: "/pug",
-		name: "linkPug",
+		name: "pug",
 		component: Pug
 	},
 	{
 		path: "/custom-directives",
-		name: "linkCustomDirectives",
+		name: "customDirectives",
 		component: CustomDirectives
 	},	
 	{
 		path: "/vuelidate",
-		name: "linkVuelidate",
+		name: "vuelidate",
 		component: Vuelidate
 	},
 	{
 		path: "/array-sorting",
-		name: "linkArraySorting",
+		name: "arraySorting",
 		component: ArraySorting
 	},
 	{
 		path: "/slide-up-down",
-		name: "linkSlideUpDown",
+		name: "slideUpDown",
 		component: SlideUpDown
 	},
 	{
