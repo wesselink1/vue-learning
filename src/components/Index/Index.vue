@@ -90,18 +90,22 @@
 
 		<div class="featured-movie">
 			<p class="featured-movie__poster">
-				<a :href="'/movie/' + featuredMovie.id + '/' + $options.filters.slugify(featuredMovie.title) ">
-					<img 
-						:src="'/static/movies/' + featuredMovie.poster" 
-						:alt="featuredMovie.title"
-						class="featured-movie__image">
-				</a>
+				<router-link
+					tag="a"
+					:to="{ name: 'linkMovieDetail', params: { id: featuredMovie.id, slug: $options.filters.slugify(featuredMovie.title) } }">
+						<img 
+							:src="'/static/movies/' + featuredMovie.poster" 
+							:alt="featuredMovie.title"
+							class="featured-movie__image">
+				</router-link>
 			</p>
 
 			<h4 class="featured-movie__title">
-				<a :href="'/movie/' + featuredMovie.id + '/' + $options.filters.slugify(featuredMovie.title) ">
+				<router-link
+					tag="a"
+					:to="{ name: 'linkMovieDetail', params: { id: featuredMovie.id, slug: $options.filters.slugify(featuredMovie.title) } }">
 					{{ featuredMovie.title }} <small>({{ featuredMovie.year }})</small>
-				</a>
+				</router-link>
 			</h4>
 		</div>
 	</main>
