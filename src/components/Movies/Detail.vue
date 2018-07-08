@@ -82,8 +82,10 @@
     }
 
     .movie-detail__poster {
+        margin-bottom: 20px;
         max-width: 450px;
         height: auto;
+        box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .25);
     }
 
     .movie-details__body {

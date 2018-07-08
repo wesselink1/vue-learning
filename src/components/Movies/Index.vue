@@ -83,9 +83,9 @@
     @import "../../scss/style";
 
     .movies__list {
-        @include display-grid;
-        @include grid-basic(5, 200px, 20px);
-        @include grid-basic-ie-placement(5);
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 20px;
     }
 
     .movies__sorting {
@@ -103,8 +103,10 @@
 
     .movie-item {
         img {
-            height: 300px;
+            height: 350px;
             width: auto;
+            max-width: 100%;
+            box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .25);
         }
     }
 </style>

@@ -186,5 +186,6 @@
 
 	.featured-movie__image {
 		max-width: 200px;
+		box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .25);
 	}
 </style>
