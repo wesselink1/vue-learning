@@ -3,7 +3,7 @@
 		<nav class="overview__nav">
 			<router-link
 				tag="div"
-				:to="{ name: 'linkNavbuttons' }"
+				:to="{ name: 'navButtons' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
@@ -11,7 +11,7 @@
 			</router-link>
 			<router-link
 				tag="div"
-				:to="{ name: 'linkVuexCounter' }"
+				:to="{ name: 'vuexCounter' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
@@ -19,7 +19,7 @@
 			</router-link>
 			<router-link
 				tag="div"
-				:to="{ name: 'linkBuyCards' }"
+				:to="{ name: 'buyCards' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
@@ -27,7 +27,7 @@
 			</router-link>
 			<router-link
 				tag="div"
-				:to="{ name: 'linkTabs' }"
+				:to="{ name: 'tabs' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
@@ -35,7 +35,7 @@
 			</router-link>
 			<router-link
 				tag="div"
-				:to="{ name: 'linkPug' }"
+				:to="{ name: 'pug' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
@@ -43,7 +43,7 @@
 			</router-link>
 			<router-link
 				tag="div"
-				:to="{ name: 'linkCustomDirectives' }"
+				:to="{ name: 'customDirectives' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
@@ -51,28 +51,28 @@
 			</router-link>
 			<router-link
 				tag="div"
-				:to="{ name: 'linkVuelidate' }"
+				:to="{ name: 'vuelidate' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
 				Vuelidate
 			</router-link>
 			<router-link tag="div"
-				:to="{ name: 'linkArraySorting' }"
+				:to="{ name: 'arraySorting' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
 				Array sorting
 			</router-link>
 			<router-link tag="div"
-				:to="{ name: 'linkSlideUpDown' }"
+				:to="{ name: 'slideUpDown' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
 				SlideUpDown
 			</router-link>
 			<router-link tag="div"
-				:to="{ name: 'linkMovies' }"
+				:to="{ name: 'moviesOverview' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
@@ -92,7 +92,7 @@
 			<p class="featured-movie__poster">
 				<router-link
 					tag="a"
-					:to="{ name: 'linkMovieDetail', params: { id: featuredMovie.id, slug: $options.filters.slugify(featuredMovie.title) } }">
+					:to="{ name: 'movieDetail', params: { id: featuredMovie.id, slug: $options.filters.slugify(featuredMovie.title) } }">
 						<img 
 							:src="'/static/movies/' + featuredMovie.poster" 
 							:alt="featuredMovie.title"
@@ -103,7 +103,7 @@
 			<h4 class="featured-movie__title">
 				<router-link
 					tag="a"
-					:to="{ name: 'linkMovieDetail', params: { id: featuredMovie.id, slug: $options.filters.slugify(featuredMovie.title) } }">
+					:to="{ name: 'movieDetail', params: { id: featuredMovie.id, slug: $options.filters.slugify(featuredMovie.title) } }">
 					{{ featuredMovie.title }} <small>({{ featuredMovie.year }})</small>
 				</router-link>
 			</h4>
