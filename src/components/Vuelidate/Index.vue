@@ -99,7 +99,11 @@
 
 						<div class="vuelidate__values">
 							<ul class="vuelidate__coupons">
-								<li v-for="coupon in coupons">{{ coupon }}</li>
+								<li
+									v-for="(coupon, index) in coupons"
+									:key="index">
+									{{ coupon }}
+								</li>
 							</ul>
 						</div>
 
