@@ -2,6 +2,8 @@
     <main class="movies">
         <h1 class="heading">Movie overview</h1>
 
+        <p class="paragraph">Movie overview- and detail page using <strong>vue-router</strong>, a dynamic url using movie ID and an URL slug.</p>
+
         <section class="movies__list">
             <cinema-item
                 v-for="movie in cinemaList"
