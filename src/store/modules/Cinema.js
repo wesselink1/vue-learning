@@ -60,9 +60,9 @@ const state = {
                 "Horror"
             ],
             stars: [
-                "Natalie Portland",
-                "Jennifer Jason Leigh",
-                "Tessa Thompson"
+                 "Toni Collette",
+                 "Milly Shapiro",
+                 "Gabriel Byrne"
             ],
             imdb: "https://www.imdb.com/title/tt7784604/"
         },
@@ -82,6 +82,58 @@ const state = {
                 "Morena Baccarin"
             ],
             imdb: "https://www.imdb.com/title/tt5463162/"
+        },
+        {
+            id: 1396484,
+            title: "IT",
+            description: "It is a movie starring Bill Skarsgård, Jaeden Lieberher, and Finn Wolfhard. In the summer of 1989, a group of bullied kids band together to destroy a shapeshifting monster, which disguises itself as a clown and preys on the children of Derry, their small Maine town.",
+            year: 2017,
+            poster: "it.jpg",
+            genre: [
+                "Horror",
+            ],
+            stars: [
+                "Bill Skarsgård",
+                "Jaeden Lieberher",
+                "Finn Wolfhard"
+            ],
+            imdb: "https://www.imdb.com/title/tt1396484/"
+        },
+        {
+            id: 4846340,
+            title: "Hidden Figures",
+            description: "The story of a team of female African-American mathematicians who served a vital role in NASA during the early years of the U.S. space program.",
+            year: 2016,
+            poster: "hidden-figures.jpg",
+            genre: [
+                "Biography",
+                "Drama",
+                "History"
+            ],
+            stars: [
+                "Taraji P. Henson",
+                "Octavia Spencer", 
+                "Janelle Monáe"
+            ],
+            imdb: "https://www.imdb.com/title/tt4846340/"
+        },
+        {
+            id: 1825683,
+            title: "Black Panther",
+            description: "TT'Challa, the King of Wakanda, rises to the throne in the isolated, technologically advanced African nation, but his claim is challenged by a vengeful outsider who was a childhood victim of T'Challa's father's mistake.",
+            year: 2018,
+            poster: "black-panther.jpg",
+            genre: [
+                "Action",
+                "Adventure",
+                "Sci-Fi"
+            ],
+            stars: [
+                "Chadwick Boseman",
+                "Michael B. Jordan",
+                "Lupita Nyong'o"
+            ],
+            imdb: "https://www.imdb.com/title/tt1825683/"
         }
     ]
 };
@@ -96,14 +148,7 @@ const getters = {
     }
 };
 
-const mutations = {
-    setCinemaList: (state, value) => {
-        state.cinemaList = value;
-    }
-};
-
 export default {
     state,
-    getters,
-    mutations
+    getters
 };
