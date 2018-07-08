@@ -9,36 +9,43 @@
 		<table class="array-sorting__movies" cellspacing="0">
 			<thead>
 				<tr>
-					<th 
-						@click="setOrderBy('title')"
-						:class="[
-								orderByDesc ? 'sorted-desc' : 'sorted-asc',
-								{ 'is-active' : order == 'title' }
-							]">
-						<span>Title</span>
+					<th>
+						<span>Poster</span>
 					</th>
-					<th 
-						@click="setOrderBy('rating')"
-						:class="[
-								orderByDesc ? 'sorted-desc' : 'sorted-asc',
-								{ 'is-active' : order == 'rating' }
-							]">
-						<span>Rating</span>
+					<th>
+						<a 
+							href="javascript:;"
+							@click="setOrderBy('title')"
+							:class="[
+									orderByDesc ? 'sorted-desc' : 'sorted-asc',
+									{ 'is-active' : order == 'title' }
+								]">
+							<span>Title</span>
+						</a>
 					</th>
-					<th 
-						@click="setOrderBy('year')"
-						:class="[
-								orderByDesc ? 'sorted-desc' : 'sorted-asc',
-								{ 'is-active' : order == 'year' }
-							]">
-						<span>Year</span>
+					<th>
+						<a 
+							href="javascript:;"
+							@click="setOrderBy('rating')"
+							:class="[
+									orderByDesc ? 'sorted-desc' : 'sorted-asc',
+									{ 'is-active' : order == 'rating' }
+								]">
+							<span>Rating</span>
+						</a>
 					</th>
-					<th 
-						@click="setOrderBy('genre')"
-						:class="[
-								orderByDesc ? 'sorted-desc' : 'sorted-asc',
-								{ 'is-active' : order == 'genre' }
-							]">
+					<th> 
+						<a 
+							href="javascript:;"
+							@click="setOrderBy('year')"
+							:class="[
+									orderByDesc ? 'sorted-desc' : 'sorted-asc',
+									{ 'is-active' : order == 'year' }
+								]">
+							<span>Year</span>
+						</a>
+					</th>
+					<th>
 						<span>Genre</span>
 					</th>
 				</tr>
@@ -55,7 +62,20 @@
 							class="array-sorting__link"
 							active-class="is-active"
 							exact-active-class="is-exact">
-							{{ movie.title }} &rsaquo; 
+							<img
+								:src="'/static/movies/' + movie.poster"
+								:alt="movie.title"
+								class="array-sorting__poster">
+						</router-link>						
+					</td>
+					<td>
+						<router-link
+							tag="a"
+							:to="'/cinema/' + movie.id + '/' + $options.filters.slugify(movie.title)"
+							class="array-sorting__link"
+							active-class="is-active"
+							exact-active-class="is-exact">
+							{{ movie.title }}
 						</router-link>
 					</td>
 					<td>{{ movie.rating }}</td>
@@ -99,7 +119,7 @@
 				"filteredMovies",
 				"highestRatedMovie",
 				"lowestRatedMovie",
-				"cinemaList",
+				"movies",
 				"order",
 				"orderByDesc"
 			]),
@@ -130,8 +150,9 @@
 
 		th,
 		td {
-			font-family: $font-custom;
 			padding: 20px;
+			vertical-align: top;
+			font-family: $font-custom;
 		}
 
 		th {
@@ -139,8 +160,13 @@
 			font-size: 32px;
 			color: black;
 			text-align: left;
-			cursor: pointer;
+		}
+
+		a {
+			display: inline-block;
+			color: inherit;
 			transition: .3s color;
+			text-decoration: none;
 
 			span::after {
 				position: relative;
@@ -182,6 +208,11 @@
 		td {
 			font-size: 22px;
 		}
+	}
+
+	.array-sorting__poster {
+		max-width: 80px;
+		height: auto;;
 	}
 
 	.array-sorting__link {

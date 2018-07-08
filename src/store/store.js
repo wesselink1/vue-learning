@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import BuyCards from "./modules/BuyCards";
-import Cinema from "./modules/Cinema";
+import Movies from "./modules/Movies";
 import Tabs from "./modules/Tabs";
 import Vuelidate from "./modules/Vuelidate";
 import VuexCounter from "./modules/VuexCounter";
@@ -20,7 +20,7 @@ export const store = new Vuex.Store({
     actions,
     modules: {
         BuyCards,
-        Cinema,
+        Movies,
         Tabs,
         Vuelidate,
         VuexCounter

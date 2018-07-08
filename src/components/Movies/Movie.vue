@@ -1,6 +1,6 @@
 <template>
-    <div class="cinema-item">
-        <p class="cinema-item__poster">
+    <div class="movie-item">
+        <p class="movie-item__poster">
             <router-link
                 tag="a"
                 :to="'/cinema/' + item.id + '/' + $options.filters.slugify(item.title)"
@@ -14,7 +14,7 @@
             </router-link>
         </p>
 
-        <h3 class="cinema-item__title">
+        <h3 class="movie-item__title">
             <router-link
                 tag="a"
                 :to="'/cinema/' + item.id + '/' + $options.filters.slugify(item.title)"
@@ -24,7 +24,7 @@
             </router-link>
         </h3>
 
-        <p class="cinema-item__genre">{{ $options.filters.inlineList(item.genre) }}</p>        
+        <p class="movie-item__genre">{{ $options.filters.inlineList(item.genre) }}</p>        
     </div>
 </template>
 
@@ -43,7 +43,7 @@
         width: 200px;
     }
 
-    .cinema-item__title {   
+    .movie-item__title {   
         margin: 0;     
         font-size: 16px;
         font-weight: 300;
@@ -56,7 +56,7 @@
         }
     }
 
-    .cinema-item__genre {
+    .movie-item__genre {
         margin: 0;
         font-family: $font-custom;
         font-size: 14px;

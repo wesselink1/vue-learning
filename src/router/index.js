@@ -2,8 +2,8 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import ArraySorting from "@/components/ArraySorting/Index";
 import BuyCards from "@/components/BuyCards/Index";
-import Cinema from "@/components/Cinema/Index";
-import CinemaDetail from "@/components/Cinema/Detail";
+import Movies from "@/components/Movies/Index";
+import MovieDetail from "@/components/Movies/Detail";
 import CustomDirectives from "@/components/CustomDirectives/Index";
 import Error404 from "@/components/Errors/Error404";
 import Index from "@/components/Index/Index";
@@ -30,14 +30,14 @@ export default new Router({
 		component: NavButtons
 	},
 	{
-		path: "/cinema",
-		name: "linkCinema",
-		component: Cinema
+		path: "/movies",
+		name: "linkMovies",
+		component: Movies
 	},
 	{
 		path: "/cinema/:id/:slug",
-		name: "linkCinemaDetail",
-		component: CinemaDetail
+		name: "linkMovieDetail",
+		component: MovieDetail
 	},
 	{
 		path: "/vuex-counter",

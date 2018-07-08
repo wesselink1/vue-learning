@@ -3,7 +3,7 @@ import { orderBy, minBy, maxBy } from "lodash";
 const state = {
     order: "year",
     orderByDesc: false,
-    cinema: [
+    movies: [
         {
             id: "0081505",
             title: "The Shining",
@@ -285,23 +285,23 @@ const getters = {
     orderByDesc: state => {
         return state.orderByDesc;
     },
-    cinemaList: state => {
-        return state.cinema;
+    movies: state => {
+        return state.movies;
     },
-    cinemaItem: (state) => (id) => {
+    movie: (state) => (id) => {
         // https://vuex.vuejs.org/guide/getters.html
-        return state.cinema.find(item => item.id == id);
+        return state.movies.find(item => item.id == id);
     },
     filteredMovies: state => {
-        return orderBy(state.cinema, [state.order], state.orderByDesc ? "desc" : "asc");
+        return orderBy(state.movies, [state.order], state.orderByDesc ? "desc" : "asc");
     },
     highestRatedMovie: state => {
-        return maxBy(state.cinema, function (item) {
+        return maxBy(state.movies, function (item) {
             return item.rating;
         });
     },
     lowestRatedMovie: state => {
-        return minBy(state.cinema, function (item) {
+        return minBy(state.movies, function (item) {
             return item.rating;
         });
     }
@@ -315,19 +315,19 @@ const mutations = {
         state.orderByDesc = !state.orderByDesc;
     },
     setHighestAndLowestRatedBoolean: state => {
-        let maxRatedMovie = maxBy(state.cinema, function (item) {
+        let maxRatedMovie = maxBy(state.movies, function (item) {
             return item.rating;
         });
 
-        let maxIndex = state.cinema.indexOf(maxRatedMovie);
-        state.cinema[maxIndex].highest = true;
+        let maxIndex = state.movies.indexOf(maxRatedMovie);
+        state.movies[maxIndex].highest = true;
 
-        let minRatedMovie = minBy(state.cinema, function (item) {
+        let minRatedMovie = minBy(state.movies, function (item) {
             return item.rating;
         });
 
-        let minIndex = state.cinema.indexOf(minRatedMovie);
-        state.cinema[minIndex].lowest = true;
+        let minIndex = state.movies.indexOf(minRatedMovie);
+        state.movies[minIndex].lowest = true;
     }
 };
 

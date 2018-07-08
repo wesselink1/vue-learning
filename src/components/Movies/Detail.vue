@@ -6,38 +6,36 @@
 
         <p class="paragraph movie-detail__poster-block">
             <img
-                :src="'/static/movies/' + selectedMovie.poster"
-                :alt="selectedMovie.title"
+                :src="'/static/movies/' + movie.poster"
+                :alt="movie.title"
                 class="movie-detail__poster">
         </p>
 
         <div class="movie-details__body">
-            <h1 class="movie-detail__title">{{ selectedMovie.title }}</h1>
+            <h1 class="movie-detail__title">{{ movie.title }}</h1>
 
-            <p class="movie-detail__genre">{{ $options.filters.inlineList(selectedMovie.genre) }}</p>            
+            <p class="movie-detail__genre">{{ $options.filters.inlineList(movie.genre) }}</p>            
 
-            <p class="movie-detail__year">{{ selectedMovie.year }}</p>
+            <p class="movie-detail__year">{{ movie.year }}</p>
 
-            <p class="movie-detail__description">{{ selectedMovie.description }}</p>
+            <p class="movie-detail__description">{{ movie.description }}</p>
 
             <h4 class="movie-detail__starring-title">Starring</h4>
 
             <p class="movie-detail__actor-list">
-                {{ $options.filters.inlineList(selectedMovie.stars) }}
+                {{ $options.filters.inlineList(movie.stars) }}
             </p>
 
-            <h4 class="movie-detail__rating">Score: {{ selectedMovie.rating }}</h4>
+            <h4 class="movie-detail__rating">Score: {{ movie.rating }}</h4>
         </div>
 
         <p class="movie-detail__external">
-            <a :href="selectedMovie.imdb" class="movie-detail__externa-link" target="_blank">View on IMDb</a>
+            <a :href="movie.imdb" class="movie-detail__externa-link" target="_blank">View on IMDb</a>
         </p>
     </main>
 </template>
 
-<script>
-    import { mapGetters } from "vuex";
-    
+<script>    
     export default {
         data() {
             return {
@@ -46,12 +44,9 @@
             }
         },
         computed: {
-            ...mapGetters([
-                "cinemaList"
-            ]),
-            selectedMovie() {
+            movie() {
                 // https://vuex.vuejs.org/guide/getters.html
-                return this.$store.getters.cinemaItem(this.id);
+                return this.$store.getters.movie(this.id);
             }            
         }
     };
