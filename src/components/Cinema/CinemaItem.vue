@@ -24,7 +24,7 @@
             </router-link>
         </h3>
 
-        <p class="cinema-item__genre">{{ inlineList(item.genre) }}</p>        
+        <p class="cinema-item__genre">{{ $options.filters.inlineList(item.genre) }}</p>        
     </div>
 </template>
 
@@ -32,12 +32,7 @@
     export default {
         props: [
             "item"
-        ],
-        methods: {
-            inlineList(listItems) {
-                return listItems.join(", ");
-            }
-        }
+        ]
     };
 </script>
 

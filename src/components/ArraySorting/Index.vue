@@ -48,10 +48,19 @@
 					v-for="(movie, index) in filteredMovies"
 					:key="index"
 					:class="{ 'is-highest' : movie.highest, 'is-lowest' : movie.lowest }">
-					<td>{{ movie.title }}</td>
+					<td>
+						<router-link
+							tag="a"
+							:to="'/cinema/' + movie.id + '/' + $options.filters.slugify(movie.title)"
+							class="array-sorting__link"
+							active-class="is-active"
+							exact-active-class="is-exact">
+							{{ movie.title }} &rsaquo; 
+						</router-link>
+					</td>
 					<td>{{ movie.rating }}</td>
 					<td>{{ movie.year }}</td>
-					<td>{{ movie.genre }}</td>
+					<td>{{ $options.filters.inlineList(movie.genre) }}</td>
 				</tr>
 			</tbody>
 		</table>
@@ -90,7 +99,7 @@
 				"filteredMovies",
 				"highestRatedMovie",
 				"lowestRatedMovie",
-				"movies",
+				"cinemaList",
 				"order",
 				"orderByDesc"
 			]),
@@ -173,5 +182,14 @@
 		td {
 			font-size: 22px;
 		}
-	}	
+	}
+
+	.array-sorting__link {
+		color: inherit;
+		text-decoration: none;
+
+		&:hover {
+			color: map-get($colors, 02);
+		}
+	}
 </style>

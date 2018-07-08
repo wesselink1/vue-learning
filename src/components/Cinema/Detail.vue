@@ -1,11 +1,7 @@
 <template>
     <main class="movie-detail">
         <p class="movie-detail__back-button">
-            <router-link
-                tag="a"
-                :to="{ name: 'linkCinema' }">
-                &lsaquo; Back to the cinema list
-            </router-link>
+            <a href="javascript:;" @click="$router.go(-1)">Back</a>
         </p>
 
         <p class="paragraph movie-detail__poster-block">
@@ -18,7 +14,7 @@
         <div class="movie-details__body">
             <h1 class="movie-detail__title">{{ selectedMovie.title }}</h1>
 
-            <p class="movie-detail__genre">{{ inlineList(selectedMovie.genre) }}</p>            
+            <p class="movie-detail__genre">{{ $options.filters.inlineList(selectedMovie.genre) }}</p>            
 
             <p class="movie-detail__year">{{ selectedMovie.year }}</p>
 
@@ -27,8 +23,10 @@
             <h4 class="movie-detail__starring-title">Starring</h4>
 
             <p class="movie-detail__actor-list">
-                {{ inlineList(selectedMovie.stars) }}
-            </p>   
+                {{ $options.filters.inlineList(selectedMovie.stars) }}
+            </p>
+
+            <h4 class="movie-detail__rating">Score: {{ selectedMovie.rating }}</h4>
         </div>
 
         <p class="movie-detail__external">
@@ -45,11 +43,6 @@
             return {
                 id: this.$route.params.id,
                 slug: this.$route.params.slug
-            }
-        },
-        methods: {
-            inlineList(listItems) {
-                return listItems.join(", ");
             }
         },
         computed: {
@@ -144,6 +137,13 @@
     .movie-detail__actor-list {
         font-size: 16px;
         font-family: $font-custom;
+    }
+
+    .movie-detail__rating {
+        font-size: 26px;
+        font-family: $font-custom;
+        font-weight: 300;
+        color: map-get($colors, 01);
     }
 
     .movie-detail__external {
