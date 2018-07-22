@@ -36,13 +36,13 @@
 </script>
 
 <style>
-    .dynamic-components__title {
+    .tab__title {
 		font-weight: 300;
 		font-size: 32px;
 		color: map-get($colors, 01);
-    }
-    
-    .dynamic-components__body {
+	}
+
+	.tab__body {
 		line-height: 1.2;
 	}
 </style>

@@ -1,5 +1,5 @@
 const state = {
-	selectedComponent: 'appCatalog'
+	selectedComponent: 'About'
 };
 
 const getters = {

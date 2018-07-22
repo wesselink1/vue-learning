@@ -14,7 +14,7 @@
 			listclass="tabs__list">
 			<tab
 				name="Catalog"
-				:selected="true"
+				:selected="selectedComponent == 'Catalog'"
 				class="tabs__panel">
 
 				<h2 class="heading">Catalog</h2>
@@ -31,6 +31,7 @@
 
 			<tab
 				name="Products"
+				:selected="selectedComponent == 'Products'"
 				class="tabs__panel">
 				
 				<h2 class="heading">These are our products</h2>
@@ -44,6 +45,7 @@
 
 			<tab
 				name="About"
+				:selected="selectedComponent == 'About'"
 				class="tabs__panel">
 				
 				<h2 class="heading">This is our story</h2>
@@ -53,6 +55,7 @@
 
 			<tab
 				name="Contact"
+				:selected="selectedComponent == 'Contact'"
 				class="tabs__panel">
 				
 				<h2 class="heading">Contact</h2>
@@ -72,6 +75,7 @@
 </template>
 
 <script>
+	import { mapGetters } from "vuex";
 	import Tab from "./Tab";
 	import Tabs from "./Tabs";
 
@@ -79,6 +83,11 @@
 		components: {
 			'Tabs': Tabs,
 			'Tab': Tab
+		},
+		computed: {
+			...mapGetters([
+				"selectedComponent"
+			]),
 		}
 	};
 </script>
