@@ -7,8 +7,16 @@
 			The selected tab is saved in <strong>Vuex</strong>.
 		</p>
 
-		<tabs>
-			<tab name="Catalog" :selected="true">
+		<tabs
+			class="tabs"
+			navclass="tabs__nav"
+			arialabel="Business value"
+			listclass="tabs__list">
+			<tab
+				name="Catalog"
+				:selected="true"
+				class="tabs__panel">
+
 				<h2 class="heading">Catalog</h2>
 
 				<p class="paragraph">
@@ -21,7 +29,10 @@
 				</p>
 			</tab>
 
-			<tab name="Products">
+			<tab
+				name="Products"
+				class="tabs__panel">
+				
 				<h2 class="heading">These are our products</h2>
 
 				<p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut sunt doloremque, incidunt adipisci maiores, minus facere modi vel similique ad!</p>
@@ -31,13 +42,19 @@
 				<p class="paragraph">Veritatis iure blanditiis odio magnam nesciunt culpa sapiente consectetur molestiae, minus itaque quaerat amet cum qui officia laborum rerum. Non.</p>
 			</tab>
 
-			<tab name="About">
+			<tab
+				name="About"
+				class="tabs__panel">
+				
 				<h2 class="heading">This is our story</h2>
 
 				<p class="paragraph">Distinctio quae nobis molestiae, ullam animi magni ratione voluptatem harum laborum. Dolore.</p>
 			</tab>
 
-			<tab name="Contact">
+			<tab
+				name="Contact"
+				class="tabs__panel">
+				
 				<h2 class="heading">Contact</h2>
 
 				<p class="paragraph">

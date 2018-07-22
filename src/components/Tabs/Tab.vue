@@ -1,9 +1,11 @@
 <template>
     <article
         v-show="isActive"
-        :id="$options.filters.slugify(name) + '-tab'"
         :aria-labelledby="$options.filters.slugify(name)"
-        role="tabpanel">
+        role="tabpanel"
+        tabindex="0"
+        :id="$options.filters.slugify(name) + '-tab'"
+        :class="{ 'is-active' : isActive }">
         <slot></slot>
     </article>
 </template>

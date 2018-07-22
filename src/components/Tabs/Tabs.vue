@@ -1,24 +1,24 @@
 <template>
-    <div class="dynamic-components">
+    <div>
         <nav
-            class="dynamic-components__nav">
+            :class="navclass">
             <ul
                 role="tablist"
-                aria-label="Business value"
-                class="dynamic-components__tab">
+                :aria-label="arialabel"
+                :class="listclass">
                 <li
                     v-for="(tab, index) in tabs"
                     v-bind:key="index"
-                    class="dynamic-components__tab-item"
-                    :class="{ 'is-active' : tab.isActive }">
+                    :class="[ listclass + '-item', { 'is-active' : tab.isActive } ]">
                     <a 
                         :href="'#' + $options.filters.slugify(tab.name) + '-tab'"
                         :id="$options.filters.slugify(tab.name)"
                         role="tab"
+                        :tabindex="tab.isActive ? '' : '-1'"
                         @click="selectTab(tab)"
                         :aria-selected="tab.isActive"
                         :aria-controls="$options.filters.slugify(tab.name) + '-tab'">
-                        {{ tab.name }}
+                        {{ tab.name }}                        
                     </a> 
                 </li>
             </ul>
@@ -33,6 +33,11 @@
     import { mapMutations } from "vuex";
     
     export default {
+        props: [
+            'navclass',
+            'listclass',
+            'arialabel'
+        ],
         data() {
             return {
                 tabs: []
@@ -59,7 +64,7 @@
 <style lang="scss">
     @import "~@/scss/style";
     
-    .dynamic-components__tab-item {
+    .tab__item {
 		a {
 			font-family: $font-custom;
 		}
@@ -69,24 +74,24 @@
 		}
 	}
 
-	.dynamic-components__title {
+	.tab__title {
 		font-weight: 300;
 		font-size: 32px;
 		color: map-get($colors, 01);
 	}
 
-	.dynamic-components__body {
+	.tab__body {
 		line-height: 1.2;
 	}
 
-	.dynamic-components__tab {
+	.tab__tab {
 		position: relative;
 		@include flexbox;
 		margin: 0;
 		padding: 0;
 	}
 
-	.dynamic-components__tab::after {
+	.tab__tab::after {
 		position: absolute;
 		bottom: 0;
 		left: 0;
@@ -98,16 +103,16 @@
 		border-top: 1px solid map-get($colors, 01);
 	}
 
-	.dynamic-components__tab-item {
+	.tab__tab-item {
 		margin: 0;
 		list-style: none;
 	}
 
-	.dynamic-components__tab-item + .dynamic-components__tab-item {
+	.tab__tab-item + .tab__tab-item {
 		margin-left: 10px;
 	}
 
-	.dynamic-components__tab-item {
+	.tab__tab-item {
 		:hover {
 			a {
 				color: white;
