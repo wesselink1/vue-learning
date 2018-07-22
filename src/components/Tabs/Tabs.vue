@@ -9,13 +9,13 @@
                 <li
                     v-for="(tab, index) in tabs"
                     v-bind:key="index"
-                    :class="[ listclass + '-item', { 'is-active' : tab.isActive } ]">
+                    :class="[ listclass + '-item', { 'is-active' : isActiveClass(tab.name) } ]">
                     <a 
                         :href="'#' + $options.filters.slugify(tab.name) + '-tab'"
                         :id="$options.filters.slugify(tab.name)"
                         role="tab"
                         :tabindex="tab.isActive ? '' : '-1'"
-                        @click="selectTab(tab)"
+                        @click="selectTab($event, tab)"
                         :aria-selected="tab.isActive"
                         :aria-controls="$options.filters.slugify(tab.name) + '-tab'">
                         {{ tab.name }}                        
@@ -50,14 +50,25 @@
             ...mapMutations([
 				"setSelectedComponent"
 			]),
-            selectTab(selectedTab) {
+            selectTab(event, selectedTab) {
+                event.preventDefault();
+                
                 this.tabs.forEach(tab => {
                     tab.isActive = (tab.name == selectedTab.name);
                 });
 
                 this.setSelectedComponent(selectedTab.name);
+                return false;
+            },
+            isActiveClass(selectedTab) {
+                return this.selectedComponent == selectedTab;
             }
-        }
+        },
+        computed: {
+			...mapGetters([
+				"selectedComponent"
+            ])            
+		}
     };
 </script>
 

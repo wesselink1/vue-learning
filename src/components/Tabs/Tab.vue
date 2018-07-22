@@ -11,6 +11,8 @@
 </template>
 
 <script>
+    import { mapGetters } from "vuex";
+
     export default {
         props: {
             name: {
@@ -22,16 +24,18 @@
             }
         },
         mounted() {
-            this.isActive = this.selected;
+            this.isActive = (this.selectedComponent == this.name);
         },
         data() {
             return {
                 isActive: false
             }
         },
-        methods: {
-
-        }
+        computed: {
+			...mapGetters([
+				"selectedComponent"
+            ])            
+		}
     };
 </script>
 
