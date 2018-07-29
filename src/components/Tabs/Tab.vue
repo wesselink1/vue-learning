@@ -24,7 +24,7 @@
             }
         },
         mounted() {
-            this.isActive = (this.selectedComponent == this.name);
+            this.isActive = (this.selectedTabComponent == this.name);
         },
         data() {
             return {
@@ -33,7 +33,7 @@
         },
         computed: {
 			...mapGetters([
-				"selectedComponent"
+				"selectedTabComponent"
             ])            
 		}
     };

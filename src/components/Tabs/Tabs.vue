@@ -48,7 +48,7 @@
         },
         methods: {
             ...mapMutations([
-				"setSelectedComponent"
+				"setSelectedTabComponent"
 			]),
             selectTab(event, selectedTab) {
                 event.preventDefault();
@@ -57,16 +57,16 @@
                     tab.isActive = (tab.name == selectedTab.name);
                 });
 
-                this.setSelectedComponent(selectedTab.name);
+                this.setSelectedTabComponent(selectedTab.name);
                 return false;
             },
             isActiveClass(selectedTab) {
-                return this.selectedComponent == selectedTab;
+                return this.selectedTabComponent == selectedTab;
             }
         },
         computed: {
 			...mapGetters([
-				"selectedComponent"
+				"selectedTabComponent"
             ])            
 		}
     };
