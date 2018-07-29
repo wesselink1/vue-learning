@@ -1,16 +1,16 @@
 const state = {
-	selectedComponent: 'appCatalog'
+	selectedTabComponent: 'About'
 };
 
 const getters = {
-	selectedComponent: state => {
-		return state.selectedComponent;
+	selectedTabComponent: state => {
+		return state.selectedTabComponent;
 	}
 };
 
 const mutations = {
-	setSelectedComponent: (state, payload) => {
-		state.selectedComponent = payload;
+	setSelectedTabComponent: (state, payload) => {
+		state.selectedTabComponent = payload;
 	}
 };
 

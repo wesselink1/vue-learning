@@ -78,6 +78,13 @@
 				exact-active-class="is-exact">
 				Movies
 			</router-link>
+			<router-link tag="div"
+				:to="{ name: 'formModules' }"
+				class="overview__nav-item"
+				active-class="is-active" 
+				exact-active-class="is-exact">
+				Form modules
+			</router-link>
 		</nav>
 
 		<p class="overview__logo">

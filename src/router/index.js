@@ -5,6 +5,7 @@ import CustomDirectives from "@/components/CustomDirectives/Index";
 import Error404 from "@/components/Errors/Error404";
 import Index from "@/components/Index/Index";
 import MovieDetail from "@/components/Movies/Detail";
+import formModules from "@/components/formModules/Index";
 import Movies from "@/components/Movies/Index";
 import NavButtons from "@/components/NavButtons/Index";
 import Pug from "@/components/Pug/Index";
@@ -28,6 +29,11 @@ export default new Router({
 		path: "/nav-buttons",
 		name: "navButtons",
 		component: NavButtons
+	},
+	{
+		path: "/form-modules",
+		name: "formModules",
+		component: formModules
 	},
 	{
 		path: "/movies",
