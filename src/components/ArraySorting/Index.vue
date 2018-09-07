@@ -63,7 +63,7 @@
 							active-class="is-active"
 							exact-active-class="is-exact">
 							<img
-								:src="'/movies/' + movie.poster"
+								:src="'/img/movies/' + movie.poster"
 								:alt="movie.title"
 								class="array-sorting__poster">
 						</router-link>						
