@@ -39,7 +39,9 @@
     };
 </script>
 
-<style>
+<style lang="scss">
+    @import "~@/scss/style"; 
+    
     .tab__title {
 		font-weight: 300;
 		font-size: 32px;
