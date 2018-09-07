@@ -5,7 +5,7 @@
 					tag="a"
 					:to="{ name: 'movieDetail', params: { id: movie.id, slug: $options.filters.slugify(movie.title) } }">
 						<img 
-							:src="'/static/movies/' + movie.poster" 
+							:src="'/movies/' + movie.poster" 
 							:alt="movie.title"
 							class="featured-movie__image">
 				</router-link>

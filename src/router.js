@@ -5,7 +5,7 @@ import CustomDirectives from "@/components/CustomDirectives/Index";
 import Error404 from "@/components/Errors/Error404";
 import Index from "@/components/Index/Index";
 import MovieDetail from "@/components/Movies/Detail";
-import formModules from "@/components/formModules/Index";
+import formModules from "@/components/FormModules/Index";
 import Movies from "@/components/Movies/Index";
 import NavButtons from "@/components/NavButtons/Index";
 import Pug from "@/components/Pug/Index";
@@ -18,7 +18,8 @@ import VuexCounter from "@/components/VuexCounter/Index";
 Vue.use(Router)
 
 export default new Router({
-  mode: "history",
+  mode: 'history',
+  base: process.env.BASE_URL,
   routes: [
 	{
 		path: "/",

@@ -88,7 +88,7 @@
 		</nav>
 
 		<p class="overview__logo">
-			<img src="/static/vuejs-logo.png" alt="Vue logo" class="overview__logo-img">
+			<img src="/vuejs-logo.png" alt="Vue logo" class="overview__logo-img">
 		</p>
 
 		<hr>

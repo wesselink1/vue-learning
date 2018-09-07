@@ -15,7 +15,7 @@
 
             <p class="paragraph movie-detail__poster-block">
                 <img
-                    :src="'/static/movies/' + movie.poster"
+                    :src="'/movies/' + movie.poster"
                     :alt="movie.title"
                     class="movie-detail__poster">
             </p>

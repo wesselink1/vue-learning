@@ -8,7 +8,7 @@
 				active-class="is-active"
 				exact-active-class="is-exact">
                 <img
-                    :src="'/static/movies/' + item.poster"
+                    :src="'/movies/' + item.poster"
                     :alt="item.title"
                     class="cinema__poster">
             </router-link>
