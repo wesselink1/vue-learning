@@ -35,7 +35,7 @@
 <script>
 	import { mapGetters } from "vuex";
 	import { mapMutations } from "vuex";
-	import Card from "./Card";
+	import Card from "../components/BuyCards/Card";
 
 	export default {
 		components: {

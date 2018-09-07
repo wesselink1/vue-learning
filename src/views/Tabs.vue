@@ -72,8 +72,8 @@
 
 <script>
 	import { mapGetters } from "vuex";
-	import Tab from "./Tab";
-	import Tabs from "./Tabs";
+	import Tab from "@/components/Tabs/Tab";
+	import Tabs from "@/components/Tabs/Tabs";
 
 	export default {
 		components: {

@@ -1,19 +1,19 @@
 import Vue from 'vue';
-import ArraySorting from "@/components/ArraySorting/Index";
-import BuyCards from "@/components/BuyCards/Index";
-import CustomDirectives from "@/components/CustomDirectives/Index";
-import Error404 from "@/components/Errors/Error404";
-import Index from "@/components/Index/Index";
-import MovieDetail from "@/components/Movies/Detail";
-import formModules from "@/components/FormModules/Index";
-import Movies from "@/components/Movies/Index";
-import NavButtons from "@/components/NavButtons/Index";
-import Pug from "@/components/Pug/Index";
+import ArraySorting from "@/views/ArraySorting";
+import BuyCards from "@/views/BuyCards";
+import CustomDirectives from "@/views/CustomDirectives";
+import Error404 from "@/views/Error404";
+import FormModules from "@/views/FormModules";
+import Index from "@/views/Index";
+import MovieDetail from "@/views/Movies/Detail";
+import Movies from "@/views/Movies/Index";
+import NavButtons from "@/views/NavButtons";
+import Pug from "@/views/Pug";
 import Router from 'vue-router';
-import SlideUpDown from "@/components/SlideUpDown/Index";
-import Tabs from "@/components/Tabs/Index";
-import Vuelidate from "@/components/Vuelidate/Index";
-import VuexCounter from "@/components/VuexCounter/Index";
+import SlideUpDown from "@/views/SlideUpDown";
+import Tabs from "@/views/Tabs";
+import Vuelidate from "@/views/Vuelidate";
+import VuexCounter from "@/views/VuexCounter";
 
 Vue.use(Router)
 
@@ -34,7 +34,7 @@ export default new Router({
 	{
 		path: "/form-modules",
 		name: "formModules",
-		component: formModules
+		component: FormModules
 	},
 	{
 		path: "/movies",

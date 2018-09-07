@@ -51,7 +51,7 @@
 <script>
     import { mapGetters } from "vuex";
 	import { mapMutations } from "vuex";
-    import Movie from "./Movie";
+    import Movie from "@/components/Movies/Movie";
 
     export default {
         components: {

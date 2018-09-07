@@ -13,7 +13,7 @@
 </template>
 
 <script>
-    import FormRow from "./FormRow";
+    import FormRow from "../components/FormModules/FormRow";
 
     export default {
         components: {

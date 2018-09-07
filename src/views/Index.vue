@@ -103,7 +103,7 @@
 
 <script>
 	import { mapGetters } from "vuex";
-	import FeaturedMovie from "../Movies/FeaturedMovie";
+	import FeaturedMovie from "../components/Movies/FeaturedMovie";
 
 	export default {
 		components: {
