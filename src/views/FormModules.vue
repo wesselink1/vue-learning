@@ -4,11 +4,11 @@
 
         <p class="paragraph">Using components with form elements. And emitting their value to the parent.</p>
 
-        <FormRow
+        <form-row
             :coupon="coupon"
             @input="coupon = $event">
             Coupon code
-        </FormRow>
+        </form-row>
     </main>
 </template>
 

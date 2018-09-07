@@ -20,14 +20,14 @@
 		</p>
 
 		<div class="cards__grid">
-			<appCard
+			<card
 				v-for="(card, index) in cards"
 				:key="index"
 				:card="card"
 				:cardsTotal="cardsTotal"
 				:limit="limit"
 				@incrementCardsTotal="incrementCardsTotal">
-			</appCard>
+			</card>
 		</div>
 	</main>
 </template>
@@ -39,7 +39,7 @@
 
 	export default {
 		components: {
-			"appCard": Card
+			Card
 		},
 		data() {
 			return {				
