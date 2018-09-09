@@ -16,7 +16,9 @@
 
 <script>
     export default {
-        props: ['coupon'],
+        props: {
+            coupon: String
+        },
         methods: {
             updateCode(coupon) {
                 this.$emit('input', coupon);

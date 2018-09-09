@@ -33,11 +33,11 @@
     import { mapMutations } from "vuex";
     
     export default {
-        props: [
-            'navclass',
-            'listclass',
-            'arialabel'
-        ],
+        props: {
+            navclass: String,
+            listclass: String,
+            arialabel: String,
+        },
         data() {
             return {
                 tabs: []
