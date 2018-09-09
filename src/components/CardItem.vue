@@ -18,7 +18,7 @@
 		props: {
 			card: Object,
 			cardsTotal: Number,
-			limit: Number
+			limit: Array
 		},
 		methods: {
 			buyCard() {
