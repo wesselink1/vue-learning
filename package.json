@@ -1,7 +1,7 @@
 {
   "name": "vue-learning",
   "description": "SPA learning with Vue, Vuex and vue-router",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "author": "Dennis Burger <dennis@dutchwebworks.nl>",
   "license": "MIT",
   "private": true,
