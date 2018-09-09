@@ -1,15 +1,15 @@
 <template>
     <div>
         <nav
-            :class="navclass">
+            :class="navClass">
             <ul
                 role="tablist"
-                :aria-label="arialabel"
-                :class="listclass">
+                :aria-label="ariaLabel"
+                :class="listClass">
                 <li
                     v-for="(tab, index) in tabs"
                     v-bind:key="index"
-                    :class="[ listclass + '-item', { 'is-active' : isActiveClass(tab.name) } ]">
+                    :class="[ listClass + '-item', { 'is-active' : isActiveClass(tab.name) } ]">
                     <a 
                         :href="'#' + $options.filters.slugify(tab.name) + '-tab'"
                         :id="$options.filters.slugify(tab.name)"
@@ -34,9 +34,9 @@
     
     export default {
         props: {
-            navclass: String,
-            listclass: String,
-            arialabel: String,
+            navClass: String,
+            listClass: String,
+            ariaLabel: String,
         },
         data() {
             return {
