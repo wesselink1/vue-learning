@@ -12,7 +12,7 @@
 			</button>
 
 			<button
-				@click="$router.push({ name: 'buyCards' })"
+				@click="$router.push({ name: 'buyCardsPage' })"
 				class="button button--02">
 				Go to Buy Cards demo page
 			</button>

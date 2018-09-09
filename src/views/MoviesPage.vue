@@ -39,11 +39,11 @@
         </p>
 
         <section class="movies__list">
-            <movie
+            <movie-item
                 v-for="movie in filteredMovies"
                 :item="movie"
                 :key="movie.id">
-            </movie>
+            </movie-item>
         </section>
     </main>
 </template>
@@ -51,11 +51,11 @@
 <script>
     import { mapGetters } from "vuex";
 	import { mapMutations } from "vuex";
-    import Movie from "@/components/Movie";
+    import MovieItem from "@/components/MovieItem";
 
     export default {
         components: {
-            Movie
+            MovieItem
         },
         methods: {
 			...mapMutations([

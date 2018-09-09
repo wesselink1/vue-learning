@@ -3,21 +3,21 @@
         <p class="movie-item__poster">
             <router-link
                 tag="a"
-                :to="{ name: 'movieDetail', params: { id: item.id, slug: $options.filters.slugify(item.title) } }"
+                :to="{ name: 'movieDetailPage', params: { id: item.id, slug: $options.filters.slugify(item.title) } }"
                 :title="item.title"
 				active-class="is-active"
 				exact-active-class="is-exact">
                 <img
                     :src="'/img/movies/' + item.poster"
                     :alt="item.title"
-                    class="cinema__poster">
+                    class="movie-item__cinema-poster">
             </router-link>
         </p>
 
         <h3 class="movie-item__title">
             <router-link
                 tag="a"
-                :to="{ name: 'movieDetail', params: { id: item.id, slug: $options.filters.slugify(item.title) } }"
+                :to="{ name: 'movieDetailPage', params: { id: item.id, slug: $options.filters.slugify(item.title) } }"
 				active-class="is-active"
 				exact-active-class="is-exact">
                 {{ item.title }}
@@ -37,7 +37,7 @@
 </script>
 
 <style lang="scss">
-    .cinema__poster {
+    .movie-item__cinema-poster {
         width: 200px;
     }
 

@@ -5,7 +5,7 @@
 
             <p class="paragraph movie-detail__not-found">
                 The movie ID is incorret. Please go the <router-link :to="{ name: 'moviesOverview' }">movies page</router-link>.
-                Or go back to the <router-link :to="{ name: 'homepage' }">homepage</router-link>.
+                Or go back to the <router-link :to="{ name: 'indexPage' }">homepage</router-link>.
             </p>
         </template>
         <template v-else>
