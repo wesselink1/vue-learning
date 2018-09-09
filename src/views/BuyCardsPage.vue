@@ -20,14 +20,14 @@
 		</p>
 
 		<div class="cards__grid">
-			<card
+			<CardItem
 				v-for="(card, index) in cards"
 				:key="index"
 				:card="card"
 				:cardsTotal="cardsTotal"
 				:limit="limit"
-				@incrementCardsTotal="incrementCardsTotal">
-			</card>
+				@incrementCardsTotal="incrementCardsTotal"
+			/>
 		</div>
 	</main>
 </template>
@@ -35,11 +35,11 @@
 <script>
 	import { mapGetters } from "vuex";
 	import { mapMutations } from "vuex";
-	import Card from "../components/Card";
+	import CardItem from "../components/CardItem";
 
 	export default {
 		components: {
-			Card
+			CardItem
 		},
 		data() {
 			return {				

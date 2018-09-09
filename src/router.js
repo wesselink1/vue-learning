@@ -1,19 +1,19 @@
 import Vue from 'vue';
-import ArraySorting from "@/views/ArraySorting";
-import BuyCards from "@/views/BuyCards";
-import CustomDirectives from "@/views/CustomDirectives";
-import Error404 from "@/views/Error404";
-import FormModules from "@/views/FormModules";
-import Index from "@/views/Index";
-import MovieDetail from "@/views/MovieDetail";
-import Movies from "@/views/Movies";
-import NavButtons from "@/views/NavButtons";
-import Pug from "@/views/Pug";
+import ArraySortingPage from "@/views/ArraySortingPage";
+import BuyCardsPage from "@/views/BuyCardsPage";
+import CustomDirectivesPage from "@/views/CustomDirectivesPage";
+import Error404Page from "@/views/Error404Page";
+import FormModulesPage from "@/views/FormModulesPage";
+import IndexPage from "@/views/IndexPage";
+import MovieDetailPage from "@/views/MovieDetailPage";
+import MoviesPage from "@/views/MoviesPage";
+import NavButtonsPage from "@/views/NavButtonsPage";
+import PugPage from "@/views/PugPage";
 import Router from 'vue-router';
-import SlideUpDown from "@/views/SlideUpDown";
-import Tabs from "@/views/Tabs";
-import Vuelidate from "@/views/Vuelidate";
-import VuexCounter from "@/views/VuexCounter";
+import SlideUpDownPage from "@/views/SlideUpDownPage";
+import TabsPage from "@/views/TabsPage";
+import VuelidatePage from "@/views/VuelidatePage";
+import VuexCounterPage from "@/views/VuexCounterPage";
 
 Vue.use(Router)
 
@@ -23,72 +23,72 @@ export default new Router({
   routes: [
 	{
 		path: "/",
-		name: "homepage",
-		component: Index
+		name: "IndexPage",
+		component: IndexPage
 	},
 	{
 		path: "/nav-buttons",
-		name: "navButtons",
-		component: NavButtons
+		name: "NavButtonsPage",
+		component: NavButtonsPage
 	},
 	{
 		path: "/form-modules",
-		name: "formModules",
-		component: FormModules
+		name: "FormModulesPage",
+		component: FormModulesPage
 	},
 	{
 		path: "/movies",
-		name: "moviesOverview",
-		component: Movies
+		name: "MoviesPage",
+		component: MoviesPage
 	},
 	{
 		path: "/movie/:id/:slug",
-		name: "movieDetail",
-		component: MovieDetail
+		name: "MovieDetailPage",
+		component: MovieDetailPage
 	},
 	{
 		path: "/vuex-counter",
-		name: "vuexCounter",
-		component: VuexCounter
+		name: "VuexCounterPage",
+		component: VuexCounterPage
 	},
 	{
 		path: "/buy-cards",
-		name: "buyCards",
-		component: BuyCards
+		name: "BuyCardsPage",
+		component: BuyCardsPage
 	},
 	{
 		path: "/tabs",
-		name: "tabs",
-		component: Tabs
+		name: "TabsPage",
+		component: TabsPage
 	},
 	{
 		path: "/pug",
-		name: "pug",
-		component: Pug
+		name: "PugPage",
+		component: PugPage
 	},
 	{
 		path: "/custom-directives",
-		name: "customDirectives",
-		component: CustomDirectives
+		name: "CustomDirectivesPage",
+		component: CustomDirectivesPage
 	},	
 	{
 		path: "/vuelidate",
-		name: "vuelidate",
-		component: Vuelidate
+		name: "VuelidatePage",
+		component: VuelidatePage
 	},
 	{
 		path: "/array-sorting",
-		name: "arraySorting",
-		component: ArraySorting
+		name: "ArraySortingPage",
+		component: ArraySortingPage
 	},
 	{
 		path: "/slide-up-down",
-		name: "slideUpDown",
-		component: SlideUpDown
+		name: "SlideUpDownPage",
+		component: SlideUpDownPage
 	},
 	{
 		path: "*",
-		component: Error404
+		component: Error404Page
 	}
   ]
 });

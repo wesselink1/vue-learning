@@ -5,7 +5,7 @@
 		<nav class="header__nav">
 			<router-link 
 				tag="a"
-				:to="{ name: 'homepage' }"
+				:to="{ name: 'IndexPage' }"
 				active-class="is-active"
 				exact-active-class="is-exact"
 				exact>

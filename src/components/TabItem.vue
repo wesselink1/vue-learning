@@ -19,9 +19,7 @@
                 type: String,
                 required: true
             },
-            selected: {
-                type: Boolean
-            }
+            selected: Boolean
         },
         mounted() {
             this.isActive = (this.selectedTabComponent == this.name);

@@ -13,7 +13,3 @@
 			li Lodash
 			li JavaScript ES6 spread operator for #[strong mapGetters] &amp; #[strong mapMutations]
 </template>
-
-<style lang="scss">
-
-</style>

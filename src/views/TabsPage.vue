@@ -7,12 +7,12 @@
 			The selected tab is saved in <strong>Vuex</strong>.
 		</p>
 
-		<tabs
+		<TabList
 			class="tabs"
-			navclass="tabs__nav"
-			arialabel="Business value"
-			listclass="tabs__list">
-			<tab
+			navClass="tabs__nav"
+			ariaLabel="Business value"
+			listClass="tabs__list">
+			<TabItem
 				name="Catalog"
 				class="tabs__panel">
 
@@ -26,9 +26,9 @@
 				<p class="paragraph">
 					Adipisicing elit. Distinctio quae nobis molestiae, ullam animi magni ratione voluptatem harum laborum. Dolore.
 				</p>
-			</tab>
+			</TabItem>
 
-			<tab
+			<TabItem
 				name="Products"
 				class="tabs__panel">
 				
@@ -39,18 +39,18 @@
 				<p class="paragraph">Amet eum provident rerum obcaecati dolorum distinctio animi nisi, dolorem in quidem inventore maiores, possimus tenetur atque. Soluta, alias, vel.</p>
 
 				<p class="paragraph">Veritatis iure blanditiis odio magnam nesciunt culpa sapiente consectetur molestiae, minus itaque quaerat amet cum qui officia laborum rerum. Non.</p>
-			</tab>
+			</TabItem>
 
-			<tab
+			<TabItem
 				name="About"
 				class="tabs__panel">
 				
 				<h2 class="heading">This is our story</h2>
 
 				<p class="paragraph">Distinctio quae nobis molestiae, ullam animi magni ratione voluptatem harum laborum. Dolore.</p>
-			</tab>
+			</TabItem>
 
-			<tab
+			<TabItem
 				name="Contact"
 				class="tabs__panel">
 				
@@ -65,20 +65,20 @@
 					Fistinctio quae nobis molestiae, ullam animi magni ratione voluptatem harum laborum. Dolore.
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio quae nobis molestiae, ullam animi magni ratione voluptatem harum laborum. Dolore.
 				</p>
-			</tab>			
-		</tabs>
+			</TabItem>			
+		</TabList>
 	</main>
 </template>
 
 <script>
 	import { mapGetters } from "vuex";
-	import Tab from "@/components/Tab";
-	import Tabs from "@/components/Tabs";
+	import TabItem from "@/components/TabItem";
+	import TabList from "@/components/TabList";
 
 	export default {
 		components: {
-			'Tabs': Tabs,
-			'Tab': Tab
+			'TabItem': TabItem,
+			'TabList': TabList
 		},
 		computed: {
 			...mapGetters([
@@ -87,7 +87,3 @@
 		}
 	};
 </script>
-
-<style lang="scss">
-
-</style>

@@ -5,7 +5,3 @@
 		<p class="paragraph">Page not found</p>
 	</main>
 </template>
-
-<style lang="scss">
-
-</style>

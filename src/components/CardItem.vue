@@ -15,11 +15,11 @@
 
 <script>
 	export default {
-		props: [
-			"card",
-			"cardsTotal",
-			"limit"
-		],
+		props: {
+			card: Object,
+			cardsTotal: Number,
+			limit: Array
+		},
 		methods: {
 			buyCard() {
 				this.$emit("incrementCardsTotal", this.card.price);
