@@ -27,8 +27,6 @@
 </template>
 
 <style lang="scss">
-	@import "~@/scss/style";
-
 	.home__buttons {
 		@include display-grid;
 		max-width: 450px;

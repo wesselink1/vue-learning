@@ -37,8 +37,6 @@
 </script>
 
 <style lang="scss">
-    @import "~@/scss/style";
-
     .cinema__poster {
         width: 200px;
     }

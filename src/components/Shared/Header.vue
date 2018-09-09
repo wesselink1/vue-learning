@@ -16,8 +16,6 @@
 </template>
 
 <style lang="scss">
-	@import "~@/scss/style";
-
 	.header {
 		margin-bottom: 30px;
 		padding-bottom: 10px;

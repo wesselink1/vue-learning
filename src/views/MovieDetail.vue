@@ -64,8 +64,6 @@
 </script>
 
 <style lang="scss">
-    @import "~@/scss/style";
-
     .movie-detail {
         @include display-grid;
         @include grid-template-columns(490px 1fr);

@@ -82,8 +82,6 @@
 </script>
 
 <style lang="scss">
-	@import "~@/scss/style";
-
 	.slideupdown__container p {
 		margin-top: 0;
 	}

@@ -80,8 +80,6 @@
 </script>
 
 <style lang="scss">
-    @import "~@/scss/style";
-
     .movies__list {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

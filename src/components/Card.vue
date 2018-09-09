@@ -29,8 +29,6 @@
 </script>
 
 <style lang="scss">
-	@import "~@/scss/style";
-
 	.card__item {
 		@include flexbox;
 		@include flex-direction(column);

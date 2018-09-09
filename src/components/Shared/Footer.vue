@@ -6,8 +6,6 @@
 </template>
 
 <style lang="scss">
-	@import "~@/scss/style";
-
 	.footer {
 		@include display-grid;
 		@include grid-template-columns(1fr 1fr);
