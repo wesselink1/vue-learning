@@ -3,7 +3,7 @@
 		<nav class="overview__nav">
 			<router-link
 				tag="div"
-				:to="{ name: 'navButtonsPage' }"
+				:to="{ name: 'NavButtonsPage' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
@@ -11,7 +11,7 @@
 			</router-link>
 			<router-link
 				tag="div"
-				:to="{ name: 'vuexCounterPage' }"
+				:to="{ name: 'VuexCounterPage' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
@@ -19,7 +19,7 @@
 			</router-link>
 			<router-link
 				tag="div"
-				:to="{ name: 'buyCardsPage' }"
+				:to="{ name: 'BuyCardsPage' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
@@ -27,7 +27,7 @@
 			</router-link>
 			<router-link
 				tag="div"
-				:to="{ name: 'tabsPage' }"
+				:to="{ name: 'TabsPage' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
@@ -35,7 +35,7 @@
 			</router-link>
 			<router-link
 				tag="div"
-				:to="{ name: 'pugPage' }"
+				:to="{ name: 'PugPage' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
@@ -43,7 +43,7 @@
 			</router-link>
 			<router-link
 				tag="div"
-				:to="{ name: 'customDirectivesPage' }"
+				:to="{ name: 'CustomDirectivesPage' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
@@ -51,35 +51,35 @@
 			</router-link>
 			<router-link
 				tag="div"
-				:to="{ name: 'vuelidatePage' }"
+				:to="{ name: 'VuelidatePage' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
 				Vuelidate
 			</router-link>
 			<router-link tag="div"
-				:to="{ name: 'arraySortingPage' }"
+				:to="{ name: 'ArraySortingPage' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
 				Array sorting
 			</router-link>
 			<router-link tag="div"
-				:to="{ name: 'slideUpDownPage' }"
+				:to="{ name: 'SlideUpDownPage' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
 				SlideUpDown
 			</router-link>
 			<router-link tag="div"
-				:to="{ name: 'moviesPage' }"
+				:to="{ name: 'MoviesPage' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
 				Movies
 			</router-link>
 			<router-link tag="div"
-				:to="{ name: 'formModulesPage' }"
+				:to="{ name: 'FormModulesPage' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">

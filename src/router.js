@@ -23,67 +23,67 @@ export default new Router({
   routes: [
 	{
 		path: "/",
-		name: "indexPage",
+		name: "IndexPage",
 		component: IndexPage
 	},
 	{
 		path: "/nav-buttons",
-		name: "navButtonsPage",
+		name: "NavButtonsPage",
 		component: NavButtonsPage
 	},
 	{
 		path: "/form-modules",
-		name: "formModulesPage",
+		name: "FormModulesPage",
 		component: FormModulesPage
 	},
 	{
 		path: "/movies",
-		name: "moviesPage",
+		name: "MoviesPage",
 		component: MoviesPage
 	},
 	{
 		path: "/movie/:id/:slug",
-		name: "movieDetailPage",
+		name: "MovieDetailPage",
 		component: MovieDetailPage
 	},
 	{
 		path: "/vuex-counter",
-		name: "vuexCounterPage",
+		name: "VuexCounterPage",
 		component: VuexCounterPage
 	},
 	{
 		path: "/buy-cards",
-		name: "buyCardsPage",
+		name: "BuyCardsPage",
 		component: BuyCardsPage
 	},
 	{
 		path: "/tabs",
-		name: "tabsPage",
+		name: "TabsPage",
 		component: TabsPage
 	},
 	{
 		path: "/pug",
-		name: "pugPage",
+		name: "PugPage",
 		component: PugPage
 	},
 	{
 		path: "/custom-directives",
-		name: "customDirectivesPage",
+		name: "CustomDirectivesPage",
 		component: CustomDirectivesPage
 	},	
 	{
 		path: "/vuelidate",
-		name: "vuelidatePage",
+		name: "VuelidatePage",
 		component: VuelidatePage
 	},
 	{
 		path: "/array-sorting",
-		name: "arraySortingPage",
+		name: "ArraySortingPage",
 		component: ArraySortingPage
 	},
 	{
 		path: "/slide-up-down",
-		name: "slideUpDownPage",
+		name: "SlideUpDownPage",
 		component: SlideUpDownPage
 	},
 	{

@@ -4,8 +4,8 @@
             <h1 class="heading">Movie not found</h1>
 
             <p class="paragraph movie-detail__not-found">
-                The movie ID is incorret. Please go the <router-link :to="{ name: 'moviesOverview' }">movies page</router-link>.
-                Or go back to the <router-link :to="{ name: 'indexPage' }">homepage</router-link>.
+                The movie ID is incorret. Please go the <router-link :to="{ name: 'MoviesOverview' }">movies page</router-link>.
+                Or go back to the <router-link :to="{ name: 'IndexPage' }">homepage</router-link>.
             </p>
         </template>
         <template v-else>

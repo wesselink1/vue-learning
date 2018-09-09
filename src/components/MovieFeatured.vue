@@ -3,7 +3,7 @@
 			<p class="movie-featured__poster">
 				<router-link
 					tag="a"
-					:to="{ name: 'movieDetailPage', params: { id: movie.id, slug: $options.filters.slugify(movie.title) } }">
+					:to="{ name: 'MovieDetailPage', params: { id: movie.id, slug: $options.filters.slugify(movie.title) } }">
 						<img 
 							:src="'/img/movies/' + movie.poster" 
 							:alt="movie.title"
@@ -14,7 +14,7 @@
 			<h4 class="movie-featured__title">
 				<router-link
 					tag="a"
-					:to="{ name: 'movieDetailPage', params: { id: movie.id, slug: $options.filters.slugify(movie.title) } }">
+					:to="{ name: 'MovieDetailPage', params: { id: movie.id, slug: $options.filters.slugify(movie.title) } }">
 					{{ movie.title }} <small>({{ movie.year }})</small>
 				</router-link>
 			</h4>
