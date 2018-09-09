@@ -8,7 +8,7 @@
                 :class="listClass">
                 <li
                     v-for="(tab, index) in tabs"
-                    v-bind:key="index"
+                    :key="index"
                     :class="[ listClass + '-item', { 'is-active' : isActiveClass(tab.name) } ]">
                     <a 
                         :href="'#' + $options.filters.slugify(tab.name) + '-tab'"
