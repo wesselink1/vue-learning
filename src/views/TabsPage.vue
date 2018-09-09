@@ -9,9 +9,9 @@
 
 		<TabList
 			class="tabs"
-			navclass="tabs__nav"
-			arialabel="Business value"
-			listclass="tabs__list">
+			navClass="tabs__nav"
+			ariaLabel="Business value"
+			listClass="tabs__list">
 			<TabItem
 				name="Catalog"
 				class="tabs__panel">
