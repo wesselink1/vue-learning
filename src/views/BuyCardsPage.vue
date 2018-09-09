@@ -20,7 +20,7 @@
 		</p>
 
 		<div class="cards__grid">
-			<CartItem
+			<CardItem
 				v-for="(card, index) in cards"
 				:key="index"
 				:card="card"
