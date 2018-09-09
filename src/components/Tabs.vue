@@ -73,9 +73,7 @@
 </script>
 
 <style lang="scss">
-    @import "~@/scss/style"; 
-
-	.tabs__list {
+    .tabs__list {
 		position: relative;
 		@include flexbox;
 		margin: 0;

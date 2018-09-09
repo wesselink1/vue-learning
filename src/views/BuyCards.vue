@@ -63,8 +63,6 @@
 </script>
 
 <style lang="scss">
-	@import "~@/scss/style";
-
 	.cards__list,
 	.cards__total {
 		font-family: $font-custom;

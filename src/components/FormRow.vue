@@ -26,9 +26,7 @@
 </script>
 
 <style lang="scss">
-    @import "~@/scss/style";
-
-    .form-row {
+   .form-row {
         @include flexbox;
         @include align-items(center);
     }

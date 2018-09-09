@@ -28,6 +28,6 @@
 </script>
 
 <style lang="scss">
-    @import "~@/scss/style";
+
 </style>
 

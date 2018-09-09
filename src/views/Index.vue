@@ -122,8 +122,6 @@
 </script>
 
 <style lang="scss">
-	@import "~@/scss/style";
-
 	.overview__nav {
 		display: grid;
 		grid-gap: 10px;

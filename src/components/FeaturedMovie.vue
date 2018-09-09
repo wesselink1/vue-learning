@@ -31,9 +31,7 @@
 
 
 <style lang="scss">
-	@import "~@/scss/style";
-
-    .featured-movie__title {
+	.featured-movie__title {
 		font-size: 22px;
 		font-family: $font-custom;
 		font-weight: 300;

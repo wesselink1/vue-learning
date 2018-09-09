@@ -129,8 +129,6 @@
 </script>
 
 <style lang="scss">
-	@import "~@/scss/style";
-
 	.array-sorting__movies {
 		border: 1px solid map-get($colors, 05);
 
