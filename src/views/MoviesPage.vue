@@ -42,8 +42,7 @@
             <movie-item
                 v-for="movie in filteredMovies"
                 :item="movie"
-                :key="movie.id">
-            </movie-item>
+                :key="movie.id" />
         </section>
     </main>
 </template>
