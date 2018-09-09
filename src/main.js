@@ -4,7 +4,7 @@ import Vuelidate from "vuelidate";
 import router from './router'
 import { store } from "./store/store.js";
 
-import '@/scss/style.scss';
+import '@/scss/style.scss'; // https://vueschool.io/articles/vuejs-tutorials/globally-load-sass-into-your-vue-js-applications/
 
 Vue.use(Vuelidate);
 Vue.config.productionTip = false
