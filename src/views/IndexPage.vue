@@ -95,7 +95,9 @@
 
 		<h3 class="heading">Featured movie of the minute</h3>
 
-		<MovieFeatured :movie="featuredMovie"/>
+		<MovieFeatured 
+			:movie="featuredMovie"
+		/>
 	</main>
 </template>
 
