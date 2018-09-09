@@ -39,7 +39,7 @@
         </p>
 
         <section class="movies__list">
-            <movie-item
+            <MovieItem
                 v-for="movie in filteredMovies"
                 :item="movie"
                 :key="movie.id"/>

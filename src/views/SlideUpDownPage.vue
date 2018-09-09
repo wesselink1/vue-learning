@@ -15,14 +15,14 @@
 					{{ faq.title }}
 				</dt>
 
-				<vue-slide-up-down
+				<SlideUpDown
 					class="faqList__body"
 					:tag="'dd'"
 					:class="{ 'is-active' : faq.active }"
 					:active="faq.active"
 					:duration="duration">
 					{{ faq.body }}
-				</vue-slide-up-down>
+				</SlideUpDown>
 			</template>
 		</dl>
 	</main>
@@ -32,6 +32,9 @@
 	import SlideUpDown from "vue-slide-up-down";
 
 	export default {
+		components: {
+			"SlideUpDown": SlideUpDown
+		},
 		data() {
 			return {
 				active: false,
@@ -74,10 +77,7 @@
 
 				this.faqList[index].active = !this.faqList[index].active;
 			}
-		},
-		components: {
-			"vue-slide-up-down": SlideUpDown
-		}
+		}		
 	}
 </script>
 

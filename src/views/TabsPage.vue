@@ -7,12 +7,12 @@
 			The selected tab is saved in <strong>Vuex</strong>.
 		</p>
 
-		<tab-list
+		<TabList
 			class="tabs"
 			navclass="tabs__nav"
 			arialabel="Business value"
 			listclass="tabs__list">
-			<tab-item
+			<TabItem
 				name="Catalog"
 				class="tabs__panel">
 
@@ -26,9 +26,9 @@
 				<p class="paragraph">
 					Adipisicing elit. Distinctio quae nobis molestiae, ullam animi magni ratione voluptatem harum laborum. Dolore.
 				</p>
-			</tab-item>
+			</TabItem>
 
-			<tab-item
+			<TabItem
 				name="Products"
 				class="tabs__panel">
 				
@@ -39,18 +39,18 @@
 				<p class="paragraph">Amet eum provident rerum obcaecati dolorum distinctio animi nisi, dolorem in quidem inventore maiores, possimus tenetur atque. Soluta, alias, vel.</p>
 
 				<p class="paragraph">Veritatis iure blanditiis odio magnam nesciunt culpa sapiente consectetur molestiae, minus itaque quaerat amet cum qui officia laborum rerum. Non.</p>
-			</tab-item>
+			</TabItem>
 
-			<tab-item
+			<TabItem
 				name="About"
 				class="tabs__panel">
 				
 				<h2 class="heading">This is our story</h2>
 
 				<p class="paragraph">Distinctio quae nobis molestiae, ullam animi magni ratione voluptatem harum laborum. Dolore.</p>
-			</tab-item>
+			</TabItem>
 
-			<tab-item
+			<TabItem
 				name="Contact"
 				class="tabs__panel">
 				
@@ -65,8 +65,8 @@
 					Fistinctio quae nobis molestiae, ullam animi magni ratione voluptatem harum laborum. Dolore.
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio quae nobis molestiae, ullam animi magni ratione voluptatem harum laborum. Dolore.
 				</p>
-			</tab-item>			
-		</tab-list>
+			</TabItem>			
+		</TabList>
 	</main>
 </template>
 
