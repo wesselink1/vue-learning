@@ -4,20 +4,30 @@
         <div 
             class="modal-window">
             <div
+                role="dialog"
+                aria-labelledby="modalWindowTitle"
+                aria-describedby="modalWindowDescription"
                 class="modal-window__container">
                 <a
                     @click.prevent="close"
                     v-on:keydown.esc="console.log('escape key pressed')"
                     href="javascript:;"
-                    class="modal-window__close-button">
+                    class="modal-window__close-button"
+                    aria-label="Close modal">
                     &times;
                 </a>
 
                 <div class="modal-window__header">
-                    <h2 class="modal-window__title">{{ title }}</h2>
+                    <h2
+                        id="modalWindowTitle"
+                        class="modal-window__title">
+                        {{ title }}
+                    </h2>
                 </div>
 
-                <div class="modal-window__body">
+                <div
+                    id="modalWindowDescription"
+                    class="modal-window__body">
                     <slot>Modal content</slot>
                 </div>
 
@@ -26,13 +36,15 @@
                     class="modal-window__footer">
                     <button
                         class="button"
-                        @click.prevent="close">
+                        @click.prevent="close"
+                        aria-label="Close modal">
                         Cancel
                     </button>
 
                     <button
                         class="button button--02"
-                        @click.prevent="close">
+                        @click.prevent="close"
+                        aria-label="Close modal">
                         OK
                     </button>
                 </div>
