@@ -2,20 +2,38 @@
     <div class="modal-page">
         <h1 class="modal-page__title">Fancy popup</h1>
 
-        <p class="modal-page__cta">
-            <a 
-                href="javascript:;"
-                @click="toggleModal"
-                class="modal-page__link">
-                Show popup
-            </a>
-        </p>
+        <ul class="modal-page__cta">
+            <li>
+                <a 
+                    href="javascript:;"
+                    @click="toggleInfoModal"
+                    class="modal-page__link">
+                    Toggle info modal
+                </a>
+            </li>
+            <li>
+                <a 
+                    href="javascript:;"
+                    @click="toggleConfirmationModal"
+                    class="modal-page__link">
+                    Toggle confirmation modal
+                </a>
+            </li>
+        </ul>
 
         <ModalWindow
-            :showModal="showModalPopup"
-            :showModalFooter="true"
+            v-show="showInfoModal"
+            @onClose="closeInfoModal"
             title="Fantastico!!">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem iure magni atque itaque ea reiciendis. Beatae atque animi consequuntur quas.</p>
+        </ModalWindow>
+
+        <ModalWindow
+            v-show="showConfirmationModal"
+            @onClose="closeConfirmationModal"
+            title="Delete record?"
+            :showModalFooter="true">
+            <p>Are you sure you want to delete the record?</p>
         </ModalWindow>
     </div>
 </template>
@@ -29,12 +47,22 @@
         },
         data() {
             return {
-                showModalPopup: false
+                showInfoModal: false,
+                showConfirmationModal: false,
             }
         },
         methods: {
-            toggleModal() {
-                this.showModalPopup = !this.showModalPopup;
+            toggleInfoModal() {
+                this.showInfoModal = !this.showInfoModal;
+            },
+            toggleConfirmationModal() {
+                this.showConfirmationModal = !this.showConfirmationModal;
+            },
+            closeInfoModal() {
+                this.showInfoModal = false;
+            },
+            closeConfirmationModal() {
+                this.showConfirmationModal = false;
             }
         }
     };
