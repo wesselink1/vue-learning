@@ -5,6 +5,7 @@ import CustomDirectivesPage from "@/views/CustomDirectivesPage";
 import Error404Page from "@/views/Error404Page";
 import FormModulesPage from "@/views/FormModulesPage";
 import IndexPage from "@/views/IndexPage";
+import ModalPage from "@/views/ModalPage";
 import MovieDetailPage from "@/views/MovieDetailPage";
 import MoviesPage from "@/views/MoviesPage";
 import NavButtonsPage from "@/views/NavButtonsPage";
@@ -35,6 +36,11 @@ export default new Router({
 		path: "/form-modules",
 		name: "FormModulesPage",
 		component: FormModulesPage
+	},
+	{
+		path: "/modal",
+		name: "ModalPage",
+		component: ModalPage
 	},
 	{
 		path: "/movies",
