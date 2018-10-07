@@ -13,6 +13,7 @@ import PugPage from "@/views/PugPage";
 import Router from 'vue-router';
 import SlideUpDownPage from "@/views/SlideUpDownPage";
 import TabsPage from "@/views/TabsPage";
+import TvShowsPage from "@/views/TvShowsPage";
 import VuelidatePage from "@/views/VuelidatePage";
 import VuexCounterPage from "@/views/VuexCounterPage";
 
@@ -77,6 +78,11 @@ export default new Router({
 		name: "CustomDirectivesPage",
 		component: CustomDirectivesPage
 	},	
+	{
+		path: "/tv-shows",
+		name: "TvShowsPage",
+		component: TvShowsPage
+	},
 	{
 		path: "/vuelidate",
 		name: "VuelidatePage",

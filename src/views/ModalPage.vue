@@ -1,6 +1,6 @@
 <template>
     <div class="modal-page">
-        <h1 class="modal-page__title">Fancy popup</h1>
+        <h1 class="heading">Fancy popup</h1>
 
         <ul class="modal-page__cta">
             <li>
