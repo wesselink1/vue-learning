@@ -85,6 +85,20 @@
 				exact-active-class="is-exact">
 				Form modules
 			</router-link>
+			<router-link tag="div"
+				:to="{ name: 'ModalPage' }"
+				class="overview__nav-item"
+				active-class="is-active" 
+				exact-active-class="is-exact">
+				Modal
+			</router-link>
+			<router-link tag="div"
+				:to="{ name: 'TvShowsPage' }"
+				class="overview__nav-item"
+				active-class="is-active" 
+				exact-active-class="is-exact">
+				Tv Shows
+			</router-link>
 		</nav>
 
 		<p class="overview__logo">

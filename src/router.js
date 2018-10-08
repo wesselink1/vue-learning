@@ -5,6 +5,7 @@ import CustomDirectivesPage from "@/views/CustomDirectivesPage";
 import Error404Page from "@/views/Error404Page";
 import FormModulesPage from "@/views/FormModulesPage";
 import IndexPage from "@/views/IndexPage";
+import ModalPage from "@/views/ModalPage";
 import MovieDetailPage from "@/views/MovieDetailPage";
 import MoviesPage from "@/views/MoviesPage";
 import NavButtonsPage from "@/views/NavButtonsPage";
@@ -12,6 +13,7 @@ import PugPage from "@/views/PugPage";
 import Router from 'vue-router';
 import SlideUpDownPage from "@/views/SlideUpDownPage";
 import TabsPage from "@/views/TabsPage";
+import TvShowsPage from "@/views/TvShowsPage";
 import VuelidatePage from "@/views/VuelidatePage";
 import VuexCounterPage from "@/views/VuexCounterPage";
 
@@ -35,6 +37,11 @@ export default new Router({
 		path: "/form-modules",
 		name: "FormModulesPage",
 		component: FormModulesPage
+	},
+	{
+		path: "/modal",
+		name: "ModalPage",
+		component: ModalPage
 	},
 	{
 		path: "/movies",
@@ -71,6 +78,11 @@ export default new Router({
 		name: "CustomDirectivesPage",
 		component: CustomDirectivesPage
 	},	
+	{
+		path: "/tv-shows",
+		name: "TvShowsPage",
+		component: TvShowsPage
+	},
 	{
 		path: "/vuelidate",
 		name: "VuelidatePage",

@@ -1,0 +1,55 @@
+[
+    {
+        "title": "American Gods",
+        "description": "A recently released ex-convict named Shadow meets a mysterious man who calls himself 'Wednesday' and who knows more than he first seems to about Shadow's life and past.",
+        "year": 2017,
+        "genre": [
+            "Drama",
+            "Fantasy",
+            "Mystery"
+        ],
+        "rating": 8.1,
+        "imdb": "https://www.imdb.com/title/tt1898069",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTY0NDA4NTMzNl5BMl5BanBnXkFtZTgwOTk1MTg0NjM@._V1_UX182_CR0,0,182,268_AL_.jpg",
+        "stars": [
+            "Ricky Whittle",
+            "Emily Browning",
+            "Pablo Schreiber"
+        ]
+    },
+    {
+        "title": "Better Call Saul",
+        "description": "The trials and tribulations of criminal lawyer, Jimmy McGill, in the time leading up to establishing his strip-mall law office in Albuquerque, New Mexico.",
+        "year": 2015,
+        "genre": [
+            "Crime",
+            "Drama"
+        ],
+        "rating": 8.7,
+        "imdb": "https://www.imdb.com/title/tt3032476",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTAxOTQ0MjUzMzJeQTJeQWpwZ15BbWU4MDY0NTAxNzMx._V1_UX182_CR0,0,182,268_AL_.jpg",
+        "stars": [
+            "Bob Odenkirk",
+            "Rhea Seehorn",
+            "Jonathan Banks"
+        ]
+    },
+    {
+        "title": "Stranger Things",
+        "description": "When a young boy disappears, his mother, a police chief, and his friends must confront terrifying forces in order to get him back.",
+        "year": 2016,
+        "genre": [
+            "Drama",
+            "Fantasy",
+            "Horror"
+        ],
+        "rating": 8.9,
+        "imdb": "https://www.imdb.com/title/tt4574334",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjUwMDgzOTg3Nl5BMl5BanBnXkFtZTgwNTI4MDk5MzI@._V1_UX182_CR0,0,182,268_AL_.jpg",
+        "stars": [
+            "Millie Bobby Brown",
+            "Finn Wolfhard",
+            "Winona Ryder"
+        ]
+    }
+]
