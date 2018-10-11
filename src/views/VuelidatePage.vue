@@ -185,6 +185,7 @@
 	import { required, email, minValue, minLength } from "vuelidate/lib/validators";
 
 	export default {
+		name: "VuelidatePage",
 		data() {
 			return {
 				coupons: [

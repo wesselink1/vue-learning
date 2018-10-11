@@ -42,6 +42,7 @@
     import ModalWindow from "../components/ModalWindow";
 
     export default {
+        name: "ModalPage",
         components: {
             ModalWindow
         },

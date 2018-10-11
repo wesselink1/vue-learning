@@ -55,6 +55,7 @@
 
 <script>
     export default {
+        name: "ModalWindow",
         props: {
             title: {
                 type: String,

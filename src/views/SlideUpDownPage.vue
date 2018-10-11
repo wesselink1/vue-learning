@@ -32,6 +32,7 @@
 	import SlideUpDown from "vue-slide-up-down";
 
 	export default {
+		name: "SlideUpDownPage",
 		components: {
 			"SlideUpDown": SlideUpDown
 		},

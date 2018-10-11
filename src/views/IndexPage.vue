@@ -110,8 +110,7 @@
 		<h3 class="heading">Featured movie of the minute</h3>
 
 		<MovieFeatured 
-			:movie="featuredMovie"
-		/>
+			:movie="featuredMovie"/>
 	</main>
 </template>
 
@@ -120,6 +119,7 @@
 	import MovieFeatured from "@/components/MovieFeatured";
 
 	export default {
+		name: "IndexPage",
 		components: {
 			MovieFeatured
 		},

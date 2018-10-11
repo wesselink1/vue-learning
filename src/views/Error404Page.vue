@@ -5,3 +5,9 @@
 		<p class="paragraph">Page not found</p>
 	</main>
 </template>
+
+<script>
+	export default {
+		name: "Error404Page",
+	}
+</script>

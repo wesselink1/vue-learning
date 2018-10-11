@@ -28,6 +28,7 @@
 
 <script>
     export default {
+        name: "CustomDirectivesPage",
         directives: {
             "highlight": {
                 bind(el, binding) {                    

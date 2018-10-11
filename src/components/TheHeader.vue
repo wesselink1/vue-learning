@@ -15,6 +15,12 @@
 	</header>
 </template>
 
+<script>
+	export default {
+		name: "TheHeader",
+	}
+</script>
+
 <style lang="scss">
 	.header {
 		margin-bottom: 30px;

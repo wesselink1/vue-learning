@@ -14,6 +14,7 @@
     import { mapGetters } from "vuex";
 
     export default {
+        name: "TabItem",
         props: {
             name: {
                 type: String,

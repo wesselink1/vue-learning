@@ -1,30 +1,32 @@
 <template>
     <div class="movie-featured">
-			<p class="movie-featured__poster">
-				<router-link
-					tag="a"
-					:to="{ name: 'MovieDetailPage', params: { id: movie.id, slug: $options.filters.slugify(movie.title) } }">
-						<img 
-							:src="'/img/movies/' + movie.poster" 
-							:alt="movie.title"
-							class="movie-featured__image">
-				</router-link>
-			</p>
+		<p class="movie-featured__poster">
+			<router-link
+				tag="a"
+				:to="{ name: 'MovieDetailPage', params: { id: movie.id, slug: $options.filters.slugify(movie.title) } }">
+					<img 
+						:src="'/img/movies/' + movie.poster" 
+						:alt="movie.title"
+						class="movie-featured__image">
+			</router-link>
+		</p>
 
-			<h4 class="movie-featured__title">
-				<router-link
-					tag="a"
-					:to="{ name: 'MovieDetailPage', params: { id: movie.id, slug: $options.filters.slugify(movie.title) } }">
-					{{ movie.title }} <small>({{ movie.year }})</small>
-				</router-link>
-			</h4>
-		</div>
+		<h4 class="movie-featured__title">
+			<router-link
+				tag="a"
+				:to="{ name: 'MovieDetailPage', params: { id: movie.id, slug: $options.filters.slugify(movie.title) } }">
+				{{ movie.title }} <small>({{ movie.year }})</small>
+			</router-link>
+		</h4>
+	</div>
 </template>
 
 <script>
 	export default {
+		name: "MovieFeatured",
 		props: {
-			movie: Object
+			movie: Object,
+			required: true
 		}
 	}
 </script>

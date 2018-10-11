@@ -26,6 +26,12 @@
 	</main>
 </template>
 
+<script>
+	export default {
+		name: "NavButtonsPage"
+	}
+</script>
+
 <style lang="scss">
 	.home__buttons {
 		@include display-grid;

@@ -33,6 +33,7 @@
     import { mapMutations } from "vuex";
     
     export default {
+        name: "TabList",
         props: {
             navClass: String,
             listClass: String,
