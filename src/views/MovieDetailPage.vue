@@ -48,6 +48,7 @@
 
 <script>    
     export default {
+        name: "MovieDetailPage",
         data() {
             return {
                 id: this.$route.params.id,

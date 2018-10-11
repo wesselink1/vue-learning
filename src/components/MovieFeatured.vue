@@ -23,8 +23,10 @@
 
 <script>
 	export default {
+		name: "MovieFeatured",
 		props: {
-			movie: Object
+			movie: Object,
+			required: true
 		}
 	}
 </script>

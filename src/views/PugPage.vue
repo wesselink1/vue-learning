@@ -13,3 +13,10 @@
 			li Lodash
 			li JavaScript ES6 spread operator for #[strong mapGetters] &amp; #[strong mapMutations]
 </template>
+
+<script>
+	export default {
+		name: "PugPage"
+	}
+</script>
+

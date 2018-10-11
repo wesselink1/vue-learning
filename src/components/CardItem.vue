@@ -15,6 +15,7 @@
 
 <script>
 	export default {
+		name: "CardItem",
 		props: {
 			card: Object,
 			cardsTotal: Number,

@@ -1,6 +1,6 @@
 <template>
   	<section id="app" class="app__container">
-  		<appHeader></appHeader>
+  		<TheHeader></TheHeader>
 
   		<transition
   			name="app__container-"
@@ -9,18 +9,19 @@
   			<router-view></router-view>
   		</transition>
 
-  		<appFooter></appFooter>
+  		<TheFooter></TheFooter>
   	</section>
 </template>
 
 <script>
-	import Footer from "./components/TheFooter";
-	import Header from "./components/TheHeader";
+	import TheFooter from "./components/TheFooter";
+	import TheHeader from "./components/TheHeader";
 
 	export default {
+		name: "App",
 		components: {
-			"appFooter": Footer,
-			"appHeader": Header
+			TheFooter,
+			TheHeader
 		}
 	}
 </script>

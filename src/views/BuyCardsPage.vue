@@ -38,6 +38,7 @@
 	import CardItem from "../components/CardItem";
 
 	export default {
+		name: "BuyCardsPage",
 		components: {
 			CardItem
 		},

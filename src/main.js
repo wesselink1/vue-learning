@@ -26,7 +26,11 @@ Vue.filter("slugify", function(title){
 });
 
 Vue.filter("inlineList", function(listItems){
-	return listItems.join(", ");		
+	if (listItems.length > 0) {
+		return listItems.join(", ");
+	} else {
+		return listItems[0];
+	}
 });
 
 new Vue({
