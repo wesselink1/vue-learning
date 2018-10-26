@@ -109,13 +109,14 @@
 
 		<h3 class="heading">Featured movie of the minute</h3>
 
-		<MovieFeatured 
-			:movie="featuredMovie"/>
+		<MovieFeatured :movie="featuredMovie" />
 	</main>
 </template>
 
 <script>
 	import { mapGetters } from "vuex";
+    import { orderBy } from "lodash";
+    import { firebase } from "@/db";
 	import MovieFeatured from "@/components/MovieFeatured";
 
 	export default {
@@ -124,14 +125,12 @@
 			MovieFeatured
 		},
 		computed: {
-			...mapGetters([
-				"movies"
-			]),
 			featuredMovie() {
-				let randomMovie = this.movies[Math.floor(Math.random()*this.movies.length)];
-				return this.$store.getters.movie(randomMovie.id);
+				let randomMovie = this.movies[Math.floor(Math.random() * this.movies.length)];
+				return this.movies.find(item => item.id == randomMovie.id);
 			}
-		}
+		},
+		firebase
 	}
 </script>
 
