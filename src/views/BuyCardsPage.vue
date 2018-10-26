@@ -26,8 +26,7 @@
 				:card="card"
 				:cardsTotal="cardsTotal"
 				:limit="limit"
-				@incrementCardsTotal="incrementCardsTotal"
-			/>
+				@incrementCardsTotal="incrementCardsTotal" />
 		</div>
 	</main>
 </template>
@@ -35,17 +34,13 @@
 <script>
 	import { mapGetters } from "vuex";
 	import { mapMutations } from "vuex";
+	import { firebase } from "@/db";
 	import CardItem from "../components/CardItem";
 
 	export default {
 		name: "BuyCardsPage",
 		components: {
 			CardItem
-		},
-		data() {
-			return {				
-				
-			}
 		},
 		methods: {
 			...mapMutations([
@@ -55,11 +50,11 @@
 		},
 		computed: {
 			...mapGetters([
-				"cards",
 				"cardsTotal",
 				"limit"
 			])
-		}
+		},
+		firebase
 	};
 </script>
 
