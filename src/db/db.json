@@ -363,29 +363,51 @@
     ],
     "cards": [
         { 
-			"id": 1,
+			"id": 0,
 			"heading": "BMW",
 			"price": 5.95
         },
         { 
-			"id": 2,
+			"id": 1,
 			"heading": "Google",
 			"price": 10.33
         },
         { 
-			"id": 3,
+			"id": 2,
 			"heading": "Twitter",
 			"price": 15.99
         },
         { 
-			"id": 4,
+			"id": 3,
 			"heading": "Amazone",
 			"price": 50
         },
         { 
-			"id": 5,
+			"id": 4,
 			"heading": "Bol.com",
 			"price": 75.25
+        }
+    ],
+    "faq": [
+        {
+            "id": 0,
+            "title": "Whats on my icecream?",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia aspernatur cupiditate rerum ut, repellat veniam in, placeat sit porro fuga!"
+        },
+        {
+            "id": 1,
+            "title": "Where can I get a fancy red dress?",
+            "body": "Mollitia aspernatur cupiditate rerum ut, repellat veniam in, placeat sit porro fuga!"
+        },
+        {
+            "id": 2,
+            "title": "Where's the park?",
+            "body": "Consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia aspernatur cupiditate rerum ut, repellat veniam in, placeat sit porro fuga!"
+        },
+        {
+            "id": 3,
+            "title": "Is the internet finally done?",
+            "body": "The internet is not finished yet!"
         }
     ]
 }
