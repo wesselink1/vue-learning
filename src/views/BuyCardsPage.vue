@@ -47,7 +47,7 @@
 	import { mapGetters } from "vuex";
 	import { mapMutations } from "vuex";
 	import { firebase } from "@/db";
-	import CardItem from "../components/CardItem";
+	import CardItem from "@/components/CardItem";
 	import ModalWindow from "@/components/ModalWindow";
 
 	export default {
