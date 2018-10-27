@@ -1,12 +1,12 @@
 <template>
     <div class="modal-page">
-        <h1 class="heading">Fancy popup</h1>
+        <h1 class="heading">Modal window</h1>
 
         <p class="modal-page__cta">
             <button
                 class="button button--01"
                 @click="showDemoModal = true">
-                Open modal window
+                Open demo confirm modal
             </button>
         </p>
 

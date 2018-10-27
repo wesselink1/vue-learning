@@ -77,15 +77,15 @@
     .modal-window {
         position: fixed;
         top: 0;
+        right: 0;
         bottom: 0;
         left: 0;
-        right: 0;
         z-index: 100;
         @include flexbox;
         @include align-items(center);
         @include justify-content(center);
         justify-content: center;
-        background-color: rgba(0, 191, 255, .30);
+        background-color: rgba(0, 0, 0, .50);
     }
 
     .modal-window--fade-enter,
