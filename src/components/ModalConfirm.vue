@@ -108,6 +108,7 @@
         border-radius: 10px;
         font-family: $font-custom;
         background-color: white;
+        box-shadow: 0 5px 5px 0px rgba(0,0,0, .2);
     }
 
     .modal-window__header {
