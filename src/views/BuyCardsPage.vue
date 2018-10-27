@@ -16,7 +16,11 @@
 		<h2 class="sub-heading">Vuex stored total: {{ cardsTotal | euroCurrency }}</h2>
 
 		<p class="cards__reset">
-			<button class="button button--02" @click="resetCardsTotal">Reset total</button>
+			<button
+				class="button button--02"
+				@click="showConfirmResetTotalModal = true">
+				Reset total
+			</button>
 		</p>
 
 		<div class="cards__grid">
@@ -28,6 +32,14 @@
 				:limit="limit"
 				@incrementCardsTotal="incrementCardsTotal" />
 		</div>
+
+		<ModalWindow
+            v-show="showConfirmResetTotalModal"
+            @onConfirm="confirmResetTotal"
+            @onCancel="showConfirmResetTotalModal = false"
+            title="Reset total">
+            <p>Reset the total to play again?</p>
+        </ModalWindow>
 	</main>
 </template>
 
@@ -36,17 +48,27 @@
 	import { mapMutations } from "vuex";
 	import { firebase } from "@/db";
 	import CardItem from "../components/CardItem";
+	import ModalWindow from "@/components/ModalWindow";
 
 	export default {
 		name: "BuyCardsPage",
 		components: {
-			CardItem
+			CardItem,
+			ModalWindow
+		},
+		data() {
+			return {
+				showConfirmResetTotalModal: false
+			}
 		},
 		methods: {
 			...mapMutations([
-				"incrementCardsTotal",
-				"resetCardsTotal",
-			])
+				"incrementCardsTotal"
+			]),
+			confirmResetTotal() {
+				this.$store.commit("resetCardsTotal");
+				this.showConfirmResetTotalModal = false;
+			}
 		},
 		computed: {
 			...mapGetters([

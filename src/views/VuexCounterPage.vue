@@ -16,6 +16,14 @@
 				class="button button--02"
 				:disabled="counter <= 0">
 				Decrement counter
+			</button>			
+		</p>
+
+		<p class="paragraph">
+			<button
+				@click="showConfirmCounterResetModal = true"
+				class="button button--01">
+				Reset counter
 			</button>
 		</p>
 
@@ -28,22 +36,44 @@
 		<p class="paragraph">
 			<button 
 				class="button button--02"
-				@click="changeName"
+				@click="showConfirmNameChangeModal = true"
 				:disabled="nameChanged">
 				{{ nameChanged ? 'Name was changed' : 'Change name' }}
 			</button>
 		</p>
+
+		<ModalWindow
+            v-show="showConfirmCounterResetModal"
+            @onConfirm="confirmCounterReset"
+            @onCancel="showConfirmCounterResetModal = false"
+            title="Reset counter">
+            <p>Do you want to reset the counter?</p>
+        </ModalWindow>
+
+		<ModalWindow
+            v-show="showConfirmNameChangeModal"
+            @onConfirm="confirmChangeName"
+            @onCancel="showConfirmNameChangeModal = false"
+            title="Change the name">
+            <p>Remember this is not undoable.</p>
+        </ModalWindow>
 	</main>
 </template>
 
 <script>
 	import { mapGetters } from "vuex";
 	import { mapMutations } from "vuex";
+	import ModalWindow from "@/components/ModalWindow";
 
 	export default {
 		name: "VuexCounterPage",
+		components: {
+            ModalWindow
+        },
 		data() {
 			return {
+				showConfirmCounterResetModal: false,
+				showConfirmNameChangeModal: false,
 				firstName: "James",
 				lastName: "Dean",
 				nameChanged: false,
@@ -54,10 +84,15 @@
 				"decrementCounter",
 				"incrementCounter"
 			]),
-			changeName() {
+			confirmCounterReset() {
+				this.$store.commit("resetCounter");
+				this.showConfirmCounterResetModal = false;
+			},
+			confirmChangeName() {
 				this.firstName = "Master",
 				this.lastName = "of Disaster",
 				this.nameChanged = true;
+				this.showConfirmNameChangeModal = false;
 			}
 		},
 		computed: {

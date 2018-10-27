@@ -21,7 +21,7 @@
 </template>
 
 <script>
-    import ModalWindow from "../components/ModalWindow";
+    import ModalWindow from "@/components/ModalWindow";
 
     export default {
         name: "ModalPage",
