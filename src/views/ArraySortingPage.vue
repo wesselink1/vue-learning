@@ -52,10 +52,9 @@
 			</thead>
 			<tbody>
 				<ArraySortingRow
-					v-for="(movie, index) in filteredMovies"
+					v-for="movie in filteredMovies"
 					:movie="movie"
-					:key="index">
-				</ArraySortingRow>	
+					:key="movie.id"/>	
 			</tbody>
 		</table>
 
@@ -72,6 +71,8 @@
 <script>
 	import { mapGetters } from "vuex";
 	import { mapMutations } from "vuex";
+    import { orderBy, maxBy, minBy } from "lodash";
+    import { firebase } from "@/db";
 	import ArraySortingRow from "@/components/ArraySortingRow";
 
 	export default {
@@ -79,30 +80,36 @@
 		components: {
 			ArraySortingRow
 		},
-		created() {
-			this.setHighestAndLowestRatedBoolean();
-		},
 		methods: {
 			...mapMutations([
 				"changeOrder",	
-				"changeOrderByDesc",
-				"setHighestAndLowestRatedBoolean"
+				"changeOrderByDesc"
 			]),
 			setOrderBy(orderBy) {
 				this.changeOrder(orderBy);
 				this.changeOrderByDesc();
-			}
+			}						
 		},
 		computed: {
 			...mapGetters([
-				"filteredMovies",
-				"highestRatedMovie",
-				"lowestRatedMovie",
-				"movies",
 				"order",
 				"orderByDesc"
-			])			
-		}
+			]),
+			filteredMovies() {
+                return orderBy(this.movies, [this.$store.getters.order], this.$store.getters.orderByDesc ? "desc" : "asc");
+			},
+			highestRatedMovie() {
+				return maxBy(this.movies, function (item) {
+					return item.rating;
+				});
+			},
+			lowestRatedMovie() {
+				return minBy(this.movies, function (item) {
+					return item.rating;
+				});
+			}		
+		},
+		firebase
 	};
 </script>
 

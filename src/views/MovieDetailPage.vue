@@ -47,20 +47,21 @@
 </template>
 
 <script>    
+    import { firebase } from "@/db";
+
     export default {
         name: "MovieDetailPage",
         data() {
             return {
-                id: this.$route.params.id,
-                slug: this.$route.params.slug
+                id: this.$route.params.id
             }
         },
         computed: {
             movie() {
-                // https://vuex.vuejs.org/guide/getters.html
-                return this.$store.getters.movie(this.id);
+                return this.movies.find(item => item.id == this.id);
             }            
-        }
+        },
+        firebase
     };
 </script>
 

@@ -1,76 +1,69 @@
 <template>
     <div class="modal-page">
-        <h1 class="heading">Fancy popup</h1>
+        <h1 class="heading">Modal window</h1>
 
-        <ul class="modal-page__cta">
-            <li>
-                <a 
-                    href="javascript:;"
-                    @click="toggleInfoModal"
-                    class="modal-page__link">
-                    Toggle info modal
-                </a>
-            </li>
-            <li>
-                <a 
-                    href="javascript:;"
-                    @click="toggleConfirmationModal"
-                    class="modal-page__link">
-                    Toggle confirmation modal
-                </a>
-            </li>
-        </ul>
+        <p class="modal-page__cta">
+            <button
+                class="button button--01"
+                @click="showDemoModal = true">
+                Open demo confirm modal
+            </button>
+        </p>
+        
+        <p>
+            <button
+                class="button button--01"
+                @click="showBasicDemoModal = true">
+                Open basic demo confirm modal
+            </button>
+        </p>
 
-        <ModalWindow
-            v-show="showInfoModal"
-            @onClose="closeInfoModal"
-            title="Fantastico!!">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem iure magni atque itaque ea reiciendis. Beatae atque animi consequuntur quas.</p>
-        </ModalWindow>
+        <ModalConfirm
+            v-show="showDemoModal"
+            @onConfirm="confirmDemoModal"
+            @onCancel="cancelDemoModal"
+            title="Console message">
+            <p>Are you sure you want to display a console message?</p>
+        </ModalConfirm>
 
-        <ModalWindow
-            v-show="showConfirmationModal"
-            @onClose="closeConfirmationModal"
-            title="Delete record?"
-            :showModalFooter="true">
-            <p>Are you sure you want to delete the record?</p>
-        </ModalWindow>
+        <ModalConfirm
+            v-show="showBasicDemoModal"
+            @onConfirm="showBasicDemoModal = false"
+            @onCancel="showBasicDemoModal = false" />
     </div>
 </template>
 
 <script>
-    import ModalWindow from "../components/ModalWindow";
+    import ModalConfirm from "@/components/ModalConfirm";
 
     export default {
         name: "ModalPage",
         components: {
-            ModalWindow
+            ModalConfirm
         },
         data() {
             return {
-                showInfoModal: false,
-                showConfirmationModal: false,
+                showDemoModal: false,
+                showBasicDemoModal: false
             }
         },
         methods: {
-            toggleInfoModal() {
-                this.showInfoModal = !this.showInfoModal;
+            confirmDemoModal() {
+                this.showDemoModal = false;
+                console.log("[modal window] confirmed");
             },
-            toggleConfirmationModal() {
-                this.showConfirmationModal = !this.showConfirmationModal;
-            },
-            closeInfoModal() {
-                this.showInfoModal = false;
-            },
-            closeConfirmationModal() {
-                this.showConfirmationModal = false;
+            cancelDemoModal() {
+                this.showDemoModal = false;
+                console.log("[modal window] canceled");
             }
         }
     };
 </script>
 
-<style>
-    .modal-page {
-
+<style lang="scss">
+    .modal-page__cta {
+        .button + .button {
+            margin-left: 20px;
+        }
     }
 </style>

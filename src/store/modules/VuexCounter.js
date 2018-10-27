@@ -16,6 +16,9 @@ const mutations = {
 	    if (state.counter > 0) {
 	        state.counter--;
 	    }
+	},
+	resetCounter: state => {
+		state.counter = 0;
 	}
 };
 

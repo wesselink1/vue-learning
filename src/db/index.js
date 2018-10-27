@@ -17,7 +17,10 @@ const FireBaseApp = Firebase.initializeApp(config);
 const FireDB = FireBaseApp.database();
 const firebase = function() {
     return {
-        tvshows: FireDB.ref("tvshows")
+        tvshows: FireDB.ref("tvshows"),
+        movies: FireDB.ref("movies"),
+        cards: FireDB.ref("cards"),
+        faq: FireDB.ref("faq")
     }
 }
 export {
