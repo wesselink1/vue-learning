@@ -19,7 +19,9 @@
                 <div
                     id="modalWindowDescription"
                     class="modal-window__body">
-                    <slot>Modal content</slot>
+                    <slot>
+                        <p>Are you sure?</p>                        
+                    </slot>
                 </div>
 
                 <div
@@ -50,7 +52,7 @@
         props: {
             title: {
                 type: String,
-                default: "Modal title"
+                default: "Confirm"
             },
             showModalFooter: {
                 type: Boolean,

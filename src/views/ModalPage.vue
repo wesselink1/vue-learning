@@ -9,6 +9,14 @@
                 Open demo confirm modal
             </button>
         </p>
+        
+        <p>
+            <button
+                class="button button--01"
+                @click="showBasicDemoModal = true">
+                Open basic demo confirm modal
+            </button>
+        </p>
 
         <ModalConfirm
             v-show="showDemoModal"
@@ -17,6 +25,11 @@
             title="Console message">
             <p>Are you sure you want to display a console message?</p>
         </ModalConfirm>
+
+        <ModalConfirm
+            v-show="showBasicDemoModal"
+            @onConfirm="showBasicDemoModal = false"
+            @onCancel="showBasicDemoModal = false" />
     </div>
 </template>
 
@@ -30,7 +43,8 @@
         },
         data() {
             return {
-                showDemoModal: false
+                showDemoModal: false,
+                showBasicDemoModal: false
             }
         },
         methods: {
@@ -46,8 +60,10 @@
     };
 </script>
 
-<style>
-    .modal-page {
-
+<style lang="scss">
+    .modal-page__cta {
+        .button + .button {
+            margin-left: 20px;
+        }
     }
 </style>
