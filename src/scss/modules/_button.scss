@@ -23,6 +23,7 @@
 }
 
 .button--03 {
+	border: 1px solid map-get($colors, 03);
 	color: map-get($colors, 03);
 	background-color: white;	
 }

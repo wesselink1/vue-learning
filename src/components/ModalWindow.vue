@@ -8,15 +8,6 @@
                 aria-labelledby="modalWindowTitle"
                 aria-describedby="modalWindowDescription"
                 class="modal-window__container">
-                <a
-                    @click.prevent="close"
-                    v-on:keydown.esc="console.log('escape key pressed')"
-                    href="javascript:;"
-                    class="modal-window__close-button"
-                    aria-label="Close modal">
-                    &times;
-                </a>
-
                 <div class="modal-window__header">
                     <h2
                         id="modalWindowTitle"
@@ -35,16 +26,16 @@
                     v-if="showModalFooter"
                     class="modal-window__footer">
                     <button
-                        class="button"
-                        @click.prevent="close"
-                        aria-label="Close modal">
+                        class="button button--03"
+                        aria-label="Close modal"
+                        @click.prevent="cancel">
                         Cancel
                     </button>
 
                     <button
                         class="button button--02"
-                        @click.prevent="close"
-                        aria-label="Close modal">
+                        aria-label="Close modal"
+                        @click.prevent="confirm">
                         OK
                     </button>
                 </div>
@@ -63,7 +54,7 @@
             },
             showModalFooter: {
                 type: Boolean,
-                default: false
+                default: true
             }
         },
         data() {
@@ -72,14 +63,17 @@
             }
         },
         methods: {
-            close() {
-                this.$emit("onClose");
+            confirm() {
+                this.$emit("onConfirm");
+            },
+            cancel() {
+                this.$emit("onCancel");
             }
         }
     };
 </script>
 
-<style>   
+<style lang="scss">   
     .modal-window {
         position: fixed;
         top: 0;
@@ -87,29 +81,11 @@
         left: 0;
         right: 0;
         z-index: 100;
-        display: flex;
-        align-items: center;
+        @include flexbox;
+        @include align-items(center);
+        @include justify-content(center);
         justify-content: center;
         background-color: rgba(0, 0, 0, .50);
-    }
-
-    .modal-window__container {
-        position: relative;
-        min-width: 40vw;
-        max-width: 80vw;
-        padding: 20px;
-        border-radius: 10px;
-        background-color: white;
-    }
-
-    .modal-window__close-button {
-        position: absolute;
-        top: 0px;
-        right: 10px;
-        font-size: 30px;
-        font-weight: 700;
-        color: black;
-        text-decoration: none
     }
 
     .modal-window--fade-enter,
@@ -121,4 +97,33 @@
     .modal-window--fade-leave-active {
         transition: opacity .3s ease;
     }
+
+    .modal-window__container {
+        position: relative;
+        min-width: 20vw;
+        max-width: 50vw;
+        padding: 20px;
+        border-radius: 10px;
+        font-family: $font-custom;
+        background-color: white;
+    }
+
+    .modal-window__header {
+        border-bottom: 1px solid #444;
+        padding-bottom: 10px;
+    }
+
+    .modal-window__title {
+        margin: 0;
+    }
+
+    .modal-window__footer {
+        @include flexbox;
+        @include justify-content(flex-end);
+        margin-top: 50px;
+
+        .button + .button {
+            margin-left: 20px;
+        }
+    }    
 </style>

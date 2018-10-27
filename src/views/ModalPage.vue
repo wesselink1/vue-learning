@@ -2,37 +2,19 @@
     <div class="modal-page">
         <h1 class="heading">Fancy popup</h1>
 
-        <ul class="modal-page__cta">
-            <li>
-                <a 
-                    href="javascript:;"
-                    @click="toggleInfoModal"
-                    class="modal-page__link">
-                    Toggle info modal
-                </a>
-            </li>
-            <li>
-                <a 
-                    href="javascript:;"
-                    @click="toggleConfirmationModal"
-                    class="modal-page__link">
-                    Toggle confirmation modal
-                </a>
-            </li>
-        </ul>
+        <p class="modal-page__cta">
+            <button
+                class="button button--01"
+                @click="showModal = true">
+                Open modal window
+            </button>
+        </p>
 
         <ModalWindow
-            v-show="showInfoModal"
-            @onClose="closeInfoModal"
-            title="Fantastico!!">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem iure magni atque itaque ea reiciendis. Beatae atque animi consequuntur quas.</p>
-        </ModalWindow>
-
-        <ModalWindow
-            v-show="showConfirmationModal"
-            @onClose="closeConfirmationModal"
-            title="Delete record?"
-            :showModalFooter="true">
+            v-show="showModal"
+            @onConfirm="confirmDelete"
+            @onCancel="showModal = false"
+            title="Delete record">
             <p>Are you sure you want to delete the record?</p>
         </ModalWindow>
     </div>
@@ -48,22 +30,13 @@
         },
         data() {
             return {
-                showInfoModal: false,
-                showConfirmationModal: false,
+                showModal: false
             }
         },
         methods: {
-            toggleInfoModal() {
-                this.showInfoModal = !this.showInfoModal;
-            },
-            toggleConfirmationModal() {
-                this.showConfirmationModal = !this.showConfirmationModal;
-            },
-            closeInfoModal() {
-                this.showInfoModal = false;
-            },
-            closeConfirmationModal() {
-                this.showConfirmationModal = false;
+            confirmDelete() {
+                this.showModal = false;
+                console.log("Modal window action: confirmed");
             }
         }
     };
