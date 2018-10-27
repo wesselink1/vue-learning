@@ -2,7 +2,8 @@
     <transition
         name="modal-window--fade">
         <div 
-            class="modal-window">
+            class="modal-window"
+            @click.prevent="cancel">
             <div
                 role="dialog"
                 aria-labelledby="modalWindowTitle"
