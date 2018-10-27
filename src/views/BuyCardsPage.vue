@@ -17,6 +17,7 @@
 
 		<p class="cards__reset">
 			<button
+				:disabled="cardsTotal == 0"
 				class="button button--02"
 				@click="showConfirmResetTotalModal = true">
 				Reset total
