@@ -5,17 +5,17 @@
         <p class="modal-page__cta">
             <button
                 class="button button--01"
-                @click="showModal = true">
+                @click="showDemoModal = true">
                 Open modal window
             </button>
         </p>
 
         <ModalWindow
-            v-show="showModal"
-            @onConfirm="confirmDelete"
-            @onCancel="showModal = false"
-            title="Delete record">
-            <p>Are you sure you want to delete the record?</p>
+            v-show="showDemoModal"
+            @onConfirm="confirmDemoModal"
+            @onCancel="cancelDemoModal"
+            title="Demo modal">
+            <p>Are you sure you want to display a console message?</p>
         </ModalWindow>
     </div>
 </template>
@@ -30,13 +30,17 @@
         },
         data() {
             return {
-                showModal: false
+                showDemoModal: false
             }
         },
         methods: {
-            confirmDelete() {
-                this.showModal = false;
-                console.log("Modal window action: confirmed");
+            confirmDemoModal() {
+                this.showDemoModal = false;
+                console.log("[modal window] confirmed");
+            },
+            cancelDemoModal() {
+                this.showDemoModal = false
+                console.log("[modal window] canceled");
             }
         }
     };
