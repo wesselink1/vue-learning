@@ -85,7 +85,7 @@
         @include align-items(center);
         @include justify-content(center);
         justify-content: center;
-        background-color: rgba(0, 0, 0, .50);
+        background-color: rgba(0, 191, 255, .30);
     }
 
     .modal-window--fade-enter,

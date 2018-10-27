@@ -33,13 +33,13 @@
 				@incrementCardsTotal="incrementCardsTotal" />
 		</div>
 
-		<ModalWindow
+		<ModalConfirm
             v-show="showConfirmResetTotalModal"
             @onConfirm="confirmResetTotal"
             @onCancel="showConfirmResetTotalModal = false"
             title="Reset total">
             <p>Reset the total to play again?</p>
-        </ModalWindow>
+        </ModalConfirm>
 	</main>
 </template>
 
@@ -48,13 +48,13 @@
 	import { mapMutations } from "vuex";
 	import { firebase } from "@/db";
 	import CardItem from "@/components/CardItem";
-	import ModalWindow from "@/components/ModalWindow";
+	import ModalConfirm from "@/components/ModalConfirm";
 
 	export default {
 		name: "BuyCardsPage",
 		components: {
 			CardItem,
-			ModalWindow
+			ModalConfirm
 		},
 		data() {
 			return {

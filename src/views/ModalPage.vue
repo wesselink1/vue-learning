@@ -10,23 +10,23 @@
             </button>
         </p>
 
-        <ModalWindow
+        <ModalConfirm
             v-show="showDemoModal"
             @onConfirm="confirmDemoModal"
             @onCancel="cancelDemoModal"
-            title="Demo modal">
+            title="Console message">
             <p>Are you sure you want to display a console message?</p>
-        </ModalWindow>
+        </ModalConfirm>
     </div>
 </template>
 
 <script>
-    import ModalWindow from "@/components/ModalWindow";
+    import ModalConfirm from "@/components/ModalConfirm";
 
     export default {
         name: "ModalPage",
         components: {
-            ModalWindow
+            ModalConfirm
         },
         data() {
             return {

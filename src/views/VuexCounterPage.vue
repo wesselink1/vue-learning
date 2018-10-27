@@ -16,15 +16,14 @@
 				class="button button--02"
 				:disabled="counter <= 0">
 				Decrement counter
-			</button>			
-		</p>
+			</button>	
 
-		<p class="paragraph">
 			<button
 				@click="showConfirmCounterResetModal = true"
-				class="button button--01">
+				class="button button--01"
+				:disabled="counter == 0">
 				Reset counter
-			</button>
+			</button>		
 		</p>
 
 		<hr class="hr">
@@ -38,37 +37,37 @@
 				class="button button--02"
 				@click="showConfirmNameChangeModal = true"
 				:disabled="nameChanged">
-				{{ nameChanged ? 'Name was changed' : 'Change name' }}
+				{{ nameChanged ? 'Name was already changed' : 'Change name' }}
 			</button>
 		</p>
 
-		<ModalWindow
+		<ModalConfirm
             v-show="showConfirmCounterResetModal"
             @onConfirm="confirmCounterReset"
             @onCancel="showConfirmCounterResetModal = false"
             title="Reset counter">
             <p>Do you want to reset the counter?</p>
-        </ModalWindow>
+        </ModalConfirm>
 
-		<ModalWindow
+		<ModalConfirm
             v-show="showConfirmNameChangeModal"
             @onConfirm="confirmChangeName"
             @onCancel="showConfirmNameChangeModal = false"
             title="Change the name">
             <p>Remember this is not undoable.</p>
-        </ModalWindow>
+        </ModalConfirm>
 	</main>
 </template>
 
 <script>
 	import { mapGetters } from "vuex";
 	import { mapMutations } from "vuex";
-	import ModalWindow from "@/components/ModalWindow";
+	import ModalConfirm from "@/components/ModalConfirm";
 
 	export default {
 		name: "VuexCounterPage",
 		components: {
-            ModalWindow
+            ModalConfirm
         },
 		data() {
 			return {
@@ -105,3 +104,11 @@
 		}
 	};
 </script>
+
+<style lang="scss">
+	.counter__buttons {
+		.button + .button {
+			margin-left: 20px;
+		}
+	}
+</style>
