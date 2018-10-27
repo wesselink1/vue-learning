@@ -59,6 +59,15 @@
                 default: true
             }
         },
+        created() {
+            const _that = this;
+
+            document.addEventListener('keydown', function(e) {
+                if(e.key === 'Escape') {
+                    _that.$emit("onCancel");
+                }
+            });
+        },
         data() {
             return {
                 
