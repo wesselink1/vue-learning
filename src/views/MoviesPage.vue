@@ -2,10 +2,7 @@
     <main class="movies">
         <h1 class="heading">Movies</h1>
 
-        <p class="paragraph">
-            Movie overview- and detail page using <strong>vue-router</strong>, a dynamic URL using movie ID and an URL title slug.
-            The list of movies is coming from <strong>Google Firebase</strong>.
-        </p>
+        <p class="paragraph">Movie overview- and detail page using <strong>vue-router</strong>, a dynamic URL using movie ID and an URL title slug.</p>
 
         <p class="paragraph movies__sorting">
             Order by: 
@@ -52,9 +49,7 @@
 
 <script>
     import { mapGetters } from "vuex";
-    import { mapMutations } from "vuex";
-    import { orderBy } from "lodash";
-    import { firebase } from "@/db";
+	import { mapMutations } from "vuex";
     import MovieItem from "@/components/MovieItem";
 
     export default {
@@ -75,14 +70,12 @@
 		},
         computed: {
             ...mapGetters([
+                "filteredMovies",
+                "movies",
 				"order",
 				"orderByDesc"
-            ]),
-            filteredMovies() {
-                return orderBy(this.movies, [this.$store.getters.order], this.$store.getters.orderByDesc ? "desc" : "asc");
-            }
-        },
-        firebase
+            ])
+        }
     };
 </script>
 
