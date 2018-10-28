@@ -25,7 +25,7 @@
     </div>
 </template>
 
-<script>    
+<script>
     import { firebase } from "@/db";
     import TvShowItem from "@/components/TvShowItem";
 
