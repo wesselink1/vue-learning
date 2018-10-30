@@ -61,11 +61,9 @@
             }
         },
         created() {
-            const _that = this;
-
-            document.addEventListener('keydown', function(e) {
+            document.addEventListener('keydown', (e) => {
                 if(e.key === 'Escape') {
-                    _that.$emit("onCancel");
+                    this.$emit("onCancel");
                 }
             });
         },
