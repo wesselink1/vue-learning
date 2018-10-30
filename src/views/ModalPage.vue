@@ -50,11 +50,9 @@
         methods: {
             confirmDemoModal() {
                 this.showDemoModal = false;
-                console.log("[modal window] confirmed");
             },
             cancelDemoModal() {
                 this.showDemoModal = false;
-                console.log("[modal window] canceled");
             }
         }
     };
