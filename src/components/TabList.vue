@@ -39,11 +39,9 @@
             listClass: String,
             ariaLabel: String,
         },
-        data() {
-            return {
-                tabs: []
-            }
-        },
+        data: () => ({
+            tabs: []
+        }),
         created() {
             this.tabs = this.$children;
         },

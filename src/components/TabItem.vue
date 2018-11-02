@@ -25,11 +25,9 @@
         mounted() {
             this.isActive = (this.selectedTabComponent == this.name);
         },
-        data() {
-            return {
-                isActive: false
-            }
-        },
+        data: () => ({
+            isActive: false
+        }),
         computed: {
 			...mapGetters([
 				"selectedTabComponent"

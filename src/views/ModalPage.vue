@@ -41,12 +41,10 @@
         components: {
             ModalConfirm
         },
-        data() {
-            return {
-                showDemoModal: false,
-                showBasicDemoModal: false
-            }
-        },
+        data: () => ({
+            showDemoModal: false,
+            showBasicDemoModal: false
+        }),        
         methods: {
             confirmDemoModal() {
                 this.showDemoModal = false;

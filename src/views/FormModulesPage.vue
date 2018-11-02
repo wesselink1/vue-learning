@@ -20,11 +20,9 @@
         components: {
             FormRow
         },
-        data() {
-            return {
-                coupon: "FREEBIE"
-            }
-        }
+        data: () => ({
+            coupon: "FREEBIE"
+        })
     }
 </script>
 

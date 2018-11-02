@@ -57,11 +57,9 @@
 			CardItem,
 			ModalConfirm
 		},
-		data() {
-			return {
-				showConfirmResetTotalModal: false
-			}
-		},
+		data: () => ({
+			showConfirmResetTotalModal: false
+        }),
 		methods: {
 			...mapMutations([
 				"incrementCardsTotal"
