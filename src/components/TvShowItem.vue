@@ -30,14 +30,6 @@
                 type: Object,
                 required: true
             }
-        },
-        data() {
-            return {
-
-            }
-        },
-        methods: {
-
         }
     };
 </script>

@@ -36,38 +36,36 @@
 		components: {
 			"SlideUpDown": SlideUpDown
 		},
-		data() {
-			return {
-				active: false,
-				duration: 300,
-				faqList: [
-					{
-						id: 1,
-						active: false,
-						title: "Whats on my icecream?",
-						body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia aspernatur cupiditate rerum ut, repellat veniam in, placeat sit porro fuga!"
-					},
-					{
-						id: 2,
-						active: false,
-						title: "Where can I get a fancy red dress?",
-						body: "Mollitia aspernatur cupiditate rerum ut, repellat veniam in, placeat sit porro fuga!"
-					},
-					{
-						id: 3,
-						active: false,
-						title: "Where's the park?",
-						body: "Consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia aspernatur cupiditate rerum ut, repellat veniam in, placeat sit porro fuga!"
-					},
-					{
-						id: 4,
-						active: false,
-						title: "Is the internet finally done?",
-						body: "The internet is not finished yet!"
-					},
-				]
-			}
-		},
+		data: () => ({   
+			active: false,
+			duration: 300,
+			faqList: [
+				{
+					id: 1,
+					active: false,
+					title: "Whats on my icecream?",
+					body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia aspernatur cupiditate rerum ut, repellat veniam in, placeat sit porro fuga!"
+				},
+				{
+					id: 2,
+					active: false,
+					title: "Where can I get a fancy red dress?",
+					body: "Mollitia aspernatur cupiditate rerum ut, repellat veniam in, placeat sit porro fuga!"
+				},
+				{
+					id: 3,
+					active: false,
+					title: "Where's the park?",
+					body: "Consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia aspernatur cupiditate rerum ut, repellat veniam in, placeat sit porro fuga!"
+				},
+				{
+					id: 4,
+					active: false,
+					title: "Is the internet finally done?",
+					body: "The internet is not finished yet!"
+				},
+			]
+		}),
 		methods: {
 			toggleFaqItem(index) {
 				for(let i = 0, j = this.faqList.length; i < j; i++){

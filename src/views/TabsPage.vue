@@ -84,7 +84,7 @@
 		computed: {
 			...mapGetters([
 				"selectedTabComponent"
-			]),
+			])
 		}
 	};
 </script>

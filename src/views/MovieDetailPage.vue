@@ -42,22 +42,15 @@
                 <a :href="movie.imdb" class="movie-detail__externa-link" target="_blank">View on IMDb</a>
             </p>
         </template>
-        
     </main>
 </template>
 
 <script>    
     export default {
         name: "MovieDetailPage",
-        data() {
-            return {
-                id: this.$route.params.id,
-            }
-        },
         computed: {
-            movie() {
-                // https://vuex.vuejs.org/guide/getters.html
-                return this.$store.getters.movie(this.id);
+            movie() {                
+                return this.$store.getters.movie(this.$route.params.id);
             }            
         }
     };

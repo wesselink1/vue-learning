@@ -69,15 +69,13 @@
 		components: {
             ModalConfirm
         },
-		data() {
-			return {
-				showConfirmCounterResetModal: false,
-				showConfirmNameChangeModal: false,
-				firstName: "James",
-				lastName: "Dean",
-				nameChanged: false,
-			}
-		},
+		data: () => ({
+			showConfirmCounterResetModal: false,
+			showConfirmNameChangeModal: false,
+			firstName: "James",
+			lastName: "Dean",
+			nameChanged: false
+        }),
 		methods: {
 			...mapMutations([
 				"decrementCounter",

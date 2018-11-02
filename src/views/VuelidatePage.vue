@@ -186,15 +186,13 @@
 
 	export default {
 		name: "VuelidatePage",
-		data() {
-			return {
-				coupons: [
-					"SUMMER28",
-					"FALL44",
-					"SPRING2019"
-				]
-			}
-		},
+		data: () => ({
+			coupons: [
+				"SUMMER28",
+				"FALL44",
+				"SPRING2019"
+			]
+        }),
 		methods: {
 			submitForm() {
 				alert("Form send");

@@ -67,11 +67,6 @@
                 }
             });
         },
-        data() {
-            return {
-                
-            }
-        },
         methods: {
             confirm() {
                 this.$emit("onConfirm");
