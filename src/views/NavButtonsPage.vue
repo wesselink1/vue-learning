@@ -8,11 +8,12 @@
 			Scripted navigation button using <strong>Vue Router</strong>
 		</p>
 
-		<p>
+		<p class="paragraph">
 			<button
 				class="button button--01"
+				:disabled="btnDisabled"
 				@click="confirmThis">
-				Test me
+				Show modalTest
 			</button>
 		</p>
 
@@ -41,14 +42,19 @@
 <script>
 	export default {
 		name: "NavButtonsPage",
+		data() {
+			return {
+				btnDisabled: false,
+			}
+		},
 		methods: {
 			confirmThis() {
-				this.$modalConfirm("Do you want to delete this?")
+				this.$modalTest("Are you sure you want this to happen?")
 					.then((response) => {
-						console.log(`[modal test] ${response}`);
+						console.log(`[modalTest] OK!`);
 					})
 					.catch((response) => {
-						console.log(`[modal test] ${response}`);
+						console.log(`[modalTest] Canceled!`);
 					})
 			}
 		}
