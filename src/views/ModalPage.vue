@@ -67,7 +67,7 @@
 					})
 					.catch((response) => {
 						console.log(`[modalTest] Canceled!`);
-					})
+					});
 			}
         }
     };
