@@ -16,7 +16,7 @@
                 @click="showBasicDemoModal = true">
                 Open basic demo confirm modal
             </button>
-        </p>
+        </p>       
 
         <ModalConfirm
             v-show="showDemoModal"
@@ -30,6 +30,14 @@
             v-show="showBasicDemoModal"
             @onConfirm="showBasicDemoModal = false"
             @onCancel="showBasicDemoModal = false" />
+
+        <p>
+			<button
+				class="button button--01"
+				@click="confirmThis">
+				Open modalTest
+			</button>
+		</p>
     </div>
 </template>
 
@@ -51,7 +59,16 @@
             },
             cancelDemoModal() {
                 this.showDemoModal = false;
-            }
+            },
+            confirmThis() {
+				this.$modalTest("Are you sure you want this to happen?")
+					.then((response) => {
+						console.log(`[modalTest] OK!`);
+					})
+					.catch((response) => {
+						console.log(`[modalTest] Canceled!`);
+					})
+			}
         }
     };
 </script>

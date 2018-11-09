@@ -1,21 +1,6 @@
 <template>
 	<main class="home">
-		<h1 class="heading">Navigation buttons</h1>
-
-		<p
-			class="paragraph"
-			v-fancy.delayed="{ classname: 'fancy', delay: 2000 }">
-			Scripted navigation button using <strong>Vue Router</strong>
-		</p>
-
-		<p class="paragraph">
-			<button
-				class="button button--01"
-				:disabled="btnDisabled"
-				@click="confirmThis">
-				Show modalTest
-			</button>
-		</p>
+		<h1 class="heading">Navigation buttons</h1>	
 
 		<p class="home__buttons">
 			<button
@@ -41,23 +26,7 @@
 
 <script>
 	export default {
-		name: "NavButtonsPage",
-		data() {
-			return {
-				btnDisabled: false,
-			}
-		},
-		methods: {
-			confirmThis() {
-				this.$modalTest("Are you sure you want this to happen?")
-					.then((response) => {
-						console.log(`[modalTest] OK!`);
-					})
-					.catch((response) => {
-						console.log(`[modalTest] Canceled!`);
-					})
-			}
-		}
+		name: "NavButtonsPage"
 	}
 </script>
 

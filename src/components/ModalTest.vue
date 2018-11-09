@@ -16,14 +16,14 @@
                     <button
                         @click="cancel"
                         aria-label="Cancel modal"
-                        class="modalTest__button button button--02">
+                        class="modalTest__button button button--03">
                         Cancel
                     </button>
 
                     <button
                         @click="confirm"
                         aria-label="Confirm modal"
-                        class="modalTest__button button button--01">
+                        class="modalTest__button button button--02">
                         Ok
                     </button>
                 </nav>
