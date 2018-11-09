@@ -10,8 +10,6 @@
   		</transition>
 
   		<TheFooter></TheFooter>
-		  
-		<div id="modalTest"></div>
   	</section>
 </template>
 
