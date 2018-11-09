@@ -33,7 +33,7 @@
 
         <p>
 			<button
-				class="button button--01"
+				class="button button--02"
 				@click="confirmThis">
 				Open modalTest
 			</button>
