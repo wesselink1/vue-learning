@@ -10,7 +10,9 @@ import '@/scss/style.scss'; // https://vueschool.io/articles/vuejs-tutorials/glo
 
 Vue.use(Vuelidate);
 Vue.use(FancyBackground);
-Vue.use(ModalConfirm);
+Vue.use(ModalConfirm, {
+	// bodyClass: "has-modal-open"
+});
 
 Vue.config.productionTip = false;
 
