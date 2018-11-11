@@ -66,10 +66,10 @@
                         // okButtonLabel: "Yes please!",
                         // cancelButtonLabel: "No f*** way!"
                     })
-					.then((response) => {
+					.then(e => {
 						console.log(`[modalConfirm] Confirmed`);
 					})
-					.catch((response) => {
+					.catch(e => {
 						console.log(`[modalConfirm] Canceled`);
 					});
 			}
