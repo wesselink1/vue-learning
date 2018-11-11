@@ -19,7 +19,7 @@
 			</button>	
 
 			<button
-				@click="showConfirmCounterResetModal = true"
+				@click="confirmCounterReset"
 				class="button button--01"
 				:disabled="counter == 0">
 				Reset counter
@@ -35,45 +35,25 @@
 		<p class="paragraph">
 			<button 
 				class="button button--02"
-				@click="showConfirmNameChangeModal = true"
+				@click="confirmChangeName"
 				:disabled="nameChanged">
 				{{ nameChanged ? 'Name was already changed' : 'Change name' }}
 			</button>
 		</p>
-
-		<ModalConfirm
-            v-show="showConfirmCounterResetModal"
-            @onConfirm="confirmCounterReset"
-            @onCancel="showConfirmCounterResetModal = false"
-            title="Reset counter">
-            <p>Do you want to reset the counter?</p>
-        </ModalConfirm>
-
-		<ModalConfirm
-            v-show="showConfirmNameChangeModal"
-            @onConfirm="confirmChangeName"
-            @onCancel="showConfirmNameChangeModal = false"
-            title="Change the name">
-            <p>Remember this is not undoable.</p>
-        </ModalConfirm>
 	</main>
 </template>
 
 <script>
 	import { mapGetters } from "vuex";
 	import { mapMutations } from "vuex";
-	import ModalConfirm from "@/components/ModalConfirm";
 
 	export default {
 		name: "VuexCounterPage",
-		components: {
-            ModalConfirm
-        },
 		data: () => ({
-			showConfirmCounterResetModal: false,
-			showConfirmNameChangeModal: false,
 			firstName: "James",
 			lastName: "Dean",
+			newFirstName: "Master",
+			newLastName: "of Disaster",
 			nameChanged: false
         }),
 		methods: {
@@ -82,14 +62,26 @@
 				"incrementCounter"
 			]),
 			confirmCounterReset() {
-				this.$store.commit("resetCounter");
-				this.showConfirmCounterResetModal = false;
+				this.$modalConfirm({ title: "Reset the counter?", description: "Do you want to reset the counter?" })
+					.then(e => {
+						this.$store.commit("resetCounter");
+						this.showConfirmCounterResetModal = false;
+					})
+					.catch(e => {
+						console.log(e);
+					});				
 			},
 			confirmChangeName() {
-				this.firstName = "Master",
-				this.lastName = "of Disaster",
-				this.nameChanged = true;
-				this.showConfirmNameChangeModal = false;
+				this.$modalConfirm({ title: "Are your sure you want to change the name?", description: `To: ${this.newFirstName} ${this.newLastName}` })
+					.then((response) => {
+						this.firstName = this.newFirstName,
+						this.lastName = this.newLastName,
+						this.nameChanged = true;
+						this.showConfirmNameChangeModal = false;
+					})
+					.catch(e => {
+						console.log(e);
+					});				
 			}
 		},
 		computed: {
