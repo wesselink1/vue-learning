@@ -23,7 +23,7 @@
 		},
 		methods: {
 			buyCard() {
-				this.$emit("incrementCardsTotal", this.card.price);
+				this.$emit("onIncrementCardsTotal", this.card.price);
 			}
 		}
 	};

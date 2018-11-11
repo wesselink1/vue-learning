@@ -31,7 +31,7 @@
 				:card="card"
 				:cardsTotal="cardsTotal"
 				:limit="limit"
-				@incrementCardsTotal="incrementCardsTotal" />
+				@onIncrementCardsTotal="incrementCardsTotal" />
 		</div>
 	</main>
 </template>
