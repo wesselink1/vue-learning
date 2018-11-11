@@ -7,7 +7,7 @@ export default {
                 new Vue({
                     render: h => h(ModalConfirm, {
                         props: {
-                            ModalConfirmInit: true,
+                            modalConfirmInit: true,
                             options: modalOptions
                         },
                         on: {

@@ -53,7 +53,7 @@
                 type: Object,
                 required: true
             },
-            ModalConfirmInit: {
+            modalConfirmInit: {
                 type: Boolean,
                 default: false
             }
@@ -67,7 +67,7 @@
         },
         data() {
             return {
-                showModalConfirm: this.ModalConfirmInit
+                showModalConfirm: this.modalConfirmInit
             }
         },
         methods: {
