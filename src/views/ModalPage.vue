@@ -61,12 +61,16 @@
                 this.showDemoModal = false;
             },
             showConfirmModal() {
-				this.$modalConfirm({ title: "Are you sure you want this to happen?", description: "Whahaha" })
+				this.$modalConfirm({
+                        title: "Are you sure you want this to happen?",
+                        // okButtonLabel: "Yes please!",
+                        // cancelButtonLabel: "No f*** way!"
+                    })
 					.then((response) => {
-						console.log(`[modalConfirm] OK!`);
+						console.log(`[modalConfirm] Confirmed`);
 					})
 					.catch((response) => {
-						console.log(`[modalConfirm] Canceled!`);
+						console.log(`[modalConfirm] Canceled`);
 					});
 			}
         }

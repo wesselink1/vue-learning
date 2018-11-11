@@ -30,14 +30,14 @@
                         @click="cancel"
                         aria-label="Cancel modal"
                         class="modal-confirm__button button button--03">
-                        Cancel
+                        {{ options.cancelButtonLabel || "Cancel" }}
                     </button>
 
                     <button
                         @click="confirm"
                         aria-label="Confirm modal"
                         class="modal-confirm__button button button--02">
-                        Ok
+                        {{ options.okButtonLabel || "Ok" }}
                     </button>
                 </div>
             </div>
