@@ -1,8 +1,6 @@
 <template>
 	<main class="home">
-		<h1 class="heading">Navigation buttons</h1>
-
-		<p class="paragraph">Scripted navigation button using <strong>Vue Router</strong></p>
+		<h1 class="heading">Navigation buttons</h1>	
 
 		<p class="home__buttons">
 			<button
@@ -40,5 +38,16 @@
 
 	.button {
 		margin-bottom: 20px;
+	}
+
+	.paragraph {
+		transition: .3s background-color, .3s color;
+		padding: 10px 20px;
+	}
+
+	p.fancy {
+		color: white;
+		border-radius: 10px;
+		background-color: deeppink;
 	}
 </style>

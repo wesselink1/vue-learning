@@ -4,6 +4,8 @@
 
         <p class="paragraph">Using Vue custom directive attributes to create custom functionality.</p>
 
+        <p class="paragraph" v-fancy.delayed="{ className: 'fancyBackground', delay: 3000 }">Using a Vue plugin to set a custom directive on this paragraph.</p>
+
         <p
             class="paragraph customdirective__body"
             v-highlight="{ color: 'red' }">
@@ -60,5 +62,11 @@
         border-radius: 10px;
         -webkit-transition: background-color .5s ease-in-out, color .5s ease-in-out;
         transition: background-color .5s ease-in-out, color .5s ease-in-out;
+    }
+
+    p.fancyBackground {
+        border-radius: 10px;
+        color: map-get($colors, 05);
+        background-color: map-get($colors, 01);
     }
 </style>

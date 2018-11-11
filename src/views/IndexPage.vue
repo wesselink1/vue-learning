@@ -115,7 +115,7 @@
 
 <script>
 	import { mapGetters } from "vuex";
-	import MovieFeatured from "@/components/MovieFeatured";
+	import MovieFeatured from "@/components/MovieFeatured";	
 
 	export default {
 		name: "IndexPage",

@@ -16,30 +16,38 @@
                 @click="showBasicDemoModal = true">
                 Open basic demo confirm modal
             </button>
-        </p>
+        </p>       
 
-        <ModalConfirm
+        <ModalWindow
             v-show="showDemoModal"
             @onConfirm="confirmDemoModal"
             @onCancel="cancelDemoModal"
             title="Console message">
             <p>Are you sure you want to display a console message?</p>
-        </ModalConfirm>
+        </ModalWindow>
 
-        <ModalConfirm
+        <ModalWindow
             v-show="showBasicDemoModal"
             @onConfirm="showBasicDemoModal = false"
             @onCancel="showBasicDemoModal = false" />
+
+        <p>
+			<button
+				class="button button--02"
+				@click="showConfirmModal">
+				Open modalConfirm
+			</button>
+		</p>
     </div>
 </template>
 
 <script>
-    import ModalConfirm from "@/components/ModalConfirm";
+    import ModalWindow from "@/components/ModalWindow";
 
     export default {
         name: "ModalPage",
         components: {
-            ModalConfirm
+            ModalWindow
         },
         data: () => ({
             showDemoModal: false,
@@ -51,7 +59,20 @@
             },
             cancelDemoModal() {
                 this.showDemoModal = false;
-            }
+            },
+            showConfirmModal() {
+				this.$modalConfirm({
+                        title: "Are you sure you want this to happen?",
+                        // okButtonLabel: "Yes please!",
+                        // cancelButtonLabel: "No f*** way!"
+                    })
+					.then(e => {
+						console.log(`[modalConfirm] Confirmed`);
+					})
+					.catch(e => {
+						console.log(`[modalConfirm] Canceled`);
+					});
+			}
         }
     };
 </script>

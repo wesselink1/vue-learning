@@ -19,7 +19,7 @@
 			<button
 				:disabled="cardsTotal == 0"
 				class="button button--02"
-				@click="showConfirmResetTotalModal = true">
+				@click="confirmResetTotal">
 				Reset total
 			</button>
 		</p>
@@ -31,16 +31,8 @@
 				:card="card"
 				:cardsTotal="cardsTotal"
 				:limit="limit"
-				@incrementCardsTotal="incrementCardsTotal" />
+				@onIncrementCardsTotal="incrementCardsTotal" />
 		</div>
-
-		<ModalConfirm
-            v-show="showConfirmResetTotalModal"
-            @onConfirm="confirmResetTotal"
-            @onCancel="showConfirmResetTotalModal = false"
-            title="Reset total">
-            <p>Reset the total to play again?</p>
-        </ModalConfirm>
 	</main>
 </template>
 
@@ -49,13 +41,11 @@
 	import { mapMutations } from "vuex";
 	import { firebase } from "@/db";
 	import CardItem from "@/components/CardItem";
-	import ModalConfirm from "@/components/ModalConfirm";
 
 	export default {
 		name: "BuyCardsPage",
 		components: {
-			CardItem,
-			ModalConfirm
+			CardItem
 		},
 		data: () => ({
 			showConfirmResetTotalModal: false
@@ -65,8 +55,14 @@
 				"incrementCardsTotal"
 			]),
 			confirmResetTotal() {
-				this.$store.commit("resetCardsTotal");
-				this.showConfirmResetTotalModal = false;
+				this.$modalConfirm({ title: "Reset total", description: "Back to zero?" })
+					.then((response) => {
+						this.$store.commit("resetCardsTotal");
+						this.showConfirmResetTotalModal = false;
+					})
+					.catch(e => {
+						console.log(e);
+					});				
 			}
 		},
 		computed: {
