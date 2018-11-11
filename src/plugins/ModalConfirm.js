@@ -1,9 +1,15 @@
 import ModalConfirm from "@/components/ModalConfirm";
 
 export default {
-    install(Vue, options) {
+    install(Vue, config) {
+        const optionsDefaults = {
+            bodyClass: "has-modal-open"
+        }
+
+        const options = { ...optionsDefaults, ...config }
+
         Vue.prototype.$modalConfirm = modalOptions => {
-            let bodyTag = document.getElementsByTagName("BODY")[0];
+            const bodyTag = document.getElementsByTagName("BODY")[0];
             bodyTag.classList.add(options.bodyClass);
 
             return new Promise((resolve, reject) => {
