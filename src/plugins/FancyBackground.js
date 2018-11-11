@@ -3,7 +3,7 @@ export default {
         Vue.directive('fancy', {
             bind(el, binding) {
                 setTimeout(() => {
-                    el.classList.add(binding.value.classname);                    
+                    el.classList.add(binding.value.className);                    
                 }, binding.modifiers['delayed'] ? binding.value.delay : 0);
             }
         });
