@@ -3,6 +3,9 @@ import ModalConfirm from "@/components/ModalConfirm";
 export default {
     install(Vue, options) {
         Vue.prototype.$modalConfirm = modalOptions => {
+            let bodyTag = document.getElementsByTagName("BODY")[0];
+            bodyTag.classList.add(options.bodyClass);
+
             return new Promise((resolve, reject) => {
                 new Vue({
                     render: h => h(ModalConfirm, {
@@ -12,9 +15,11 @@ export default {
                         },
                         on: {
                             onConfirm() {
+                                bodyTag.classList.remove(options.bodyClass);
                                 resolve();
                             },
                             onCancel() {
+                                bodyTag.classList.remove(options.bodyClass);
                                 reject();
                             }
                         }

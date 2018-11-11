@@ -84,6 +84,12 @@
 </script>
 
 <style lang="scss">
+    body.has-modal-open {
+        .app__container {
+            filter: blur(4px);
+        }
+    }
+
     .modal-confirm {
         position: fixed;
         top: 0;
