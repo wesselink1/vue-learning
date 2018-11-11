@@ -8,7 +8,7 @@ export default {
                     render: h => h(ModalTest, {
                         props: {
                             modalTestInit: true,
-                            title: modalOptions
+                            options: modalOptions
                         },
                         on: {
                             onConfirm() {

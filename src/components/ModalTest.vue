@@ -3,30 +3,43 @@
         name="modal-test--fade">
         <div
             v-if="showModalTest"
-            class="modalTest">
+            class="modal-test">
             <div
                 role="dialog"
-                aria-labelledby="modalWindowTitle"   
-                class="modalTest__block">
-                <h2
-                    id="modalWindowTitle"
-                    class="modalTest__title">{{ title }}</h2>
+                aria-labelledby="modalWindowTitle"                
+                aria-describedby="modalWindowDescription"  
+                class="modal-test__block">
 
-                <nav class="modalTest__footer">
+                <div class="modal-test__header">
+                    <h2
+                        id="modalWindowTitle"
+                        class="modal-test__title">
+                        {{ options.title }}
+                    </h2>
+                </div>         
+
+                <div
+                    v-if="options.description"
+                    id="modalWindowDescription"
+                    class="modal-test__body">
+                    {{ options.description }}
+                </div>       
+
+                <div class="modal-test__footer">
                     <button
                         @click="cancel"
                         aria-label="Cancel modal"
-                        class="modalTest__button button button--03">
+                        class="modal-test__button button button--03">
                         Cancel
                     </button>
 
                     <button
                         @click="confirm"
                         aria-label="Confirm modal"
-                        class="modalTest__button button button--02">
+                        class="modal-test__button button button--02">
                         Ok
                     </button>
-                </nav>
+                </div>
             </div>
         </div>    
     </transition>
@@ -36,9 +49,9 @@
     export default {
         name: "ModalTest",
         props: {
-            title: {
-                type: String,
-                default: "Are you sure?"
+            options: {
+                type: Object,
+                required: true
             },
             modalTestInit: {
                 type: Boolean,
@@ -71,7 +84,7 @@
 </script>
 
 <style lang="scss">
-    .modalTest {
+    .modal-test {
         position: fixed;
         top: 0;
         right: 0;
@@ -95,7 +108,7 @@
         transition: opacity .3s ease;
     }
 
-    .modalTest__block {
+    .modal-test__block {
         position: relative;
         min-width: 20vw;
         max-width: 50vw;
@@ -106,18 +119,18 @@
         box-shadow: 0 5px 5px 0px rgba(0,0,0, .2);
     }
 
-    .modalTest__title {
+    .modal-test__title {
         font-size: 20px;
         columns: black;
         border-bottom: 1px solid #444;
         padding-bottom: 10px;
     }
 
-    .modalTest__button {
+    .modal-test__button {
         cursor: pointer;
     }
 
-    .modalTest__footer {
+    .modal-test__footer {
         @include flexbox;
         @include justify-content(flex-end);
         margin-top: 50px;

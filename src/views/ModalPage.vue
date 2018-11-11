@@ -61,7 +61,7 @@
                 this.showDemoModal = false;
             },
             confirmThis() {
-				this.$modalTest("Are you sure you want this to happen?")
+				this.$modalTest({ title: "Are you sure you want this to happen?" })
 					.then((response) => {
 						console.log(`[modalTest] OK!`);
 					})
