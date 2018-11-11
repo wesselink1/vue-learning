@@ -19,7 +19,7 @@ export default {
                             }
                         }
                     })
-                }).$mount('#modalTest');
+                }).$mount(document.body.appendChild(document.createElement('div')));                
             });
         }
     }
