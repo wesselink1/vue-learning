@@ -18,15 +18,15 @@
             </button>
         </p>       
 
-        <ModalConfirm
+        <ModalWindow
             v-show="showDemoModal"
             @onConfirm="confirmDemoModal"
             @onCancel="cancelDemoModal"
             title="Console message">
             <p>Are you sure you want to display a console message?</p>
-        </ModalConfirm>
+        </ModalWindow>
 
-        <ModalConfirm
+        <ModalWindow
             v-show="showBasicDemoModal"
             @onConfirm="showBasicDemoModal = false"
             @onCancel="showBasicDemoModal = false" />
@@ -34,20 +34,20 @@
         <p>
 			<button
 				class="button button--02"
-				@click="confirmThis">
-				Open modalTest
+				@click="showConfirmModal">
+				Open modalConfirm
 			</button>
 		</p>
     </div>
 </template>
 
 <script>
-    import ModalConfirm from "@/components/ModalConfirm";
+    import ModalWindow from "@/components/ModalWindow";
 
     export default {
         name: "ModalPage",
         components: {
-            ModalConfirm
+            ModalWindow
         },
         data: () => ({
             showDemoModal: false,
@@ -60,13 +60,13 @@
             cancelDemoModal() {
                 this.showDemoModal = false;
             },
-            confirmThis() {
-				this.$modalTest({ title: "Are you sure you want this to happen?" })
+            showConfirmModal() {
+				this.$modalConfirm({ title: "Are you sure you want this to happen?", description: "Whahaha" })
 					.then((response) => {
-						console.log(`[modalTest] OK!`);
+						console.log(`[modalConfirm] OK!`);
 					})
 					.catch((response) => {
-						console.log(`[modalTest] Canceled!`);
+						console.log(`[modalConfirm] Canceled!`);
 					});
 			}
         }

@@ -1,13 +1,13 @@
-import ModalTest from "@/components/ModalTest";
+import ModalConfirm from "@/components/ModalConfirm";
 
 export default {
     install(Vue, options) {
-        Vue.prototype.$modalTest = modalOptions => {
+        Vue.prototype.$modalConfirm = modalOptions => {
             return new Promise((resolve, reject) => {
                 new Vue({
-                    render: h => h(ModalTest, {
+                    render: h => h(ModalConfirm, {
                         props: {
-                            modalTestInit: true,
+                            ModalConfirmInit: true,
                             options: modalOptions
                         },
                         on: {
@@ -19,7 +19,7 @@ export default {
                             }
                         }
                     })
-                }).$mount(document.body.appendChild(document.createElement('div')));                
+                }).$mount(document.body.appendChild(document.createElement('div')));
             });
         }
     }
