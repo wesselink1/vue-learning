@@ -3,9 +3,7 @@ const state = {
 };
 
 const getters = {
-	counter: state => {
-	    return state.counter;
-	}
+	counter: state => state.counter
 };
 
 const mutations = {
