@@ -3,9 +3,7 @@ const state = {
 };
 
 const getters = {
-	selectedTabComponent: state => {
-		return state.selectedTabComponent;
-	}
+	selectedTabComponent: state => state.selectedTabComponent
 };
 
 const mutations = {

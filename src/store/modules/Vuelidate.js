@@ -7,21 +7,11 @@ const state = {
 };
 
 const getters = {
-    age: state => {
-        return state.age;
-    },
-    email: state => {
-        return state.email;
-    },
-    terms: state => {
-        return state.terms;
-    },
-    username: state => {
-        return state.username;
-    },
-    coupon: state => {
-        return state.coupon;
-    }
+    age: state => state.age,
+    email: state => state.email,
+    terms: state => state.terms,
+    username: state => state.username,
+    coupon: state => state.coupon
 };
 
 const mutations = {

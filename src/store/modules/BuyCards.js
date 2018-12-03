@@ -8,12 +8,8 @@ const state = {
 };
 
 const getters = {
-	cardsTotal: state => {
-	    return state.cardsTotal;
-	},
-	limit: state => {
-		return state.limit;
-	}
+	cardsTotal: state => state.cardsTotal,
+	limit: state => state.limit
 };
 
 const mutations = {

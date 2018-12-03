@@ -15,8 +15,8 @@ const state = {
                 "Horror"
             ],
             stars: [
-                "Jack Nicholson", 
-                "Shelley Duvall", 
+                "Jack Nicholson",
+                "Shelley Duvall",
                 "Danny Lloyd"
             ],
             rating: 8.4,
@@ -161,8 +161,8 @@ const state = {
                 "Sci-Fi"
             ],
             stars: [
-                "Alden Ehrenreich", 
-                "Woody Harrelson", 
+                "Alden Ehrenreich",
+                "Woody Harrelson",
                 "Emilia Clarke"
             ],
             rating: 7.1,
@@ -178,7 +178,7 @@ const state = {
                 "Horror"
             ],
             stars: [
-                "Emily Blunt", 
+                "Emily Blunt",
                 "John Krasinski",
                 "Millicent Simmonds"
             ],
@@ -250,7 +250,7 @@ const state = {
             ],
             stars: [
                 "Taraji P. Henson",
-                "Octavia Spencer", 
+                "Octavia Spencer",
                 "Janelle Monáe"
             ],
             rating: 9.3,
@@ -279,32 +279,13 @@ const state = {
 };
 
 const getters = {
-    order: state => {
-        return state.order;
-    },
-    orderByDesc: state => {
-        return state.orderByDesc;
-    },
-    movies: state => {
-        return state.movies;
-    },
-    movie: (state) => (id) => {
-        // https://vuex.vuejs.org/guide/getters.html
-        return state.movies.find(item => item.id == id);
-    },
-    filteredMovies: state => {
-        return orderBy(state.movies, [state.order], state.orderByDesc ? "desc" : "asc");
-    },
-    highestRatedMovie: state => {
-        return maxBy(state.movies, function (item) {
-            return item.rating;
-        });
-    },
-    lowestRatedMovie: state => {
-        return minBy(state.movies, function (item) {
-            return item.rating;
-        });
-    }
+    order: state => state.order,
+    orderByDesc: state => state.orderByDesc,
+    movies: state => state.movies,
+    movie: (state) => (id) => state.movies.find(item => item.id == id),
+    filteredMovies: state => orderBy(state.movies, [state.order], state.orderByDesc ? "desc" : "asc"),
+    highestRatedMovie: state => maxBy(state.movies, (item) => item.rating),
+    lowestRatedMovie: state => minBy(state.movies, (item) => item.rating)
 };
 
 const mutations = {
