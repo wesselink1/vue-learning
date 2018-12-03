@@ -101,8 +101,8 @@
 
     .movie-item {
         img {
-            height: 350px;
-            width: auto;
+            height: auto;
+            width: 224px;
             max-width: 100%;
             box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .25);
         }
