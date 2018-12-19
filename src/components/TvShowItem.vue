@@ -12,11 +12,9 @@
 
         <p class="tv-shows__item-genre">{{ $options.filters.inlineList(show.genre) }}</p>  
 
-        <p class="tv-shows__item-rating">IMDb rating: {{ show.rating }} </p> 
+        <p class="tv-shows__item-rating">iMDb rating: {{ show.rating }} </p> 
 
         <p class="tv-shows__item-description"> {{ show.description }} </p>
-
-        <p class="tv-shows__item-stars">{{ $options.filters.inlineList(show.stars) }}</p>     
 
         <p class="tv-shows__item-link"><a :href="show.imdb">View in IMDb</a></p>                            
     </article>
