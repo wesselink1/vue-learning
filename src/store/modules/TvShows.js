@@ -1,22 +1,30 @@
 const state = {
     orderTvShowsBy: "year",
     orderTvShowsByDesc: true,
-    tvShowsPaginationLimit: 100,
+    tvShowsPerPage: 10,
+    tvShowsCurrentPage: 0
 }
 
 const getters = {
     orderTvShowsBy: state => state.orderTvShowsBy,
     orderTvShowsByDesc: state => state.orderTvShowsByDesc,
-    tvShowsPaginationLimit: state => state.tvShowsPaginationLimit,
+    tvShowsPerPage: state => state.tvShowsPerPage,
+    tvShowsCurrentPage: state => state.tvShowsCurrentPage
 }
 
 const mutations = {
-    changeOrderTvShowsBy: (state, payload) => {
+    setOrderTvShowsBy: (state, payload) => {
         state.orderTvShowsBy = payload;
     },
-    changeOrderTvShowsByDesc: state => {
+    setOrderTvShowsByDesc: state => {
         state.orderTvShowsByDesc = !state.orderTvShowsByDesc;
     },
+    setTvShowsPerPage: (state, payload) => {
+        state.tvShowsCurrentPage = payload;
+    },
+    setTvShowCurrentPage: (state, payload) => {
+        state.tvShowsCurrentPage = payload;
+    }
 }
 
 export default {
