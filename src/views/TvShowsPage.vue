@@ -7,27 +7,26 @@
                 <li                    
                     class="tv-shows__pagination-item tv-shows__pagination--prev">
                     <button
-                        :disabled="this.tvShowsCurrentPage == 0"
-                        @click="prevPage">
+                        :disabled="page == 1"
+                        @click="page--">
                         Prev
                     </button>
                 </li>
                 <li
                     class="tv-shows__pagination-item"
-                    :class="{ 'is-active' :  tvShowsCurrentPage == index }"
-                    v-for="(page, index) in nrOfPages"
+                    :class="{ 'is-active' :  page == pageNumber }"
+                    v-for="(pageNumber, index) in pages"
                     :key="index">             
                     <button
-                        href="javascript:;"
-                        @click="setPage(index)"
-                        >{{ index +1 }}
+                        @click="page = pageNumber">
+                        {{ pageNumber }}
                     </button>
                 </li>
                 <li
                     class="tv-shows__pagination-item tv-shows__pagination--next">
                     <button
-                        :disabled="this.tvShowsCurrentPage == nrOfPages"
-                        @click="nextPage">
+                        :disabled="page >= pages.length"
+                        @click="page++">
                         Next
                     </button>
                 </li>
@@ -70,7 +69,7 @@
 
         <section class="tv-shows__overview">
             <TvShowItem
-                v-for="show in filteredTvShows"
+                v-for="show in displayedPosts"
                 :show="show"
                 :key="show['.key']">
             </TvShowItem>
@@ -90,6 +89,35 @@
         components: {
             TvShowItem
         },
+        data() {
+            return {
+                posts: [],
+                page: 1,
+                perPage: 10,
+                pages: [],
+            }
+        },
+        created () {
+            const that = this;
+            this.posts = this.tvshows;
+
+            document.onkeydown = function(e) {
+                switch (e.keyCode) {
+                    case 37:
+                        if(that.page > 1) {
+                            that.page--;
+                        }
+
+                        break;
+                    case 39:
+                        if(that.page < that.pages.length) {
+                            that.page++;
+                        }
+
+                        break;
+                    }
+            }
+        },
         methods: {
             ...mapMutations([
                 "setOrderTvShowsBy",
@@ -99,20 +127,22 @@
             ]),
             setOrderBy(orderBy) {
                 this.setOrderTvShowsBy(orderBy);
-				this.setOrderTvShowsByDesc();
+                this.setOrderTvShowsByDesc();
+                this.page = 1;
             },
-            setPage(index) {
-                this.$store.commit("setTvShowCurrentPage", index);
-            },
-            nextPage() {
-                if(this.tvShowsCurrentPage.length > this.tvShowsCurrentPage) {
-                    this.$store.commit("setTvShowCurrentPage", this.tvShowsCurrentPage +1);
+            setPages() {
+                let numberOfPages = Math.ceil(this.posts.length / this.perPage);
+
+                for (let index = 1; index <= numberOfPages; index++) {
+                    this.pages.push(index);
                 }
             },
-            prevPage() {
-                if(this.tvShowsCurrentPage >= 0) {
-                    this.$store.commit("setTvShowCurrentPage", this.tvShowsCurrentPage -1);
-                }
+            paginate(posts) {
+                let page = this.page;
+                let perPage = this.perPage;
+                let from = (page * perPage) - perPage;
+                let to = (page * perPage);
+                return  orderBy(posts, [this.orderTvShowsBy], this.orderTvShowsByDesc ? "desc" : "asc").slice(from, to);
             }
         },
         computed: {           
@@ -122,13 +152,15 @@
                 "tvShowsPerPage",
                 "tvShowsCurrentPage"
             ]),
-            filteredTvShows() {
-                return orderBy(this.tvshows, [this.orderTvShowsBy], this.orderTvShowsByDesc ? "desc" : "asc").slice(this.tvShowsCurrentPage, this.tvShowsPerPage);
-            },
-            nrOfPages() {
-                return Math.ceil((this.tvshows.length) / this.tvShowsPerPage);
+            displayedPosts () {
+                return this.paginate(this.posts);
             }
-        }, 
+        },
+        watch: {
+            posts () {
+                this.setPages();
+            }
+        },
         firebase
     };
 </script>
@@ -177,6 +209,12 @@
 
         &:last-child {
             margin-right: 0;
+        }
+
+        &.is-active {
+            button {
+                background-color: map-get($colors, 02);
+            }
         }
 
         button {

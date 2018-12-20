@@ -1,5 +1,5 @@
 const state = {
-    orderTvShowsBy: "year",
+    orderTvShowsBy: "rating",
     orderTvShowsByDesc: true,
     tvShowsPerPage: 10,
     tvShowsCurrentPage: 0
