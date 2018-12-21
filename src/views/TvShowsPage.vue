@@ -1,36 +1,14 @@
 <template>
     <div class="tv-shows">
-        <h1 class="heading">Tv shows</h1> 
+        <h1 class="heading">Tv shows</h1>        
 
-        <nav class="tv-shows-nav">
-            <ul class="tv-shows__pagination">
-                <li                    
-                    class="tv-shows__pagination-item tv-shows__pagination--prev">
-                    <button
-                        :disabled="page == 1"
-                        @click="page--">
-                        Prev
-                    </button>
-                </li>
-                <li
-                    class="tv-shows__pagination-item"
-                    :class="{ 'is-active' :  page == pageNumber }"
-                    v-for="(pageNumber, index) in pages"
-                    :key="index">             
-                    <button
-                        @click="page = pageNumber">
-                        {{ pageNumber }}
-                    </button>
-                </li>
-                <li
-                    class="tv-shows__pagination-item tv-shows__pagination--next">
-                    <button
-                        :disabled="page >= pages.length"
-                        @click="page++">
-                        Next
-                    </button>
-                </li>
-            </ul>  
+        <nav class="tv-shows-nav">            
+            <Pagination
+                :pages="pages"
+                :page="page"
+                @setPage="page = $event"
+                @prevPage="page--"
+                @nextPage="page++" />
 
             <p class="paragraph tv-shows__sorting">
                 Order by: 
@@ -83,11 +61,13 @@
     import { orderBy, slice } from "lodash";
     import { firebase } from "@/db";
     import TvShowItem from "@/components/TvShowItem";
+    import Pagination from "@/components/Pagination";
 
     export default {
         name: "TvShowsPage",
         components: {
-            TvShowItem
+            TvShowItem,
+            Pagination
         },
         data() {
             return {
@@ -98,25 +78,7 @@
             }
         },
         created () {
-            const that = this;
             this.posts = this.tvshows;
-
-            document.onkeydown = function(e) {
-                switch (e.keyCode) {
-                    case 37:
-                        if(that.page > 1) {
-                            that.page--;
-                        }
-
-                        break;
-                    case 39:
-                        if(that.page < that.pages.length) {
-                            that.page++;
-                        }
-
-                        break;
-                    }
-            }
         },
         methods: {
             ...mapMutations([
@@ -195,52 +157,5 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-    }
-
-    .tv-shows__pagination {
-        display: flex;
-        margin: 0;
-        padding: 0;
-    }
-
-    .tv-shows__pagination-item {
-        list-style: none;
-        margin-right: 10px;
-
-        &:last-child {
-            margin-right: 0;
-        }
-
-        &.is-active {
-            button {
-                background-color: map-get($colors, 02);
-            }
-        }
-
-        button {
-            display: block;
-            border: none;
-            font-family: $font-custom;
-            color: #fff;
-            cursor: pointer;
-            padding: 10px 15px;
-            background-color: map-get($colors, 01);
-            border-radius: 8px;
-            text-decoration: none;
-            transition: .5s background-color;
-
-            &:hover {
-                background-color: map-get($colors, 02);
-            }
-
-            &[disabled] {
-                cursor: default;
-                opacity: .5;
-
-                &:hover {
-                    background-color: map-get($colors, 01);
-                }
-            }
-        }
-    }
+    }    
 </style>
