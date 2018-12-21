@@ -2,7 +2,7 @@
     <div class="tv-shows">
         <h1 class="heading">Tv shows</h1>        
 
-        <nav class="tv-shows-nav">            
+        <nav class="tv-shows-nav" role="navigation" aria-label="Pagination Navigation">            
             <Pagination
                 :totalPages="pages"
                 :currentPage="page"
