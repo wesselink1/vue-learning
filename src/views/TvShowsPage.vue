@@ -4,8 +4,8 @@
 
         <nav class="tv-shows-nav">            
             <Pagination
-                :pages="pages"
-                :page="page"
+                :totalPages="pages"
+                :currentPage="page"
                 @setPage="page = $event"
                 @prevPage="page--"
                 @nextPage="page++" />

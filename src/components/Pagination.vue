@@ -4,15 +4,17 @@
             class="pagination__item pagination__item--prev">
             <button
                 class="pagination__button"
-                :disabled="page == 1"
+                :disabled="currentPage == 1"
                 @click="$emit('prevPage')">
                 &larr;
             </button>
         </li>
         <li
             class="pagination__item"
-            v-for="(pageNumber, index) in pages"
-            :class="{ 'is-active' : page == pageNumber }"
+            :aria-label="['Goto page ' + pageNumber]"
+            :aria-current="currentPage == pageNumber ? true : false"
+            v-for="(pageNumber, index) in totalPages"
+            :class="{ 'is-active' : currentPage == pageNumber }"
             :key="index">             
             <button
                 class="pagination__button"
@@ -24,7 +26,7 @@
             class="pagination__item pagination__item--next">
             <button
                 class="pagination__button"
-                :disabled="page >= pages.length"
+                :disabled="currentPage >= totalPages.length"
                 @click="$emit('nextPage')">
                 &rarr;
             </button>
@@ -36,11 +38,11 @@
     export default {
         name: "Pagination",
         props: {
-            pages: {
+            totalPages: {
                 type: Array,
                 required: true
             },
-            page: {
+            currentPage: {
                 type: Number,
                 required: true
             }
@@ -51,12 +53,12 @@
             document.onkeydown = function(e) {
                 switch (e.keyCode) {
                     case 37:
-                        if(that.page > 1) {
+                        if(that.currentPage > 1) {
                             that.$emit("prevPage");
                         }
                         break;
                     case 39:
-                        if(that.page < that.pages.length) {
+                        if(that.currentPage < that.totalPages.length) {
                             that.$emit("nextPage");
                         }
                         break;
@@ -91,13 +93,13 @@
     .pagination__button {
             display: block;
             border: none;
-            font-family: $font-custom;
             color: #fff;
             cursor: pointer;
             padding: 10px 15px;
-            background-color: map-get($colors, 01);
             border-radius: 8px;
             text-decoration: none;
+            font-family: $font-custom;
+            background-color: map-get($colors, 01);
             transition: .5s background-color;
 
             &:hover {
