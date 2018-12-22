@@ -70,14 +70,23 @@
 
 <style lang="scss">
     .pagination {
-        display: flex;
+        @include flexbox;         
+        @include flex-wrap(wrap);
+        @include justify-content(center);
         margin: 0;
         padding: 0;
+
+        @include respond-to-min('tablet') {
+            @include flex-wrap(nowrap);
+            @include justify-content(flex-start);
+        }
     }
 
     .pagination__item {
-        list-style: none;
+        display: inline-block;
         margin-right: 10px;
+        margin-bottom: 10px;
+        list-style: none;
 
         &:last-child {
             margin-right: 0;

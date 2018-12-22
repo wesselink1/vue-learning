@@ -11,7 +11,7 @@ import MoviesPage from "@/views/MoviesPage";
 import NavButtonsPage from "@/views/NavButtonsPage";
 import PugPage from "@/views/PugPage";
 import Router from 'vue-router';
-import SlideUpDownPage from "@/views/SlideUpDownPage";
+import Faq from "@/views/Faq";
 import TabsPage from "@/views/TabsPage";
 import TvShowsPage from "@/views/TvShowsPage";
 import VuelidatePage from "@/views/VuelidatePage";
@@ -94,9 +94,9 @@ export default new Router({
 		component: ArraySortingPage
 	},
 	{
-		path: "/slide-up-down",
-		name: "SlideUpDownPage",
-		component: SlideUpDownPage
+		path: "/faq",
+		name: "Faq",
+		component: Faq
 	},
 	{
 		path: "*",

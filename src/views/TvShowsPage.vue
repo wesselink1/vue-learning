@@ -191,23 +191,38 @@
         margin-bottom: 40px;
     }
 
-    .tv-shows__overview--cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(182px, 1fr));
-        grid-gap: 40px;
+    .tv-shows__overview--cards {        
+        @include respond-to-min('tablet') {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(182px, 1fr));
+            grid-gap: 40px;            
+        }
     }
 
     .tv-shows__display {
-        margin-left: auto;
+        margin: 10px 0 0 0;
+        padding: 0;
+
+        @include respond-to-min('desktop') {
+            margin: 0 10px 0 0;
+            margin-left: auto;            
+        }
     }
 
     .tv-shows__sorting {
-        text-align: right;
+        margin: 0;
+        padding: 0;
         font-family: sans-serif;
+
+        @include respond-to-min('desktop') {
+            text-align: right;            
+        }
     }
 
     .tv-shows__sorting {
-        text-align: right;
+        @include respond-to-min('desktop') {
+            text-align: right;            
+        }
     }
 
     .tv-shows__sorting-link {
@@ -219,9 +234,11 @@
         }
     }
 
-    .tv-shows-nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .tv-shows-nav {        
+        @include respond-to-min('desktop') {
+            @include flexbox; 
+            @include justify-content(space-between);
+            @include align-items(center);
+        }
     }    
 </style>

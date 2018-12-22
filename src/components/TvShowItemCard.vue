@@ -33,6 +33,14 @@
 </script>
 
 <style lang="scss">
+    .tv-show-card__item {
+        margin-bottom: 50px;
+
+        @include respond-to-min('tablet') {
+            margin-bottom: 0;
+        }
+    }
+
     .tv-show-card__item-heading,
     .tv-show-card__item-description {
         font-family: sans-serif;
@@ -56,11 +64,15 @@
     }
 
     .tv-show-card__item-description {
-        margin-top: 30px;
+        margin-top: 10px;
         color: map-get($colors, 03);
         font-size: 14px;
         line-height: 1.6;
         font-family: $font-custom;
+
+        @include respond-to-min('tablet') {
+            margin-top: 30px;
+        }
     }
 
     .tv-show-card__item-poster {

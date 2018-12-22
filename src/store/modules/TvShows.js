@@ -2,17 +2,14 @@ const state = {
     orderTvShowsBy: "rating",
     orderTvShowsByDesc: true,
     tvShowDisplay: "TvShowItemCard",
-    tvShowsCurrentPage: 0,
-    tvShowsPerPage: 10
+    tvShowsCurrentPage: 0
 }
 
 const getters = {
     orderTvShowsBy: state => state.orderTvShowsBy,
     orderTvShowsByDesc: state => state.orderTvShowsByDesc,
     tvShowDisplay: state => state.tvShowDisplay,
-    tvShowsCurrentPage: state => state.tvShowsCurrentPage,
-    tvShowsCurrentPage: state => state.tvShowsCurrentPage,
-    tvShowsPerPage: state => state.tvShowsPerPage
+    tvShowsCurrentPage: state => state.tvShowsCurrentPage
 }
 
 const mutations = {
@@ -21,9 +18,6 @@ const mutations = {
     },
     setOrderTvShowsByDesc: state => {
         state.orderTvShowsByDesc = !state.orderTvShowsByDesc;
-    },
-    setTvShowsPerPage: (state, payload) => {
-        state.tvShowsCurrentPage = payload;
     },
     setTvShowCurrentPage: (state, payload) => {
         state.tvShowsCurrentPage = payload;
