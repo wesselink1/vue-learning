@@ -15,16 +15,16 @@
                 <a 
                     href="javascript:;" 
                     class="tv-shows__sorting-link"
-                    :class="{ 'is-active' : tvShowOverviewComponent == 'TvShowItemCard' }"
-                    @click="tvShowOverviewComponent = 'TvShowItemCard'">
+                    :class="{ 'is-active' : tvShowDisplay == 'TvShowItemCard' }"
+                    @click="setTvShowDisplay('TvShowItemCard')">
                     cards
                 </a>or
 
                 <a
                     href="javascript:;"
                     class="tv-shows__sorting-link"
-                    :class="{ 'is-active' : tvShowOverviewComponent == 'TvShowItemRow' }"
-                    @click="tvShowOverviewComponent = 'TvShowItemRow'">
+                    :class="{ 'is-active' : tvShowDisplay == 'TvShowItemRow' }"
+                    @click="setTvShowDisplay('TvShowItemRow')">
                     rows
                 </a>
             </p>
@@ -65,7 +65,7 @@
             class="tv-shows__overview"
             :class="tvShowsOverviewType">
             <component
-                :is="tvShowOverviewComponent"
+                :is="tvShowDisplay"
                 v-for="show in displayedPosts"
                 :show="show"
                 :key="show['.key']">
@@ -101,7 +101,6 @@
         },
         data() {
             return {
-                tvShowOverviewComponent: "TvShowItemCard",
                 posts: [],
                 page: 1,
                 perPage: 10,
@@ -115,8 +114,9 @@
             ...mapMutations([
                 "setOrderTvShowsBy",
                 "setOrderTvShowsByDesc",
-                "setTvShowsPerPage",
-                "setTvShowCurrentPage"
+                "setTvShowCurrentPage",
+                "setTvShowDisplay",
+                "setTvShowsPerPage"
             ]),
             setOrderBy(orderBy) {
                 this.setOrderTvShowsBy(orderBy);
@@ -136,22 +136,26 @@
                 let from = (page * perPage) - perPage;
                 let to = (page * perPage);
                 return  orderBy(posts, [this.orderTvShowsBy], this.orderTvShowsByDesc ? "desc" : "asc").slice(from, to);
+            },
+            setTvShowDisplay(componentName) {
+                this.$store.commit("setTvShowDisplay", componentName);
             }
         },
         computed: {           
             ...mapGetters([
                 "orderTvShowsBy",
                 "orderTvShowsByDesc",
-                "tvShowsPerPage",
-                "tvShowsCurrentPage"
+                "tvShowDisplay",
+                "tvShowsCurrentPage",
+                "tvShowsPerPage"
             ]),
             displayedPosts () {
                 return this.paginate(this.posts);
             },
             tvShowsOverviewType() {
                 return {
-                    'tv-shows__overview--cards': this.tvShowOverviewComponent == "TvShowItemCard",
-                    'tv-shows__overview--rows': this.tvShowOverviewComponent == "TvShowItemRow"
+                    'tv-shows__overview--cards': this.tvShowDisplay == "TvShowItemCard",
+                    'tv-shows__overview--rows': this.tvShowDisplay == "TvShowItemRow"
                 }
             }
         },
