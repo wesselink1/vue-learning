@@ -3,6 +3,7 @@ import Vuex from "vuex";
 import BuyCards from "./modules/BuyCards";
 import Movies from "./modules/Movies";
 import Tabs from "./modules/Tabs";
+import TvShows from "./modules/TvShows";
 import Vuelidate from "./modules/Vuelidate";
 import VuexCounter from "./modules/VuexCounter";
 import * as getters from "./getters";
@@ -22,6 +23,7 @@ export const store = new Vuex.Store({
         BuyCards,
         Movies,
         Tabs,
+        TvShows,
         Vuelidate,
         VuexCounter
     }
