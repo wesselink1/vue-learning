@@ -135,10 +135,21 @@
                 let perPage = this.perPage;
                 let from = (page * perPage) - perPage;
                 let to = (page * perPage);
-                return  orderBy(posts, [this.orderTvShowsBy], this.orderTvShowsByDesc ? "desc" : "asc").slice(from, to);
+                return  orderBy(posts, [this.orderTvShowsBy, "year"], [this.orderTvShowsByDesc ? "desc" : "asc", "desc"]).slice(from, to);
             },
             setTvShowDisplay(componentName) {
-                this.$modalConfirm({ title: "Switch tv show display", description: "Are you sure you want to switch views?" })
+                var displayName = "";
+
+                switch(componentName) {
+                    case "TvShowItemCard":
+                        displayName = "cards";
+                        break;
+                    case "TvShowItemRow":
+                        displayName = "rows";
+                        break;
+                }
+
+                this.$modalConfirm({ title: "Switch tv show display to " + displayName + "?" })
                     .then((response) => {
                         this.$store.commit("setTvShowDisplay", componentName);
                     })
