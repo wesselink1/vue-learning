@@ -65,7 +65,7 @@
 				Array sorting
 			</router-link>
 			<router-link tag="div"
-				:to="{ name: 'FAQ' }"
+				:to="{ name: 'Faq' }"
 				class="overview__nav-item"
 				active-class="is-active" 
 				exact-active-class="is-exact">
