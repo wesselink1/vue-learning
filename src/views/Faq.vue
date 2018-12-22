@@ -1,22 +1,18 @@
 <template>
-	<main class="slideupdown">
-		<h1 class="heading">Slide Up and Down</h1>
+	<main class="faq">
+		<h1 class="heading">FAQ</h1>		
 
-		<p class="paragraph">Using the <a href="https://github.com/danieldiekmeier/vue-slide-up-down/" class="slideupdown__link">vue-slide-up-down component</a>.</p>
-
-		<h2 class="sub-heading">Questions</h2>
-
-		<dl class="faqList">
+		<dl class="faq-list">
 			<template v-for="(faq, index) in faqList">
 				<dt
 					@click="toggleFaqItem(index)"
-					class="faqList__title"
+					class="faq-list__title"
 					:class="{ 'is-active' : faq.active }">
 					{{ faq.title }}
 				</dt>
 
 				<SlideUpDown
-					class="faqList__body"
+					class="faq-list__body"
 					:tag="'dd'"
 					:class="{ 'is-active' : faq.active }"
 					:active="faq.active"
@@ -25,6 +21,8 @@
 				</SlideUpDown>
 			</template>
 		</dl>
+
+		<p class="paragraph">Using the <a href="https://github.com/danieldiekmeier/vue-slide-up-down/" class="faq__link">vue-slide-up-down component</a>.</p>
 	</main>
 </template>
 
@@ -32,7 +30,7 @@
 	import SlideUpDown from "vue-slide-up-down";
 
 	export default {
-		name: "SlideUpDownPage",
+		name: "FAQ",
 		components: {
 			"SlideUpDown": SlideUpDown
 		},
@@ -81,11 +79,7 @@
 </script>
 
 <style lang="scss">
-	.slideupdown__container p {
-		margin-top: 0;
-	}
-
-	.slideupdown__link {
+	.faq__link {
 		color: map-get($colors, 01);
 
 		&:hover {
@@ -93,17 +87,17 @@
 		}
 	}
 
-	.faqList {
+	.faq-list {
 		max-width: 400px;
 	}
 
-	.faqList__title,
-	.faqList__body {
+	.faq-list__title,
+	.faq-list__body {
 		font-family: $font-custom;
 		line-height: 1.6;
 	}
 
-	.faqList__title {
+	.faq-list__title {
 		cursor: pointer;
 		font-size: 22px;
 		font-weight: 700;
@@ -139,7 +133,7 @@
 		}
 	}
 
-	.faqList__body {
+	.faq-list__body {
 		margin: 0 0 20px 25px;
 		color: map-get($colors, 03);
 	}
