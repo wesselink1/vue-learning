@@ -2,16 +2,35 @@
     <div class="tv-shows">
         <h1 class="heading">Tv shows</h1>        
 
-        <nav class="tv-shows-nav" role="navigation" aria-label="Pagination Navigation">            
+        <nav class="tv-shows-nav" role="navigation" aria-label="Navigation">            
             <Pagination
                 :totalPages="pages"
                 :currentPage="page"
                 @setPage="page = $event"
                 @prevPage="page--"
                 @nextPage="page++" />
+            
+            <p class="paragraph tv-shows__display">
+                Display as:
+                <a 
+                    href="javascript:;" 
+                    class="tv-shows__sorting-link"
+                    :class="{ 'is-active' : tvShowOverviewComponent == 'TvShowItemCard' }"
+                    @click="tvShowOverviewComponent = 'TvShowItemCard'">
+                    cards
+                </a>or
+
+                <a
+                    href="javascript:;"
+                    class="tv-shows__sorting-link"
+                    :class="{ 'is-active' : tvShowOverviewComponent == 'TvShowItemRow' }"
+                    @click="tvShowOverviewComponent = 'TvShowItemRow'">
+                    rows
+                </a>
+            </p>
 
             <p class="paragraph tv-shows__sorting">
-                Order by: 
+                and order by: 
                 <a 
                     href="javascript:;" 
                     class="tv-shows__sorting-link"
@@ -20,8 +39,7 @@
                         { 'is-active' : orderTvShowsBy == 'title' }
                     ]"
                     @click="setOrderBy('title')">
-                    Title
-                </a>, 
+                    title</a>, 
                 <a 
                     href="javascript:;" 
                     class="tv-shows__sorting-link"
@@ -30,8 +48,7 @@
                         { 'is-active' : orderTvShowsBy == 'rating' }
                     ]"
                     @click="setOrderBy('rating')">
-                    rating
-                </a>, 
+                    rating</a> or
                 <a 
                     href="javascript:;" 
                     class="tv-shows__sorting-link"
@@ -40,18 +57,29 @@
                         { 'is-active' : orderTvShowsBy == 'year' }
                     ]"
                     @click="setOrderBy('year')">
-                    year
-                </a>
+                    year</a>
             </p>            
         </nav>
 
-        <section class="tv-shows__overview">
-            <TvShowItem
+        <section
+            class="tv-shows__overview"
+            :class="tvShowsOverviewType">
+            <component
+                :is="tvShowOverviewComponent"
                 v-for="show in displayedPosts"
                 :show="show"
                 :key="show['.key']">
-            </TvShowItem>
+            </component>
         </section>  
+
+        <nav class="tv-shows-nav" role="navigation" aria-label="Navigation">
+            <Pagination
+                :totalPages="pages"
+                :currentPage="page"
+                @setPage="page = $event"
+                @prevPage="page--"
+                @nextPage="page++" />
+        </nav>
     </div>
 </template>
 
@@ -60,17 +88,20 @@
     import { mapMutations } from "vuex";
     import { orderBy, slice } from "lodash";
     import { firebase } from "@/db";
-    import TvShowItem from "@/components/TvShowItem";
+    import TvShowItemCard from "@/components/TvShowItemCard";
+    import TvShowItemRow from "@/components/TvShowItemRow";
     import Pagination from "@/components/Pagination";
 
     export default {
         name: "TvShowsPage",
         components: {
-            TvShowItem,
+            TvShowItemCard,
+            TvShowItemRow,
             Pagination
         },
         data() {
             return {
+                tvShowOverviewComponent: "TvShowItemCard",
                 posts: [],
                 page: 1,
                 perPage: 10,
@@ -116,6 +147,12 @@
             ]),
             displayedPosts () {
                 return this.paginate(this.posts);
+            },
+            tvShowsOverviewType() {
+                return {
+                    'tv-shows__overview--cards': this.tvShowOverviewComponent == "TvShowItemCard",
+                    'tv-shows__overview--rows': this.tvShowOverviewComponent == "TvShowItemRow"
+                }
             }
         },
         watch: {
@@ -129,10 +166,18 @@
 
 <style lang="scss">
     .tv-shows__overview {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .tv-shows__overview--cards {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(182px, 1fr));
         grid-gap: 40px;
-        margin-top: 40px;
+    }
+
+    .tv-shows__display {
+        margin-left: auto;
     }
 
     .tv-shows__sorting {
