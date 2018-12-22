@@ -18,7 +18,6 @@ const FireDB = FireBaseApp.database();
 const firebase = function() {
     return {
         tvshows: FireDB.ref("tvshowsWatched"),
-        // tvshows: FireDB.ref("tvshows"),
         cards: FireDB.ref("cards")
     }
 }
