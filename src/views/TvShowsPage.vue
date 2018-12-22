@@ -138,7 +138,13 @@
                 return  orderBy(posts, [this.orderTvShowsBy], this.orderTvShowsByDesc ? "desc" : "asc").slice(from, to);
             },
             setTvShowDisplay(componentName) {
-                this.$store.commit("setTvShowDisplay", componentName);
+                this.$modalConfirm({ title: "Switch tv show display", description: "Are you sure you want to switch views?" })
+                    .then((response) => {
+                        this.$store.commit("setTvShowDisplay", componentName);
+                    })
+                    .catch(e => {
+                        console.log(e);
+                    });
             }
         },
         computed: {           
