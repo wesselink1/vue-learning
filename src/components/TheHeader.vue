@@ -31,8 +31,12 @@
 	.header__title {
 		color: map-get($colors, 02);
 		font-weight: 300;
-		font-size: 42px;
+		font-size: 32px;
 		font-family: $font-custom;
+
+		@include respond-to-min('tablet') {
+			font-size: 42px;
+		}
 	}
 
 	.header__nav a {
