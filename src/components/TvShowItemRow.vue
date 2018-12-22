@@ -19,6 +19,8 @@
             </p>           
 
             <p class="tv-show-row__item-description"> {{ show.description }} </p>
+
+            <p class="tv-show-card__item-link"><a :href="show.imdb">View in IMDb</a></p>
         </div>
     </article>
 </template>
