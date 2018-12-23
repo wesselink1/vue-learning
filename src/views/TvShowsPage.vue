@@ -86,7 +86,7 @@
 <script>
     import { mapGetters } from "vuex";
     import { mapMutations } from "vuex";
-    import { orderBy, slice } from "lodash";
+    import { orderBy, slice, sortBy } from "lodash";
     import { firebase } from "@/db";
     import TvShowItemCard from "@/components/TvShowItemCard";
     import TvShowItemRow from "@/components/TvShowItemRow";
@@ -105,6 +105,7 @@
                 page: 1,
                 perPage: 10,
                 pages: [],
+                genres: []
             }
         },
         created () {
@@ -115,8 +116,7 @@
                 "setOrderTvShowsBy",
                 "setOrderTvShowsByDesc",
                 "setTvShowCurrentPage",
-                "setTvShowDisplay",
-                "setTvShowsPerPage"
+                "setTvShowDisplay"
             ]),
             setOrderBy(orderBy) {
                 this.setOrderTvShowsBy(orderBy);
@@ -156,6 +156,20 @@
                     .catch(e => {
                         console.log(e);
                     });
+            },
+            getGenreList() {
+                let self = this;
+                let genreList = [];
+
+                this.posts.forEach(function(item){                        
+                    item.genre.forEach(function(genre){
+                        if(!genreList.includes(genre)) {
+                            genreList.push(genre);
+                        }
+                    });                        
+                });
+
+                this.genres = sortBy(genreList);
             }
         },
         computed: {           
@@ -163,8 +177,7 @@
                 "orderTvShowsBy",
                 "orderTvShowsByDesc",
                 "tvShowDisplay",
-                "tvShowsCurrentPage",
-                "tvShowsPerPage"
+                "tvShowsCurrentPage"
             ]),
             displayedPosts () {
                 return this.paginate(this.posts);
@@ -179,6 +192,7 @@
         watch: {
             posts () {
                 this.setPages();
+                this.getGenreList();
             }
         },
         firebase
