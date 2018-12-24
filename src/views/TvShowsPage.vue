@@ -1,6 +1,13 @@
 <template>
     <div class="tv-shows">
-        <h1 class="heading">Tv shows</h1>        
+        <h1 class="heading">Tv shows</h1> 
+
+        <!--nav>
+            <Genres
+                :genres="genres"
+                @setGenre="filteredGenre = $event">
+            </Genres>
+        </nav-->       
 
         <nav class="tv-shows-nav" role="navigation" aria-label="Navigation">            
             <Pagination
@@ -86,18 +93,20 @@
 <script>
     import { mapGetters } from "vuex";
     import { mapMutations } from "vuex";
-    import { orderBy, slice, sortBy } from "lodash";
+    import { orderBy, slice, sortBy, filter } from "lodash";
     import { firebase } from "@/db";
+    import Genres from "@/components/Genres";
+    import Pagination from "@/components/Pagination";
     import TvShowItemCard from "@/components/TvShowItemCard";
     import TvShowItemRow from "@/components/TvShowItemRow";
-    import Pagination from "@/components/Pagination";
 
     export default {
         name: "TvShowsPage",
         components: {
+            Genres,
+            Pagination,
             TvShowItemCard,
-            TvShowItemRow,
-            Pagination
+            TvShowItemRow
         },
         data() {
             return {
@@ -105,7 +114,9 @@
                 page: 1,
                 perPage: 10,
                 pages: [],
-                genres: []
+                genres: [],
+                filteredGenre: "",
+                selectedGenres: []
             }
         },
         created () {
@@ -157,19 +168,34 @@
                         console.log(e);
                     });
             },
-            getGenreList() {
-                let self = this;
-                let genreList = [];
+            getGenreList(posts) {
+                var genres = [];
 
-                this.posts.forEach(function(item){                        
-                    item.genre.forEach(function(genre){
-                        if(!genreList.includes(genre)) {
-                            genreList.push(genre);
+                for (var i = 0; i < posts.length; i++) {
+                    var list = posts[i].genre;
+                    for (var j = 0; j < list.length; j++) {
+                
+                        var existingValue = genres.find(function (value) {
+                            return value.label === list[j]
+                        });
+                
+                        if (!existingValue) {
+                            genres.push(
+                                {
+                                    label: list[j],
+                                    count: 1
+                                }
+                            );
+                        } else {
+                            existingValue.count++;
                         }
-                    });                        
-                });
+                    }
+                }
 
-                this.genres = sortBy(genreList);
+                return sortBy(genres, "label");
+            },
+            setGenre(genre) {
+                this.filteredByGenre = genre;
             }
         },
         computed: {           
@@ -179,7 +205,7 @@
                 "tvShowDisplay",
                 "tvShowsCurrentPage"
             ]),
-            displayedPosts () {
+            displayedPosts() {
                 return this.paginate(this.posts);
             },
             tvShowsOverviewType() {
@@ -191,8 +217,8 @@
         },
         watch: {
             posts () {
+                this.genres = this.getGenreList(this.posts);
                 this.setPages();
-                this.getGenreList();
             }
         },
         firebase
