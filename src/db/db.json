@@ -189,52 +189,6 @@
     "year" : 2018
   } ],
   "tvshows" : [ {
-    "description" : "A recently released ex-convict named Shadow meets a mysterious man who calls himself 'Wednesday' and who knows more than he first seems to about Shadow's life and past.",
-    "genre" : [ "Drama", "Fantasy", "Mystery" ],
-    "imdb" : "https://www.imdb.com/title/tt1898069",
-    "poster" : "https://m.media-amazon.com/images/M/MV5BMTY0NDA4NTMzNl5BMl5BanBnXkFtZTgwOTk1MTg0NjM@._V1_UX182_CR0,0,182,268_AL_.jpg",
-    "rating" : 8.1,
-    "stars" : [ "Ricky Whittle", "Emily Browning", "Pablo Schreiber" ],
-    "title" : "American Gods",
-    "year" : 2017
-  }, {
-    "description" : "The trials and tribulations of criminal lawyer, Jimmy McGill, in the time leading up to establishing his strip-mall law office in Albuquerque, New Mexico.",
-    "genre" : [ "Drama" ],
-    "imdb" : "https://www.imdb.com/title/tt3032476",
-    "poster" : "https://m.media-amazon.com/images/M/MV5BMTAxOTQ0MjUzMzJeQTJeQWpwZ15BbWU4MDY0NTAxNzMx._V1_UX182_CR0,0,182,268_AL_.jpg",
-    "rating" : 8.7,
-    "stars" : [ "Bob Odenkirk", "Rhea Seehorn", "Jonathan Banks" ],
-    "title" : "Better Call Saul",
-    "year" : 2015
-  }, {
-    "description" : "When a young boy disappears, his mother, a police chief, and his friends must confront terrifying forces in order to get him back.",
-    "genre" : [ "Drama", "Fantasy", "Horror" ],
-    "imdb" : "https://www.imdb.com/title/tt4574334",
-    "poster" : "https://m.media-amazon.com/images/M/MV5BMjUwMDgzOTg3Nl5BMl5BanBnXkFtZTgwNTI4MDk5MzI@._V1_UX182_CR0,0,182,268_AL_.jpg",
-    "rating" : 8.9,
-    "stars" : [ "Millie Bobby Brown", "Finn Wolfhard", "Winona Ryder" ],
-    "title" : "Stranger Things",
-    "year" : 2016
-  }, {
-    "description" : "A Congressman works with his equally conniving wife to exact revenge on the people who betrayed him.",
-    "genre" : [ "Crime", "Drama" ],
-    "imdb" : "https://www.imdb.com/title/tt1856010",
-    "poster" : "https://m.media-amazon.com/images/M/MV5BODM1MDU2NjY5NF5BMl5BanBnXkFtZTgwMDkxNTcwNjM@._V1_UX182_CR0,0,182,268_AL_.jpg",
-    "rating" : 8.9,
-    "stars" : [ "Kevin Spacey", "Michel Gill", "Robin Wright" ],
-    "title" : "House of Cards ",
-    "year" : 2013
-  }, {
-    "description" : "Anthology series that examines how and why ordinary people commit brutal crimes.",
-    "genre" : [ "Crime", "Drama", "Mystery" ],
-    "imdb" : "https://www.imdb.com/title/tt6048596",
-    "poster" : "https://m.media-amazon.com/images/M/MV5BMjExMjcxMjM3OV5BMl5BanBnXkFtZTgwMTUwODQwMzI@._V1_.jpg",
-    "rating" : 8,
-    "stars" : [ "Jessica Biel", "Bill Pullman", "Dohn Norwoo" ],
-    "title" : "The Sinner ",
-    "year" : 2017
-  } ],
-  "tvshows" : [ {
     "description" : "As part of a deal with an intelligence agency to look for his missing brother, a renegade pilot goes on missions with an advanced battle helicopter.",
     "genre" : [ "Action", "Adventure", "Sci-Fi" ],
     "imdb" : "https://www.imdb.com/title/tt0086662",
@@ -810,5 +764,29 @@
     "rating" : 6.7,
     "title" : "Z-Nation",
     "year" : 2014
+  }, {
+    "description" : "A crew of space explorers embark on a mission to find a mysterious alien ship.",
+    "genre" : [ "Sci-Fi", "Horror" ],
+    "imdb" : "https://www.imdb.com/title/tt6903284/",
+    "poster" : "https://m.media-amazon.com/images/M/MV5BMTYwMDMwOTQwNF5BMl5BanBnXkFtZTgwMDI0MzY5NTM@._V1_UX182_CR0,0,182,268_AL_.jpg",
+    "rating" : 6.2,
+    "title" : "Nightflyers",
+    "year" : 2018
+  }, {
+    "description" : "A tough US Air Force officer and a skeptical scientist investigate UFO and alien conspiracies as Cold War paranoia spreads.",
+    "genre" : [ "Drama", "Mystery", "Sci-Fi" ],
+    "imdb" : "https://www.imdb.com/title/tt6632666/",
+    "poster" : "https://m.media-amazon.com/images/M/MV5BYTAyMWQ4NWQtMGU0Zi00OTBiLTlmMjktMzU3YTU0YmExMjdjXkEyXkFqcGdeQXVyMjYwNDA2MDE@._V1_UX182_CR0,0,182,268_AL_.jpg",
+    "rating" : 7.8,
+    "title" : "Project Blue Book",
+    "year" : 2019
+  }, {
+    "description" : "While strange rumors about their ill king grip a kingdom, the crown prince becomes their only hope against a mysterious plague overtaking the land.",
+    "genre" : [ "Action", "Thriller" ],
+    "imdb" : "https://www.imdb.com/title/tt6611916",
+    "poster" : "https://m.media-amazon.com/images/M/MV5BMmMzYzE5NzctZGZmZC00MmVkLTllMWUtZDY3YzIzYWEyMTIxXkEyXkFqcGdeQXVyNTI2MzI4NTU@._V1_UX182_CR0,0,182,268_AL_.jpg",
+    "rating" : 8.4,
+    "title" : "Kingdom",
+    "year" : 2019
   } ]
 }
