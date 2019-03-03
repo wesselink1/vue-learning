@@ -94,7 +94,7 @@
     import { mapGetters } from "vuex";
     import { mapMutations } from "vuex";
     import { orderBy, slice, sortBy, filter } from "lodash";
-    import { firebase } from "@/db";
+    import { firebase } from "@/services/Firebase";
     import Genres from "@/components/Genres";
     import Pagination from "@/components/Pagination";
     import TvShowItemCard from "@/components/TvShowItemCard";

@@ -39,7 +39,7 @@
 <script>
 	import { mapGetters } from "vuex";
 	import { mapMutations } from "vuex";
-	import { firebase } from "@/db";
+	import { firebase } from "@/services/Firebase";
 	import CardItem from "@/components/CardItem";
 
 	export default {
