@@ -49,11 +49,12 @@
 
 <script>
     import { mapGetters } from "vuex";
-	import { mapMutations } from "vuex";
+    import { mapMutations } from "vuex";
+    import { mapActions } from "vuex";
     import MovieItem from "@/components/MovieItem";
 
     export default {
-        name: "MoviePage",
+        name: "MoviesPage",
         components: {
             MovieItem
         },
@@ -62,7 +63,10 @@
 				"changeOrder",	
 				"changeOrderByDesc",
 				"setHighestAndLowestRatedBoolean"
-			]),
+            ]),
+            ...mapActions([
+                "getMovies"
+            ]),
 			setOrderBy(orderBy) {
 				this.changeOrder(orderBy);
 				this.changeOrderByDesc();
@@ -75,6 +79,9 @@
 				"order",
 				"orderByDesc"
             ])
+        },
+        created() {
+            this.getMovies();
         }
     };
 </script>
