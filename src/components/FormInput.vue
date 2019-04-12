@@ -25,8 +25,11 @@
 </template>
 
 <script>
+    import computedErrortext from "@/mixins/computedErrortext";
+
     export default {
         name: "FormInput",
+        mixins: [computedErrortext],
         props: {
             value: String,
             errortexts: Object,
@@ -46,19 +49,6 @@
                     this.v.$touch();
                 } else {
                     this.$emit("blur");
-                }
-            }
-        },
-        computed: {
-            errortext() {
-                if(this.v && this.v.$error) {
-                    for(let key in this.errortexts) {
-                        if(this.errortexts.hasOwnProperty(key)) {
-                            if(this.v[key] === false) {
-                                return this.errortexts[key];
-                            }
-                        }
-                    }
                 }
             }
         }
