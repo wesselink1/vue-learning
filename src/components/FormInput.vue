@@ -12,7 +12,7 @@
             :class="{ 'is-error' : v && v.$error, 'is-valid' : (v && !v.$error && !v.$invalid) }"
             :type="type"
             :placeholder="placeholder"
-            v-bind:value="value"
+            :value="value"
             @input="onInput"
             @blur="onBlur">
 
