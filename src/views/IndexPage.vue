@@ -57,6 +57,14 @@
 				exact-active-class="is-exact">
 				Vuelidate
 			</router-link>
+			<router-link
+				tag="div"
+				:to="{ name: 'VuelidateEnhancedPage' }"
+				class="overview__nav-item"
+				active-class="is-active" 
+				exact-active-class="is-exact">
+				Vuelidate Enhanced
+			</router-link>
 			<router-link tag="div"
 				:to="{ name: 'ArraySortingPage' }"
 				class="overview__nav-item"

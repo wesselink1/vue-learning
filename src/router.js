@@ -15,6 +15,7 @@ import Faq from "@/views/Faq";
 import TabsPage from "@/views/TabsPage";
 import TvShowsPage from "@/views/TvShowsPage";
 import VuelidatePage from "@/views/VuelidatePage";
+import VuelidateEnhancedPage from "@/views/VuelidateEnhancedPage";
 import VuexCounterPage from "@/views/VuexCounterPage";
 
 Vue.use(Router)
@@ -87,6 +88,11 @@ export default new Router({
 		path: "/vuelidate",
 		name: "VuelidatePage",
 		component: VuelidatePage
+	},
+	{
+		path: "/vuelidate-enhanced",
+		name: "VuelidateEnhancedPage",
+		component: VuelidateEnhancedPage
 	},
 	{
 		path: "/array-sorting",
