@@ -1,21 +1,22 @@
 import Vue from 'vue';
-import ArraySortingPage from "@/views/ArraySortingPage";
-import BuyCardsPage from "@/views/BuyCardsPage";
-import CustomDirectivesPage from "@/views/CustomDirectivesPage";
-import Error404Page from "@/views/Error404Page";
-import FormModulesPage from "@/views/FormModulesPage";
 import IndexPage from "@/views/IndexPage";
-import ModalPage from "@/views/ModalPage";
-import MovieDetailPage from "@/views/MovieDetailPage";
-import MoviesPage from "@/views/MoviesPage";
-import NavButtonsPage from "@/views/NavButtonsPage";
-import PugPage from "@/views/PugPage";
 import Router from 'vue-router';
-import Faq from "@/views/Faq";
-import TabsPage from "@/views/TabsPage";
-import TvShowsPage from "@/views/TvShowsPage";
-import VuelidatePage from "@/views/VuelidatePage";
-import VuexCounterPage from "@/views/VuexCounterPage";
+
+const ArraySortingPage = () => import(/* webpackChunkName: "array-sorting-page" */ "@/views/ArraySortingPage");
+const BuyCardsPage = () => import(/* webpackChunkName: "buy-cards-page" */ "@/views/BuyCardsPage");
+const CustomDirectivesPage = () => import(/* webpackChunkName: "custom-directive-page" */ "@/views/CustomDirectivesPage");
+const Error404Page = () => import(/* webpackChunkName: "error-page" */ "@/views/Error404Page");
+const Faq = () => import(/* webpackChunkName: "faq-page" */ "@/views/Faq");
+const FormModulesPage = () => import(/* webpackChunkName: "form-modules-page" */ "@/views/FormModulesPage");
+const ModalPage = () => import(/* webpackChunkName: "modal-page" */ "@/views/ModalPage");
+const MovieDetailPage = () => import(/* webpackChunkName: "movie-page" */ "@/views/MovieDetailPage");
+const MoviesPage = () => import(/* webpackChunkName: "movie-page" */ "@/views/MoviesPage");
+const NavButtonsPage = () => import(/* webpackChunkName: "nav-button-page" */ "@/views/NavButtonsPage");
+const PugPage = () => import(/* webpackChunkName: "pug-page" */ "@/views/PugPage");
+const TabsPage = () => import(/* webpackChunkName: "tabs-page" */ "@/views/TabsPage");
+const TvShowsPage = () => import(/* webpackChunkName: "tv-shows-page" */ "@/views/MovieDetailPage");
+const VuelidatePage = () => import(/* webpackChunkName: "vuelidate-page" */ "@/views/VuelidatePage");
+const VuexCounterPage = () => import(/* webpackChunkName: "vuex-counter-page" */ "@/views/VuexCounterPage");
 
 Vue.use(Router)
 
