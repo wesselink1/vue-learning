@@ -14,7 +14,7 @@ const MoviesPage = () => import(/* webpackChunkName: "movie-page" */ "@/views/Mo
 const NavButtonsPage = () => import(/* webpackChunkName: "nav-button-page" */ "@/views/NavButtonsPage");
 const PugPage = () => import(/* webpackChunkName: "pug-page" */ "@/views/PugPage");
 const TabsPage = () => import(/* webpackChunkName: "tabs-page" */ "@/views/TabsPage");
-const TvShowsPage = () => import(/* webpackChunkName: "tv-shows-page" */ "@/views/MovieDetailPage");
+const TvShowsPage = () => import(/* webpackChunkName: "tv-shows-page" */ "@/views/TvShowsPage");
 const VuelidatePage = () => import(/* webpackChunkName: "vuelidate-page" */ "@/views/VuelidatePage");
 const VuexCounterPage = () => import(/* webpackChunkName: "vuex-counter-page" */ "@/views/VuexCounterPage");
 
