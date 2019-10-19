@@ -592,7 +592,7 @@
     "description" : "When a young boy disappears, his mother, a police chief, and his friends must confront terrifying forces in order to get him back.",
     "genre" : [ "Drama", "Fantasy", "Horror" ],
     "imdb" : "https://www.imdb.com/title/tt4574334",
-    "poster" : "https://m.media-amazon.com/images/M/MV5BMjUwMDgzOTg3Nl5BMl5BanBnXkFtZTgwNTI4MDk5MzI@._V1_UX182_CR0,0,182,268_AL_.jpg",
+    "poster" : "https://m.media-amazon.com/images/M/MV5BZGExYjQzNTQtNGNhMi00YmY1LTlhY2MtMTRjODg3MjU4YTAyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
     "rating" : 8.9,
     "title" : "Stranger Things",
     "year" : 2016
@@ -688,7 +688,7 @@
     "description" : "Sheriff Deputy Rick Grimes wakes up from a coma to learn the world is in ruins, and must lead a group of survivors to stay alive.",
     "genre" : [ "Drama", "Horror", "Sci-Fi" ],
     "imdb" : "https://www.imdb.com/title/tt1520211",
-    "poster" : "https://m.media-amazon.com/images/M/MV5BMTcwMDAzMDk3OF5BMl5BanBnXkFtZTgwMjY0MzcyNjM@._V1_UX182_CR0,0,182,268_AL_.jpg",
+    "poster" : "https://m.media-amazon.com/images/M/MV5BYWY4ODJiZjMtNWMxYi00ZmM5LWIwZmQtZWY0MjJmZGU5MjcxXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
     "rating" : 8.4,
     "title" : "The Walking Dead",
     "year" : 2010
@@ -787,6 +787,22 @@
     "poster" : "https://m.media-amazon.com/images/M/MV5BMmMzYzE5NzctZGZmZC00MmVkLTllMWUtZDY3YzIzYWEyMTIxXkEyXkFqcGdeQXVyNTI2MzI4NTU@._V1_UX182_CR0,0,182,268_AL_.jpg",
     "rating" : 8.4,
     "title" : "Kingdom",
+    "year" : 2019
+  }, {
+    "description" : "Hosted by Morgan Freeman, Through the Wormhole will explore the deepest mysteries of existence - the questions that have puzzled mankind for eternity. What are we made of? What was there before the beginning? Are we really alone? Is there a creator? These questions have been pondered by the most exquisite minds of the human race. Now, science has evolved to the point where hard facts and evidence may be able to provide us with answers instead of philosophical theories. Through the Wormhole will bring together the brightest minds and best ideas from the very edges of science - Astrophysics, Astrobiology, Quantum Mechanics, String Theory, and more - to reveal the extraordinary truth of our Universe.",
+    "genre" : [ "Documentary" ],
+    "imdb" : "https://www.imdb.com/title/tt1513168",
+    "poster" : "https://m.media-amazon.com/images/M/MV5BMDhkMTY2NGQtMWY4Mi00ZjhmLWIzNGYtZDJhODkwNTM5NTIzXkEyXkFqcGdeQXVyNDk3NDEzMzk@._V1_UY268_CR0,0,182,268_AL_.jpg",
+    "rating" : 8.6,
+    "title" : "Through the Wormhole",
+    "year" : 2010
+  }, {
+    "description" : "Emma, a famous and successful French horror writer, is forced to return to her hometown after the woman who haunted her dreams fifteen years ago begins to re-appear. The work she writes is apparently a work of fiction, but how much is fact?",
+    "genre" : [ "Horror" ],
+    "imdb" : "https://www.imdb.com/title/tt10875696/",
+    "poster" : "https://m.media-amazon.com/images/M/MV5BODQ4NGIwZWYtMWNhOC00MzFjLTk5ZDYtOGM1MzM3NjVlZGUxXkEyXkFqcGdeQXVyNDg4MjkzNDk@._V1_UX182_CR0,0,182,268_AL_.jpg",
+    "rating" : 7.6,
+    "title" : "Marianne",
     "year" : 2019
   } ]
 }
