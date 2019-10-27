@@ -47,7 +47,6 @@
 
 <script>    
     export default {
-        name: "MovieDetailPage",
         computed: {
             movie() {                
                 return this.$store.getters.movie(this.$route.params.id);

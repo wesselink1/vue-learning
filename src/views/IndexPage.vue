@@ -1,6 +1,6 @@
 <template>
 	<main class="overview">
-		<nav class="overview__nav">
+		<nav class="overview__nav">			
 			<router-link
 				tag="div"
 				:to="{ name: 'NavButtonsPage' }"
@@ -32,14 +32,6 @@
 				active-class="is-active" 
 				exact-active-class="is-exact">
 				Tabs
-			</router-link>
-			<router-link
-				tag="div"
-				:to="{ name: 'PugPage' }"
-				class="overview__nav-item"
-				active-class="is-active" 
-				exact-active-class="is-exact">
-				Pug
 			</router-link>
 			<router-link
 				tag="div"
@@ -118,7 +110,6 @@
 	import MovieFeatured from "@/components/MovieFeatured";	
 
 	export default {
-		name: "IndexPage",
 		components: {
 			MovieFeatured
 		},

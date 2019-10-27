@@ -48,7 +48,6 @@
 	import { mapMutations } from "vuex";
 
 	export default {
-		name: "VuexCounterPage",
 		data: () => ({
 			firstName: "James",
 			lastName: "Dean",

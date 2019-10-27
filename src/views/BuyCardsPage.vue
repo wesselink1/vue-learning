@@ -39,11 +39,9 @@
 <script>
 	import { mapGetters } from "vuex";
 	import { mapMutations } from "vuex";
-	import { firebase } from "@/db";
 	import CardItem from "@/components/CardItem";
 
 	export default {
-		name: "BuyCardsPage",
 		components: {
 			CardItem
 		},
@@ -67,11 +65,11 @@
 		},
 		computed: {
 			...mapGetters([
+				"cards",
 				"cardsTotal",
 				"limit"
 			])
-		},
-		firebase
+		}
 	};
 </script>
 
