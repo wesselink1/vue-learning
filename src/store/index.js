@@ -13,18 +13,18 @@ import * as actions from "./actions";
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
-    state: {
-        
-    },
-    getters,
-    mutations,
-    actions,
-    modules: {
-        BuyCards,
-        Movies,
-        Tabs,
-        TvShows,
-        Vuelidate,
-        VuexCounter
-    }
+  state: {
+
+  },
+  getters,
+  mutations,
+  actions,
+  modules: {
+    BuyCards,
+    Movies,
+    Tabs,
+    TvShows,
+    VuexCounter,
+    Vuelidate
+  }
 });

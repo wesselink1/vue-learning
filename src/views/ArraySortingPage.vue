@@ -74,7 +74,6 @@
 	import ArraySortingRow from "@/components/ArraySortingRow";
 
 	export default {
-		name: "ArraySortingPage",
 		components: {
 			ArraySortingRow
 		},

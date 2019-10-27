@@ -76,7 +76,6 @@
 	import TabList from "@/components/TabList";
 
 	export default {
-		name: "TabsPage",
 		components: {
 			'TabItem': TabItem,
 			'TabList': TabList
