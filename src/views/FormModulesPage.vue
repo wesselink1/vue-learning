@@ -16,7 +16,6 @@
     import FormRow from "@/components/FormRow";
 
     export default {
-        name: "FormModulesPage",
         components: {
             FormRow
         },

@@ -1,20 +1,22 @@
-import Vue from 'vue';
-import App from "./App";
+import Vue from "vue";
+import App from "./App.vue";
 import Vuelidate from "vuelidate";
-import router from './router'
-import { store } from "./store/store.js";
+import "./registerServiceWorker";
+import router from "./router";
+import { store } from "./store";
 import FancyBackground from "@/plugins/FancyBackground";
 import ModalConfirm from "@/plugins/ModalConfirm";
 
 import '@/scss/style.scss'; // https://vueschool.io/articles/vuejs-tutorials/globally-load-sass-into-your-vue-js-applications/
 
+Vue.config.productionTip = false;
+
 Vue.use(Vuelidate);
 Vue.use(FancyBackground);
 Vue.use(ModalConfirm, {
-	// bodyClass: "has-modal-open"
+  // bodyClass: "has-modal-open"
 });
 
-Vue.config.productionTip = false;
 
 Vue.filter("euroCurrency", function(price){
 	return Number(price).toLocaleString("nl-NL", {
@@ -44,4 +46,4 @@ new Vue({
   router,
   store,
   render: h => h(App)
-}).$mount('#app')
+}).$mount("#app");

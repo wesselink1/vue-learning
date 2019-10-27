@@ -53,7 +53,6 @@
     import MovieItem from "@/components/MovieItem";
 
     export default {
-        name: "MoviePage",
         components: {
             MovieItem
         },

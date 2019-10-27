@@ -94,14 +94,12 @@
     import { mapGetters } from "vuex";
     import { mapMutations } from "vuex";
     import { orderBy, slice, sortBy, filter } from "lodash";
-    import { firebase } from "@/db";
     import Genres from "@/components/Genres";
     import Pagination from "@/components/Pagination";
     import TvShowItemCard from "@/components/TvShowItemCard";
     import TvShowItemRow from "@/components/TvShowItemRow";
 
     export default {
-        name: "TvShowsPage",
         components: {
             Genres,
             Pagination,
@@ -120,7 +118,7 @@
             }
         },
         created () {
-            this.posts = this.tvshows;
+            this.posts = this.tvShows;
         },
         methods: {
             ...mapMutations([
@@ -203,6 +201,7 @@
                 "orderTvShowsBy",
                 "orderTvShowsByDesc",
                 "tvShowDisplay",
+                "tvShows",
                 "tvShowsCurrentPage"
             ]),
             displayedPosts() {
@@ -220,8 +219,7 @@
                 this.genres = this.getGenreList(this.posts);
                 this.setPages();
             }
-        },
-        firebase
+        }
     };
 </script>
 
