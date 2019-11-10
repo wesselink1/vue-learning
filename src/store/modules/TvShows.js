@@ -696,6 +696,15 @@ const state = {
             "rating": 7.6,
             "title": "Marianne",
             "year": 2019
+        },
+        {
+            "description": "A gangster family epic set in 1919 Birmingham, England; centered on a gang who sew razor blades in the peaks of their caps, and their fierce boss Tommy Shelby.",
+            "genre": ["Crime", "Drama"],
+            "imdb": "https://www.imdb.com/title/tt2442560/",
+            "poster": "https://m.media-amazon.com/images/M/MV5BMTkzNjEzMDEzMF5BMl5BanBnXkFtZTgwMDI0MjE4MjE@._V1_SY1000_CR0,0,674,1000_AL_.jpg",
+            "rating": 8.8,
+            "title": "Peaky Blinders",
+            "year": 2013
         }
     ]
 }
