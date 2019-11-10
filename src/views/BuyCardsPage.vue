@@ -49,8 +49,8 @@
 			showConfirmResetTotalModal: false
         }),
 		methods: {
-			...mapMutations({
-				incrementCardsTotal: "BuyCards/incrementCardsTotal"
+			...mapMutations("BuyCards", {
+				incrementCardsTotal: "incrementCardsTotal"
 			}),
 			confirmResetTotal() {
 				this.$modalConfirm({ title: "Reset total", description: "Back to zero?" })
@@ -64,10 +64,10 @@
 			}
 		},
 		computed: {
-			...mapGetters({
-				cards: "BuyCards/cards",
-				cardsTotal: "BuyCards/cardsTotal",
-				limit: "BuyCards/limit"
+			...mapGetters("BuyCards", {
+				cards: "cards",
+				cardsTotal: "cardsTotal",
+				limit: "limit"
 			})
 		}
 	};

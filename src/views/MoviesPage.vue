@@ -57,10 +57,10 @@
             MovieItem,
         },
         methods: {
-			...mapMutations({
-				changeOrder: "Movies/changeOrder",	
-				changeOrderByDesc: "Movies/changeOrderByDesc",	
-				setHighestAndLowestRatedBoolean: "Movies/setHighestAndLowestRatedBoolean",	
+			...mapMutations("Movies", {
+				changeOrder: "changeOrder",	
+				changeOrderByDesc: "changeOrderByDesc",	
+				setHighestAndLowestRatedBoolean: "setHighestAndLowestRatedBoolean",	
             }),
 			setOrderBy(orderBy) {
 				this.changeOrder(orderBy);
@@ -68,11 +68,11 @@
 			}
 		},
         computed: {
-            ...mapGetters({
-                filteredMovies: "Movies/filteredMovies",
-                movies: "Movies/movies",
-				order: "Movies/order",
-				orderByDesc: "Movies/orderByDesc"
+            ...mapGetters("Movies", {
+                filteredMovies: "filteredMovies",
+                movies: "movies",
+				order: "order",
+				orderByDesc: "orderByDesc"
             })
         }
     };

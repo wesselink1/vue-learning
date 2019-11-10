@@ -121,11 +121,11 @@
             this.posts = this.tvShows;
         },
         methods: {
-            ...mapMutations({
-                setOrderTvShowsBy: "TvShows/setOrderTvShowsBy",
-                setOrderTvShowsByDesc: "TvShows/setOrderTvShowsByDesc",
-                setTvShowCurrentPage: "TvShows/setTvShowCurrentPage",
-                setTvShowDisplay: "TvShows/setTvShowDisplay"
+            ...mapMutations("TvShows", {
+                setOrderTvShowsBy: "setOrderTvShowsBy",
+                setOrderTvShowsByDesc: "setOrderTvShowsByDesc",
+                setTvShowCurrentPage: "setTvShowCurrentPage",
+                setTvShowDisplay: "setTvShowDisplay"
             }),
             setOrderBy(orderBy) {
                 this.setOrderTvShowsBy(orderBy);
@@ -197,12 +197,12 @@
             }
         },
         computed: {           
-            ...mapGetters({
-                orderTvShowsBy: "TvShows/orderTvShowsBy",
-                orderTvShowsByDesc: "TvShows/orderTvShowsByDesc",
-                tvShowDisplay: "TvShows/tvShowDisplay",
-                tvShows: "TvShows/tvShows",
-                tvShowsCurrentPage: "TvShows/tvShowsCurrentPage"
+            ...mapGetters("TvShows", {
+                orderTvShowsBy: "orderTvShowsBy",
+                orderTvShowsByDesc: "orderTvShowsByDesc",
+                tvShowDisplay: "tvShowDisplay",
+                tvShows: "tvShows",
+                tvShowsCurrentPage: "tvShowsCurrentPage"
             }),
             displayedPosts() {
                 return this.paginate(this.posts);

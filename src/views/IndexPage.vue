@@ -114,8 +114,8 @@
 			MovieFeatured
 		},
 		computed: {
-			...mapGetters({
-				movies: "Movies/movies"
+			...mapGetters("Movies", {
+				movies: "movies"
 			}),
 			featuredMovie() {
 				let randomMovie = this.movies[Math.floor(Math.random()*this.movies.length)];

@@ -81,8 +81,8 @@
 			TabList
 		},
 		computed: {
-			...mapGetters({
-				selectedTabComponent: "Tabs/selectedTabComponent"
+			...mapGetters("Tabs", {
+				selectedTabComponent: "selectedTabComponent"
 			})
 		}
 	};
