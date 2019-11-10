@@ -77,13 +77,13 @@
 
 	export default {
 		components: {
-			'TabItem': TabItem,
-			'TabList': TabList
+			TabItem,
+			TabList
 		},
 		computed: {
-			...mapGetters([
-				"selectedTabComponent"
-			])
+			...mapGetters({
+				selectedTabComponent: "Tabs/selectedTabComponent"
+			})
 		}
 	};
 </script>

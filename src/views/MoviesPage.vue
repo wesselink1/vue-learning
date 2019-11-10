@@ -54,26 +54,26 @@
 
     export default {
         components: {
-            MovieItem
+            MovieItem,
         },
         methods: {
-			...mapMutations([
-				"changeOrder",	
-				"changeOrderByDesc",
-				"setHighestAndLowestRatedBoolean"
-			]),
+			...mapMutations({
+				changeOrder: "Movies/changeOrder",	
+				changeOrderByDesc: "Movies/changeOrderByDesc",	
+				setHighestAndLowestRatedBoolean: "Movies/setHighestAndLowestRatedBoolean",	
+            }),
 			setOrderBy(orderBy) {
 				this.changeOrder(orderBy);
 				this.changeOrderByDesc();
 			}
 		},
         computed: {
-            ...mapGetters([
-                "filteredMovies",
-                "movies",
-				"order",
-				"orderByDesc"
-            ])
+            ...mapGetters({
+                filteredMovies: "Movies/filteredMovies",
+                movies: "Movies/movies",
+				order: "Movies/order",
+				orderByDesc: "Movies/orderByDesc"
+            })
         }
     };
 </script>

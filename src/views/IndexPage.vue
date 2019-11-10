@@ -114,12 +114,12 @@
 			MovieFeatured
 		},
 		computed: {
-			...mapGetters([
-				"movies"
-			]),
+			...mapGetters({
+				movies: "Movies/movies"
+			}),
 			featuredMovie() {
 				let randomMovie = this.movies[Math.floor(Math.random()*this.movies.length)];
-				return this.$store.getters.movie(randomMovie.id);
+				return this.$store.getters["Movies/movie"](randomMovie.id);
 			}
 		}
 	}

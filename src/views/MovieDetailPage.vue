@@ -49,7 +49,7 @@
     export default {
         computed: {
             movie() {                
-                return this.$store.getters.movie(this.$route.params.id);
+                return this.$store.getters["Movies/movie"](this.$route.params.id);
             }            
         }
     };

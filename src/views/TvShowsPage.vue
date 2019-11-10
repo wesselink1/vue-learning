@@ -121,12 +121,12 @@
             this.posts = this.tvShows;
         },
         methods: {
-            ...mapMutations([
-                "setOrderTvShowsBy",
-                "setOrderTvShowsByDesc",
-                "setTvShowCurrentPage",
-                "setTvShowDisplay"
-            ]),
+            ...mapMutations({
+                setOrderTvShowsBy: "TvShows/setOrderTvShowsBy",
+                setOrderTvShowsByDesc: "TvShows/setOrderTvShowsByDesc",
+                setTvShowCurrentPage: "TvShows/setTvShowCurrentPage",
+                setTvShowDisplay: "TvShows/setTvShowDisplay"
+            }),
             setOrderBy(orderBy) {
                 this.setOrderTvShowsBy(orderBy);
                 this.setOrderTvShowsByDesc();
@@ -160,7 +160,7 @@
 
                 this.$modalConfirm({ title: "Switch tv show display to " + displayName + "?" })
                     .then((response) => {
-                        this.$store.commit("setTvShowDisplay", componentName);
+                        this.$store.commit("TvShows/setTvShowDisplay", componentName);
                     })
                     .catch(e => {
                         console.log(e);
@@ -197,13 +197,13 @@
             }
         },
         computed: {           
-            ...mapGetters([
-                "orderTvShowsBy",
-                "orderTvShowsByDesc",
-                "tvShowDisplay",
-                "tvShows",
-                "tvShowsCurrentPage"
-            ]),
+            ...mapGetters({
+                orderTvShowsBy: "TvShows/orderTvShowsBy",
+                orderTvShowsByDesc: "TvShows/orderTvShowsByDesc",
+                tvShowDisplay: "TvShows/tvShowDisplay",
+                tvShows: "TvShows/tvShows",
+                tvShowsCurrentPage: "TvShows/tvShowsCurrentPage"
+            }),
             displayedPosts() {
                 return this.paginate(this.posts);
             },
