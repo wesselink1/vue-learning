@@ -46,16 +46,16 @@
             this.tabs = this.$children;
         },
         methods: {
-            ...mapMutations([
-				"setSelectedTabComponent"
-			]),
+            ...mapMutations({
+				setSelectedTabComponent: "Tabs/setSelectedTabComponent"
+            }),
             selectTab(event, selectedTab) {
                 event.preventDefault();
                 
                 this.tabs.forEach(tab => {
                     tab.isActive = (tab.name == selectedTab.name);
                 });
-
+                
                 this.setSelectedTabComponent(selectedTab.name);
                 return false;
             },
@@ -64,9 +64,9 @@
             }
         },
         computed: {
-			...mapGetters([
-				"selectedTabComponent"
-            ])            
+			...mapGetters({
+				selectedTabComponent: "Tabs/selectedTabComponent"
+            })            
 		}
     };
 </script>

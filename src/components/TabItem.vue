@@ -29,9 +29,9 @@
             isActive: false
         }),
         computed: {
-			...mapGetters([
-				"selectedTabComponent"
-            ])            
+			...mapGetters({
+				selectedTabComponent: "Tabs/selectedTabComponent"
+            })
 		}
     };
 </script>

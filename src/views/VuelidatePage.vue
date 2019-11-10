@@ -200,42 +200,42 @@
 		computed: {
 			age: {
 				get() {
-					return this.$store.getters.age;
+					return this.$store.getters["Vuelidate/age"];
 				},
 				set(value) {
-					this.$store.commit("age", value);
+					this.$store.commit("Vuelidate/age", value);
 				}
 			},
 			email: {
 				get() {
-					return this.$store.getters.email;
+					return this.$store.getters["Vuelidate/email"];
 				},
 				set(value) {
-					this.$store.commit("email", value);
+					this.$store.commit("Vuelidate/email", value);
 				}
 			},
 			terms: {
 				get() {
-					return this.$store.getters.terms;
+					return this.$store.getters["Vuelidate/terms"];
 				},
 				set(value) {
-					this.$store.commit("terms", value);
+					this.$store.commit("Vuelidate/terms", value);
 				}
 			},
 			username: {
 				get() {
-					return this.$store.getters.username;
+					return this.$store.getters["Vuelidate/username"];
 				},
 				set(value) {
-					this.$store.commit("username", value);
+					this.$store.commit("Vuelidate/username", value);
 				}
 			},
 			coupon: {
 				get() {
-					return this.$store.getters.coupon;
+					return this.$store.getters["Vuelidate/coupon"];
 				},
 				set(value) {
-					this.$store.commit("coupon", value);
+					this.$store.commit("Vuelidate/coupon", value);
 				}
 			},
 			isCouponValid() {

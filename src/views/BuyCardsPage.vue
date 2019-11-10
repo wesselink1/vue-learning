@@ -49,13 +49,13 @@
 			showConfirmResetTotalModal: false
         }),
 		methods: {
-			...mapMutations([
-				"incrementCardsTotal"
-			]),
+			...mapMutations("BuyCards", {
+				incrementCardsTotal: "incrementCardsTotal"
+			}),
 			confirmResetTotal() {
 				this.$modalConfirm({ title: "Reset total", description: "Back to zero?" })
 					.then((response) => {
-						this.$store.commit("resetCardsTotal");
+						this.$store.commit("BuyCards/resetCardsTotal");
 						this.showConfirmResetTotalModal = false;
 					})
 					.catch(e => {
@@ -64,11 +64,11 @@
 			}
 		},
 		computed: {
-			...mapGetters([
-				"cards",
-				"cardsTotal",
-				"limit"
-			])
+			...mapGetters("BuyCards", {
+				cards: "cards",
+				cardsTotal: "cardsTotal",
+				limit: "limit"
+			})
 		}
 	};
 </script>

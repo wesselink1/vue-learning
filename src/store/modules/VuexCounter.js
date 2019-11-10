@@ -1,27 +1,25 @@
-const state = {
-	counter: 0,
-};
-
-const getters = {
-	counter: state => state.counter
-};
-
-const mutations = {
-	incrementCounter: state => {
-	    state.counter++;
-	},
-	decrementCounter: state => {
-	    if (state.counter > 0) {
-	        state.counter--;
-	    }
-	},
-	resetCounter: state => {
-		state.counter = 0;
-	}
-};
-
 export default {
-	state,
-	getters,
-	mutations
+	namespaced: true,
+
+	state: {
+		counter: 0,
+	},
+
+	getters: {
+		counter: state => state.counter
+	},
+
+	mutations: {
+		incrementCounter: state => {
+			state.counter++;
+		},
+		decrementCounter: state => {
+			if (state.counter > 0) {
+				state.counter--;
+			}
+		},
+		resetCounter: state => {
+			state.counter = 0;
+		}
+	}
 };

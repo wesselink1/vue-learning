@@ -56,14 +56,14 @@
 			nameChanged: false
         }),
 		methods: {
-			...mapMutations([
-				"decrementCounter",
-				"incrementCounter"
-			]),
+			...mapMutations("VuexCounter", {
+				decrementCounter: "decrementCounter",
+				incrementCounter: "incrementCounter"
+			}),
 			confirmCounterReset() {
 				this.$modalConfirm({ title: "Reset the counter?", description: "Do you want to reset the counter?" })
 					.then(e => {
-						this.$store.commit("resetCounter");
+						this.$store.commit("VuexCounter/resetCounter");
 						this.showConfirmCounterResetModal = false;
 					})
 					.catch(e => {
@@ -84,9 +84,9 @@
 			}
 		},
 		computed: {
-			...mapGetters([
-				"counter"
-			]),
+			...mapGetters("VuexCounter", {
+				counter: "counter"
+			}),
 			fullName() {
 				return this.firstName + " " + this.lastName;
 			}

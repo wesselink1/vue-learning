@@ -81,25 +81,25 @@
 			this.setHighestAndLowestRatedBoolean();
 		},
 		methods: {
-			...mapMutations([
-				"changeOrder",	
-				"changeOrderByDesc",
-				"setHighestAndLowestRatedBoolean"
-			]),
+			...mapMutations("Movies", {
+				changeOrder: "changeOrder",	
+				changeOrderByDesc: "changeOrderByDesc",
+				setHighestAndLowestRatedBoolean: "setHighestAndLowestRatedBoolean"
+			}),
 			setOrderBy(orderBy) {
 				this.changeOrder(orderBy);
 				this.changeOrderByDesc();
 			}
 		},
 		computed: {
-			...mapGetters([
-				"filteredMovies",
-				"highestRatedMovie",
-				"lowestRatedMovie",
-				"movies",
-				"order",
-				"orderByDesc"
-			])			
+			...mapGetters("Movies", {
+				filteredMovies: "filteredMovies",
+				highestRatedMovie: "highestRatedMovie",
+				lowestRatedMovie: "lowestRatedMovie",
+				movies: "movies",
+				order: "order",
+				orderByDesc: "orderByDesc"
+			})			
 		}
 	};
 </script>
