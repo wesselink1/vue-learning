@@ -48,62 +48,62 @@
 </template>
 
 <script>
-    import { mapGetters } from "vuex";
-	import { mapMutations } from "vuex";
-    import MovieItem from "@/components/MovieItem";
+import { mapGetters } from "vuex";
+import { mapMutations } from "vuex";
+import MovieItem from "@/components/MovieItem";
 
-    export default {
-        components: {
-            MovieItem,
-        },
-        methods: {
-			...mapMutations("Movies", {
-				changeOrder: "changeOrder",	
-				changeOrderByDesc: "changeOrderByDesc",	
-				setHighestAndLowestRatedBoolean: "setHighestAndLowestRatedBoolean",	
-            }),
-			setOrderBy(orderBy) {
-				this.changeOrder(orderBy);
-				this.changeOrderByDesc();
-			}
-		},
-        computed: {
-            ...mapGetters("Movies", {
-                filteredMovies: "filteredMovies",
-                movies: "movies",
-				order: "order",
-				orderByDesc: "orderByDesc"
-            })
+export default {
+    components: {
+        MovieItem,
+    },
+    methods: {
+        ...mapMutations("Movies", {
+            changeOrder: "changeOrder",	
+            changeOrderByDesc: "changeOrderByDesc",	
+            setHighestAndLowestRatedBoolean: "setHighestAndLowestRatedBoolean",	
+        }),
+        setOrderBy(orderBy) {
+            this.changeOrder(orderBy);
+            this.changeOrderByDesc();
         }
-    };
+    },
+    computed: {
+        ...mapGetters("Movies", {
+            filteredMovies: "filteredMovies",
+            movies: "movies",
+            order: "order",
+            orderByDesc: "orderByDesc"
+        })
+    }
+};
 </script>
 
 <style lang="scss">
-    .movies__list {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        grid-gap: 20px;
-    }
+.movies__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+}
 
-    .movies__sorting {
-        text-align: right;
-    }
+.movies__sorting {
+    text-align: right;
+}
 
-    .movies__sorting-link {
-        color: map-get($colors, 03);
+.movies__sorting-link {
+    color: map-get($colors, 03);
 
-        &.is-active,
-        &:hover {
-            color: map-get($colors, 01);
-        }
+    &.is-active,
+    &:hover {
+        color: map-get($colors, 01);
     }
+}
 
-    .movie-item {
-        img {
-            height: auto;
-            width: 224px;
-            max-width: 100%;
-            box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .25);
-        }
+.movie-item {
+    img {
+        height: auto;
+        width: 224px;
+        max-width: 100%;
+        box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .25);
     }
+}
 </style>

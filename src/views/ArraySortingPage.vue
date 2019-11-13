@@ -54,7 +54,7 @@
 				<ArraySortingRow
 					v-for="movie in filteredMovies"
 					:movie="movie"
-					:key="movie.id"	/>	
+					:key="movie.id"/>	
 			</tbody>
 		</table>
 
@@ -69,47 +69,47 @@
 </template>
 
 <script>
-	import { mapGetters } from "vuex";
-	import { mapMutations } from "vuex";
-	import ArraySortingRow from "@/components/ArraySortingRow";
+import { mapGetters } from "vuex";
+import { mapMutations } from "vuex";
+import ArraySortingRow from "@/components/ArraySortingRow";
 
-	export default {
-		components: {
-			ArraySortingRow
-		},
-		created() {
-			this.setHighestAndLowestRatedBoolean();
-		},
-		methods: {
-			...mapMutations("Movies", {
-				changeOrder: "changeOrder",	
-				changeOrderByDesc: "changeOrderByDesc",
-				setHighestAndLowestRatedBoolean: "setHighestAndLowestRatedBoolean"
-			}),
-			setOrderBy(orderBy) {
-				this.changeOrder(orderBy);
-				this.changeOrderByDesc();
-			}
-		},
-		computed: {
-			...mapGetters("Movies", {
-				filteredMovies: "filteredMovies",
-				highestRatedMovie: "highestRatedMovie",
-				lowestRatedMovie: "lowestRatedMovie",
-				movies: "movies",
-				order: "order",
-				orderByDesc: "orderByDesc"
-			})			
+export default {
+	components: {
+		ArraySortingRow
+	},
+	created() {
+		this.setHighestAndLowestRatedBoolean();
+	},
+	methods: {
+		...mapMutations("Movies", {
+			changeOrder: "changeOrder",	
+			changeOrderByDesc: "changeOrderByDesc",
+			setHighestAndLowestRatedBoolean: "setHighestAndLowestRatedBoolean"
+		}),
+		setOrderBy(orderBy) {
+			this.changeOrder(orderBy);
+			this.changeOrderByDesc();
 		}
-	};
+	},
+	computed: {
+		...mapGetters("Movies", {
+			filteredMovies: "filteredMovies",
+			highestRatedMovie: "highestRatedMovie",
+			lowestRatedMovie: "lowestRatedMovie",
+			movies: "movies",
+			order: "order",
+			orderByDesc: "orderByDesc"
+		})			
+	}
+};
 </script>
 
 <style lang="scss">
-	.array-sorting__movies {
-		border: 1px solid map-get($colors, 05);
+.array-sorting__movies {
+	border: 1px solid map-get($colors, 05);
 
-		tbody tr:nth-child(odd) {
-			background-color: map-get($colors, 05);
-		}
-	}	
+	tbody tr:nth-child(odd) {
+		background-color: map-get($colors, 05);
+	}
+}	
 </style>

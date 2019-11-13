@@ -182,221 +182,221 @@
 </template>
 
 <script>
-	import { required, email, minValue, minLength } from "vuelidate/lib/validators";
+import { required, email, minValue, minLength } from "vuelidate/lib/validators";
 
-	export default {
-		data: () => ({
-			coupons: [
-				"SUMMER28",
-				"FALL44",
-				"SPRING2019"
-			]
-        }),
-		methods: {
-			submitForm() {
-				alert("Form send");
+export default {
+	data: () => ({
+		coupons: [
+			"SUMMER28",
+			"FALL44",
+			"SPRING2019"
+		]
+	}),
+	methods: {
+		submitForm() {
+			alert("Form send");
+		}
+	},
+	computed: {
+		age: {
+			get() {
+				return this.$store.getters["Vuelidate/age"];
+			},
+			set(value) {
+				this.$store.commit("Vuelidate/age", value);
 			}
 		},
-		computed: {
-			age: {
-				get() {
-					return this.$store.getters["Vuelidate/age"];
-				},
-				set(value) {
-					this.$store.commit("Vuelidate/age", value);
-				}
+		email: {
+			get() {
+				return this.$store.getters["Vuelidate/email"];
 			},
-			email: {
-				get() {
-					return this.$store.getters["Vuelidate/email"];
-				},
-				set(value) {
-					this.$store.commit("Vuelidate/email", value);
-				}
-			},
-			terms: {
-				get() {
-					return this.$store.getters["Vuelidate/terms"];
-				},
-				set(value) {
-					this.$store.commit("Vuelidate/terms", value);
-				}
-			},
-			username: {
-				get() {
-					return this.$store.getters["Vuelidate/username"];
-				},
-				set(value) {
-					this.$store.commit("Vuelidate/username", value);
-				}
-			},
-			coupon: {
-				get() {
-					return this.$store.getters["Vuelidate/coupon"];
-				},
-				set(value) {
-					this.$store.commit("Vuelidate/coupon", value);
-				}
-			},
-			isCouponValid() {
-				return this.$v.coupon.validCoupon && this.coupon != "" && this.coupon != null;
+			set(value) {
+				this.$store.commit("Vuelidate/email", value);
 			}
 		},
-		validations: {
-			username: {
-				required,
-				minLen: minLength(4)
+		terms: {
+			get() {
+				return this.$store.getters["Vuelidate/terms"];
 			},
-			email: {
-				required,
-				email
-			},
-			age: {
-				required,
-				minVal: minValue(18)
-			},
-			coupon: {
-				validCoupon(val) {
-					if(val == "" || val == null) {
-						return true; 
-					} else {
-						return this.coupons.includes(val);
-					}
-				}
-			},
-			terms: {
-				required
+			set(value) {
+				this.$store.commit("Vuelidate/terms", value);
 			}
-		}		
-	};
+		},
+		username: {
+			get() {
+				return this.$store.getters["Vuelidate/username"];
+			},
+			set(value) {
+				this.$store.commit("Vuelidate/username", value);
+			}
+		},
+		coupon: {
+			get() {
+				return this.$store.getters["Vuelidate/coupon"];
+			},
+			set(value) {
+				this.$store.commit("Vuelidate/coupon", value);
+			}
+		},
+		isCouponValid() {
+			return this.$v.coupon.validCoupon && this.coupon != "" && this.coupon != null;
+		}
+	},
+	validations: {
+		username: {
+			required,
+			minLen: minLength(4)
+		},
+		email: {
+			required,
+			email
+		},
+		age: {
+			required,
+			minVal: minValue(18)
+		},
+		coupon: {
+			validCoupon(val) {
+				if(val == "" || val == null) {
+					return true; 
+				} else {
+					return this.coupons.includes(val);
+				}
+			}
+		},
+		terms: {
+			required
+		}
+	}		
+};
 </script>
 
 <style lang="scss">
-	.vuelidate__label,
-	.vuelidate__error,
-	.vuelidate__newsletter-list,
-	.vuelidate__values {
-		font-family: $font-custom;
+.vuelidate__label,
+.vuelidate__error,
+.vuelidate__newsletter-list,
+.vuelidate__values {
+	font-family: $font-custom;
+}
+
+.vuelidate-grid {
+	@include display-grid;
+	@include grid-template-columns(2fr 1fr);
+	grid-gap: 40px;
+}
+
+.vuelidate-form-grid {
+	@include display-grid;
+	@include grid-template-columns(200px 1fr);
+	grid-gap: 20px;
+	max-width: 600px;
+}
+
+.vuelidate__label {
+	font-weight: 300;
+
+	&.is-valid {
+		color: green;
 	}
 
-	.vuelidate-grid {
-		@include display-grid;
-		@include grid-template-columns(2fr 1fr);
-		grid-gap: 40px;
+	&.has-error {
+		color: red;
 	}
+}
 
-	.vuelidate-form-grid {
-		@include display-grid;
-		@include grid-template-columns(200px 1fr);
-		grid-gap: 20px;
-		max-width: 600px;
-	}
+.vuelidate__label--input-field {
+	padding-top: 15px;
+}
 
-	.vuelidate__label {
-		font-weight: 300;
+.vuelidate__input {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 15px;
+	border-radius: $border-radius;
+	border: 2px solid #ccc;
 
-		&.is-valid {
-			color: green;
-		}
-
-		&.has-error {
-			color: red;
-		}
-	}
-
-	.vuelidate__label--input-field {
-		padding-top: 15px;
-	}
-
-	.vuelidate__input {
-		width: 100%;
-		box-sizing: border-box;
-		padding: 15px;
-		border-radius: $border-radius;
-		border: 2px solid #ccc;
-
-		&.is-valid {
-			border-color: green;
-		}	
-
-		&.has-error {
-			border-color: red;
-		}
-	}
-
-	.vuelidate__coupons {
-		margin: 0 0 0 20px;
-		padding: 0;
-		font-family: monospace, sans-serif;
-		color: map-get($colors, 2);
-		font-size: 22px;
+	&.is-valid {
+		border-color: green;
 	}	
 
-	.vuelidate__error {
-		display: block;
-		margin-top: 10px;
-		color: red;
-		@include align-self(center);
+	&.has-error {
+		border-color: red;
+	}
+}
+
+.vuelidate__coupons {
+	margin: 0 0 0 20px;
+	padding: 0;
+	font-family: monospace, sans-serif;
+	color: map-get($colors, 2);
+	font-size: 22px;
+}	
+
+.vuelidate__error {
+	display: block;
+	margin-top: 10px;
+	color: red;
+	@include align-self(center);
+}
+
+.vuelidate__values {
+	@include grid-column(2);
+
+	.is-valid {
+		color: green;
 	}
 
-	.vuelidate__values {
-		@include grid-column(2);
+	pre {
+		height: 600px;
+		overflow: auto;
+		font-size: 16px;
+		line-height: 1.5;
+		padding: 20px;
+		border-radius: 10px;
+		border: 1px solid map-get($colors, 01);
+		-webkit-overflow-scrolling: touch;
+	}
+}
 
-		.is-valid {
-			color: green;
-		}
+.vuelidate__values.do-shake {
+	animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
 
-		pre {
-			height: 600px;
-			overflow: auto;
-			font-size: 16px;
-			line-height: 1.5;
-			padding: 20px;
-			border-radius: 10px;
-			border: 1px solid map-get($colors, 01);
-			-webkit-overflow-scrolling: touch;
-		}
+.vuelidate__newsletter-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.vuelidate__newsletter-list label {
+	cursor: pointer;
+}
+
+.vuelidate__newsletter-list li {
+	margin-bottom: 10px;
+}
+
+.vuelidate__button {
+	margin-top: 20px;
+	grid-column: 2;
+	@include align-self(center);
+}
+
+@keyframes shake {
+	10%, 90% {
+		transform: translate3d(-1px, 0, 0);
 	}
 
-	.vuelidate__values.do-shake {
-		animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+	20%, 80% {
+		transform: translate3d(4px, 0, 0);
 	}
 
-	.vuelidate__newsletter-list {
-		margin: 0;
-		padding: 0;
-		list-style: none;
+	30%, 50%, 70% {
+		transform: translate3d(-8px, 0, 0);
 	}
 
-	.vuelidate__newsletter-list label {
-		cursor: pointer;
+	40%, 60% {
+		transform: translate3d(8px, 0, 0);
 	}
-
-	.vuelidate__newsletter-list li {
-		margin-bottom: 10px;
-	}
-
-	.vuelidate__button {
-		margin-top: 20px;
-		grid-column: 2;
-		@include align-self(center);
-	}
-
-	@keyframes shake {
-		10%, 90% {
-			transform: translate3d(-1px, 0, 0);
-		}
-
-		20%, 80% {
-			transform: translate3d(4px, 0, 0);
-		}
-
-		30%, 50%, 70% {
-			transform: translate3d(-8px, 0, 0);
-		}
-
-		40%, 60% {
-			transform: translate3d(8px, 0, 0);
-		}
-	}
+}
 </style>

@@ -44,60 +44,60 @@
 </template>
 
 <script>
-	import { mapGetters } from "vuex";
-	import { mapMutations } from "vuex";
+import { mapGetters } from "vuex";
+import { mapMutations } from "vuex";
 
-	export default {
-		data: () => ({
-			firstName: "James",
-			lastName: "Dean",
-			newFirstName: "Master",
-			newLastName: "of Disaster",
-			nameChanged: false
-        }),
-		methods: {
-			...mapMutations("VuexCounter", {
-				decrementCounter: "decrementCounter",
-				incrementCounter: "incrementCounter"
-			}),
-			confirmCounterReset() {
-				this.$modalConfirm({ title: "Reset the counter?", description: "Do you want to reset the counter?" })
-					.then(e => {
-						this.$store.commit("VuexCounter/resetCounter");
-						this.showConfirmCounterResetModal = false;
-					})
-					.catch(e => {
-						console.log(e);
-					});				
-			},
-			confirmChangeName() {
-				this.$modalConfirm({ title: "Are your sure you want to change the name?", description: `To: ${this.newFirstName} ${this.newLastName}` })
-					.then((response) => {
-						this.firstName = this.newFirstName,
-						this.lastName = this.newLastName,
-						this.nameChanged = true;
-						this.showConfirmNameChangeModal = false;
-					})
-					.catch(e => {
-						console.log(e);
-					});				
-			}
+export default {
+	data: () => ({
+		firstName: "James",
+		lastName: "Dean",
+		newFirstName: "Master",
+		newLastName: "of Disaster",
+		nameChanged: false
+	}),
+	methods: {
+		...mapMutations("VuexCounter", {
+			decrementCounter: "decrementCounter",
+			incrementCounter: "incrementCounter"
+		}),
+		confirmCounterReset() {
+			this.$modalConfirm({ title: "Reset the counter?", description: "Do you want to reset the counter?" })
+				.then(e => {
+					this.$store.commit("VuexCounter/resetCounter");
+					this.showConfirmCounterResetModal = false;
+				})
+				.catch(e => {
+					console.log(e);
+				});				
 		},
-		computed: {
-			...mapGetters("VuexCounter", {
-				counter: "counter"
-			}),
-			fullName() {
-				return this.firstName + " " + this.lastName;
-			}
+		confirmChangeName() {
+			this.$modalConfirm({ title: "Are your sure you want to change the name?", description: `To: ${this.newFirstName} ${this.newLastName}` })
+				.then((response) => {
+					this.firstName = this.newFirstName,
+					this.lastName = this.newLastName,
+					this.nameChanged = true;
+					this.showConfirmNameChangeModal = false;
+				})
+				.catch(e => {
+					console.log(e);
+				});				
 		}
-	};
+	},
+	computed: {
+		...mapGetters("VuexCounter", {
+			counter: "counter"
+		}),
+		fullName() {
+			return this.firstName + " " + this.lastName;
+		}
+	}
+};
 </script>
 
 <style lang="scss">
-	.counter__buttons {
-		.button + .button {
-			margin-left: 20px;
-		}
+.counter__buttons {
+	.button + .button {
+		margin-left: 20px;
 	}
+}
 </style>
