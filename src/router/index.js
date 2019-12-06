@@ -76,6 +76,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "faq-page" */ "@/views/FaqPage")
   },
   {
+    path: "/gsap",
+    name: "GsapPage",
+    component: () => import(/* webpackChunkName: "tween-page" */ "@/views/GsapPage")
+  },
+  {
     path: "*",
     component: () => import(/* webpackChunkName: "error-page" */ "@/views/Error404Page")
   }
