@@ -31,62 +31,62 @@
 				:card="card"
 				:cardsTotal="cardsTotal"
 				:limit="limit"
-				@onIncrementCardsTotal="incrementCardsTotal" />
+				@onIncrementCardsTotal="incrementCardsTotal"/>
 		</div>
 	</main>
 </template>
 
 <script>
-	import { mapGetters } from "vuex";
-	import { mapMutations } from "vuex";
-	import CardItem from "@/components/CardItem";
+import { mapGetters } from "vuex";
+import { mapMutations } from "vuex";
+import CardItem from "@/components/CardItem";
 
-	export default {
-		components: {
-			CardItem
-		},
-		data: () => ({
-			showConfirmResetTotalModal: false
-        }),
-		methods: {
-			...mapMutations("BuyCards", {
-				incrementCardsTotal: "incrementCardsTotal"
-			}),
-			confirmResetTotal() {
-				this.$modalConfirm({ title: "Reset total", description: "Back to zero?" })
-					.then((response) => {
-						this.$store.commit("BuyCards/resetCardsTotal");
-						this.showConfirmResetTotalModal = false;
-					})
-					.catch(e => {
-						console.log(e);
-					});				
-			}
-		},
-		computed: {
-			...mapGetters("BuyCards", {
-				cards: "cards",
-				cardsTotal: "cardsTotal",
-				limit: "limit"
-			})
+export default {
+	components: {
+		CardItem
+	},
+	data: () => ({
+		showConfirmResetTotalModal: false
+	}),
+	methods: {
+		...mapMutations("BuyCards", {
+			incrementCardsTotal: "incrementCardsTotal"
+		}),
+		confirmResetTotal() {
+			this.$modalConfirm({ title: "Reset total", description: "Back to zero?" })
+				.then((response) => {
+					this.$store.commit("BuyCards/resetCardsTotal");
+					this.showConfirmResetTotalModal = false;
+				})
+				.catch(e => {
+					console.log(e);
+				});				
 		}
-	};
+	},
+	computed: {
+		...mapGetters("BuyCards", {
+			cards: "cards",
+			cardsTotal: "cardsTotal",
+			limit: "limit"
+		})
+	}
+};
 </script>
 
 <style lang="scss">
-	.cards__list,
-	.cards__total {
-		font-family: $font-custom;
-	}
+.cards__list,
+.cards__total {
+	font-family: $font-custom;
+}
 
-	.cards__grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-		grid-auto-rows: 200px;
-		grid-gap: 10px;
-	}
+.cards__grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-auto-rows: 200px;
+	grid-gap: 10px;
+}
 
-	.cards__total {
-		font-size: 42px;
-	}
+.cards__total {
+	font-size: 42px;
+}
 </style>

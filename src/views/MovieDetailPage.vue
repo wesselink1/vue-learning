@@ -46,128 +46,128 @@
 </template>
 
 <script>    
-    export default {
-        computed: {
-            movie() {                
-                return this.$store.getters["Movies/movie"](this.$route.params.id);
-            }            
-        }
-    };
+export default {
+    computed: {
+        movie() {                
+            return this.$store.getters["Movies/movie"](this.$route.params.id);
+        }            
+    }
+};
 </script>
 
 <style lang="scss">
-    .movie-detail {
-        @include display-grid;
-        @include grid-template-columns(490px 1fr);
-    }
+.movie-detail {
+    @include display-grid;
+    @include grid-template-columns(490px 1fr);
+}
 
-    .movie-detail__back-button {
-        @include grid-row(1);
-        font-size: 18px;
-        font-family: $font-custom;
-        color: map-get($colors, 01);
+.movie-detail__back-button {
+    @include grid-row(1);
+    font-size: 18px;
+    font-family: $font-custom;
+    color: map-get($colors, 01);
 
-        a {
-            color: inherit;
-            text-decoration: none;
+    a {
+        color: inherit;
+        text-decoration: none;
 
-            &:hover {
-                color: map-get($colors, 02);
-            }
-        }
-    }
-
-    .movie-detail__poster-block {
-        margin: 0;
-        @include grid-row(2);
-    }
-
-    .movie-detail__poster {
-        margin-bottom: 20px;
-        max-width: 450px;
-        height: auto;
-        box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .25);
-    }
-
-    .movie-details__body {
-        @include grid-row(2);
-        @include grid-column(2);
-    }
-
-    .movie-detail__title {
-        margin: 0 0 0 0;
-        font-size: 85px;
-        font-family: $font-custom;
-        font-weight: 300;
-        color: map-get($colors, 01);
-    }
-
-    .movie-detail__not-found {
-        @include grid-row(2);
-        @include grid-column(1, 2);
-        font-family: $font-custom;
-        font-size: 26px;
-
-        a {
+        &:hover {
             color: map-get($colors, 02);
-
-            &:hover {
-                color: map-get($colors, 01);
-            }
         }
     }
+}
 
-    .movie-detail__genre {
-        margin: 0 0 10px 0;
-        font-size: 22px;
-        color: map-get($colors, 04);
-        font-family: $font-custom;
-    } 
+.movie-detail__poster-block {
+    margin: 0;
+    @include grid-row(2);
+}
 
-    .movie-detail__year {
-        margin: 0 0 40px 0;
-        font-size: 24px;
-        font-family: $font-custom;
+.movie-detail__poster {
+    margin-bottom: 20px;
+    max-width: 450px;
+    height: auto;
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .25);
+}
+
+.movie-details__body {
+    @include grid-row(2);
+    @include grid-column(2);
+}
+
+.movie-detail__title {
+    margin: 0 0 0 0;
+    font-size: 85px;
+    font-family: $font-custom;
+    font-weight: 300;
+    color: map-get($colors, 01);
+}
+
+.movie-detail__not-found {
+    @include grid-row(2);
+    @include grid-column(1, 2);
+    font-family: $font-custom;
+    font-size: 26px;
+
+    a {
         color: map-get($colors, 02);
-    }
-    
-    .movie-detail__description {
-        margin: 0 0 40px 0;
-        font-size: 28px;
-        line-height: 1.5;
-        font-weight: 300;
-        font-family: $font-custom;
-    }   
 
-    .movie-detail__starring-title {
-        margin: 0;
-        font-size: 22px;
-        font-family: $font-custom;
-        font-weight: 300;
-        color: map-get($colors, 02);
+        &:hover {
+            color: map-get($colors, 01);
+        }
     }
+}
 
-    .movie-detail__actor-list {
-        font-size: 16px;
-        font-family: $font-custom;
-    }
+.movie-detail__genre {
+    margin: 0 0 10px 0;
+    font-size: 22px;
+    color: map-get($colors, 04);
+    font-family: $font-custom;
+} 
 
-    .movie-detail__rating {
-        font-size: 26px;
-        font-family: $font-custom;
-        font-weight: 300;
-        color: map-get($colors, 01);
-    }
+.movie-detail__year {
+    margin: 0 0 40px 0;
+    font-size: 24px;
+    font-family: $font-custom;
+    color: map-get($colors, 02);
+}
 
-    .movie-detail__external {
-        margin: 0;
-        @include grid-row(3);
-        @include grid-column(1);
-    }
+.movie-detail__description {
+    margin: 0 0 40px 0;
+    font-size: 28px;
+    line-height: 1.5;
+    font-weight: 300;
+    font-family: $font-custom;
+}   
 
-    .movie-detail__externa-link {
-        font-size: 14px;
-        font-family: $font-custom;
-        color: map-get($colors, 02);
-    }
+.movie-detail__starring-title {
+    margin: 0;
+    font-size: 22px;
+    font-family: $font-custom;
+    font-weight: 300;
+    color: map-get($colors, 02);
+}
+
+.movie-detail__actor-list {
+    font-size: 16px;
+    font-family: $font-custom;
+}
+
+.movie-detail__rating {
+    font-size: 26px;
+    font-family: $font-custom;
+    font-weight: 300;
+    color: map-get($colors, 01);
+}
+
+.movie-detail__external {
+    margin: 0;
+    @include grid-row(3);
+    @include grid-column(1);
+}
+
+.movie-detail__externa-link {
+    font-size: 14px;
+    font-family: $font-custom;
+    color: map-get($colors, 02);
+}
 </style>

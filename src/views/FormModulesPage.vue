@@ -13,15 +13,15 @@
 </template>
 
 <script>
-    import FormRow from "@/components/FormRow";
+import FormRow from "@/components/FormRow";
 
-    export default {
-        components: {
-            FormRow
-        },
-        data: () => ({
-            coupon: "FREEBIE"
-        })
-    }
+export default {
+    components: {
+        FormRow
+    },
+    data: () => ({
+        coupon: "FREEBIE"
+    })
+}
 </script>
 

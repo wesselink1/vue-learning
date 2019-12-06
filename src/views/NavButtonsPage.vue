@@ -24,29 +24,24 @@
 	</main>
 </template>
 
-<script>
-	export default {
-	}
-</script>
-
 <style lang="scss">
-	.home__buttons {
-		@include display-grid;
-		max-width: 450px;
-	}
+.home__buttons {
+	@include display-grid;
+	max-width: 450px;
+}
 
-	.button {
-		margin-bottom: 20px;
-	}
+.button {
+	margin-bottom: 20px;
+}
 
-	.paragraph {
-		transition: .3s background-color, .3s color;
-		padding: 10px 20px;
-	}
+.paragraph {
+	transition: .3s background-color, .3s color;
+	padding: 10px 20px;
+}
 
-	p.fancy {
-		color: white;
-		border-radius: 10px;
-		background-color: deeppink;
-	}
+p.fancy {
+	color: white;
+	border-radius: 10px;
+	background-color: deeppink;
+}
 </style>
