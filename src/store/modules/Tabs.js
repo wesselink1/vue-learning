@@ -1,17 +1,20 @@
-export default {
-	namespaced: true,
+const state = {
+	selectedTabComponent: 'About'
+}
 
-	state: {
-		selectedTabComponent: 'About'
-	},
+const getters = {
+	selectedTabComponent: state => state.selectedTabComponent
+};
 
-	getters: {
-		selectedTabComponent: state => state.selectedTabComponent
-	},
-
-	mutations: {
-		setSelectedTabComponent: (state, payload) => {
-			state.selectedTabComponent = payload;
-		}
+const mutations = {
+	setSelectedTabComponent: (state, payload) => {
+		state.selectedTabComponent = payload;
 	}
 };
+
+export default {
+	namespaced: true,
+	state,
+	getters,
+	mutations
+}

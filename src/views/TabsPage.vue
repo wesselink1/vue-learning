@@ -71,19 +71,19 @@
 </template>
 
 <script>
-	import { mapGetters } from "vuex";
-	import TabItem from "@/components/TabItem";
-	import TabList from "@/components/TabList";
+import { mapGetters } from "vuex";
+import TabItem from "@/components/TabItem";
+import TabList from "@/components/TabList";
 
-	export default {
-		components: {
-			TabItem,
-			TabList
-		},
-		computed: {
-			...mapGetters("Tabs", {
-				selectedTabComponent: "selectedTabComponent"
-			})
-		}
-	};
+export default {
+	components: {
+		TabItem,
+		TabList
+	},
+	computed: {
+		...mapGetters("Tabs", {
+			selectedTabComponent: "selectedTabComponent"
+		})
+	}
+};
 </script>

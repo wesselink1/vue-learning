@@ -29,7 +29,7 @@
         <ModalWindow
             v-show="showBasicDemoModal"
             @onConfirm="showBasicDemoModal = false"
-            @onCancel="showBasicDemoModal = false" />
+            @onCancel="showBasicDemoModal = false"/>
 
         <p>
 			<button
@@ -42,44 +42,44 @@
 </template>
 
 <script>
-    import ModalWindow from "@/components/ModalWindow";
+import ModalWindow from "@/components/ModalWindow";
 
-    export default {
-        components: {
-            ModalWindow
+export default {
+    components: {
+        ModalWindow
+    },
+    data: () => ({
+        showDemoModal: false,
+        showBasicDemoModal: false
+    }),        
+    methods: {
+        confirmDemoModal() {
+            this.showDemoModal = false;
         },
-        data: () => ({
-            showDemoModal: false,
-            showBasicDemoModal: false
-        }),        
-        methods: {
-            confirmDemoModal() {
-                this.showDemoModal = false;
-            },
-            cancelDemoModal() {
-                this.showDemoModal = false;
-            },
-            showConfirmModal() {
-				this.$modalConfirm({
-                        title: "Are you sure you want this to happen?",
-                        // okButtonLabel: "Yes please!",
-                        // cancelButtonLabel: "No f*** way!"
-                    })
-					.then(e => {
-						console.log(`[modalConfirm] Confirmed`);
-					})
-					.catch(e => {
-						console.log(`[modalConfirm] Canceled`);
-					});
-			}
+        cancelDemoModal() {
+            this.showDemoModal = false;
+        },
+        showConfirmModal() {
+            this.$modalConfirm({
+                    title: "Are you sure you want this to happen?",
+                    // okButtonLabel: "Yes please!",
+                    // cancelButtonLabel: "No f*** way!"
+                })
+                .then(e => {
+                    console.log(`[modalConfirm] Confirmed`);
+                })
+                .catch(e => {
+                    console.log(`[modalConfirm] Canceled`);
+                });
         }
-    };
+    }
+};
 </script>
 
 <style lang="scss">
-    .modal-page__cta {
-        .button + .button {
-            margin-left: 20px;
-        }
+.modal-page__cta {
+    .button + .button {
+        margin-left: 20px;
     }
+}
 </style>

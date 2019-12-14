@@ -13,9 +13,6 @@ import * as actions from "./actions";
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
-  state: {
-
-  },
   getters,
   mutations,
   actions,
@@ -24,7 +21,7 @@ export const store = new Vuex.Store({
     Movies,
     Tabs,
     TvShows,
+    Vuelidate,
     VuexCounter,
-    Vuelidate
   }
 });

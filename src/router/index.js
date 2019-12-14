@@ -81,6 +81,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "tween-page" */ "@/views/GsapPage")
   },
   {
+    path: "/method-prop",
+    name: "MethodPropPage",
+    component: () => import(/* webpackChunkName: "method-prop-page" */ "@/views/MethodPropPage")
+  },
+  {
     path: "*",
     component: () => import(/* webpackChunkName: "error-page" */ "@/views/Error404Page")
   }

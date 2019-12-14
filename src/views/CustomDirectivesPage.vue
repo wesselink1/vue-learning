@@ -29,43 +29,43 @@
 </template>
 
 <script>
-    export default {
-        directives: {
-            "highlight": {
-                bind(el, binding) {                    
-                    setTimeout(() => {
-                        if(binding.value.classname != undefined) {
-                            el.classList.add(binding.value.classname);
-                        }
+export default {
+    directives: {
+        "highlight": {
+            bind(el, binding) {                    
+                setTimeout(() => {
+                    if(binding.value.classname != undefined) {
+                        el.classList.add(binding.value.classname);
+                    }
 
-                        if (binding.arg == 'background') {
-                            el.style.color = binding.value.color;
-                            el.style.backgroundColor = binding.value.backgroundColor;
-                        } else {
-                            el.style.color = binding.value.color;
-                        }
-                    }, binding.modifiers['delayed'] ? binding.value.delay : 0);	
-                }
-            } 
-        }
-    };
+                    if (binding.arg == 'background') {
+                        el.style.color = binding.value.color;
+                        el.style.backgroundColor = binding.value.backgroundColor;
+                    } else {
+                        el.style.color = binding.value.color;
+                    }
+                }, binding.modifiers['delayed'] ? binding.value.delay : 0);	
+            }
+        } 
+    }
+};
 </script>
 
 <style lang="scss">
-    .customdirective__total {
-		font-family: "Roboto", sans-serif;
-	}
+.customdirective__total {
+    font-family: "Roboto", sans-serif;
+}
 
-    .customdirective__body[style] {
-        padding: 10px;
-        border-radius: 10px;
-        -webkit-transition: background-color .5s ease-in-out, color .5s ease-in-out;
-        transition: background-color .5s ease-in-out, color .5s ease-in-out;
-    }
+.customdirective__body[style] {
+    padding: 10px;
+    border-radius: 10px;
+    -webkit-transition: background-color .5s ease-in-out, color .5s ease-in-out;
+    transition: background-color .5s ease-in-out, color .5s ease-in-out;
+}
 
-    p.fancyBackground {
-        border-radius: 10px;
-        color: map-get($colors, 05);
-        background-color: map-get($colors, 01);
-    }
+p.fancyBackground {
+    border-radius: 10px;
+    color: map-get($colors, 05);
+    background-color: map-get($colors, 01);
+}
 </style>
